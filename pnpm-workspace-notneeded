@@ -1,5 +1,0 @@
-onlyBuiltDependencies:
-  - workerd
-  - esbuild
-  - sharp
-  - "@parcel/watcher"
