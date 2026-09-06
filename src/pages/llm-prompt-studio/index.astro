@@ -1,0 +1,24 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { DocPageView } from '@/components/comfyui-prompt-studio/DocPageView'
+import { getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
+
+const page = getPageBySlug([])
+if (!page) {
+  throw new Error('Missing Prompt Studio hub page')
+}
+const currentPath = slugToPath([])
+---
+
+<BaseLayout
+  title="LLM Prompt Studio"
+  description={page.description}
+  canonical={currentPath}
+  wide
+>
+  <div class="site-main !max-w-6xl">
+    <DocPageView client:load page={page} currentPath={currentPath} />
+  </div>
+</BaseLayout>

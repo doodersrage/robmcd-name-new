@@ -1,0 +1,10 @@
+Visual language: workshop / systems shop — not generic SaaS.
+
+Direction:
+- Canvas: green-gray paper (`#eef1ee` / dark `#141814`). Ink `#1a211c`. Accent pine `#1f6a4a` (dark `#8fbfa4`).
+- Type: IBM Plex Sans + IBM Plex Mono. Brand in mono. No Inter, no gradient headlines.
+- Surfaces: type and rules first. Avoid glass cards, indigo/violet, glow, rounded-full pills, hover-lift shadows.
+- Radius: 4px max. Buttons are ink fill or hairline outline.
+- Hero: brand (Robmcd.name), one headline, one sentence, CTAs. No status chips, badges, or fake media cards.
+- Sections: one job, numbered lists or divided stacks. Cards only for real inputs (forms, search).
+- Tokens live in `src/styles/globals.scss` as `--canvas --ink --muted --accent --line --paper`.

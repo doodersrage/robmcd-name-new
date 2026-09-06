@@ -1,0 +1,25 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { SITE_LINKS } from '@/lib/site'
+---
+
+<BaseLayout title="404 — Page not found" description="This page doesn't exist" canonical="/404">
+  <section class="space-y-6">
+    <p class="eyebrow">404 — Page not found</p>
+    <h1 class="page-title">This page doesn't exist</h1>
+    <p class="max-w-xl text-base leading-relaxed text-[var(--muted)]">
+      The link may be outdated or the page may have moved. Try search or head back to a main section.
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <a href="/" class="btn btn-primary">Go home</a>
+      <a href="/work" class="btn btn-secondary">Case studies</a>
+      <a href={SITE_LINKS.promptStudio} class="btn btn-secondary">LLM Prompt Studio</a>
+      <a href={SITE_LINKS.thermalTrace} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+        ThermalTrace
+      </a>
+      <a href="/contact" class="btn btn-secondary">Contact</a>
+    </div>
+  </section>
+</BaseLayout>

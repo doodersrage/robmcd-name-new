@@ -1,0 +1,98 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { getWorkBySlug, WORK_CASE_STUDIES } from '@/content/work/case-studies'
+import { SITE_LINKS } from '@/lib/site'
+
+export function getStaticPaths() {
+  const aliases = [{ params: { slug: 'garage-temp' } }]
+  return [
+    ...WORK_CASE_STUDIES.map((study) => ({ params: { slug: study.slug } })),
+    ...aliases,
+  ]
+}
+
+const { slug } = Astro.params
+const study = getWorkBySlug(slug!)
+if (!study) {
+  return Astro.redirect('/work')
+}
+
+const primaryHref = study.href ?? study.externalHref ?? SITE_LINKS.contact
+const primaryExternal = Boolean(study.externalHref && !study.href)
+---
+
+<BaseLayout title={study.title} description={study.description} canonical={`/work/${study.slug}`}>
+  <section class="space-y-4">
+    <p class="eyebrow">
+      <a href="/work" class="hover:underline">Work</a>
+      <span class="mx-2 text-[var(--muted)]">/</span>
+      Case study
+    </p>
+    <h1 class="page-title">{study.title}</h1>
+    <p class="font-mono text-sm text-[var(--muted)] md:text-base">{study.tagline}</p>
+    <p class="max-w-3xl text-base leading-relaxed text-[var(--muted)]">{study.description}</p>
+    <p class="font-mono text-xs text-[var(--muted)]">{study.stack.join(' · ')}</p>
+    <div class="flex flex-wrap gap-3 pt-2">
+      {
+        primaryExternal ? (
+          <a href={primaryHref} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            {study.linkLabel}
+          </a>
+        ) : (
+          <a href={primaryHref} class="btn btn-primary">
+            {study.linkLabel}
+          </a>
+        )
+      }
+      {
+        study.href && study.externalHref ? (
+          <a href={study.externalHref} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+            View on GitHub
+          </a>
+        ) : null
+      }
+      {
+        study.slug === 'thermaltrace' ? (
+          <>
+            <a
+              href={SITE_LINKS.thermalTraceDemo}
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live demo
+            </a>
+            <a
+              href={SITE_LINKS.thermalTraceGuides}
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Guides
+            </a>
+          </>
+        ) : null
+      }
+    </div>
+  </section>
+
+  <div class="mt-12 space-y-10">
+    {
+      study.sections.map((section) => (
+        <section class="space-y-3">
+          <h2 class="text-xl font-semibold md:text-2xl">{section.heading}</h2>
+          {section.body.map((para) => (
+            <p class="max-w-3xl text-base leading-relaxed text-[var(--muted)]">{para}</p>
+          ))}
+        </section>
+      ))
+    }
+  </div>
+
+  <div class="mt-12 flex flex-wrap gap-3 border-t pt-10" style="border-color: var(--line)">
+    <a href={SITE_LINKS.contact} class="btn btn-primary">Start a conversation</a>
+    <a href="/work" class="btn btn-secondary">All case studies</a>
+  </div>
+</BaseLayout>

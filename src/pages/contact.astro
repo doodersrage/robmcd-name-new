@@ -1,0 +1,31 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import Content from '@/content/pages/contact.mdx'
+import { ContactForm } from '@/components/react/ContactForm'
+
+const siteKey =
+  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ||
+  import.meta.env.TURNSTILE_SITE_KEY ||
+  ''
+---
+
+<BaseLayout title="Contact" description="Get in touch with Robert McDowell" canonical="/contact">
+  <article class="mx-auto w-full max-w-5xl space-y-8">
+    <h1 class="page-title">Contact</h1>
+    <div class="prose-site">
+      <Content />
+    </div>
+    {
+      siteKey ? (
+        <ContactForm client:load siteKey={siteKey} />
+      ) : (
+        <p class="font-mono text-sm text-[var(--muted)]">
+          Form unavailable — set <code>PUBLIC_TURNSTILE_SITE_KEY</code>. Meanwhile email{' '}
+          <a href="mailto:admin@robmcd.name" class="text-link">admin@robmcd.name</a>.
+        </p>
+      )
+    }
+  </article>
+</BaseLayout>

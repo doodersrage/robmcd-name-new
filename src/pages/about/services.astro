@@ -1,0 +1,14 @@
+---
+export const prerender = true
+
+import ProseLayout from '@/layouts/ProseLayout.astro'
+import Content from '@/content/pages/about-services.mdx'
+---
+
+<ProseLayout
+  title="Services"
+  description="Homelab and services operated from this domain"
+  path="/about/services"
+>
+  <Content />
+</ProseLayout>

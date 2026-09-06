@@ -1,0 +1,86 @@
+---
+import '@/styles/globals.scss'
+import '@fontsource/ibm-plex-sans/400.css'
+import '@fontsource/ibm-plex-sans/500.css'
+import '@fontsource/ibm-plex-sans/600.css'
+import '@fontsource/ibm-plex-sans/700.css'
+import '@fontsource/ibm-plex-mono/400.css'
+import '@fontsource/ibm-plex-mono/500.css'
+import { Header } from '@/components/ui/Header'
+import { Footer } from '@/components/ui/Footer'
+import {
+  SITE_DESCRIPTION,
+  SITE_KEYWORDS,
+  SITE_NAME,
+  SITE_OWNER,
+  SITE_TAGLINE,
+  SITE_URL,
+} from '@/lib/site'
+
+interface Props {
+  title?: string
+  description?: string
+  canonical?: string
+  wide?: boolean
+}
+
+const { title, description = SITE_DESCRIPTION, canonical, wide = false } = Astro.props
+const pageTitle = title ? `${title} | ${SITE_OWNER}` : `${SITE_NAME} — ${SITE_TAGLINE}`
+const canonicalUrl = new URL(canonical ?? Astro.url.pathname, SITE_URL).toString()
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content={SITE_OWNER} />
+    <meta name="keywords" content={SITE_KEYWORDS.join(', ')} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <script is:inline>
+      ;(function () {
+        try {
+          var t = localStorage.getItem('theme')
+          var d = t ? t === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+          document.documentElement.classList.toggle('dark', d)
+        } catch (e) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <a href="#content" class="skip-link">Skip to content</a>
+    <div class="site-shell">
+      <div aria-hidden="true" class="site-bg">
+        <div class="site-bg__mesh"></div>
+        <div class="site-bg__noise"></div>
+        <div class="site-bg__vignette"></div>
+      </div>
+      <Header client:load />
+      <main id="content" class:list={[wide ? 'relative z-10 flex-1 py-8 md:py-12' : 'site-main']}>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --font-plex-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-plex-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+</style>

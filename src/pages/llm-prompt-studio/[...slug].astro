@@ -1,0 +1,35 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { DocPageView } from '@/components/comfyui-prompt-studio/DocPageView'
+import { DOC_PAGES, getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
+
+export function getStaticPaths() {
+  return DOC_PAGES.filter((p) => p.slug.length > 0).map((page) => ({
+    params: { slug: page.slug.join('/') },
+  }))
+}
+
+const slugParam = Astro.params.slug
+const slug = slugParam ? slugParam.split('/').filter(Boolean) : []
+const page = getPageBySlug(slug)
+
+if (!page) {
+  return Astro.redirect('/llm-prompt-studio')
+}
+
+const currentPath = slugToPath(page.slug)
+const isMarketing = page.layout === 'marketing'
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  canonical={currentPath}
+  wide
+>
+  <div class:list={[isMarketing ? 'site-main' : 'relative z-10 mx-auto w-full max-w-6xl flex-1 px-0 py-8 md:py-12']}>
+    <DocPageView client:load page={page} currentPath={currentPath} />
+  </div>
+</BaseLayout>

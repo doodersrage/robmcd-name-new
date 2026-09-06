@@ -1,0 +1,10 @@
+---
+export const prerender = true
+
+import ProseLayout from '@/layouts/ProseLayout.astro'
+import Content from '@/content/pages/about.mdx'
+---
+
+<ProseLayout title="About" description="About Robert McDowell and robmcd.name" path="/about">
+  <Content />
+</ProseLayout>
