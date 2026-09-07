@@ -86,7 +86,7 @@ export function ContactForm({ siteKey }: { siteKey: string }) {
   if (status === 'success') {
     return (
       <p className="max-w-xl rounded-sm border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-base leading-relaxed">
-        Message received. I&apos;ll get back to you soon — usually within a couple of days.
+        Message received. Thanks for writing — I read every note and usually reply within a couple of days.
       </p>
     )
   }
@@ -134,7 +134,7 @@ export function ContactForm({ siteKey }: { siteKey: string }) {
           required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="What are you working on, and how can I help?"
+          placeholder="Stack, constraint, timeline — and what done looks like."
         />
       </div>
 

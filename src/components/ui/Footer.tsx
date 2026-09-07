@@ -70,6 +70,9 @@ export function Footer() {
             <p className="text-center text-sm text-[var(--muted)] md:text-left">
               &copy; {new Date().getFullYear()} Robert McDowell. All rights reserved.
             </p>
+            <p className="font-mono text-xs text-[var(--muted)] md:order-none">
+              Astro · Cloudflare Workers
+            </p>
             <div className="flex gap-4">
               <a
                 href={SITE_LINKS.github}

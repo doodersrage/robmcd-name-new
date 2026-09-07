@@ -79,6 +79,15 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, SITE_
     <meta name="twitter:image" content={ogImageUrl} />
     <link rel="alternate" type="text/plain" title="LLMs" href="/llms.txt" />
     {jsonLd ? <JsonLd data={jsonLd} /> : null}
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-ETMLWXCT6M"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+      gtag('config', 'G-ETMLWXCT6M')
+    </script>
     <script is:inline>
       ;(function () {
         try {
