@@ -8,9 +8,20 @@ interface Props {
   robots?: string
   jsonLd?: Record<string, unknown> | Record<string, unknown>[] | null
   ogType?: 'website' | 'article'
+  eyebrow?: string
+  heading?: string
 }
 
-const { title, description, path, robots, jsonLd = null, ogType = 'website' } = Astro.props
+const {
+  title,
+  description,
+  path,
+  robots,
+  jsonLd = null,
+  ogType = 'website',
+  eyebrow,
+  heading = title,
+} = Astro.props
 ---
 
 <BaseLayout
@@ -22,7 +33,10 @@ const { title, description, path, robots, jsonLd = null, ogType = 'website' } = 
   ogType={ogType}
 >
   <article class="mx-auto w-full max-w-5xl space-y-8">
-    <h1 class="page-title">{title}</h1>
+    <header class="space-y-3">
+      {eyebrow ? <p class="eyebrow">{eyebrow}</p> : null}
+      <h1 class="page-title">{heading}</h1>
+    </header>
     <div class="prose-site">
       <slot />
     </div>

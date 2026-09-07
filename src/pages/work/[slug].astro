@@ -66,6 +66,13 @@ const jsonLd = workCaseStudySchema({
   description={study.description}
   canonical={path}
   ogType="article"
+  ogImage={
+    isPromptStudio
+      ? '/work/prompt-studio/dashboard.jpg'
+      : isThermalTrace
+        ? '/work/thermaltrace/overview.jpg'
+        : undefined
+  }
   jsonLd={jsonLd}
 >
   <section class="space-y-4">
@@ -140,36 +147,180 @@ const jsonLd = workCaseStudySchema({
 
   {
     isThermalTrace ? (
-      <figure class="mt-10 max-w-3xl space-y-3">
-        <svg
-          viewBox="0 0 640 160"
-          class="w-full rounded-sm border bg-[var(--paper)]"
-          style="border-color: var(--line)"
-          role="img"
-          aria-label="ThermalTrace flow: sensors push or pull into Cloudflare ingest, dashboard and alerts, companion apps"
-        >
-          <rect x="8" y="48" width="120" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
-          <text x="68" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="currentColor">Sensors</text>
-          <text x="68" y="96" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="currentColor" opacity="0.65">ESP / Pico / HA</text>
-          <path d="M136 80h48" stroke="currentColor" stroke-width="1.25" opacity="0.45"></path>
-          <polygon points="184,80 176,76 176,84" fill="currentColor" opacity="0.45"></polygon>
-          <rect x="192" y="48" width="140" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
-          <text x="262" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="currentColor">Ingest edge</text>
-          <text x="262" y="96" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="currentColor" opacity="0.65">Cloudflare Workers</text>
-          <path d="M340 80h48" stroke="currentColor" stroke-width="1.25" opacity="0.45"></path>
-          <polygon points="388,80 380,76 380,84" fill="currentColor" opacity="0.45"></polygon>
-          <rect x="396" y="48" width="120" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
-          <text x="456" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="currentColor">Dashboard</text>
-          <text x="456" y="96" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="currentColor" opacity="0.65">Alerts + history</text>
-          <path d="M524 80h48" stroke="currentColor" stroke-width="1.25" opacity="0.45"></path>
-          <polygon points="572,80 564,76 564,84" fill="currentColor" opacity="0.45"></polygon>
-          <rect x="580" y="48" width="52" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
-          <text x="606" y="86" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="currentColor">Apps</text>
-        </svg>
-        <figcaption class="font-mono text-xs text-[var(--muted)]">
-          Sensor → ingest → dashboard/alerts → companion apps (PWA, Desktop, Android, Bay Buddy).
-        </figcaption>
-      </figure>
+      <>
+        <figure class="mt-10 max-w-3xl space-y-3">
+          <svg
+            viewBox="0 0 640 160"
+            class="w-full rounded-sm border bg-[var(--paper)]"
+            style="border-color: var(--line)"
+            role="img"
+            aria-label="ThermalTrace flow: sensors push or pull into Cloudflare ingest, dashboard and alerts, companion apps"
+          >
+            <rect x="8" y="48" width="120" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
+            <text x="68" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="currentColor">Sensors</text>
+            <text x="68" y="96" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="currentColor" opacity="0.65">ESP / Pico / HA</text>
+            <path d="M136 80h48" stroke="currentColor" stroke-width="1.25" opacity="0.45"></path>
+            <polygon points="184,80 176,76 176,84" fill="currentColor" opacity="0.45"></polygon>
+            <rect x="192" y="48" width="140" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
+            <text x="262" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="currentColor">Ingest edge</text>
+            <text x="262" y="96" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="currentColor" opacity="0.65">Cloudflare Workers</text>
+            <path d="M340 80h48" stroke="currentColor" stroke-width="1.25" opacity="0.45"></path>
+            <polygon points="388,80 380,76 380,84" fill="currentColor" opacity="0.45"></polygon>
+            <rect x="396" y="48" width="120" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
+            <text x="456" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="currentColor">Dashboard</text>
+            <text x="456" y="96" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="currentColor" opacity="0.65">Alerts + history</text>
+            <path d="M524 80h48" stroke="currentColor" stroke-width="1.25" opacity="0.45"></path>
+            <polygon points="572,80 564,76 564,84" fill="currentColor" opacity="0.45"></polygon>
+            <rect x="580" y="48" width="52" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
+            <text x="606" y="86" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="currentColor">Apps</text>
+          </svg>
+          <figcaption class="font-mono text-xs text-[var(--muted)]">
+            Sensor → ingest → dashboard/alerts → companion apps (PWA, Desktop, Android, Bay Buddy).
+          </figcaption>
+        </figure>
+
+        <section class="mt-10 space-y-6" aria-labelledby="thermaltrace-shots">
+          <div class="space-y-2">
+            <h2 id="thermaltrace-shots" class="text-xl font-semibold md:text-2xl">
+              Product screens
+            </h2>
+            <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+              Overview, history, devices, and portfolio — freeze risk, probe curves, and multi-property health.
+            </p>
+          </div>
+          <ul class="space-y-8" role="list">
+            <li>
+              <figure class="space-y-3">
+                <img
+                  src="/work/thermaltrace/overview.jpg"
+                  alt="ThermalTrace overview with space status, probe curves, freeze forecast, and regional comparison"
+                  class="w-full max-w-3xl rounded-sm border"
+                  style="border-color: var(--line)"
+                  loading="lazy"
+                  width="537"
+                  height="1024"
+                />
+                <figcaption class="font-mono text-xs text-[var(--muted)]">
+                  Overview — live probes, time-to-freeze, flood status, and winter claims pack.
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="space-y-3">
+                <img
+                  src="/work/thermaltrace/history.jpg"
+                  alt="ThermalTrace reading history chart with temperature and humidity trends and freeze line"
+                  class="w-full max-w-3xl rounded-sm border"
+                  style="border-color: var(--line)"
+                  loading="lazy"
+                  width="956"
+                  height="1024"
+                />
+                <figcaption class="font-mono text-xs text-[var(--muted)]">
+                  History — multi-probe trends, humidity, dew point, and year-over-year compare.
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="space-y-3">
+                <img
+                  src="/work/thermaltrace/devices.jpg"
+                  alt="ThermalTrace devices page showing garage pull feed, latest sensor values, and push device setup"
+                  class="w-full max-w-3xl rounded-sm border"
+                  style="border-color: var(--line)"
+                  loading="lazy"
+                  width="601"
+                  height="1024"
+                />
+                <figcaption class="font-mono text-xs text-[var(--muted)]">
+                  Devices — push/pull ingest, ESP/Pico setup, and live sensor values.
+                </figcaption>
+              </figure>
+            </li>
+            <li>
+              <figure class="space-y-3">
+                <img
+                  src="/work/thermaltrace/portfolio.jpg"
+                  alt="ThermalTrace portfolio health across properties with freeze and flood risk scores"
+                  class="w-full max-w-3xl rounded-sm border"
+                  style="border-color: var(--line)"
+                  loading="lazy"
+                  width="956"
+                  height="1024"
+                />
+                <figcaption class="font-mono text-xs text-[var(--muted)]">
+                  Portfolio — cross-property freeze and flood risk at a glance.
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+        </section>
+      </>
+    ) : null
+  }
+
+  {
+    isPromptStudio ? (
+      <section class="mt-10 space-y-6" aria-labelledby="prompt-studio-shots">
+        <div class="space-y-2">
+          <h2 id="prompt-studio-shots" class="text-xl font-semibold md:text-2xl">
+            Product screens
+          </h2>
+          <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+            Dashboard, Generate, and Gallery — the daily loop from queue health to model-ready prompts to review.
+          </p>
+        </div>
+        <ul class="space-y-8" role="list">
+          <li>
+            <figure class="space-y-3">
+              <img
+                src="/work/prompt-studio/dashboard.jpg"
+                alt="Prompt Studio dashboard showing Play film loop, Studio shortcuts, and ComfyUI queue status"
+                class="w-full rounded-sm border"
+                style="border-color: var(--line)"
+                loading="lazy"
+                width="1024"
+                height="984"
+              />
+              <figcaption class="font-mono text-xs text-[var(--muted)]">
+                Dashboard — Play film loop, studio shortcuts, and ComfyUI queue health.
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="space-y-3">
+              <img
+                src="/work/prompt-studio/generate.jpg"
+                alt="Prompt Studio Generate tool with scene keywords, model picker, and detail controls"
+                class="w-full rounded-sm border"
+                style="border-color: var(--line)"
+                loading="lazy"
+                width="1024"
+                height="984"
+              />
+              <figcaption class="font-mono text-xs text-[var(--muted)]">
+                Generate — keywords to model-aware prompts with family, detail, and quality controls.
+              </figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="space-y-3">
+              <img
+                src="/work/prompt-studio/gallery.jpg"
+                alt="Prompt Studio Gallery with search, filters, ratings, and review controls over thousands of outputs"
+                class="w-full rounded-sm border"
+                style="border-color: var(--line)"
+                loading="lazy"
+                width="1024"
+                height="618"
+              />
+              <figcaption class="font-mono text-xs text-[var(--muted)]">
+                Gallery — search, rate, compare, and export across large render batches.
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
     ) : null
   }
 

@@ -12,6 +12,11 @@ const faqs = [
       'Legacy repair and stack modernization, Linux/Windows server maintenance, MySQL/MSSQL administration, and technical audits — plus product work like Prompt Studio and ThermalTrace when those patterns apply.',
   },
   {
+    question: 'Do you only do greenfield builds?',
+    answer:
+      'No. Most useful engagements start with what’s already running: stabilize, measure, then modernize in slices. Greenfield happens when the old stack truly can’t carry the next year.',
+  },
+  {
     question: 'What is LLM Prompt Studio?',
     answer:
       'An MIT-licensed Next.js studio for ComfyUI and cloud stills/clips: prompt tools, Play campaigns, workflow takeover, and desktop/Docker installs. Docs live at robmcd.name/llm-prompt-studio.',
@@ -22,8 +27,9 @@ const faqs = [
       'Open-source garage and workshop monitoring for freeze and flood risk — ESP32/Pico ingest, household alerts, and companion apps. Product at thermaltrace.dev; write-up at robmcd.name/work/thermaltrace.',
   },
   {
-    question: 'How should I contact you?',
-    answer: 'Use the contact form at robmcd.name/contact. That is the only contact path on this site.',
+    question: 'Where should I start?',
+    answer:
+      'Send a short note via the contact form at robmcd.name/contact: stack, constraints, timeline, and what done looks like. That form is the only contact path on this site. Replies usually within a couple of days.',
   },
 ]
 
@@ -33,6 +39,8 @@ const description =
 
 <ProseLayout
   title="About"
+  heading="Robert McDowell"
+  eyebrow="About"
   description={description}
   path="/about"
   jsonLd={aboutPageSchema(faqs)}
