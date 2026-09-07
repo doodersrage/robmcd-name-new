@@ -2,11 +2,12 @@
 export const prerender = true
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import { WORK_CASE_STUDIES } from '@/content/work/case-studies'
+import { WORK_CASE_STUDIES, WORK_REPO_HIGHLIGHTS } from '@/content/work/case-studies'
 import { itemListSchema } from '@/lib/seo'
+import { SITE_LINKS } from '@/lib/site'
 
 const description =
-  'Case studies — LLM Prompt Studio, ThermalTrace freeze and flood monitoring, and legacy stack modernization.'
+  'Case studies — LLM Prompt Studio, ThermalTrace freeze and flood monitoring, legacy modernization, and selected open-source repos.'
 
 const jsonLd = itemListSchema(
   'Work',
@@ -47,5 +48,51 @@ const jsonLd = itemListSchema(
         ))
       }
     </ul>
+  </section>
+
+  <section class="mt-16 space-y-6 border-t pt-12" style="border-color: var(--line)" aria-labelledby="also-github">
+    <div class="space-y-3">
+      <p class="eyebrow">Also on GitHub</p>
+      <h2 id="also-github" class="text-xl font-semibold tracking-tight md:text-2xl">
+        Selected repositories
+      </h2>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        Standouts that are not full case studies here — cinema integrations, payments, desktop tooling, and earlier ecommerce.
+      </p>
+    </div>
+
+    <ol class="divide-y" style="border-color: var(--line)" role="list">
+      {
+        WORK_REPO_HIGHLIGHTS.map((repo, index) => (
+          <li class="flex gap-4 py-5 first:pt-0">
+            <span class="font-mono text-sm text-[var(--muted)] tabular-nums" aria-hidden="true">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <div class="min-w-0 space-y-1">
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <a
+                  href={repo.href}
+                  class="font-mono text-sm font-medium text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {repo.name}
+                </a>
+                {repo.note ? (
+                  <span class="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">{repo.note}</span>
+                ) : null}
+              </div>
+              <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{repo.blurb}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="font-mono text-sm text-[var(--muted)]">
+      <a href={SITE_LINKS.github} class="text-link" target="_blank" rel="noopener noreferrer">
+        More on GitHub
+      </a>
+    </p>
   </section>
 </BaseLayout>

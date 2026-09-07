@@ -4,7 +4,7 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import Content from '@/content/pages/contact.mdx'
 import { ContactForm } from '@/components/react/ContactForm'
-import { personSchema, SITE_EMAIL } from '@/lib/seo'
+import { personSchema } from '@/lib/seo'
 import { SITE_URL } from '@/lib/site'
 
 const siteKey =
@@ -13,7 +13,7 @@ const siteKey =
   ''
 
 const description =
-  'Contact Robert McDowell for infrastructure, legacy modernization, or questions about LLM Prompt Studio and ThermalTrace — admin@robmcd.name.'
+  'Contact Robert McDowell for infrastructure, legacy modernization, or questions about LLM Prompt Studio and ThermalTrace via the web form.'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -28,7 +28,6 @@ const jsonLd = {
       mainEntity: {
         '@type': 'ContactPoint',
         contactType: 'customer support',
-        email: SITE_EMAIL,
         url: `${SITE_URL}/contact`,
         availableLanguage: 'English',
       },
@@ -56,8 +55,7 @@ const jsonLd = {
           <ContactForm client:load siteKey={siteKey} />
         ) : (
           <p class="max-w-xl text-base leading-relaxed text-[var(--muted)]">
-            The form needs Turnstile configured. Until then, email{' '}
-            <a href="mailto:admin@robmcd.name" class="text-link">admin@robmcd.name</a>.
+            The contact form is temporarily unavailable (Turnstile is not configured). Please try again later.
           </p>
         )
       }

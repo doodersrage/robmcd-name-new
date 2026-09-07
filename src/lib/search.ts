@@ -1,5 +1,5 @@
 import { DOC_PAGES, slugToPath } from '@/content/comfyui-prompt-studio/pages'
-import { WORK_CASE_STUDIES } from '@/content/work/case-studies'
+import { WORK_CASE_STUDIES, WORK_REPO_HIGHLIGHTS } from '@/content/work/case-studies'
 import { SITE_LINKS } from '@/lib/site'
 
 export type SearchHit = {
@@ -42,6 +42,19 @@ export function searchLocalContent(term: string): SearchHit[] {
     source: 'Work · Case study',
   }))
 
+  const repoHits: SearchHit[] = WORK_REPO_HIGHLIGHTS.filter(
+    (repo) =>
+      repo.name.toLowerCase().includes(q) ||
+      repo.blurb.toLowerCase().includes(q) ||
+      (repo.note?.toLowerCase().includes(q) ?? false),
+  ).map((repo) => ({
+    id: `repo-${repo.name}`,
+    title: repo.name,
+    description: repo.blurb,
+    href: repo.href,
+    source: 'Work · GitHub',
+  }))
+
   const extras: SearchHit[] = []
   if (
     /garage|temp|thermal|trace|freeze|flood|leak|iot|dht|probe|sensor|esp32|pico|alert/.test(q)
@@ -56,5 +69,5 @@ export function searchLocalContent(term: string): SearchHit[] {
     })
   }
 
-  return [...workHits, ...docHits, ...extras].slice(0, 20)
+  return [...workHits, ...repoHits, ...docHits, ...extras].slice(0, 20)
 }

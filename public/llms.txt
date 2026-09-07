@@ -6,7 +6,7 @@
 - https://robmcd.name/ — home
 - https://robmcd.name/about — bio and practice
 - https://robmcd.name/work — case studies
-- https://robmcd.name/contact — email and form (admin@robmcd.name)
+- https://robmcd.name/contact — contact form only (no public email)
 
 ## Products documented here
 - LLM Prompt Studio docs: https://robmcd.name/llm-prompt-studio

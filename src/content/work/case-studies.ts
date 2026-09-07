@@ -223,3 +223,42 @@ export function getWorkBySlug(slug: string): WorkCaseStudy | undefined {
   const resolved = SLUG_ALIASES[slug] ?? slug
   return WORK_CASE_STUDIES.find((w) => w.slug === resolved)
 }
+
+/** Curated GitHub standouts — not full case studies; listed under /work. */
+export type WorkRepoHighlight = {
+  name: string
+  blurb: string
+  href: string
+  note?: string
+}
+
+export const WORK_REPO_HIGHLIGHTS: WorkRepoHighlight[] = [
+  {
+    name: 'wallhaven-plasma-6-plugin',
+    blurb:
+      'KDE Plasma 6 wallpaper plugin for wallhaven.cc — search, slideshow, multi-monitor control, KRunner, and D-Bus.',
+    href: 'https://github.com/doodersrage/wallhaven-plasma-6-plugin',
+  },
+  {
+    name: 'concrete-cms-rts-cinemasource-blocks',
+    blurb: 'Concrete CMS blocks bridging RTS POS and the CinemaSource API for theater listings and showtimes.',
+    href: 'https://github.com/doodersrage/concrete-cms-rts-cinemasource-blocks',
+  },
+  {
+    name: 'community_store_affirm',
+    blurb: 'Affirm payment method for Concrete5 Community Store — installment checkout for ecommerce.',
+    href: 'https://github.com/doodersrage/community_store_affirm',
+  },
+  {
+    name: 'next-js-cinemasource',
+    blurb: 'TypeScript / Next.js module for CinemaSource API integration.',
+    href: 'https://github.com/doodersrage/next-js-cinemasource',
+  },
+  {
+    name: 'CheapLocalDeals.com',
+    blurb:
+      'Legacy PHP gift-certificate ecommerce (geo deals, merchant portal, memcached) — retired, still relevant past work.',
+    href: 'https://github.com/doodersrage/CheapLocalDeals.com',
+    note: 'Legacy',
+  },
+]

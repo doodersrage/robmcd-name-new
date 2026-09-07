@@ -14,7 +14,6 @@ const ABS = (pathOrUrl: string) =>
 
 export const DEFAULT_OG_IMAGE = ABS('/og/default.png')
 
-export const SITE_EMAIL = 'admin@robmcd.name'
 export const SITE_LINKEDIN = 'https://www.linkedin.com/in/robertsmcdowell/'
 
 export function personSchema(): Record<string, unknown> {
@@ -23,7 +22,6 @@ export function personSchema(): Record<string, unknown> {
     '@id': `${SITE_URL}/#person`,
     name: SITE_OWNER,
     url: SITE_URL,
-    email: SITE_EMAIL,
     jobTitle: 'Full-stack engineer',
     description: SITE_DESCRIPTION,
     knowsAbout: [

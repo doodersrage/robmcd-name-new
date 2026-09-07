@@ -86,11 +86,6 @@ export function DefaultHomePage() {
             View case studies
           </a>
         </div>
-        <p className="font-mono text-sm text-[var(--muted)]">
-          <a href="mailto:admin@robmcd.name" className="text-link">
-            admin@robmcd.name
-          </a>
-        </p>
       </section>
     </>
   )
