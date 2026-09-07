@@ -7,6 +7,9 @@ export const GET: APIRoute = () => {
   const body = `User-agent: *
 Allow: /
 
+# AI / answer-engine summary
+# https://robmcd.name/llms.txt
+
 Sitemap: ${SITE_URL}/sitemap.xml
 `
   return new Response(body, {

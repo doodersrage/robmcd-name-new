@@ -4,8 +4,9 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { DefaultHomePage } from '@/components/home/DefaultHomePage'
 import { SITE_DESCRIPTION } from '@/lib/site'
+import { homeGraph } from '@/lib/seo'
 ---
 
-<BaseLayout description={SITE_DESCRIPTION} canonical="/">
-  <DefaultHomePage client:load />
+<BaseLayout description={SITE_DESCRIPTION} canonical="/" jsonLd={homeGraph()}>
+  <DefaultHomePage />
 </BaseLayout>

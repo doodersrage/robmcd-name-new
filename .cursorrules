@@ -7,4 +7,4 @@ Direction:
 - Radius: 4px max. Buttons are ink fill or hairline outline.
 - Hero: brand (Robmcd.name), one headline, one sentence, CTAs. No status chips, badges, or fake media cards.
 - Sections: one job, numbered lists or divided stacks. Cards only for real inputs (forms, search).
-- Tokens live in `src/styles/globals.scss` as `--canvas --ink --muted --accent --line --paper`.
+- Tokens live in `src/styles/globals.css` as `--canvas --ink --muted --accent --line --paper`.

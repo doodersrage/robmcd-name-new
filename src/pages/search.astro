@@ -10,8 +10,9 @@ const hits = searchLocalContent(query)
 
 <BaseLayout
   title={query ? `Search results for ${query}` : 'Search'}
-  description={query ? `Search results for ${query}` : 'Search the site'}
-  canonical={`/search${query ? `?query=${encodeURIComponent(query)}` : ''}`}
+  description="Search Prompt Studio docs, case studies, and ThermalTrace topics on robmcd.name."
+  canonical="/search"
+  robots="noindex, follow"
 >
   <div class="space-y-8">
     <h1 class="page-title">

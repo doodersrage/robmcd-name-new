@@ -4,6 +4,7 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { getWorkBySlug, WORK_CASE_STUDIES } from '@/content/work/case-studies'
 import { SITE_LINKS } from '@/lib/site'
+import { softwareApplicationSchema, workCaseStudySchema } from '@/lib/seo'
 
 export function getStaticPaths() {
   const aliases = [{ params: { slug: 'garage-temp' } }]
@@ -19,16 +20,59 @@ if (!study) {
   return Astro.redirect('/work')
 }
 
+const isThermalTrace = study.slug === 'thermaltrace'
+const isPromptStudio = study.slug === 'llm-prompt-studio'
 const primaryHref = study.href ?? study.externalHref ?? SITE_LINKS.contact
 const primaryExternal = Boolean(study.externalHref && !study.href)
+const path = `/work/${study.slug}`
+
+const software = isThermalTrace
+  ? softwareApplicationSchema({
+      name: 'ThermalTrace',
+      description: study.description,
+      url: SITE_LINKS.thermalTrace,
+      codeRepository: SITE_LINKS.thermalTraceGithub,
+      applicationCategory: 'UtilitiesApplication',
+      offersUrl: SITE_LINKS.thermalTrace,
+      sameAs: [
+        SITE_LINKS.thermalTrace,
+        SITE_LINKS.thermalTraceGithub,
+        SITE_LINKS.thermalTraceDocs,
+        path,
+      ],
+    })
+  : isPromptStudio
+    ? softwareApplicationSchema({
+        name: 'LLM Prompt Studio',
+        description: study.description,
+        url: SITE_LINKS.promptStudio,
+        codeRepository: SITE_LINKS.promptStudioGithub,
+        applicationCategory: 'DeveloperApplication',
+        offersUrl: SITE_LINKS.promptStudioGithub,
+        sameAs: [SITE_LINKS.promptStudioGithub, SITE_LINKS.promptStudioDocs, SITE_LINKS.promptStudio],
+      })
+    : undefined
+
+const jsonLd = workCaseStudySchema({
+  title: study.title,
+  description: study.description,
+  path,
+  software,
+})
 ---
 
-<BaseLayout title={study.title} description={study.description} canonical={`/work/${study.slug}`}>
+<BaseLayout
+  title={study.title}
+  description={study.description}
+  canonical={path}
+  ogType="article"
+  jsonLd={jsonLd}
+>
   <section class="space-y-4">
     <p class="eyebrow">
       <a href="/work" class="hover:underline">Work</a>
       <span class="mx-2 text-[var(--muted)]">/</span>
-      Case study
+      {isThermalTrace ? 'Product' : 'Case study'}
     </p>
     <h1 class="page-title">{study.title}</h1>
     <p class="font-mono text-sm text-[var(--muted)] md:text-base">{study.tagline}</p>
@@ -47,14 +91,14 @@ const primaryExternal = Boolean(study.externalHref && !study.href)
         )
       }
       {
-        study.href && study.externalHref ? (
+        study.href && study.externalHref && !isThermalTrace ? (
           <a href={study.externalHref} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
             View on GitHub
           </a>
         ) : null
       }
       {
-        study.slug === 'thermaltrace' ? (
+        isThermalTrace ? (
           <>
             <a
               href={SITE_LINKS.thermalTraceDemo}
@@ -65,12 +109,28 @@ const primaryExternal = Boolean(study.externalHref && !study.href)
               Live demo
             </a>
             <a
+              href={SITE_LINKS.thermalTraceApps}
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Companion apps
+            </a>
+            <a
               href={SITE_LINKS.thermalTraceGuides}
               class="btn btn-secondary"
               target="_blank"
               rel="noopener noreferrer"
             >
               Guides
+            </a>
+            <a
+              href={SITE_LINKS.thermalTraceGithub}
+              class="btn btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
             </a>
           </>
         ) : null
@@ -86,6 +146,24 @@ const primaryExternal = Boolean(study.externalHref && !study.href)
           {section.body.map((para) => (
             <p class="max-w-3xl text-base leading-relaxed text-[var(--muted)]">{para}</p>
           ))}
+          {section.links?.length ? (
+            <ul class="mt-4 space-y-2 border-l pl-4" style="border-color: var(--line)">
+              {section.links.map((link) => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="text-sm font-medium text-link"
+                    {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    {link.label}
+                  </a>
+                  {link.note ? (
+                    <span class="ml-2 font-mono text-xs text-[var(--muted)]">{link.note}</span>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </section>
       ))
     }
@@ -94,5 +172,12 @@ const primaryExternal = Boolean(study.externalHref && !study.href)
   <div class="mt-12 flex flex-wrap gap-3 border-t pt-10" style="border-color: var(--line)">
     <a href={SITE_LINKS.contact} class="btn btn-primary">Start a conversation</a>
     <a href="/work" class="btn btn-secondary">All case studies</a>
+    {
+      isThermalTrace ? (
+        <a href={SITE_LINKS.thermalTrace} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Open thermaltrace.dev
+        </a>
+      ) : null
+    }
   </div>
 </BaseLayout>

@@ -1,8 +1,10 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "robmcd-name-new",
+  // Astro + nodejs_compat: without this, prerender/SSR bodies become "[object Object]"
+  // https://github.com/withastro/astro/issues/14511
   "compatibility_date": "2025-10-01",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": ["nodejs_compat", "disable_nodejs_process_v2"],
   "main": "@astrojs/cloudflare/entrypoints/server",
   "assets": {
     "directory": "./dist",

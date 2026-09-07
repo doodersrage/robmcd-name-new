@@ -7,16 +7,16 @@ import { SiteLogo } from '@/components/ui/SiteLogo'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { PRIMARY_NAV } from '@/lib/site'
 
-function SearchBox() {
+function SearchBox({ id = 'site-search' }: { id?: string }) {
   const [q, setQ] = useState('')
 
   return (
     <form action="/search" method="get" className="relative min-w-0 flex-1 md:max-w-[12rem] lg:max-w-[14rem]">
-      <label htmlFor="site-search" className="sr-only">
+      <label htmlFor={id} className="sr-only">
         Search
       </label>
       <input
-        id="site-search"
+        id={id}
         name="query"
         type="search"
         value={q}
@@ -38,13 +38,13 @@ export function Header() {
           <div className="hidden min-w-0 md:flex md:flex-1 md:items-center md:justify-end md:gap-4 lg:gap-6">
             <NavMenu items={PRIMARY_NAV} />
             <ThemeToggle />
-            <SearchBox />
+            <SearchBox id="site-search" />
           </div>
 
           <MobileHeaderNav
             menuButton={
               <div className="flex min-w-0 flex-1 items-center gap-3">
-                <SearchBox />
+                <SearchBox id="site-search-mobile" />
                 <ThemeToggle />
               </div>
             }

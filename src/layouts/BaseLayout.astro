@@ -1,5 +1,5 @@
 ---
-import '@/styles/globals.scss'
+import '@/styles/globals.css'
 import '@fontsource/ibm-plex-sans/400.css'
 import '@fontsource/ibm-plex-sans/500.css'
 import '@fontsource/ibm-plex-sans/600.css'
@@ -8,9 +8,10 @@ import '@fontsource/ibm-plex-mono/400.css'
 import '@fontsource/ibm-plex-mono/500.css'
 import { Header } from '@/components/ui/Header'
 import { Footer } from '@/components/ui/Footer'
+import JsonLd from '@/components/seo/JsonLd.astro'
+import { DEFAULT_OG_IMAGE } from '@/lib/seo'
 import {
   SITE_DESCRIPTION,
-  SITE_KEYWORDS,
   SITE_NAME,
   SITE_OWNER,
   SITE_TAGLINE,
@@ -20,13 +21,31 @@ import {
 interface Props {
   title?: string
   description?: string
-  canonical?: string
+  canonical?: string | null
   wide?: boolean
+  ogImage?: string
+  ogType?: 'website' | 'article'
+  robots?: string
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[] | null
 }
 
-const { title, description = SITE_DESCRIPTION, canonical, wide = false } = Astro.props
+const {
+  title,
+  description = SITE_DESCRIPTION,
+  canonical,
+  wide = false,
+  ogImage = DEFAULT_OG_IMAGE,
+  ogType = 'website',
+  robots,
+  jsonLd = null,
+} = Astro.props
+
 const pageTitle = title ? `${title} | ${SITE_OWNER}` : `${SITE_NAME} — ${SITE_TAGLINE}`
-const canonicalUrl = new URL(canonical ?? Astro.url.pathname, SITE_URL).toString()
+const canonicalUrl =
+  canonical === null
+    ? null
+    : new URL(canonical ?? Astro.url.pathname, SITE_URL).toString()
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, SITE_URL).toString()
 ---
 
 <!doctype html>
@@ -34,21 +53,32 @@ const canonicalUrl = new URL(canonical ?? Astro.url.pathname, SITE_URL).toString
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eef1ee" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141814" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/og/default.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content={SITE_OWNER} />
-    <meta name="keywords" content={SITE_KEYWORDS.join(', ')} />
-    <link rel="canonical" href={canonicalUrl} />
+    {robots ? <meta name="robots" content={robots} /> : null}
+    {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalUrl} />
+    {canonicalUrl ? <meta property="og:url" content={canonicalUrl} /> : null}
     <meta property="og:site_name" content={SITE_NAME} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={`${SITE_NAME} — ${SITE_TAGLINE}`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <link rel="alternate" type="text/plain" title="LLMs" href="/llms.txt" />
+    {jsonLd ? <JsonLd data={jsonLd} /> : null}
     <script is:inline>
       ;(function () {
         try {

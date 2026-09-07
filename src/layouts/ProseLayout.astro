@@ -5,12 +5,22 @@ interface Props {
   title: string
   description?: string
   path: string
+  robots?: string
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[] | null
+  ogType?: 'website' | 'article'
 }
 
-const { title, description, path } = Astro.props
+const { title, description, path, robots, jsonLd = null, ogType = 'website' } = Astro.props
 ---
 
-<BaseLayout title={title} description={description} canonical={path}>
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={path}
+  robots={robots}
+  jsonLd={jsonLd}
+  ogType={ogType}
+>
   <article class="mx-auto w-full max-w-5xl space-y-8">
     <h1 class="page-title">{title}</h1>
     <div class="prose-site">

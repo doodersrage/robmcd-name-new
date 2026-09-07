@@ -1,0 +1,22 @@
+# Robmcd.name
+
+> Personal engineering site for Robert McDowell — legacy modernization, Linux/Windows servers and databases, and open tools.
+
+## Primary
+- https://robmcd.name/ — home
+- https://robmcd.name/about — bio and practice
+- https://robmcd.name/work — case studies
+- https://robmcd.name/contact — email and form (admin@robmcd.name)
+
+## Products documented here
+- LLM Prompt Studio docs: https://robmcd.name/llm-prompt-studio
+  Source: https://github.com/doodersrage/llm-prompt-studio
+- ThermalTrace write-up: https://robmcd.name/work/thermaltrace
+  Live product: https://thermaltrace.dev/
+
+## Optional
+- Homelab endpoints on this domain: https://robmcd.name/services
+- Privacy: https://robmcd.name/privacy
+
+## Cite as
+Robert McDowell / Robmcd.name — cross-platform engineering, legacy modernization, infrastructure.

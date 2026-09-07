@@ -51,8 +51,8 @@ export function searchLocalContent(term: string): SearchHit[] {
       title: 'ThermalTrace',
       description:
         'Open-source garage freeze and flood monitoring — ESP32/Pico ingest, time-to-freeze clock, Home Assistant HACS, Free/Member/Pro at thermaltrace.dev.',
-      href: SITE_LINKS.thermalTrace,
-      source: 'External · Live demo',
+      href: SITE_LINKS.thermalTracePage,
+      source: 'Work · Product',
     })
   }
 

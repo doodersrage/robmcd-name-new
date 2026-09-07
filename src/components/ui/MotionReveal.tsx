@@ -33,11 +33,12 @@ export function MotionReveal({ children, className, as = 'section', stagger = tr
 
   return (
     <Component
-      initial="hidden"
+      // Keep SSR/first paint visible — initial="hidden" baked opacity:0 into HTML.
+      initial={false}
       whileInView="visible"
       viewport={{ once: true, margin: '-40px' }}
       variants={stagger ? containerVariants : itemVariants}
-      className={cn(className)}
+      className={cn('motion-reveal', className)}
     >
       {stagger
         ? React.Children.map(children, (child) =>

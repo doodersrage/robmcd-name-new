@@ -3,8 +3,39 @@ export const prerender = true
 
 import ProseLayout from '@/layouts/ProseLayout.astro'
 import Content from '@/content/pages/about.mdx'
+import { aboutPageSchema } from '@/lib/seo'
+
+const faqs = [
+  {
+    question: 'What kind of work do you take on?',
+    answer:
+      'Legacy repair and stack modernization, Linux/Windows server maintenance, MySQL/MSSQL administration, and technical audits — plus product work like Prompt Studio and ThermalTrace when those patterns apply.',
+  },
+  {
+    question: 'What is LLM Prompt Studio?',
+    answer:
+      'An MIT-licensed Next.js studio for ComfyUI and cloud stills/clips: prompt tools, Play campaigns, workflow takeover, and desktop/Docker installs. Docs live at robmcd.name/llm-prompt-studio.',
+  },
+  {
+    question: 'What is ThermalTrace?',
+    answer:
+      'Open-source garage and workshop monitoring for freeze and flood risk — ESP32/Pico ingest, household alerts, and companion apps. Product at thermaltrace.dev; write-up at robmcd.name/work/thermaltrace.',
+  },
+  {
+    question: 'How should I contact you?',
+    answer: 'Email admin@robmcd.name or use the contact form at robmcd.name/contact.',
+  },
+]
+
+const description =
+  'Robert McDowell — full-stack engineer since 2006. Legacy modernization, Linux and Windows servers, databases, LLM Prompt Studio, and ThermalTrace.'
 ---
 
-<ProseLayout title="About" description="About Robert McDowell and robmcd.name" path="/about">
+<ProseLayout
+  title="About"
+  description={description}
+  path="/about"
+  jsonLd={aboutPageSchema(faqs)}
+>
   <Content />
 </ProseLayout>

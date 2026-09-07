@@ -4,14 +4,40 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import Content from '@/content/pages/contact.mdx'
 import { ContactForm } from '@/components/react/ContactForm'
+import { personSchema, SITE_EMAIL } from '@/lib/seo'
+import { SITE_URL } from '@/lib/site'
 
 const siteKey =
   import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ||
   import.meta.env.TURNSTILE_SITE_KEY ||
   ''
+
+const description =
+  'Contact Robert McDowell for infrastructure, legacy modernization, or questions about LLM Prompt Studio and ThermalTrace — admin@robmcd.name.'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    personSchema(),
+    {
+      '@type': 'ContactPage',
+      '@id': `${SITE_URL}/contact#page`,
+      url: `${SITE_URL}/contact`,
+      name: 'Contact',
+      description,
+      mainEntity: {
+        '@type': 'ContactPoint',
+        contactType: 'customer support',
+        email: SITE_EMAIL,
+        url: `${SITE_URL}/contact`,
+        availableLanguage: 'English',
+      },
+    },
+  ],
+}
 ---
 
-<BaseLayout title="Contact" description="Get in touch with Robert McDowell" canonical="/contact">
+<BaseLayout title="Contact" description={description} canonical="/contact" jsonLd={jsonLd}>
   <article class="mx-auto w-full max-w-5xl space-y-8">
     <h1 class="page-title">Contact</h1>
     <div class="prose-site">

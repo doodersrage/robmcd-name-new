@@ -26,5 +26,7 @@ export default defineConfig({
     '/blog': '/',
     '/comfyui-prompt-studio': '/llm-prompt-studio',
     '/work/garage-temp': '/work/thermaltrace',
+    '/projects': '/services',
+    '/about/services': '/services',
   },
 })

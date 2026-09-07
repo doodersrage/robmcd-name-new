@@ -1,6 +1,10 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+/* Explicit sources: Astro client islands are built after CSS extraction.
+   https://github.com/tailwindlabs/tailwindcss/issues/15794 */
+@source '../';
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -879,6 +883,12 @@
 
   to {
     transform: scale(1.03) translate3d(-1%, 0.5%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .brand-display::after {
+    animation: brand-rule 0.7s ease-out both;
   }
 }
 

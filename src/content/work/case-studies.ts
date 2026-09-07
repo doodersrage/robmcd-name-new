@@ -1,5 +1,12 @@
 import { SITE_LINKS } from '@/lib/site'
 
+export type WorkSectionLink = {
+  label: string
+  href: string
+  note?: string
+  external?: boolean
+}
+
 export type WorkCaseStudy = {
   slug: string
   title: string
@@ -8,7 +15,7 @@ export type WorkCaseStudy = {
   href?: string
   externalHref?: string
   linkLabel: string
-  sections: { heading: string; body: string[] }[]
+  sections: { heading: string; body: string[]; links?: WorkSectionLink[] }[]
   stack: string[]
 }
 
@@ -61,9 +68,9 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'ThermalTrace',
     tagline: 'Know before pipes freeze or a space floods — hosted alerts for hardware you already own',
     description:
-      'Open-source monitoring at thermaltrace.dev for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), freeze and flood alerts, Overview Insights, household sharing, and Free / Member / Pro plans — without babysitting another home server.',
+      'Open-source monitoring at thermaltrace.dev for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), freeze and flood alerts, Overview Insights, household sharing, companion apps, and Free / Member / Pro plans — without babysitting another home server.',
     externalHref: SITE_LINKS.thermalTrace,
-    linkLabel: 'Open ThermalTrace',
+    linkLabel: 'Open thermaltrace.dev',
     stack: [
       'Astro 6',
       'Cloudflare Workers',
@@ -72,22 +79,104 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       'Home Assistant',
       'Stripe',
       'PWA',
+      'Android / Desktop companions',
     ],
     sections: [
       {
-        heading: 'The problem',
+        heading: 'What it is',
         body: [
-          'Vulnerable spaces swing hard with seasons, sun load, and door events. A single thermometer reading does not tell you whether pipes, pads, or storage are at risk — and DIY MQTT setups rarely deliver household freeze and flood alerts without another box to keep online.',
-          'ThermalTrace keeps your ESP32, Arduino, MQTT, or Home Assistant stack and adds hosted history plus alerts: freeze risk, wet leak contacts, humidity spikes, silent feeds, or custom rules you define.',
+          'ThermalTrace is an open-source product for vulnerable spaces that swing with seasons, sun load, and door events: garages, workshops, attics, crawlspaces, and shops. It tracks temperature, humidity, wet/dry leak contacts, and related sensors, then turns those readings into live curves, freeze risk, flood alerts, and exportable history.',
+          'You keep the hardware you already trust — ESP32, Pico W, Arduino, MQTT, Home Assistant, Nest/Ecobee, or almost any device that can speak JSON. ThermalTrace adds the hosted dashboard, household alerts, and history so you are not running another always-on box just to know when pipes or pads are at risk.',
+          'The live product is at thermaltrace.dev. This page is the portfolio write-up: what the system is made of, how the pieces fit, and where to go next.',
+        ],
+        links: [
+          { label: 'thermaltrace.dev', href: SITE_LINKS.thermalTrace, external: true },
+          { label: 'Interactive probe demo', href: SITE_LINKS.thermalTraceDemo, external: true },
+          { label: 'Product guides', href: SITE_LINKS.thermalTraceGuides, external: true },
+          { label: 'Pricing', href: SITE_LINKS.thermalTracePricing, external: true },
         ],
       },
       {
-        heading: 'What shipped',
+        heading: 'How it works',
         body: [
-          'Build → Connect → Get alerted. Push JSON to a per-device ingest URL (sensors auto-import on first POST) or pull HTTPS feeds on a schedule. Hardware coverage spans ESP32, Pico W, Arduino, STM32 Zephyr, CH32V RISC-V, Teensy, PIC18, AVR assembly, and cellular samples in the repo sketches/ tree — plus Nest/Ecobee thermostat hooks and an MQTT bridge so Mosquitto can stay on the LAN.',
-          'Overview Simple or Insights mode: 7-day probe curves, freeze hours and degree-hours, indoor−outdoor ΔT, probe spread, condensation risk, feed health, and cards for doors, power, motion, battery/RSSI, and air quality. Threshold freeze and automatic flood/leak alerts on every plan, plus a forecast-backed time-to-freeze clock. Member adds outdoor forecast warnings; Pro adds official NWS alerts, SMS, WhatsApp, browser push, HMAC webhooks, Grafana/Prometheus metrics keys, and a printable claims evidence pack.',
-          'Households invite family (including read-only viewers), publish a free family live share link, and scale to Portfolio / property-manager logins for multi-unit sites. Free forever with 7-day history; Member $4/mo and Pro $10/mo unlock longer retention and CSV export. PWA install today; Android early access and ThermalTrace Desktop companions on GitHub; HACS Home Assistant integration in doodersrage/thermaltrace-home-assistant.',
-          'Try without hardware via the interactive probe simulator or live demo at thermaltrace.dev/demo. Product guides at /guides; developer docs (ingest, OpenAPI, deploy) at doodersrage.github.io/thermaltrace; source at github.com/doodersrage/thermaltrace.',
+          'Build → Connect → Get alerted. Wire a temperature probe (and optional leak pad), create a push device or pull feed in the dashboard, then POST JSON to a per-device ingest URL — or let ThermalTrace pull an HTTPS feed on a schedule. Sensors auto-import on first contact.',
+          'Set a freeze threshold and enable wet flood/leak contacts. Email and chat channels cover the free and Member tiers; Pro adds SMS, WhatsApp, browser push, HMAC webhooks, and official NWS freeze/cold alerts. A forecast-backed time-to-freeze clock shows hours until risk, not only after the probe crosses the line.',
+        ],
+      },
+      {
+        heading: 'Core product components',
+        body: [
+          'Web app & ingest edge — Astro 6 on Cloudflare Workers serves the marketing site, authenticated dashboard, and ingest APIs close to visitors. Live job and ingest health is published on the product’s system-status page rather than a marketing uptime claim.',
+          'Dashboard Overview — Simple or Insights mode: 7-day probe curves, freeze hours and degree-hours, indoor−outdoor ΔT, probe spread, condensation risk, feed health, plus cards for doors, power, motion, battery/RSSI, and air quality.',
+          'Devices & feeds — Push devices with API keys, pull HTTPS JSON feeds, MQTT bridge so Mosquitto can stay on the LAN, Home Assistant recipes, and Nest/Ecobee thermostat hooks for outdoor/context readings.',
+          'Alerts & evidence — Threshold freeze and automatic flood/leak alerts on every plan. Member adds outdoor forecast warnings; Pro adds NWS alerts, richer channels, Grafana/Prometheus metrics keys, and a printable claims evidence pack with matching readings and alert CSVs for a date range you choose.',
+          'Households & portfolios — Invite family (including read-only viewers), publish a free family live share link, and scale to Portfolio / property-manager logins for multi-unit sites.',
+          'Plans — Free forever with 7-day history; Member ($4/mo) and Pro ($10/mo) unlock longer retention, CSV export, and higher alert/automation ceilings. Annual billing is discounted versus monthly.',
+        ],
+        links: [
+          { label: 'About / start here', href: SITE_LINKS.thermalTraceAbout, external: true },
+          { label: 'Ingest & developer docs', href: SITE_LINKS.thermalTraceDocs, external: true },
+          { label: 'Source on GitHub', href: SITE_LINKS.thermalTraceGithub, external: true },
+        ],
+      },
+      {
+        heading: 'Hardware & firmware',
+        body: [
+          'ThermalTrace does not lock you into a proprietary puck. Sample sketches and recipes live in the product repo under sketches/ and in the guides: ESP32 freeze kits with waterproof DS18B20, Raspberry Pi Pico W, Arduino Ethernet, STM32 Zephyr, CH32V RISC-V, Teensy, PIC18, AVR assembly, and cellular (Particle Boron) samples.',
+          'Typical path: flash a personalized sketch, POST so sensors auto-import, optionally add OTA / QR stickers for field installs. Accessories (claim puck, leak pads, door contacts, mounts) are catalogued separately from companion apps.',
+        ],
+        links: [
+          {
+            label: 'Adding devices guide',
+            href: 'https://thermaltrace.dev/about/adding-devices',
+            external: true,
+          },
+          { label: 'Hardware accessories', href: SITE_LINKS.thermalTraceAccessories, external: true },
+        ],
+      },
+      {
+        heading: 'Companion apps',
+        body: [
+          'Companion clients sign into your ThermalTrace account. They do not measure temperature — ESP/Arduino probes (or HTTPS feeds) push readings; apps display them, history, alerts, devices, and household tools.',
+          'Android (early access) — Native phone/tablet companion for live probes, history, freeze/flood alerts, devices, MFA, and household tools while Google Play review finishes.',
+          'ThermalTrace Desktop — Native Windows, macOS, and Linux dashboard for the full account experience at a desk.',
+          'Bay Buddy — Glanceable freeze and flood “mood” for one garage, workshop, or cabin space on a second monitor.',
+          'Progressive Web App — Install from Chrome, Edge, or Safari Add to Home Screen for a phone-friendly client with the same account, no store wait. Pro can enable browser push from Dashboard → Alerts.',
+          'Home Assistant — HACS integration in doodersrage/thermaltrace-home-assistant for dual-run with local notify when you want LAN voice/phone alerts alongside ThermalTrace channels.',
+        ],
+        links: [
+          { label: 'Apps catalog', href: SITE_LINKS.thermalTraceApps, external: true, note: 'thermaltrace.dev/apps' },
+          { label: 'Android (GitHub)', href: SITE_LINKS.thermalTraceAndroid, external: true },
+          { label: 'Desktop (GitHub)', href: SITE_LINKS.thermalTraceDesktop, external: true },
+          {
+            label: 'Home Assistant HACS',
+            href: SITE_LINKS.thermalTraceHomeAssistant,
+            external: true,
+          },
+        ],
+      },
+      {
+        heading: 'Related open-source stack',
+        body: [
+          'ThermalTrace grew out of earlier garage-temperature work on this domain. The product repo is the Astro app at thermaltrace.dev. Older pieces still useful as references: the FastAPI + Redis JSON relay, and the Arduino network JSON temperature sketch with dual probes.',
+        ],
+        links: [
+          { label: 'thermaltrace', href: SITE_LINKS.thermalTraceGithub, external: true },
+          {
+            label: 'fast-api-relay',
+            href: 'https://github.com/doodersrage/fast-api-relay',
+            external: true,
+          },
+          {
+            label: 'arduino-network-json-temperature-sever',
+            href: 'https://github.com/doodersrage/arduino-network-json-temperature-sever',
+            external: true,
+          },
+          {
+            label: 'garage-temp (earlier front end)',
+            href: 'https://github.com/doodersrage/garage-temp',
+            external: true,
+          },
         ],
       },
       {
@@ -104,8 +193,8 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     tagline: 'Stabilize first, then modernize without losing historical data',
     description:
       'Composite consulting pattern: repair aging Windows/Linux servers and C#/PHP apps, then bridge databases into a fast Next.js front end when the business is ready.',
-    href: '/projects',
-    linkLabel: 'View projects',
+    href: SITE_LINKS.services,
+    linkLabel: 'View services',
     stack: ['C# / .NET', 'PHP', 'MySQL', 'MSSQL', 'Next.js', 'Payload CMS'],
     sections: [
       {

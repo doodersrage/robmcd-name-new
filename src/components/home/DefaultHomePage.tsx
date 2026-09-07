@@ -1,31 +1,43 @@
 import React from 'react'
 import { BentoGrid } from '@/components/ui/BentoGrid'
-import { CtaBanner } from '@/components/ui/CtaBanner'
 import { Hero } from '@/components/ui/Hero'
 import { ProjectShowcase } from '@/components/ui/ProjectShowcase'
 import { SITE_LINKS } from '@/lib/site'
 
-const BENTO_ITEMS = [
+const CAPABILITIES = [
   {
-    span: 'wide',
-    icon: 'Layers',
     title: 'Legacy repair & stack modernization',
     description:
-      'Inherited a fragile codebase or an outdated stack? I audit, repair, and refactor existing applications—stabilizing legacy C#/.NET or PHP (WordPress/ConcreteCMS) installations or migrating them to modern, headless architectures.',
+      'Audit, stabilize, and refactor fragile C#/.NET or PHP stacks — or migrate them to modern headless architectures when the business is ready.',
   },
   {
-    span: 'default',
-    icon: 'Shield',
-    title: 'Server maintenance & database administration',
+    title: 'Servers & databases',
     description:
-      'Keeping environments fast, secure, and available. Ongoing server maintenance, OS upgrades, cloud migrations, and deep database administration across MySQL and MSSQL.',
+      'Ongoing maintenance, OS upgrades, cloud moves, and MySQL/MSSQL administration so environments stay fast, secure, and available.',
   },
   {
-    span: 'default',
-    icon: 'BarChart3',
-    title: 'Technical advisory & system audits',
+    title: 'Technical advisory',
     description:
-      'Two decades across Linux and Windows means I build for stability and longevity: technical debt, security patching, and query performance.',
+      'Debt, patching, and query performance across Linux and Windows — built for longevity, not hype cycles.',
+  },
+]
+
+const SHIPPED = [
+  {
+    title: 'LLM Prompt Studio',
+    tagline: 'ComfyUI + cloud stills and clips',
+    description:
+      'MIT-licensed Next.js studio: prompt tools, Play campaigns, workflow takeover, Mobile Studio, and desktop/Docker installs.',
+    href: SITE_LINKS.promptStudio,
+    linkLabel: 'Read the docs',
+  },
+  {
+    title: 'ThermalTrace',
+    tagline: 'Freeze and flood alerts for instrumented spaces',
+    description:
+      'Open-source monitoring for garages and workshops — ESP32/Pico ingest, time-to-freeze, household alerts, and companion apps.',
+    href: SITE_LINKS.thermalTracePage,
+    linkLabel: 'About ThermalTrace',
   },
 ]
 
@@ -39,82 +51,47 @@ export function DefaultHomePage() {
         secondaryCta={{ label: 'Get in touch', href: SITE_LINKS.contact }}
       />
 
-      <div id="capabilities">
-        <BentoGrid
-          eyebrow="Practice"
-          title="What I do"
-          description="From low-level server work to modern web applications and sensor dashboards."
-          items={BENTO_ITEMS}
-        />
-      </div>
+      <BentoGrid
+        eyebrow="Practice"
+        title="What I do"
+        description="From servers and databases to modern web apps and sensor dashboards."
+        items={CAPABILITIES}
+      />
 
       <ProjectShowcase
         eyebrow="Shipped"
         title="Open source"
-        description="LLM Prompt Studio docs live here. ThermalTrace watches garages for freeze and flood risk at thermaltrace.dev."
-        projects={[
-          {
-            title: 'LLM Prompt Studio',
-            tagline: 'Prompt, queue, and ship films — ComfyUI + cloud stills/clips.',
-            description:
-              'MIT-licensed Next.js studio: Heal & ready, Play campaigns (Moodboard → Cut → Cast), 25+ tools, 40+ models, workflow takeover, Mobile Studio, and desktop/Docker installs.',
-            href: SITE_LINKS.promptStudio,
-            linkLabel: 'Read the docs',
-          },
-          {
-            title: 'ThermalTrace',
-            tagline: 'Freeze and flood alerts for spaces you already instrument.',
-            description:
-              'Open-source Astro 6 app — ESP32/Pico push or pull feeds, time-to-freeze clock, Home Assistant HACS, Overview Insights, Free/Member/Pro, PWA and companion apps.',
-            href: SITE_LINKS.thermalTrace,
-            linkLabel: 'Open thermaltrace.dev',
-            external: true,
-          },
-          {
-            title: 'Work & case studies',
-            tagline: 'Prompt Studio, ThermalTrace, and legacy modernization patterns.',
-            description: 'Problem, stack, and outcome — plus the consulting pattern behind stack rescues.',
-            href: SITE_LINKS.work,
-            linkLabel: 'Browse case studies',
-          },
-        ]}
+        description="Docs for Prompt Studio live here. ThermalTrace runs at thermaltrace.dev."
+        projects={SHIPPED}
       />
 
-      <section className="space-y-4">
+      <section className="space-y-6 border-t pt-10 md:pt-14" style={{ borderColor: 'var(--line)' }}>
         <p className="eyebrow">Approach</p>
         <blockquote className="max-w-2xl text-2xl font-semibold tracking-tight md:text-3xl">
           Stability and maintainability outweigh hype.
         </blockquote>
         <p className="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
-          Software isn&apos;t just about writing new code — it&apos;s about respecting systems already in
-          production. Whether you need servers kept, databases tuned, an IoT dashboard like{' '}
-          <a
-            href={SITE_LINKS.thermalTrace}
-            className="text-link underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          Software isn&apos;t just new code — it&apos;s respecting systems already in production. Need a
+          stack repaired, a server that stays up, or something like{' '}
+          <a href={SITE_LINKS.thermalTracePage} className="text-link underline">
             ThermalTrace
           </a>
-          , or a legacy application brought back to health, I focus on long-term results.
+          ? Start a conversation.
         </p>
-      </section>
-
-      <div className="space-y-4">
-        <CtaBanner
-          title="Need a stack repaired, or a server that stays up?"
-          description="Twenty years of cross-platform engineering — or start with LLM Prompt Studio and ThermalTrace."
-          primaryLabel="Start a conversation"
-          primaryHref={SITE_LINKS.contact}
-          secondaryLabel="View case studies"
-          secondaryHref={SITE_LINKS.work}
-        />
+        <div className="flex flex-wrap items-center gap-3 pt-2">
+          <a href={SITE_LINKS.contact} className="btn btn-primary">
+            Start a conversation
+          </a>
+          <a href={SITE_LINKS.work} className="btn btn-secondary">
+            View case studies
+          </a>
+        </div>
         <p className="font-mono text-sm text-[var(--muted)]">
           <a href="mailto:admin@robmcd.name" className="text-link">
             admin@robmcd.name
           </a>
         </p>
-      </div>
+      </section>
     </>
   )
 }

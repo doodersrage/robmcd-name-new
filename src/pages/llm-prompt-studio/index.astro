@@ -4,12 +4,37 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { DocPageView } from '@/components/comfyui-prompt-studio/DocPageView'
 import { getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
+import { breadcrumbSchema, personSchema, softwareApplicationSchema } from '@/lib/seo'
+import { SITE_LINKS, SITE_URL } from '@/lib/site'
 
 const page = getPageBySlug([])
 if (!page) {
   throw new Error('Missing Prompt Studio hub page')
 }
 const currentPath = slugToPath([])
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    personSchema(),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'LLM Prompt Studio', path: currentPath },
+    ]),
+    {
+      ...softwareApplicationSchema({
+        name: 'LLM Prompt Studio',
+        description: page.description,
+        url: currentPath,
+        codeRepository: SITE_LINKS.promptStudioGithub,
+        applicationCategory: 'DeveloperApplication',
+        offersUrl: SITE_LINKS.promptStudioGithub,
+        sameAs: [SITE_LINKS.promptStudioGithub, SITE_LINKS.promptStudioDocs],
+      }),
+      '@id': `${SITE_URL}${currentPath}#software`,
+    },
+  ],
+}
 ---
 
 <BaseLayout
@@ -17,6 +42,7 @@ const currentPath = slugToPath([])
   description={page.description}
   canonical={currentPath}
   wide
+  jsonLd={jsonLd}
 >
   <div class="site-main !max-w-6xl">
     <DocPageView client:load page={page} currentPath={currentPath} />

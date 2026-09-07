@@ -4,6 +4,7 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { DocPageView } from '@/components/comfyui-prompt-studio/DocPageView'
 import { DOC_PAGES, getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
+import { breadcrumbSchema } from '@/lib/seo'
 
 export function getStaticPaths() {
   return DOC_PAGES.filter((p) => p.slug.length > 0).map((page) => ({
@@ -21,6 +22,24 @@ if (!page) {
 
 const currentPath = slugToPath(page.slug)
 const isMarketing = page.layout === 'marketing'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'LLM Prompt Studio', path: '/llm-prompt-studio' },
+      { name: page.title, path: currentPath },
+    ]),
+    {
+      '@type': 'TechArticle',
+      headline: page.title,
+      description: page.description,
+      url: `https://robmcd.name${currentPath}`,
+      author: { '@id': 'https://robmcd.name/#person' },
+    },
+  ],
+}
 ---
 
 <BaseLayout
@@ -28,6 +47,8 @@ const isMarketing = page.layout === 'marketing'
   description={page.description}
   canonical={currentPath}
   wide
+  ogType="article"
+  jsonLd={jsonLd}
 >
   <div class:list={[isMarketing ? 'site-main' : 'relative z-10 mx-auto w-full max-w-6xl flex-1 px-0 py-8 md:py-12']}>
     <DocPageView client:load page={page} currentPath={currentPath} />

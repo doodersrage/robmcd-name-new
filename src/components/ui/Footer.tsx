@@ -31,12 +31,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a
-                  href={SITE_LINKS.thermalTrace}
-                  className="text-link text-sm"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={SITE_LINKS.thermalTracePage} className="text-link text-sm">
                   ThermalTrace
                 </a>
               </li>
@@ -46,8 +41,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={SITE_LINKS.projects} className="text-link text-sm">
-                  Projects
+                <a href={SITE_LINKS.services} className="text-link text-sm">
+                  Services
                 </a>
               </li>
             </ul>
@@ -81,9 +76,18 @@ export function Footer() {
                 className="text-link text-[var(--muted)]"
                 aria-label="GitHub"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="me noopener noreferrer"
               >
                 GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/robertsmcdowell/"
+                className="text-link text-[var(--muted)]"
+                aria-label="LinkedIn"
+                target="_blank"
+                rel="me noopener noreferrer"
+              >
+                LinkedIn
               </a>
             </div>
           </div>

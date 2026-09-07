@@ -1,6 +1,5 @@
 import React from 'react'
 import { CtaLink } from '@/components/ui/CtaLink'
-import { MotionReveal } from '@/components/ui/MotionReveal'
 import { SITE_NAME } from '@/lib/site'
 import { cn } from '@/lib/cn'
 
@@ -34,9 +33,14 @@ export function Hero({
   const visibleSkills = skills.map((skill) => skill.trim()).filter(Boolean)
 
   return (
-    <MotionReveal as="section" className="not-prose" stagger={false}>
-      <div className={cn('max-w-3xl space-y-6', imageUrl && 'grid grid-cols-1 items-end gap-10 lg:max-w-none lg:grid-cols-12')}>
-        <div className={cn('space-y-6', imageUrl && 'lg:col-span-7')}>
+    <section className="not-prose">
+      <div
+        className={cn(
+          'max-w-3xl space-y-6',
+          imageUrl && 'grid grid-cols-1 items-end gap-10 lg:max-w-none lg:grid-cols-12',
+        )}
+      >
+        <div className={cn('space-y-5', imageUrl && 'lg:col-span-7')}>
           {brand ? <p className="brand-display">{brand}</p> : null}
           <h1 className="page-title">{title}</h1>
           {description ? (
@@ -52,7 +56,7 @@ export function Hero({
             </ul>
           ) : null}
           {hasCtas ? (
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               {primaryCta?.label && primaryCta.href ? (
                 <CtaLink label={primaryCta.label} href={primaryCta.href} variant="primary" />
               ) : null}
@@ -68,6 +72,6 @@ export function Hero({
           </div>
         ) : null}
       </div>
-    </MotionReveal>
+    </section>
   )
 }

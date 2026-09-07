@@ -8,12 +8,10 @@ export const prerender = true
 const staticPaths = [
   '/',
   '/about',
-  '/about/services',
-  '/projects',
+  '/services',
   '/privacy',
   '/contact',
   '/work',
-  '/search',
   '/llm-prompt-studio',
 ]
 

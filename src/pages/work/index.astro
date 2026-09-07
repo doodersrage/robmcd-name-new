@@ -3,13 +3,23 @@ export const prerender = true
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { WORK_CASE_STUDIES } from '@/content/work/case-studies'
+import { itemListSchema } from '@/lib/seo'
+
+const description =
+  'Case studies — LLM Prompt Studio, ThermalTrace freeze and flood monitoring, and legacy stack modernization.'
+
+const jsonLd = itemListSchema(
+  'Work',
+  description,
+  WORK_CASE_STUDIES.map((study) => ({
+    name: study.title,
+    path: `/work/${study.slug}`,
+    description: study.description,
+  })),
+)
 ---
 
-<BaseLayout
-  title="Work"
-  description="Case studies — LLM Prompt Studio, ThermalTrace, and legacy modernization."
-  canonical="/work"
->
+<BaseLayout title="Work" description={description} canonical="/work" jsonLd={jsonLd}>
   <section class="space-y-8">
     <div class="space-y-3">
       <p class="eyebrow">Portfolio</p>
