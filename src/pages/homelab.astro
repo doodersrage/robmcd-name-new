@@ -1,0 +1,14 @@
+---
+export const prerender = true
+
+import ProseLayout from '@/layouts/ProseLayout.astro'
+import Content from '@/content/pages/homelab.mdx'
+---
+
+<ProseLayout
+  title="Homelab"
+  description="Homelab endpoints on robmcd.name — AudioBookShelf, Jellyfin, Seer, Plex, and Romm."
+  path="/homelab"
+>
+  <Content />
+</ProseLayout>

@@ -45,7 +45,7 @@ export function CaseStudyDemo() {
             key={p.id}
             type="button"
             onClick={() => setActive(i)}
-            className={`shrink-0 rounded-xl px-4 py-2 text-sm font-medium transition-all duration-300 ${
+            className={`shrink-0 rounded-sm px-4 py-2 text-sm font-medium transition-all duration-300 ${
               active === i
                 ? 'bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900 shadow-md'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800'
@@ -58,20 +58,20 @@ export function CaseStudyDemo() {
 
       <div
         key={phase.id}
-        className="mt-4 rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/80 p-6 shadow-sm transition-all duration-300"
+        className="mt-4 rounded-sm border border-[var(--line)] bg-[var(--paper)] p-6  transition-all duration-300"
       >
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-zinc-500">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">
               {phase.week}
             </p>
-            <h4 className="mt-1 text-xl font-bold text-slate-900 dark:text-zinc-100">{phase.title}</h4>
+            <h4 className="mt-1 text-xl font-bold text-[var(--ink)]">{phase.title}</h4>
           </div>
           <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
             {phase.metric}
           </span>
         </div>
-        <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-zinc-400">{phase.body}</p>
+        <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">{phase.body}</p>
 
         <ol className="mt-6 flex gap-2">
           {PHASES.map((_, i) => (

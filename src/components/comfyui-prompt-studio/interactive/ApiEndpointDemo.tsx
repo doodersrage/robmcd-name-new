@@ -15,13 +15,13 @@ export function ApiEndpointDemo() {
 
   return (
     <div className="not-prose my-8 space-y-3">
-      <div className="flex items-center justify-between gap-3 rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-slate-950 dark:bg-zinc-950 px-4 py-3 font-mono text-sm text-emerald-400/90">
+      <div className="flex items-center justify-between gap-3 rounded-sm border border-[var(--line)] bg-slate-950 dark:bg-zinc-950 px-4 py-3 font-mono text-sm text-emerald-400/90">
         <code>{ENDPOINT}</code>
         <button type="button" onClick={copy} className="btn btn-secondary shrink-0 text-xs">
           {copied ? 'Copied' : 'Copy'}
         </button>
       </div>
-      <pre className="overflow-x-auto rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/80 p-4 text-xs leading-relaxed text-slate-700 dark:text-zinc-300">
+      <pre className="overflow-x-auto rounded-sm border border-[var(--line)] bg-[var(--paper)] p-4 text-xs leading-relaxed text-[var(--ink)]">
         {`{
   "positive": "young woman, red windbreaker, city street...",
   "negative": "low quality, blurry, watermark",

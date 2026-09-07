@@ -84,7 +84,11 @@ export function ContactForm({ siteKey }: { siteKey: string }) {
   }
 
   if (status === 'success') {
-    return <p className="rounded-sm border border-[var(--line)] bg-[var(--paper)] px-4 py-3">Thanks for contacting us!</p>
+    return (
+      <p className="max-w-xl rounded-sm border border-[var(--line)] bg-[var(--paper)] px-4 py-3 text-base leading-relaxed">
+        Message received. I&apos;ll get back to you soon — usually within a couple of days.
+      </p>
+    )
   }
 
   return (
@@ -127,8 +131,10 @@ export function ContactForm({ siteKey }: { siteKey: string }) {
         <textarea
           id="contact-message"
           className="input-field min-h-[8rem]"
+          required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          placeholder="What are you working on, and how can I help?"
         />
       </div>
 

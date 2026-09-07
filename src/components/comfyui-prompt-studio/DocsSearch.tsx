@@ -34,22 +34,25 @@ export function DocsSearch() {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         placeholder="Search docs…"
-        className="w-full rounded-xl border border-slate-200/80 bg-white/80 px-4 py-2.5 text-sm text-slate-900 shadow-sm outline-none transition-all duration-200 placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-slate-200/80 dark:border-zinc-800/80 dark:bg-zinc-900/80 dark:text-zinc-100 dark:placeholder:text-zinc-500 dark:focus:border-zinc-700 dark:focus:ring-zinc-800/80"
+        className="input-field w-full"
       />
       {query.trim() ? (
-        <ul className="mt-2 max-h-64 space-y-1 overflow-y-auto rounded-xl border border-slate-200/80 bg-white/90 p-2 shadow-sm dark:border-zinc-800/80 dark:bg-zinc-900/90">
+        <ul
+          className="mt-2 max-h-64 space-y-1 overflow-y-auto rounded-sm border bg-[var(--paper)] p-2"
+          style={{ borderColor: 'var(--line)' }}
+        >
           {results.length === 0 ? (
-            <li className="px-3 py-2 text-sm text-slate-500 dark:text-zinc-500">No matches</li>
+            <li className="px-3 py-2 text-sm text-[var(--muted)]">No matches</li>
           ) : (
             results.map((page) => (
               <li key={slugToPath(page.slug)}>
                 <a
                   href={slugToPath(page.slug)}
-                  className="block rounded-lg px-3 py-2 transition-colors hover:bg-slate-50 dark:hover:bg-zinc-800/80"
+                  className="block rounded-sm px-3 py-2 transition-colors hover:bg-[var(--canvas)]"
                   onClick={() => setQuery('')}
                 >
-                  <p className="text-sm font-medium text-slate-900 dark:text-zinc-100">{page.title}</p>
-                  <p className="text-xs text-slate-500 dark:text-zinc-500">{page.section}</p>
+                  <p className="text-sm font-medium text-[var(--ink)]">{page.title}</p>
+                  <p className="font-mono text-xs text-[var(--muted)]">{page.section}</p>
                 </a>
               </li>
             ))

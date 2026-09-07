@@ -55,10 +55,10 @@ export function SalesPitchDemo() {
         {items.map((item) => (
           <li
             key={item}
-            className={`flex gap-3 rounded-xl border p-4 text-sm leading-relaxed ${
+            className={`flex gap-3 rounded-sm border p-4 text-sm leading-relaxed ${
               view === 'before'
-                ? 'border-amber-200/80 bg-amber-50/40 dark:border-amber-900/60 dark:bg-amber-950/20 text-slate-700 dark:text-zinc-300'
-                : 'border-emerald-200/80 bg-emerald-50/40 dark:border-emerald-900/60 dark:bg-emerald-950/20 text-slate-700 dark:text-zinc-300'
+                ? 'border-amber-200/80 bg-amber-50/40 dark:border-amber-900/60 dark:bg-amber-950/20 text-[var(--ink)]'
+                : 'border-emerald-200/80 bg-emerald-50/40 dark:border-emerald-900/60 dark:bg-emerald-950/20 text-[var(--ink)]'
             }`}
           >
             <span aria-hidden className="mt-0.5 shrink-0 font-bold">
@@ -73,9 +73,9 @@ export function SalesPitchDemo() {
         {METRICS.map((m) => (
           <div
             key={m.id}
-            className="rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/80 p-5 shadow-sm"
+            className="rounded-sm border border-[var(--line)] bg-[var(--paper)] p-5 "
           >
-            <p className="text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-zinc-500">
+            <p className="text-xs font-medium uppercase tracking-wide text-[var(--muted)]">
               {m.label}
             </p>
             <div className="mt-3 flex items-end gap-2">
@@ -83,7 +83,7 @@ export function SalesPitchDemo() {
                 {m.before}
                 {m.unit}
               </span>
-              <span className="text-3xl font-bold tabular-nums text-slate-900 dark:text-zinc-100">
+              <span className="text-3xl font-bold tabular-nums text-[var(--ink)]">
                 {m.after}
                 {m.unit}
               </span>

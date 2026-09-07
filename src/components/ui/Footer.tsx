@@ -41,8 +41,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={SITE_LINKS.services} className="text-link text-sm">
-                  Services
+                <a href={SITE_LINKS.homelab} className="text-link text-sm">
+                  Homelab
                 </a>
               </li>
             </ul>

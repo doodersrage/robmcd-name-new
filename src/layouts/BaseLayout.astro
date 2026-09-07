@@ -6,7 +6,7 @@ import '@fontsource/ibm-plex-sans/600.css'
 import '@fontsource/ibm-plex-sans/700.css'
 import '@fontsource/ibm-plex-mono/400.css'
 import '@fontsource/ibm-plex-mono/500.css'
-import { Header } from '@/components/ui/Header'
+import Header from '@/components/ui/Header.astro'
 import { Footer } from '@/components/ui/Footer'
 import JsonLd from '@/components/seo/JsonLd.astro'
 import { DEFAULT_OG_IMAGE } from '@/lib/seo'
@@ -56,7 +56,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, SITE_
     <meta name="theme-color" content="#eef1ee" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#141814" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/og/default.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
@@ -99,11 +99,20 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, SITE_
         <div class="site-bg__noise"></div>
         <div class="site-bg__vignette"></div>
       </div>
-      <Header client:load />
+      <Header />
       <main id="content" class:list={[wide ? 'relative z-10 flex-1 py-8 md:py-12' : 'site-main']}>
         <slot />
       </main>
       <Footer />
+      {
+        import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN ? (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={JSON.stringify({ token: import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN })}
+          />
+        ) : null
+      }
     </div>
   </body>
 </html>

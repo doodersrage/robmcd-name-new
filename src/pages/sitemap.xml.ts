@@ -8,7 +8,7 @@ export const prerender = true
 const staticPaths = [
   '/',
   '/about',
-  '/services',
+  '/homelab',
   '/privacy',
   '/contact',
   '/work',

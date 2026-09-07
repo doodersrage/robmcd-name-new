@@ -42,7 +42,7 @@ export function ToolRoutesDemo() {
 
   return (
     <div className="not-prose my-8">
-      <p className="mb-4 text-sm leading-relaxed text-slate-600 dark:text-zinc-400">
+      <p className="mb-4 text-sm leading-relaxed text-[var(--muted)]">
         28+ tool routes — click a card for docs, hover for the live local URL (Node.js 22+, port 47832).
       </p>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
@@ -52,18 +52,18 @@ export function ToolRoutesDemo() {
             href={`${DOCS_BASE_PATH}/${tool.slug}`}
             onMouseEnter={() => setHovered(tool.route)}
             onMouseLeave={() => setHovered(null)}
-            className={`rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/80 p-3 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${
+            className={`rounded-sm border border-[var(--line)] bg-[var(--paper)] p-3  transition-all duration-300  ${
               hovered === tool.route ? 'ring-2 ring-slate-300/80 dark:ring-zinc-600' : ''
             }`}
           >
-            <p className="truncate text-[10px] font-medium uppercase tracking-wide text-slate-500 dark:text-zinc-500">
+            <p className="truncate text-[10px] font-medium uppercase tracking-wide text-[var(--muted)]">
               {tool.route}
             </p>
-            <p className="mt-0.5 truncate text-sm font-bold text-slate-900 dark:text-zinc-100">{tool.label}</p>
+            <p className="mt-0.5 truncate text-sm font-bold text-[var(--ink)]">{tool.label}</p>
           </a>
         ))}
       </div>
-      <p className="mt-4 text-center text-sm text-slate-600 dark:text-zinc-400">
+      <p className="mt-4 text-center text-sm text-[var(--muted)]">
         Open live tool:{' '}
         <a
           href={`${LIVE}${hovered ?? '/dashboard'}`}

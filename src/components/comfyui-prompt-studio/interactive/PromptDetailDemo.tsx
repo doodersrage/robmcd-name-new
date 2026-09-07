@@ -45,7 +45,7 @@ export function PromptDetailDemo() {
           </button>
         ))}
       </div>
-      <div className="rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-slate-950 dark:bg-zinc-950 p-5 font-mono text-sm leading-relaxed text-emerald-400/90 shadow-inner">
+      <div className="rounded-sm border border-[var(--line)] bg-slate-950 dark:bg-zinc-950 p-5 font-mono text-sm leading-relaxed text-emerald-400/90 shadow-inner">
         <span key={level} className="block transition-opacity duration-300">
           {current.sample}
         </span>
@@ -57,7 +57,7 @@ export function PromptDetailDemo() {
             style={{ width: `${Math.min(100, (current.chars / 400) * 100)}%` }}
           />
         </div>
-        <span className="text-sm tabular-nums text-slate-600 dark:text-zinc-400">{current.chars} chars</span>
+        <span className="text-sm tabular-nums text-[var(--muted)]">{current.chars} chars</span>
       </div>
     </div>
   )

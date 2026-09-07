@@ -20,18 +20,15 @@ export function DocsBreadcrumbs({ slug, title }: DocsBreadcrumbsProps) {
   }
 
   return (
-    <nav aria-label="Breadcrumb" className="mb-6 text-sm text-slate-500 dark:text-zinc-500">
+    <nav aria-label="Breadcrumb" className="page-meta mb-6">
       <ol className="flex flex-wrap items-center gap-1.5">
         {crumbs.map((crumb, i) => (
           <li key={crumb.href} className="flex items-center gap-1.5">
             {i > 0 ? <span aria-hidden>/</span> : null}
             {i === crumbs.length - 1 ? (
-              <span className="font-medium text-slate-700 dark:text-zinc-300 capitalize">{title}</span>
+              <span className="font-medium capitalize text-[var(--ink)]">{title}</span>
             ) : (
-              <a
-                href={crumb.href}
-                className="capitalize hover:text-slate-900 dark:hover:text-zinc-100 transition-colors"
-              >
+              <a href={crumb.href} className="capitalize text-link">
                 {crumb.label}
               </a>
             )}

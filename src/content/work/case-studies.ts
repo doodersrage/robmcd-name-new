@@ -193,8 +193,8 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     tagline: 'Stabilize first, then modernize without losing historical data',
     description:
       'Composite consulting pattern: repair aging Windows/Linux servers and C#/PHP apps, then bridge databases into a fast Next.js front end when the business is ready.',
-    href: SITE_LINKS.services,
-    linkLabel: 'View services',
+    href: SITE_LINKS.homelab,
+    linkLabel: 'View homelab',
     stack: ['C# / .NET', 'PHP', 'MySQL', 'MSSQL', 'Next.js', 'Payload CMS'],
     sections: [
       {

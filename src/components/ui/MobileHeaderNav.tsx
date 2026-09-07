@@ -1,19 +1,29 @@
 'use client'
 
 import React, { useState } from 'react'
+import { NavMenu } from '@/components/ui/NavMenu'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { PRIMARY_NAV } from '@/lib/site'
 
-type MobileHeaderNavProps = {
-  menuButton: React.ReactNode
-  children: React.ReactNode
-}
-
-export function MobileHeaderNav({ menuButton, children }: MobileHeaderNavProps) {
+export function MobileHeaderNav() {
   const [open, setOpen] = useState(false)
 
   return (
     <div className="md:hidden">
       <div className="flex items-center gap-3 pt-4">
-        <div className="min-w-0 flex-1">{menuButton}</div>
+        <form action="/search" method="get" className="relative min-w-0 flex-1">
+          <label htmlFor="site-search-mobile" className="sr-only">
+            Search
+          </label>
+          <input
+            id="site-search-mobile"
+            name="query"
+            type="search"
+            placeholder="Search"
+            className="input-field w-full py-2 text-sm"
+          />
+        </form>
+        <ThemeToggle />
         <button
           type="button"
           className="btn-icon-toggle"
@@ -54,7 +64,7 @@ export function MobileHeaderNav({ menuButton, children }: MobileHeaderNavProps) 
         role="region"
         aria-label="Main navigation"
       >
-        {children}
+        <NavMenu items={PRIMARY_NAV} mobile />
       </div>
     </div>
   )

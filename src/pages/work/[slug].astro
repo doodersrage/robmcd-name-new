@@ -138,6 +138,41 @@ const jsonLd = workCaseStudySchema({
     </div>
   </section>
 
+  {
+    isThermalTrace ? (
+      <figure class="mt-10 max-w-3xl space-y-3">
+        <svg
+          viewBox="0 0 640 160"
+          class="w-full rounded-sm border bg-[var(--paper)]"
+          style="border-color: var(--line)"
+          role="img"
+          aria-label="ThermalTrace flow: sensors push or pull into Cloudflare ingest, dashboard and alerts, companion apps"
+        >
+          <rect x="8" y="48" width="120" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
+          <text x="68" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="currentColor">Sensors</text>
+          <text x="68" y="96" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="currentColor" opacity="0.65">ESP / Pico / HA</text>
+          <path d="M136 80h48" stroke="currentColor" stroke-width="1.25" opacity="0.45"></path>
+          <polygon points="184,80 176,76 176,84" fill="currentColor" opacity="0.45"></polygon>
+          <rect x="192" y="48" width="140" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
+          <text x="262" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="currentColor">Ingest edge</text>
+          <text x="262" y="96" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="currentColor" opacity="0.65">Cloudflare Workers</text>
+          <path d="M340 80h48" stroke="currentColor" stroke-width="1.25" opacity="0.45"></path>
+          <polygon points="388,80 380,76 380,84" fill="currentColor" opacity="0.45"></polygon>
+          <rect x="396" y="48" width="120" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
+          <text x="456" y="78" text-anchor="middle" font-family="ui-monospace, monospace" font-size="12" fill="currentColor">Dashboard</text>
+          <text x="456" y="96" text-anchor="middle" font-family="ui-sans-serif, sans-serif" font-size="11" fill="currentColor" opacity="0.65">Alerts + history</text>
+          <path d="M524 80h48" stroke="currentColor" stroke-width="1.25" opacity="0.45"></path>
+          <polygon points="572,80 564,76 564,84" fill="currentColor" opacity="0.45"></polygon>
+          <rect x="580" y="48" width="52" height="64" fill="none" stroke="currentColor" stroke-width="1.25" opacity="0.35"></rect>
+          <text x="606" y="86" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="currentColor">Apps</text>
+        </svg>
+        <figcaption class="font-mono text-xs text-[var(--muted)]">
+          Sensor → ingest → dashboard/alerts → companion apps (PWA, Desktop, Android, Bay Buddy).
+        </figcaption>
+      </figure>
+    ) : null
+  }
+
   <div class="mt-12 space-y-10">
     {
       study.sections.map((section) => (

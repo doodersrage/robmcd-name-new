@@ -35,7 +35,7 @@ export function WorkspaceModeDemo() {
 
   return (
     <div className="not-prose my-8 space-y-4">
-      <p className="text-sm leading-relaxed text-slate-600 dark:text-zinc-400">
+      <p className="text-sm leading-relaxed text-[var(--muted)]">
         Four workspace modes — switch from the sidebar footer or Profile → Appearance.
       </p>
       <div className="flex flex-wrap gap-2">
@@ -56,14 +56,14 @@ export function WorkspaceModeDemo() {
       </div>
       <div
         key={mode.id}
-        className="rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md p-6 shadow-sm transition-all duration-300"
+        className="rounded-sm border border-[var(--line)] bg-[var(--paper)] p-6  transition-all duration-300"
       >
-        <p className="text-base leading-relaxed text-slate-600 dark:text-zinc-400">{mode.description}</p>
+        <p className="text-base leading-relaxed text-[var(--muted)]">{mode.description}</p>
         <ul className="mt-4 flex flex-wrap gap-2">
           {mode.tools.map((tool) => (
             <li
               key={tool}
-              className="rounded-lg bg-slate-50 dark:bg-zinc-950 px-3 py-1.5 text-sm font-medium text-slate-700 dark:text-zinc-300"
+              className="rounded-lg bg-slate-50 dark:bg-zinc-950 px-3 py-1.5 text-sm font-medium text-[var(--ink)]"
             >
               {tool}
             </li>

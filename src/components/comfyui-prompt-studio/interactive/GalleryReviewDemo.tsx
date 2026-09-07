@@ -34,19 +34,19 @@ export function GalleryReviewDemo() {
   }, [rate])
 
   return (
-    <div className="not-prose my-8 rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/80 p-6 shadow-sm">
-      <p className="text-sm text-slate-600 dark:text-zinc-400">
+    <div className="not-prose my-8 rounded-sm border border-[var(--line)] bg-[var(--paper)] p-6 ">
+      <p className="text-sm text-[var(--muted)]">
         Press <kbd className="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs dark:bg-zinc-800">1</kbd>
         –
         <kbd className="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs dark:bg-zinc-800">5</kbd> to rate
       </p>
       <div
         key={item.id}
-        className="mt-4 flex aspect-video items-center justify-center rounded-xl bg-gradient-to-br from-slate-200 to-slate-100 dark:from-zinc-800 dark:to-zinc-900 transition-opacity duration-200"
+        className="mt-4 flex aspect-video items-center justify-center rounded-sm bg-gradient-to-br from-slate-200 to-slate-100 dark:from-zinc-800 dark:to-zinc-900 transition-opacity duration-200"
       >
         <div className="text-center">
-          <p className="font-bold text-slate-800 dark:text-zinc-200">{item.label}</p>
-          <p className="mt-1 text-sm text-slate-500 dark:text-zinc-500">seed {item.seed}</p>
+          <p className="font-bold text-[var(--ink)]">{item.label}</p>
+          <p className="mt-1 text-sm text-[var(--muted)]">seed {item.seed}</p>
         </div>
       </div>
       <div className="mt-4 flex flex-wrap gap-2">
@@ -62,7 +62,7 @@ export function GalleryReviewDemo() {
         ))}
       </div>
       {Object.keys(ratings).length > 0 ? (
-        <ul className="mt-4 space-y-1 text-sm text-slate-600 dark:text-zinc-400">
+        <ul className="mt-4 space-y-1 text-sm text-[var(--muted)]">
           {ITEMS.filter((i) => ratings[i.id]).map((i) => (
             <li key={i.id}>
               {i.label}: {'★'.repeat(ratings[i.id]!)}

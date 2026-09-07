@@ -30,7 +30,7 @@ export function ModelFamilyDemo() {
 
   return (
     <div className="not-prose my-8 space-y-4">
-      <p className="text-sm leading-relaxed text-slate-600 dark:text-zinc-400">
+      <p className="text-sm leading-relaxed text-[var(--muted)]">
         40+ ComfyUI model targets grouped by architecture family — filter to compare prompt style and length limits.
       </p>
       <div className="flex flex-wrap gap-2">
@@ -58,14 +58,14 @@ export function ModelFamilyDemo() {
         {visible.map((f, i) => (
           <div
             key={f.id}
-            className="rounded-2xl border border-slate-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-900/80 p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
+            className="rounded-sm border border-[var(--line)] bg-[var(--paper)] p-4  transition-all duration-300 "
             style={{ animationDelay: `${i * 50}ms` }}
           >
             <div className="flex items-baseline justify-between gap-2">
-              <h4 className="font-bold text-slate-900 dark:text-zinc-100">{f.name}</h4>
-              <span className="shrink-0 text-xs text-slate-500 dark:text-zinc-500">~{f.limit} chars</span>
+              <h4 className="font-bold text-[var(--ink)]">{f.name}</h4>
+              <span className="shrink-0 text-xs text-[var(--muted)]">~{f.limit} chars</span>
             </div>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-zinc-400">{f.style}</p>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--muted)]">{f.style}</p>
           </div>
         ))}
       </div>

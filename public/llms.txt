@@ -15,7 +15,7 @@
   Live product: https://thermaltrace.dev/
 
 ## Optional
-- Homelab endpoints on this domain: https://robmcd.name/services
+- Homelab endpoints on this domain: https://robmcd.name/homelab
 - Privacy: https://robmcd.name/privacy
 
 ## Cite as

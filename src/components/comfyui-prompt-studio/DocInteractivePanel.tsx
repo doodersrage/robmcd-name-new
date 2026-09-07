@@ -38,16 +38,16 @@ function QualityProfileDemo() {
         ))}
       </div>
       <div className="grid gap-4 sm:grid-cols-3">
-        <div className="rounded-xl border border-slate-200/80 dark:border-zinc-800/80 bg-slate-50 dark:bg-zinc-950 p-4 text-center">
-          <p className="text-2xl font-bold tabular-nums text-slate-900 dark:text-zinc-100">{profile.steps}</p>
-          <p className="text-xs text-slate-500 dark:text-zinc-500">steps</p>
+        <div className="rounded-sm border border-[var(--line)] bg-slate-50 dark:bg-zinc-950 p-4 text-center">
+          <p className="text-2xl font-bold tabular-nums text-[var(--ink)]">{profile.steps}</p>
+          <p className="text-xs text-[var(--muted)]">steps</p>
         </div>
-        <div className="rounded-xl border border-slate-200/80 dark:border-zinc-800/80 bg-slate-50 dark:bg-zinc-950 p-4 text-center">
-          <p className="text-2xl font-bold tabular-nums text-slate-900 dark:text-zinc-100">{profile.cfg}</p>
-          <p className="text-xs text-slate-500 dark:text-zinc-500">CFG</p>
+        <div className="rounded-sm border border-[var(--line)] bg-slate-50 dark:bg-zinc-950 p-4 text-center">
+          <p className="text-2xl font-bold tabular-nums text-[var(--ink)]">{profile.cfg}</p>
+          <p className="text-xs text-[var(--muted)]">CFG</p>
         </div>
-        <div className="flex items-center justify-center rounded-xl border border-slate-200/80 dark:border-zinc-800/80 bg-slate-50 dark:bg-zinc-950 p-4">
-          <p className="text-sm text-slate-600 dark:text-zinc-400">{profile.desc}</p>
+        <div className="flex items-center justify-center rounded-sm border border-[var(--line)] bg-slate-50 dark:bg-zinc-950 p-4">
+          <p className="text-sm text-[var(--muted)]">{profile.desc}</p>
         </div>
       </div>
     </div>

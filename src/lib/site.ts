@@ -9,7 +9,9 @@ export const SITE_LINKS = {
   github: 'https://github.com/doodersrage',
   about: '/about',
   contact: '/contact',
-  services: '/services',
+  homelab: '/homelab',
+  /** @deprecated Use homelab */
+  services: '/homelab',
   work: '/work',
   privacy: '/privacy',
   promptStudio: '/llm-prompt-studio',
@@ -41,7 +43,7 @@ export type SiteNavItem = {
   children?: SiteNavItem[]
 }
 
-/** Full static primary nav (no CMS). */
+/** Full static primary nav (no CMS). Homelab lives in the footer. */
 export const PRIMARY_NAV: SiteNavItem[] = [
   { id: 'about', label: 'About', href: SITE_LINKS.about },
   {
@@ -54,6 +56,5 @@ export const PRIMARY_NAV: SiteNavItem[] = [
       { id: 'work-thermaltrace', label: 'ThermalTrace', href: SITE_LINKS.thermalTracePage },
     ],
   },
-  { id: 'services', label: 'Services', href: SITE_LINKS.services },
   { id: 'contact', label: 'Contact', href: SITE_LINKS.contact },
 ]

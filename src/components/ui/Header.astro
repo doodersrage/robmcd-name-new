@@ -1,0 +1,83 @@
+---
+import { SiteLogo } from '@/components/ui/SiteLogo'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { MobileHeaderNav } from '@/components/ui/MobileHeaderNav'
+import { PRIMARY_NAV } from '@/lib/site'
+---
+
+<header class="site-header">
+  <nav class="site-header__inner" aria-label="Primary">
+    <div class="flex w-full flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-6">
+      <SiteLogo variant="compact" showTagline={false} />
+
+      <div class="hidden min-w-0 md:flex md:flex-1 md:items-center md:justify-end md:gap-4 lg:gap-6">
+        <ul class="flex flex-col gap-1 md:flex-row md:items-center md:gap-6" role="list">
+          {
+            PRIMARY_NAV.map((item) =>
+              item.children?.length ? (
+                <li class="nav-item-has-children group relative">
+                  <a class="nav-link inline-flex items-center gap-1" href={item.href}>
+                    {item.label}
+                    <svg
+                      class="h-3.5 w-3.5 opacity-60 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      aria-hidden="true"
+                    >
+                      <path d="m6 9 6 6 6-6" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+                  </a>
+                  <ul class="nav-dropdown" role="list">
+                    {item.children.map((child) => (
+                      <li>
+                        {child.external ? (
+                          <a
+                            class="nav-dropdown__link"
+                            href={child.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {child.label}
+                          </a>
+                        ) : (
+                          <a class="nav-dropdown__link" href={child.href}>
+                            {child.label}
+                          </a>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </li>
+              ) : (
+                <li>
+                  <a class="nav-link" href={item.href}>
+                    {item.label}
+                  </a>
+                </li>
+              ),
+            )
+          }
+        </ul>
+        <ThemeToggle client:load />
+        <form
+          action="/search"
+          method="get"
+          class="relative min-w-0 flex-1 md:max-w-[12rem] lg:max-w-[14rem]"
+        >
+          <label for="site-search" class="sr-only">Search</label>
+          <input
+            id="site-search"
+            name="query"
+            type="search"
+            placeholder="Search"
+            class="input-field w-full py-2 text-sm"
+          />
+        </form>
+      </div>
+
+      <MobileHeaderNav client:load />
+    </div>
+  </nav>
+</header>
