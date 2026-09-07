@@ -23,9 +23,9 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
   {
     slug: 'llm-prompt-studio',
     title: 'LLM Prompt Studio',
-    tagline: 'Prompt, queue, and ship films — ComfyUI takeover plus cloud stills and clips',
+    tagline: 'Prompt, queue, and ship films. ComfyUI takeover plus cloud stills and clips.',
     description:
-      'An MIT-licensed Next.js studio that turns topics into model-ready prompts for image, video, audio, and 3D. Heal & ready on first launch, Play campaign loops (Moodboard → Cut → Cast), Mobile Studio, workflow takeover, and optional Fal/Replicate/Grok/Gemini when you skip the local graph.',
+      'MIT-licensed Next.js studio that turns topics into model-ready prompts for image, video, audio, and 3D. Heal & ready on first launch, Play campaigns (Moodboard through Cut and Cast), Mobile Studio, workflow takeover, and optional Fal/Replicate/Grok/Gemini when you skip the local graph.',
     href: SITE_LINKS.promptStudio,
     externalHref: SITE_LINKS.promptStudioGithub,
     linkLabel: 'Read the docs on robmcd.name',
@@ -58,7 +58,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'Outcome',
         body: [
-          'A reusable open-source product that doubles as a portfolio piece for LLM tooling, ComfyUI integration, and edge-ready Next.js architecture — the same stack this marketing site runs on. Creators get a missing text layer between their LLM and their render farm, with a 10-minute still→clip→Cast loop and an escape hatch to cloud when ComfyUI is not in the loop.',
+          'Open-source and usable today. Useful if you care about ComfyUI text tooling, Next.js on the edge, or how a prompt layer sits between an LLM and a render farm without owning one vendor graph.',
         ],
       },
     ],
@@ -66,9 +66,9 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
   {
     slug: 'thermaltrace',
     title: 'ThermalTrace',
-    tagline: 'Know before pipes freeze or a space floods — hosted alerts for hardware you already own',
+    tagline: 'Know before pipes freeze or a space floods. Hosted alerts for hardware you already own.',
     description:
-      'Open-source monitoring at thermaltrace.dev for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), freeze and flood alerts, Overview Insights, household sharing, companion apps, and Free / Member / Pro plans — without babysitting another home server.',
+      'Open monitoring at thermaltrace.dev for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), freeze and flood alerts, household sharing, companion apps, and Free / Member / Pro plans. You do not have to babysit another home server just to watch probes.',
     externalHref: SITE_LINKS.thermalTrace,
     linkLabel: 'Open thermaltrace.dev',
     stack: [
@@ -182,7 +182,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'Outcome',
         body: [
-          'A working product visitors can open immediately — not a mockup. Useful for clients who need IoT dashboards, telemetry UIs, alert routing, insurance-ready evidence, or “sensor to screen” architecture explained clearly. Sits alongside LLM Prompt Studio as proof of embedded + web craft under the robmcd.name brand.',
+          'A live product at thermaltrace.dev. Handy reference if you need IoT dashboards, alert routing, or a clear path from sensor to phone without standing up your own always-on box.',
         ],
       },
     ],
@@ -190,9 +190,9 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
   {
     slug: 'legacy-stack-rescue',
     title: 'Legacy stack rescue & headless modernization',
-    tagline: 'Stabilize first, then modernize without losing historical data',
+    tagline: 'Stabilize first, then modernize without throwing away the data',
     description:
-      'Composite consulting pattern: repair aging Windows/Linux servers and C#/PHP apps, then bridge databases into a fast Next.js front end when the business is ready.',
+      'Consulting pattern: repair aging Windows/Linux servers and C#/PHP apps, then bridge databases into a faster Next.js front end when the business is ready.',
     href: SITE_LINKS.homelab,
     linkLabel: 'View homelab',
     stack: ['C# / .NET', 'PHP', 'MySQL', 'MSSQL', 'Next.js', 'Payload CMS'],
@@ -200,15 +200,15 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'The pattern',
         body: [
-          'Inherited stacks rarely need a greenfield rewrite on day one. The first win is usually uptime, query performance, and patching — then a headless front end that keeps years of content intact.',
-          'This write-up captures the consulting approach behind client work on robmcd.name: audit → stabilize → optimize → optionally modernize.',
+          'Inherited stacks rarely need a greenfield rewrite on day one. First wins are usually uptime, query performance, and patching. A new front end comes later if the content and business logic still matter.',
+          'This page is the short version of how I approach that kind of client work: audit, stabilize, optimize, then modernize only where it pays off.',
         ],
       },
       {
         heading: 'Typical moves',
         body: [
-          'Database bottleneck repair (MySQL/MSSQL), IIS/Nginx and OS hygiene, security patching, and hybrid architectures that keep established backends while shipping Next.js for speed.',
-          'When appropriate, Payload or WordPress remains the content engine; the public site becomes a fast, maintainable edge front end.',
+          'Database bottleneck repair (MySQL/MSSQL), IIS/Nginx and OS hygiene, security patching, and hybrids that keep the old backend while shipping Next.js for the public site.',
+          'Sometimes Payload or WordPress stays the content engine; the public site becomes a thinner, faster front end.',
         ],
       },
     ],
@@ -236,28 +236,28 @@ export const WORK_REPO_HIGHLIGHTS: WorkRepoHighlight[] = [
   {
     name: 'wallhaven-plasma-6-plugin',
     blurb:
-      'KDE Plasma 6 wallpaper plugin for wallhaven.cc — search, slideshow, multi-monitor control, KRunner, and D-Bus.',
+      'KDE Plasma 6 wallpaper plugin for wallhaven.cc. Search, slideshow, multi-monitor, KRunner, D-Bus.',
     href: 'https://github.com/doodersrage/wallhaven-plasma-6-plugin',
   },
   {
     name: 'concrete-cms-rts-cinemasource-blocks',
-    blurb: 'Concrete CMS blocks bridging RTS POS and the CinemaSource API for theater listings and showtimes.',
+    blurb: 'Concrete CMS blocks for RTS POS and the CinemaSource API (listings and showtimes).',
     href: 'https://github.com/doodersrage/concrete-cms-rts-cinemasource-blocks',
   },
   {
     name: 'community_store_affirm',
-    blurb: 'Affirm payment method for Concrete5 Community Store — installment checkout for ecommerce.',
+    blurb: 'Affirm payment method for Concrete5 Community Store.',
     href: 'https://github.com/doodersrage/community_store_affirm',
   },
   {
     name: 'next-js-cinemasource',
-    blurb: 'TypeScript / Next.js module for CinemaSource API integration.',
+    blurb: 'TypeScript / Next.js module for the CinemaSource API.',
     href: 'https://github.com/doodersrage/next-js-cinemasource',
   },
   {
     name: 'CheapLocalDeals.com',
     blurb:
-      'Legacy PHP gift-certificate ecommerce (geo deals, merchant portal, memcached) — retired, still relevant past work.',
+      'Old PHP gift-certificate ecommerce (geo deals, merchant portal, memcached). Retired; still relevant past work.',
     href: 'https://github.com/doodersrage/CheapLocalDeals.com',
     note: 'Legacy',
   },

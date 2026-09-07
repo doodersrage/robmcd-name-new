@@ -10,6 +10,9 @@ interface Props {
   ogType?: 'website' | 'article'
   eyebrow?: string
   heading?: string
+  portraitSrc?: string
+  portraitAlt?: string
+  ogImage?: string
 }
 
 const {
@@ -21,6 +24,9 @@ const {
   ogType = 'website',
   eyebrow,
   heading = title,
+  portraitSrc,
+  portraitAlt = '',
+  ogImage,
 } = Astro.props
 ---
 
@@ -31,11 +37,33 @@ const {
   robots={robots}
   jsonLd={jsonLd}
   ogType={ogType}
+  ogImage={ogImage}
 >
   <article class="mx-auto w-full max-w-5xl space-y-8">
-    <header class="space-y-3">
-      {eyebrow ? <p class="eyebrow">{eyebrow}</p> : null}
-      <h1 class="page-title">{heading}</h1>
+    <header
+      class:list={[
+        'space-y-3',
+        portraitSrc && 'flex flex-col gap-6 sm:flex-row sm:items-end sm:gap-8',
+      ]}
+    >
+      {
+        portraitSrc ? (
+          <img
+            src={portraitSrc}
+            alt={portraitAlt}
+            width="400"
+            height="400"
+            class="h-36 w-36 shrink-0 rounded-sm border object-cover sm:h-44 sm:w-44"
+            style="border-color: var(--line)"
+            loading="eager"
+            decoding="async"
+          />
+        ) : null
+      }
+      <div class="min-w-0 space-y-3">
+        {eyebrow ? <p class="eyebrow">{eyebrow}</p> : null}
+        <h1 class="page-title">{heading}</h1>
+      </div>
     </header>
     <div class="prose-site">
       <slot />

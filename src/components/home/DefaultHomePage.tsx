@@ -6,19 +6,24 @@ import { SITE_LINKS } from '@/lib/site'
 
 const CAPABILITIES = [
   {
-    title: 'Legacy repair & stack modernization',
+    title: 'Legacy repair & modernization',
     description:
-      'Audit, stabilize, and refactor fragile C#/.NET or PHP stacks — or migrate them to modern headless architectures when the business is ready.',
+      'Fix fragile C#/.NET or PHP apps that are still in production. Migrate to a newer front end when it actually helps.',
   },
   {
     title: 'Servers & databases',
     description:
-      'Ongoing maintenance, OS upgrades, cloud moves, and MySQL/MSSQL administration so environments stay fast, secure, and available.',
+      'Linux and Windows upkeep, upgrades, cloud moves, and MySQL/MSSQL work so things stay up and stay fast enough.',
+  },
+  {
+    title: 'SEO & AEO',
+    description:
+      'Technical SEO and answer-engine-friendly structure. Google Analytics certified; I’ve worked with SEO companies on real CMS and custom sites.',
   },
   {
     title: 'Technical advisory',
     description:
-      'Debt, patching, and query performance across Linux and Windows — built for longevity, not hype cycles.',
+      'Second opinions on debt, patching, and query performance. Less theater, more “what fails first.”',
   },
 ]
 
@@ -35,7 +40,7 @@ const SHIPPED = [
     title: 'ThermalTrace',
     tagline: 'Freeze and flood alerts for instrumented spaces',
     description:
-      'Open-source monitoring for garages and workshops — ESP32/Pico ingest, time-to-freeze, household alerts, and companion apps.',
+      'Open monitoring for garages and workshops. ESP32/Pico ingest, time-to-freeze, household alerts, companion apps.',
     href: SITE_LINKS.thermalTracePage,
     linkLabel: 'About ThermalTrace',
   },
@@ -45,45 +50,41 @@ export function DefaultHomePage() {
   return (
     <>
       <Hero
-        title="Resilient infrastructure. Modern codebases."
-        description="Twenty years of Linux and Windows engineering — repairing live stacks, running servers, and shipping tools you can open today."
+        title="Linux, Windows, and the stacks that refuse to die."
+        description="About twenty years of full-stack work: repair what’s live, run the servers, and ship tools you can actually open."
         primaryCta={{ label: 'See the work', href: SITE_LINKS.work }}
-        secondaryCta={{ label: 'Get in touch', href: SITE_LINKS.contact }}
+        secondaryCta={{ label: 'Contact', href: SITE_LINKS.contact }}
       />
 
       <BentoGrid
         eyebrow="Practice"
         title="What I do"
-        description="From servers and databases to modern web apps and sensor dashboards."
+        description="Servers, databases, old CMS estates, SEO/AEO on the technical side, and the occasional sensor dashboard."
         items={CAPABILITIES}
       />
 
       <ProjectShowcase
         eyebrow="Shipped"
         title="Open source"
-        description="Docs for Prompt Studio live here. ThermalTrace runs at thermaltrace.dev."
+        description="Prompt Studio docs live on this site. ThermalTrace runs at thermaltrace.dev."
         projects={SHIPPED}
       />
 
       <section className="space-y-6 border-t pt-10 md:pt-14" style={{ borderColor: 'var(--line)' }}>
-        <p className="eyebrow">Approach</p>
-        <blockquote className="max-w-2xl text-2xl font-semibold tracking-tight md:text-3xl">
-          Stability and maintainability outweigh hype.
-        </blockquote>
+        <p className="eyebrow">Next</p>
         <p className="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
-          Software isn&apos;t just new code — it&apos;s respecting systems already in production. Need a
-          stack repaired, a server that stays up, or something like{' '}
+          If you have a stack that needs attention, a server that should stay quiet, or a question about{' '}
           <a href={SITE_LINKS.thermalTracePage} className="text-link underline">
             ThermalTrace
-          </a>
-          ? Start a conversation.
+          </a>{' '}
+          or Prompt Studio, use the contact form.
         </p>
         <div className="flex flex-wrap items-center gap-3 pt-2">
           <a href={SITE_LINKS.contact} className="btn btn-primary">
-            Start a conversation
+            Contact
           </a>
           <a href={SITE_LINKS.work} className="btn btn-secondary">
-            View case studies
+            Case studies
           </a>
         </div>
       </section>

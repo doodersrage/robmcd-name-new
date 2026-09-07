@@ -9,32 +9,37 @@ const faqs = [
   {
     question: 'What kind of work do you take on?',
     answer:
-      'Legacy repair and stack modernization, Linux/Windows server maintenance, MySQL/MSSQL administration, and technical audits — plus product work like Prompt Studio and ThermalTrace when those patterns apply.',
+      'Legacy repair and modernization, Linux/Windows server maintenance, MySQL/MSSQL administration, technical audits, SEO and AEO from the engineering side (Google Analytics certified; experience working with SEO companies), and product work like Prompt Studio or ThermalTrace when that fits.',
+  },
+  {
+    question: 'Do you do SEO as a standalone service?',
+    answer:
+      'Not as a pure SEO agency. I implement and advise on structure, performance, analytics, schema, and content that search and answer engines can use, including alongside an SEO partner.',
   },
   {
     question: 'Do you only do greenfield builds?',
     answer:
-      'No. Most useful engagements start with what’s already running: stabilize, measure, then modernize in slices. Greenfield happens when the old stack truly can’t carry the next year.',
+      'No. Most useful work starts with what’s already running. Greenfield only when the old stack really can’t carry another year.',
   },
   {
     question: 'What is LLM Prompt Studio?',
     answer:
-      'An MIT-licensed Next.js studio for ComfyUI and cloud stills/clips: prompt tools, Play campaigns, workflow takeover, and desktop/Docker installs. Docs live at robmcd.name/llm-prompt-studio.',
+      'An MIT-licensed Next.js studio for ComfyUI and cloud stills/clips. Docs live at robmcd.name/llm-prompt-studio.',
   },
   {
     question: 'What is ThermalTrace?',
     answer:
-      'Open-source garage and workshop monitoring for freeze and flood risk — ESP32/Pico ingest, household alerts, and companion apps. Product at thermaltrace.dev; write-up at robmcd.name/work/thermaltrace.',
+      'Garage and workshop freeze/flood monitoring with ESP32/Pico ingest, alerts, and companion apps. Product at thermaltrace.dev; write-up at robmcd.name/work/thermaltrace.',
   },
   {
     question: 'Where should I start?',
     answer:
-      'Send a short note via the contact form at robmcd.name/contact: stack, constraints, timeline, and what done looks like. That form is the only contact path on this site. Replies usually within a couple of days.',
+      'Use the contact form at robmcd.name/contact. Include stack, constraints, timeline, and what done looks like. Replies usually within a couple of days.',
   },
 ]
 
 const description =
-  'Robert McDowell — full-stack engineer since 2006. Legacy modernization, Linux and Windows servers, databases, LLM Prompt Studio, and ThermalTrace.'
+  'Robert McDowell, full-stack engineer since 2006. Legacy modernization, servers and databases, SEO/AEO, LLM Prompt Studio, and ThermalTrace.'
 ---
 
 <ProseLayout
@@ -43,6 +48,9 @@ const description =
   eyebrow="About"
   description={description}
   path="/about"
+  portraitSrc="/about/robert-mcdowell.jpg"
+  portraitAlt="Robert McDowell"
+  ogImage="/about/robert-mcdowell.jpg"
   jsonLd={aboutPageSchema(faqs)}
 >
   <Content />

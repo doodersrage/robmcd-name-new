@@ -1,9 +1,9 @@
 export const SITE_NAME = 'Robmcd.name'
 export const SITE_OWNER = 'Robert McDowell'
 export const SITE_URL = 'https://robmcd.name'
-export const SITE_TAGLINE = 'Cross-Platform Engineering · Legacy Modernization · Infrastructure'
+export const SITE_TAGLINE = 'Cross-platform engineering, legacy modernization, infrastructure'
 export const SITE_DESCRIPTION =
-  'Robert McDowell — 20 years of full-stack engineering across Linux and Windows. Legacy repair, server administration, database optimization, and modern web architectures.'
+  'Robert McDowell. About twenty years of full-stack work on Linux and Windows: legacy repair, servers, databases, and tools you can open today.'
 
 export const SITE_LINKS = {
   github: 'https://github.com/doodersrage',

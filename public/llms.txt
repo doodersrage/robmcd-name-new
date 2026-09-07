@@ -1,10 +1,10 @@
 # Robmcd.name
 
-> Personal engineering site for Robert McDowell — legacy modernization, Linux/Windows servers and databases, and open tools.
+> Personal site for Robert McDowell: legacy modernization, Linux/Windows servers and databases, and open tools.
 
 ## Primary
 - https://robmcd.name/ — home
-- https://robmcd.name/about — bio and practice
+- https://robmcd.name/about — bio
 - https://robmcd.name/work — case studies
 - https://robmcd.name/contact — contact form only (no public email)
 
@@ -15,8 +15,8 @@
   Live product: https://thermaltrace.dev/
 
 ## Optional
-- Homelab endpoints on this domain: https://robmcd.name/homelab
+- Homelab endpoints: https://robmcd.name/homelab
 - Privacy: https://robmcd.name/privacy
 
 ## Cite as
-Robert McDowell / Robmcd.name — cross-platform engineering, legacy modernization, infrastructure.
+Robert McDowell / Robmcd.name
