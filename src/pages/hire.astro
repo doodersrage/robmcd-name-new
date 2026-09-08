@@ -1,0 +1,100 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { SITE_LINKS } from '@/lib/site'
+import { breadcrumbSchema, personSchema } from '@/lib/seo'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    personSchema(),
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Hire', path: '/hire' },
+    ]),
+    {
+      '@type': 'WebPage',
+      name: 'Hire Robert McDowell',
+      url: 'https://robmcd.name/hire',
+      description:
+        'Engagement shapes for legacy modernization, servers and databases, and technical advisory.',
+    },
+  ],
+}
+
+const shapes = [
+  {
+    title: 'Legacy stack rescue',
+    body: 'Fragile C#/.NET or PHP still in production. Stabilize first, modernize the surface when it pays off.',
+  },
+  {
+    title: 'Servers & databases',
+    body: 'Linux/Windows upkeep, upgrades, cloud moves, MySQL/MSSQL tuning so things stay up and stay fast enough.',
+  },
+  {
+    title: 'Technical advisory',
+    body: 'Second opinions on debt, patching, and query performance. Less theater, more “what fails first.”',
+  },
+]
+
+const notDoing = [
+  'Greenfield product design without an engineering stake',
+  'Open-ended retainers with no failure mode',
+  'SEO content mills — technical SEO/AEO only',
+]
+---
+
+<BaseLayout
+  title="Hire"
+  description="How to engage Robert McDowell — rescue, servers/databases, advisory. What I take, what I don’t, and how a first call works."
+  canonical="/hire"
+  jsonLd={jsonLd}
+>
+  <div class="space-y-12">
+    <header class="space-y-3">
+      <p class="eyebrow">Engagement</p>
+      <h1 class="page-title">Hire</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        About twenty years of full-stack work across Linux and Windows. If something is live and fragile, start there.
+      </p>
+    </header>
+
+    <section class="space-y-6">
+      <h2 class="text-xl font-semibold text-[var(--ink)]">Shapes that fit</h2>
+      <ol class="divide-y border-t" style="border-color: var(--line)">
+        {
+          shapes.map((item, i) => (
+            <li class="grid gap-2 py-5 sm:grid-cols-[2rem_1fr] sm:gap-4">
+              <span class="font-mono text-sm text-[var(--muted)]">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <h3 class="font-medium text-[var(--ink)]">{item.title}</h3>
+                <p class="mt-1 max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{item.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold text-[var(--ink)]">What I don’t take</h2>
+      <ul class="max-w-2xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
+        {notDoing.map((line) => <li>{line}</li>)}
+      </ul>
+    </section>
+
+    <section class="space-y-4 border-t pt-10" style="border-color: var(--line)">
+      <h2 class="text-xl font-semibold text-[var(--ink)]">First call</h2>
+      <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+        Send a short brief: stack, what fails first, urgency, and environment. I usually reply within a couple of days.
+        Paid work starts with a scoped first pass — not an open-ended “discovery workshop.”
+      </p>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <a href={SITE_LINKS.contact} class="btn btn-primary">Contact form</a>
+        <a href={SITE_LINKS.toolsTriage} class="btn btn-secondary">Legacy triage brief</a>
+        <a href={SITE_LINKS.work} class="btn btn-secondary">Case studies</a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

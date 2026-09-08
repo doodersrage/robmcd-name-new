@@ -1,0 +1,55 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { SITE_LINKS, SITE_OWNER, SITE_TAGLINE, SITE_URL } from '@/lib/site'
+---
+
+<BaseLayout
+  title="Colophon"
+  description="How robmcd.name is built — Astro 7, Cloudflare Workers, IBM Plex, workshop tokens."
+  canonical="/colophon"
+>
+  <div class="space-y-10">
+    <header class="space-y-3">
+      <p class="eyebrow">Build</p>
+      <h1 class="page-title">Colophon</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        {SITE_OWNER} · {SITE_TAGLINE}
+      </p>
+    </header>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">Stack</h2>
+      <ul class="max-w-2xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
+        <li>Astro 7 (server output) on Cloudflare Workers via <code class="font-mono text-xs">@astrojs/cloudflare</code></li>
+        <li>React islands for forms, tools, theme toggle, and docs chrome</li>
+        <li>Tailwind CSS v4 + IBM Plex Sans / Mono</li>
+        <li>MDX for prose; TypeScript modules for case studies and Prompt Studio docs</li>
+        <li>Contact / triage mail via SMTP; Turnstile on public forms</li>
+      </ul>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">Visual system</h2>
+      <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+        Workshop / systems shop — not generic SaaS. Tokens in <code class="font-mono text-xs">src/styles/globals.css</code>:
+        <code class="font-mono text-xs">--canvas --ink --muted --accent --line --paper</code>. Radius capped. Brand in mono.
+      </p>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">Deploy</h2>
+      <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+        <code class="font-mono text-xs">npm run deploy</code> → <code class="font-mono text-xs">astro build && wrangler deploy</code>.
+        Site: <a href={SITE_URL} class="text-link">{SITE_URL}</a>. Source patterns live in this repo; products also ship from
+        separate GitHub orgs/repos linked under Work.
+      </p>
+    </section>
+
+    <p class="text-sm text-[var(--muted)]">
+      Also: <a href={SITE_LINKS.now} class="text-link">Now</a>, <a href={SITE_LINKS.press} class="text-link">Press kit</a>,{' '}
+      <a href={SITE_LINKS.privacy} class="text-link">Privacy</a>.
+    </p>
+  </div>
+</BaseLayout>

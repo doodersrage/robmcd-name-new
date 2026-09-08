@@ -1,0 +1,81 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { SITE_DESCRIPTION, SITE_LINKS, SITE_OWNER, SITE_TAGLINE, SITE_URL } from '@/lib/site'
+import { SITE_LINKEDIN } from '@/lib/seo'
+---
+
+<BaseLayout
+  title="Press kit"
+  description="One-pager for Robert McDowell / robmcd.name — bio, products, contact. Print or Save as PDF."
+  canonical="/press"
+>
+  <div class="space-y-10 print:space-y-6">
+    <header class="flex flex-wrap items-end justify-between gap-4 space-y-3 print:block">
+      <div class="space-y-3">
+        <p class="eyebrow">Press / one-pager</p>
+        <h1 class="page-title">{SITE_OWNER}</h1>
+        <p class="max-w-2xl font-mono text-sm text-[var(--muted)]">{SITE_TAGLINE}</p>
+      </div>
+      <button type="button" class="btn btn-secondary print:hidden" onclick="window.print()">Print / PDF</button>
+    </header>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Bio</h2>
+      <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{SITE_DESCRIPTION}</p>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Products</h2>
+      <ul class="max-w-2xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
+        <li>
+          <strong class="text-[var(--ink)]">LLM Prompt Studio</strong> — ComfyUI + cloud stills/clips tooling; docs at{' '}
+          {SITE_URL}{SITE_LINKS.promptStudio}
+        </li>
+        <li>
+          <strong class="text-[var(--ink)]">ThermalTrace</strong> — freeze/flood monitoring; product at thermaltrace.dev;
+          write-up at {SITE_URL}{SITE_LINKS.thermalTracePage}
+        </li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Site</h2>
+      <ul class="max-w-2xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
+        <li>{SITE_URL}</li>
+        <li>Hire: {SITE_URL}{SITE_LINKS.hire}</li>
+        <li>Contact: {SITE_URL}{SITE_LINKS.contact} · admin@robmcd.name</li>
+        <li>GitHub: {SITE_LINKS.github}</li>
+        <li>LinkedIn: {SITE_LINKEDIN}</li>
+      </ul>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="text-lg font-semibold">Boilerplate</h2>
+      <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+        Robert McDowell is a full-stack engineer focused on legacy modernization, Linux and Windows infrastructure, and
+        open tools including LLM Prompt Studio and ThermalTrace. His engineering site is robmcd.name.
+      </p>
+    </section>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  @media print {
+    .site-header,
+    .site-footer,
+    .site-bg,
+    .skip-link {
+      display: none !important;
+    }
+    .site-main {
+      max-width: none !important;
+      padding: 0 !important;
+    }
+    body {
+      background: white !important;
+      color: black !important;
+    }
+  }
+</style>

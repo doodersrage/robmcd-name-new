@@ -10,7 +10,7 @@ const hits = searchLocalContent(query)
 
 <BaseLayout
   title={query ? `Search results for ${query}` : 'Search'}
-  description="Search Prompt Studio docs, case studies, and ThermalTrace topics on robmcd.name."
+  description="Search pages, notes, case studies, Prompt Studio docs, tools, and ThermalTrace topics on robmcd.name."
   canonical="/search"
   robots="noindex, follow"
 >
@@ -42,7 +42,9 @@ const hits = searchLocalContent(query)
           </ul>
         )
       ) : (
-        <p class="text-[var(--muted)]">Search Prompt Studio docs, case studies, and ThermalTrace keywords.</p>
+        <p class="text-[var(--muted)]">
+          Search notes, hire/tools pages, case studies, Prompt Studio docs, and ThermalTrace keywords.
+        </p>
       )
     }
   </div>

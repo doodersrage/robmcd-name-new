@@ -1,0 +1,16 @@
+---
+title: Sensor ingest — first POST should be enough
+description: ThermalTrace design note — auto-import on first contact, pull feeds as fallback.
+---
+
+Field hardware fails when onboarding is a ceremony. For garage and workshop sensors, the happy path should be:
+
+1. Flash a sketch (or drop in a known firmware profile).
+2. Point it at an ingest URL.
+3. POST JSON once — the dashboard creates the device from that first contact.
+
+Pull feeds (HTTPS endpoints the edge scrapes on a schedule) are the fallback when a site cannot push. Both paths should share one normalized reading shape so alerts, history, and companion apps do not fork.
+
+**What to put in the payload:** device identity, timestamp, temperature (and units), optional leak / door / humidity channels, and a firmware or sketch revision. Keep auth on the ingest URL or a device token — not in a shared global secret baked into every binary.
+
+The longer write-up and companion links live on the [ThermalTrace case study](/work/thermaltrace). The open ingest sketch for this site is on the [protocol kit](/work/thermaltrace/protocol).

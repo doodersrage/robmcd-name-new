@@ -53,7 +53,7 @@ export function DefaultHomePage() {
         title="Linux, Windows, and the stacks that refuse to die."
         description="About twenty years of full-stack work: repair what’s live, run the servers, and ship tools you can actually open."
         primaryCta={{ label: 'See the work', href: SITE_LINKS.work }}
-        secondaryCta={{ label: 'Contact', href: SITE_LINKS.contact }}
+        secondaryCta={{ label: 'Hire', href: SITE_LINKS.hire }}
       />
 
       <BentoGrid
@@ -73,18 +73,25 @@ export function DefaultHomePage() {
       <section className="space-y-6 border-t pt-10 md:pt-14" style={{ borderColor: 'var(--line)' }}>
         <p className="eyebrow">Next</p>
         <p className="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
-          If you have a stack that needs attention, a server that should stay quiet, or a question about{' '}
-          <a href={SITE_LINKS.thermalTracePage} className="text-link underline">
-            ThermalTrace
+          If you have a stack that needs attention, start with{' '}
+          <a href={SITE_LINKS.hire} className="text-link underline">
+            Hire
           </a>{' '}
-          or Prompt Studio, use the contact form.
+          or the{' '}
+          <a href={SITE_LINKS.toolsTriage} className="text-link underline">
+            legacy triage
+          </a>{' '}
+          brief. Shop tools and field notes live on this domain too.
         </p>
         <div className="flex flex-wrap items-center gap-3 pt-2">
-          <a href={SITE_LINKS.contact} className="btn btn-primary">
-            Contact
+          <a href={SITE_LINKS.hire} className="btn btn-primary">
+            Hire
           </a>
-          <a href={SITE_LINKS.work} className="btn btn-secondary">
-            Case studies
+          <a href={SITE_LINKS.tools} className="btn btn-secondary">
+            Tools
+          </a>
+          <a href={SITE_LINKS.notes} className="btn btn-secondary">
+            Notes
           </a>
         </div>
       </section>

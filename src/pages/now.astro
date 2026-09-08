@@ -1,0 +1,57 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { NOW } from '@/content/now'
+import { breadcrumbSchema } from '@/lib/seo'
+---
+
+<BaseLayout
+  title="Now"
+  description={`What Robert McDowell is building as of ${NOW.updated} — robmcd.name, ThermalTrace, Prompt Studio.`}
+  canonical="/now"
+  jsonLd={{
+    '@context': 'https://schema.org',
+    ...breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Now', path: '/now' },
+    ]),
+  }}
+>
+  <div class="space-y-10">
+    <header class="space-y-3">
+      <p class="eyebrow">Now · {NOW.updated}</p>
+      <h1 class="page-title">Now</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">{NOW.headline}</p>
+    </header>
+
+    <ol class="divide-y border-t" style="border-color: var(--line)">
+      {
+        NOW.items.map((item, i) => (
+          <li class="grid gap-2 py-6 sm:grid-cols-[2rem_1fr] sm:gap-4">
+            <span class="font-mono text-sm text-[var(--muted)]">{String(i + 1).padStart(2, '0')}</span>
+            <div class="space-y-2">
+              <h2 class="font-medium text-[var(--ink)]">
+                {item.href ? (
+                  <a href={item.href} class="text-link">
+                    {item.label}
+                  </a>
+                ) : (
+                  item.label
+                )}
+              </h2>
+              <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{item.detail}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <section class="space-y-3">
+      <h2 class="text-xl font-semibold">Not doing</h2>
+      <ul class="max-w-2xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
+        {NOW.notDoing.map((line) => <li>{line}</li>)}
+      </ul>
+    </section>
+  </div>
+</BaseLayout>

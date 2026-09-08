@@ -21,8 +21,28 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/about" className="text-link text-sm">
+                <a href={SITE_LINKS.about} className="text-link text-sm">
                   About
+                </a>
+              </li>
+              <li>
+                <a href={SITE_LINKS.hire} className="text-link text-sm">
+                  Hire
+                </a>
+              </li>
+              <li>
+                <a href={SITE_LINKS.work} className="text-link text-sm">
+                  Work
+                </a>
+              </li>
+              <li>
+                <a href={SITE_LINKS.tools} className="text-link text-sm">
+                  Tools
+                </a>
+              </li>
+              <li>
+                <a href={SITE_LINKS.notes} className="text-link text-sm">
+                  Notes
                 </a>
               </li>
               <li>
@@ -35,30 +55,45 @@ export function Footer() {
                   ThermalTrace
                 </a>
               </li>
-              <li>
-                <a href={SITE_LINKS.work} className="text-link text-sm">
-                  Work
-                </a>
-              </li>
+            </ul>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <h4 className="eyebrow">Shop</h4>
+            <ul className="space-y-3">
               <li>
                 <a href={SITE_LINKS.homelab} className="text-link text-sm">
                   Homelab
                 </a>
               </li>
-            </ul>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <h4 className="eyebrow">Legal</h4>
-            <ul className="space-y-3">
               <li>
-                <a href="/privacy" className="text-link text-sm">
-                  Privacy Policy
+                <a href={SITE_LINKS.status} className="text-link text-sm">
+                  Status
                 </a>
               </li>
               <li>
-                <a href="/contact" className="text-link text-sm">
+                <a href={SITE_LINKS.now} className="text-link text-sm">
+                  Now
+                </a>
+              </li>
+              <li>
+                <a href={SITE_LINKS.colophon} className="text-link text-sm">
+                  Colophon
+                </a>
+              </li>
+              <li>
+                <a href={SITE_LINKS.press} className="text-link text-sm">
+                  Press kit
+                </a>
+              </li>
+              <li>
+                <a href={SITE_LINKS.contact} className="text-link text-sm">
                   Contact
+                </a>
+              </li>
+              <li>
+                <a href={SITE_LINKS.privacy} className="text-link text-sm">
+                  Privacy
                 </a>
               </li>
             </ul>

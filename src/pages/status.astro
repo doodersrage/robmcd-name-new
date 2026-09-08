@@ -1,0 +1,37 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { StatusBoard } from '@/components/tools/StatusBoard'
+import { SITE_LINKS } from '@/lib/site'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Status', path: '/status' },
+    ]),
+  ],
+}
+---
+
+<BaseLayout
+  title="Status"
+  description="Public reachability board for homelab endpoints on robmcd.name — probed from the edge."
+  canonical="/status"
+  jsonLd={jsonLd}
+>
+  <div class="space-y-8">
+    <header class="space-y-3">
+      <p class="eyebrow">Systems</p>
+      <h1 class="page-title">Status</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        Homelab endpoints on this domain. Links and context on{' '}
+        <a href={SITE_LINKS.homelab} class="text-link">Homelab</a>.
+      </p>
+    </header>
+    <StatusBoard client:load />
+  </div>
+</BaseLayout>

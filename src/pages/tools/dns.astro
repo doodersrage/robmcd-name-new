@@ -1,0 +1,23 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { DnsTlsChecker } from '@/components/tools/DnsTlsChecker'
+---
+
+<BaseLayout
+  title="DNS / HTTPS check"
+  description="Look up A/AAAA/MX/TXT and probe HTTPS reachability from robmcd.name’s edge Worker."
+  canonical="/tools/dns"
+>
+  <div class="space-y-8">
+    <header class="space-y-3">
+      <p class="eyebrow">Tools</p>
+      <h1 class="page-title">DNS / HTTPS check</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        Quick shop check for a hostname — not a replacement for dig + openssl s_client when you need depth.
+      </p>
+    </header>
+    <DnsTlsChecker client:load />
+  </div>
+</BaseLayout>

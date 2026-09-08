@@ -1,0 +1,58 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { NOTES } from '@/content/notes'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Notes', path: '/notes' },
+    ]),
+    {
+      '@type': 'CollectionPage',
+      name: 'Field notes',
+      url: 'https://robmcd.name/notes',
+      description: 'Short engineering notes from the shop — Workers, Astro, sensors.',
+    },
+  ],
+}
+---
+
+<BaseLayout
+  title="Notes"
+  description="Field journal: short engineering notes on Cloudflare Workers, Astro, and sensor ingest — not a marketing blog."
+  canonical="/notes"
+  jsonLd={jsonLd}
+>
+  <div class="space-y-10">
+    <header class="space-y-3">
+      <p class="eyebrow">Field journal</p>
+      <h1 class="page-title">Notes</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        Short shop write-ups. Not a cadence blog — entries when something was worth leaving on the bench.
+      </p>
+    </header>
+
+    <ol class="divide-y border-t" style="border-color: var(--line)" start="1">
+      {
+        NOTES.map((note, i) => (
+          <li class="grid gap-2 py-6 sm:grid-cols-[2rem_1fr] sm:gap-4">
+            <span class="font-mono text-sm text-[var(--muted)]">{String(i + 1).padStart(2, '0')}</span>
+            <div class="min-w-0 space-y-2">
+              <p class="font-mono text-xs text-[var(--muted)]">{note.date}</p>
+              <a href={`/notes/${note.slug}`} class="text-link text-lg font-semibold">
+                {note.title}
+              </a>
+              <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{note.description}</p>
+              <p class="font-mono text-xs text-[var(--muted)]">{note.tags.join(' · ')}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</BaseLayout>

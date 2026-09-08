@@ -1,0 +1,14 @@
+---
+title: Workers, SMTP, and why the form felt simple until it wasn’t
+description: Contact forms on Cloudflare Workers — Turnstile, nodemailer, and production env seams.
+---
+
+A contact form on a static-feeling site still needs three boring pieces: a bot check, a mail path, and secrets that exist in every place the Worker runs.
+
+**Turnstile first.** Verify the token server-side against Cloudflare’s siteverify endpoint before you touch SMTP. Fail closed. Reset the widget on error so people aren’t stuck with a spent token.
+
+**Mail second.** On Workers you are not running a local MTA. Use SMTP over TLS (or an HTTP mail API) with credentials from the Worker environment — not from a committed `.env` that only works on your laptop. Match `secure` to the port; 465 and 587 behave differently.
+
+**Env seams.** Local `astro dev`, `wrangler deploy`, and dashboard secrets are three surfaces. If the form “works at home” and 500s in production, check `TURNSTILE_SECRET_KEY`, `EMAIL_*`, and `CONTACT_TO` on the deployed Worker before you rewrite the React form.
+
+The shop rule: the form UI can be quiet; the failure modes should be loud in logs and honest in the UI.

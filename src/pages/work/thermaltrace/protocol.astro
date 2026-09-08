@@ -1,0 +1,88 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { SITE_LINKS } from '@/lib/site'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const example = `{
+  "device_id": "garage-north-01",
+  "ts": "2026-09-07T16:02:11.000Z",
+  "firmware": "esp32-dht22-1.4.0",
+  "temperature_c": 3.2,
+  "humidity_pct": 41,
+  "leak": false,
+  "door_open": false
+}`
+---
+
+<BaseLayout
+  title="ThermalTrace ingest protocol"
+  description="Open ingest sketch for ThermalTrace-style sensors — first POST auto-import, normalized reading shape, push and pull."
+  canonical={SITE_LINKS.thermalTraceProtocol}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    ...breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Work', path: '/work' },
+      { name: 'ThermalTrace', path: SITE_LINKS.thermalTracePage },
+      { name: 'Ingest protocol', path: SITE_LINKS.thermalTraceProtocol },
+    ]),
+  }}
+>
+  <article class="space-y-10">
+    <header class="space-y-3">
+      <p class="eyebrow">ThermalTrace · kit</p>
+      <h1 class="page-title">Ingest protocol</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        Engineering home for the reading shape. The live product, dashboard, and billing live at{' '}
+        <a href={SITE_LINKS.thermalTrace} class="text-link" target="_blank" rel="noopener noreferrer">thermaltrace.dev</a>.
+        Case study: <a href={SITE_LINKS.thermalTracePage} class="text-link">ThermalTrace</a>.
+      </p>
+    </header>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">Goals</h2>
+      <ol class="list-decimal space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
+        <li>First successful POST creates or binds the device (auto-import).</li>
+        <li>Push ingest and scheduled HTTPS pull feeds share one normalized reading.</li>
+        <li>Auth is per-device (URL token or header), not a global firmware secret.</li>
+      </ol>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">Minimal reading</h2>
+      <pre class="overflow-x-auto rounded-sm border bg-[var(--paper)] p-4 font-mono text-xs leading-relaxed" style="border-color: var(--line)">{example}</pre>
+      <ul class="max-w-2xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
+        <li><code class="font-mono text-xs">device_id</code> — stable id you control.</li>
+        <li><code class="font-mono text-xs">ts</code> — ISO-8601 UTC when the sample was taken.</li>
+        <li><code class="font-mono text-xs">temperature_c</code> — preferred; convert at the edge if the probe is °F.</li>
+        <li>Optional channels: humidity, leak, door, battery, rssi, firmware.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">Transport</h2>
+      <div class="prose-site max-w-2xl">
+        <p>
+          <strong>Push:</strong> <code>POST</code> JSON to a per-device ingest URL over HTTPS. Expect <code>2xx</code> on
+          accept; treat retries as idempotent on <code>(device_id, ts)</code> when possible.
+        </p>
+        <p>
+          <strong>Pull:</strong> expose an HTTPS feed the edge can fetch on a schedule. Same JSON object or a small array of
+          readings. Prefer fresh samples; stale feeds should not reset alerts falsely.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-4 border-t pt-8" style="border-color: var(--line)">
+      <h2 class="text-xl font-semibold">Related</h2>
+      <div class="flex flex-wrap gap-3">
+        <a href={SITE_LINKS.thermalTracePage} class="btn btn-secondary">Case study</a>
+        <a href={SITE_LINKS.thermalTraceDemo} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Live demo</a>
+        <a href={SITE_LINKS.thermalTraceGithub} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="/notes/sensor-ingest-first-contact" class="btn btn-secondary">Field note</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

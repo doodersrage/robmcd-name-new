@@ -6,7 +6,10 @@ export const prerender = false
 type Body = {
   name?: string
   email?: string
-  message?: string
+  stack?: string
+  pain?: string
+  urgency?: string
+  environment?: string
   turnstileToken?: string
 }
 
@@ -20,11 +23,16 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 
   const name = body.name?.trim() ?? ''
   const email = body.email?.trim() ?? ''
-  const message = body.message?.trim() ?? ''
+  const stack = body.stack?.trim() ?? ''
+  const pain = body.pain?.trim() ?? ''
+  const urgency = body.urgency?.trim() ?? ''
+  const environment = body.environment?.trim() ?? ''
   const turnstileToken = body.turnstileToken?.trim() ?? ''
 
-  if (!name || !email) {
-    return new Response(JSON.stringify({ error: 'Name and email are required.' }), { status: 400 })
+  if (!name || !email || !stack || !pain) {
+    return new Response(JSON.stringify({ error: 'Name, email, stack, and pain are required.' }), {
+      status: 400,
+    })
   }
 
   const ok = await verifyTurnstile(turnstileToken, clientAddress)
@@ -33,9 +41,20 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
   }
 
   const mailed = await sendOperatorMail({
-    subject: `Contact form: ${name}`,
+    subject: `Legacy triage: ${name}`,
     replyTo: email,
-    text: [`Name: ${name}`, `Email: ${email}`, '', message || '(no message)'].join('\n'),
+    text: [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Urgency: ${urgency || '(not set)'}`,
+      `Environment: ${environment || '(not set)'}`,
+      '',
+      'Stack:',
+      stack,
+      '',
+      'Pain / failure mode:',
+      pain,
+    ].join('\n'),
   })
 
   if (!mailed.ok) {

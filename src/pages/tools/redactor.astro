@@ -1,0 +1,23 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { JsonRedactor } from '@/components/tools/JsonRedactor'
+---
+
+<BaseLayout
+  title="Log / JSON redactor"
+  description="Browser-only redactor for emails, JWTs, Bearer tokens, and common secret shapes."
+  canonical="/tools/redactor"
+>
+  <div class="space-y-8">
+    <header class="space-y-3">
+      <p class="eyebrow">Tools</p>
+      <h1 class="page-title">Log / JSON redactor</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        Paste a log or payload, copy a safer version. Nothing leaves the browser.
+      </p>
+    </header>
+    <JsonRedactor client:load />
+  </div>
+</BaseLayout>

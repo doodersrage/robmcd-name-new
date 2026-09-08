@@ -1,0 +1,68 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { SITE_LINKS } from '@/lib/site'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const tools = [
+  {
+    title: 'Log / JSON redactor',
+    href: SITE_LINKS.toolsRedactor,
+    body: 'Strip emails, JWTs, Bearer tokens, and common secret shapes before you paste a log into chat.',
+  },
+  {
+    title: 'DNS / HTTPS check',
+    href: SITE_LINKS.toolsDns,
+    body: 'A/AAAA/MX/TXT via Cloudflare DoH, plus an HTTPS reachability probe from this Worker.',
+  },
+  {
+    title: 'Legacy triage brief',
+    href: SITE_LINKS.toolsTriage,
+    body: 'Structured intake for stack rescue — what fails first, urgency, environment — emailed to me.',
+  },
+]
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Tools', path: '/tools' },
+    ]),
+  ],
+}
+---
+
+<BaseLayout
+  title="Tools"
+  description="Shop tools on robmcd.name — log redactor, DNS/HTTPS check, and legacy triage intake."
+  canonical="/tools"
+  jsonLd={jsonLd}
+>
+  <div class="space-y-10">
+    <header class="space-y-3">
+      <p class="eyebrow">Shop</p>
+      <h1 class="page-title">Tools</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        Small utilities with the same visual language as the rest of the site. Useful on their own; also a way to see how I ship.
+      </p>
+    </header>
+
+    <ol class="divide-y border-t" style="border-color: var(--line)">
+      {
+        tools.map((tool, i) => (
+          <li class="grid gap-2 py-6 sm:grid-cols-[2rem_1fr] sm:gap-4">
+            <span class="font-mono text-sm text-[var(--muted)]">{String(i + 1).padStart(2, '0')}</span>
+            <div class="space-y-2">
+              <a href={tool.href} class="text-link text-lg font-semibold">
+                {tool.title}
+              </a>
+              <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{tool.body}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</BaseLayout>

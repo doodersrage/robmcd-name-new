@@ -1,0 +1,60 @@
+---
+export const prerender = true
+
+import ProseLayout from '@/layouts/ProseLayout.astro'
+import { NOTES, getNote } from '@/content/notes'
+import { breadcrumbSchema } from '@/lib/seo'
+import CloudflareWorkersSmtp from '@/content/notes/cloudflare-workers-smtp.mdx'
+import AstroTailwindOnWorkers from '@/content/notes/astro-tailwind-on-workers.mdx'
+import SensorIngestFirstContact from '@/content/notes/sensor-ingest-first-contact.mdx'
+
+export function getStaticPaths() {
+  return NOTES.map((note) => ({ params: { slug: note.slug } }))
+}
+
+const { slug } = Astro.params
+const note = getNote(slug!)
+if (!note) {
+  return Astro.redirect('/notes')
+}
+
+const bodies: Record<string, any> = {
+  'cloudflare-workers-smtp': CloudflareWorkersSmtp,
+  'astro-tailwind-on-workers': AstroTailwindOnWorkers,
+  'sensor-ingest-first-contact': SensorIngestFirstContact,
+}
+const Body = bodies[note.slug]
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Notes', path: '/notes' },
+      { name: note.title, path: `/notes/${note.slug}` },
+    ]),
+    {
+      '@type': 'BlogPosting',
+      headline: note.title,
+      datePublished: note.date,
+      description: note.description,
+      url: `https://robmcd.name/notes/${note.slug}`,
+      author: { '@id': 'https://robmcd.name/#person' },
+    },
+  ],
+}
+---
+
+<ProseLayout
+  title={note.title}
+  description={note.description}
+  path={`/notes/${note.slug}`}
+  eyebrow={`${note.date} · note`}
+  ogType="article"
+  jsonLd={jsonLd}
+>
+  {Body ? <Body /> : <p>Missing note body.</p>}
+  <p>
+    <a href="/notes">← All notes</a>
+  </p>
+</ProseLayout>

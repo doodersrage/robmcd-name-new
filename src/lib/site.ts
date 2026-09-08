@@ -9,10 +9,21 @@ export const SITE_LINKS = {
   github: 'https://github.com/doodersrage',
   about: '/about',
   contact: '/contact',
+  hire: '/hire',
   homelab: '/homelab',
   /** @deprecated Use homelab */
   services: '/homelab',
   work: '/work',
+  notes: '/notes',
+  now: '/now',
+  status: '/status',
+  tools: '/tools',
+  toolsRedactor: '/tools/redactor',
+  toolsDns: '/tools/dns',
+  toolsTriage: '/tools/triage',
+  colophon: '/colophon',
+  press: '/press',
+  thermalTraceProtocol: '/work/thermaltrace/protocol',
   privacy: '/privacy',
   promptStudio: '/llm-prompt-studio',
   promptStudioGithub: 'https://github.com/doodersrage/llm-prompt-studio',
@@ -43,7 +54,7 @@ export type SiteNavItem = {
   children?: SiteNavItem[]
 }
 
-/** Full static primary nav (no CMS). Homelab lives in the footer. */
+/** Full static primary nav (no CMS). Notes/status/colophon live in the footer. */
 export const PRIMARY_NAV: SiteNavItem[] = [
   { id: 'about', label: 'About', href: SITE_LINKS.about },
   {
@@ -54,7 +65,19 @@ export const PRIMARY_NAV: SiteNavItem[] = [
       { id: 'work-overview', label: 'Case studies', href: SITE_LINKS.work },
       { id: 'work-prompt-studio', label: 'LLM Prompt Studio', href: SITE_LINKS.promptStudio },
       { id: 'work-thermaltrace', label: 'ThermalTrace', href: SITE_LINKS.thermalTracePage },
+      { id: 'work-protocol', label: 'Ingest protocol', href: SITE_LINKS.thermalTraceProtocol },
     ],
   },
-  { id: 'contact', label: 'Contact', href: SITE_LINKS.contact },
+  {
+    id: 'tools',
+    label: 'Tools',
+    href: SITE_LINKS.tools,
+    children: [
+      { id: 'tools-overview', label: 'Shop tools', href: SITE_LINKS.tools },
+      { id: 'tools-redactor', label: 'Log / JSON redactor', href: SITE_LINKS.toolsRedactor },
+      { id: 'tools-dns', label: 'DNS / HTTPS check', href: SITE_LINKS.toolsDns },
+      { id: 'tools-triage', label: 'Legacy triage', href: SITE_LINKS.toolsTriage },
+    ],
+  },
+  { id: 'hire', label: 'Hire', href: SITE_LINKS.hire },
 ]

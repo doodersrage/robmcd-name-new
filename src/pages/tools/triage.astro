@@ -1,0 +1,40 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { TriageForm } from '@/components/tools/TriageForm'
+import { SITE_LINKS } from '@/lib/site'
+
+const siteKey =
+  import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ||
+  import.meta.env.TURNSTILE_SITE_KEY ||
+  ''
+---
+
+<BaseLayout
+  title="Legacy triage"
+  description="Structured intake for legacy stack rescue — stack, failure mode, urgency — sent to Robert McDowell."
+  canonical="/tools/triage"
+>
+  <div class="space-y-8">
+    <header class="space-y-3">
+      <p class="eyebrow">Tools</p>
+      <h1 class="page-title">Legacy triage</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        A structured brief beats a vague “can you look at our app?” Prefer this when the stack is old and live. For a short
+        message, use <a href={SITE_LINKS.contact} class="text-link">Contact</a> or read{' '}
+        <a href={SITE_LINKS.hire} class="text-link">Hire</a>.
+      </p>
+    </header>
+
+    {
+      siteKey ? (
+        <TriageForm client:load siteKey={siteKey} />
+      ) : (
+        <p class="text-[var(--muted)]">
+          Triage form is unavailable (Turnstile not configured). Email admin@robmcd.name instead.
+        </p>
+      )
+    }
+  </div>
+</BaseLayout>

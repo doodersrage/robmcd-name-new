@@ -1,0 +1,12 @@
+---
+title: Astro + Tailwind on Workers without breaking the layout
+description: Sass on the global stylesheet skipped Tailwind utilities — and how to keep the canvas intact.
+---
+
+If HTML arrives intact but the page looks like an unstyled document, check whether your global stylesheet is actually going through Tailwind.
+
+On this site, running the design tokens file as Sass meant Tailwind’s `@source` / utility pipeline never saw the markup. Moving tokens and Tailwind entry to a plain CSS file (`globals.css`) restored utilities without changing the workshop look.
+
+**Keep the visual system boring and explicit:** canvas, ink, muted, accent, line, paper as CSS variables. Cap radius. Prefer type and rules over glass cards. That survives framework churn better than a pile of one-off utility soup.
+
+Related: Cloudflare’s Node compatibility flags can also turn a fine HTML response into `[object Object]` if the runtime mis-handles the body. Layout bugs and body bugs feel similar in the browser; they are not the same fix.
