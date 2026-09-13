@@ -1,0 +1,115 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import {
+  WORDPRESS_LISTINGS,
+  WORDPRESS_STATUS_LABEL,
+} from '@/content/work/wordpress'
+import { SITE_LINKS } from '@/lib/site'
+import { breadcrumbSchema, itemListSchema } from '@/lib/seo'
+
+const description =
+  'WordPress plugins by Robert McDowell — Volunteer Impact Tracker for nonprofit hours, approvals, reports, and certificates, plus related GitHub plugins.'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Work', path: SITE_LINKS.work },
+      { name: 'WordPress', path: SITE_LINKS.wordpress },
+    ]),
+    itemListSchema(
+      'WordPress plugins',
+      description,
+      WORDPRESS_LISTINGS.map((item) => ({
+        name: item.title,
+        path: SITE_LINKS.wordpress,
+        description: item.blurb,
+      })),
+    ),
+  ],
+}
+---
+
+<BaseLayout
+  title="WordPress"
+  description={description}
+  canonical={SITE_LINKS.wordpress}
+  jsonLd={jsonLd}
+>
+  <div class="space-y-12">
+    <header class="space-y-3">
+      <p class="eyebrow">Work · plugins</p>
+      <h1 class="page-title">WordPress</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        Plugins I’ve built or forked for WordPress sites — starting with nonprofit volunteer tracking.
+        Source on GitHub; WordPress.org directory links go here when a plugin is published.
+      </p>
+      <p class="flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm">
+        <a href={SITE_LINKS.github} class="text-link" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+        <a href={SITE_LINKS.concreteCms} class="text-link">Concrete CMS packages</a>
+        <a href={SITE_LINKS.work} class="text-link">Back to Work</a>
+      </p>
+    </header>
+
+    <ol class="divide-y border-t" style="border-color: var(--line)" role="list">
+      {
+        WORDPRESS_LISTINGS.map((item, i) => (
+          <li class="grid gap-2 py-7 sm:grid-cols-[2rem_1fr] sm:gap-4">
+            <span class="font-mono text-sm text-[var(--muted)] tabular-nums" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div class="min-w-0 space-y-2">
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h2 class="text-lg font-semibold text-[var(--ink)]">{item.title}</h2>
+                <span class="font-mono text-xs text-[var(--muted)]">
+                  {WORDPRESS_STATUS_LABEL[item.status]}
+                </span>
+              </div>
+              {
+                item.slug ? (
+                  <p class="font-mono text-xs text-[var(--muted)]">{item.slug}</p>
+                ) : null
+              }
+              <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{item.blurb}</p>
+              <p class="font-mono text-xs text-[var(--muted)]">{item.compatibility}</p>
+              <p class="flex flex-wrap gap-x-4 gap-y-1 pt-1 text-sm">
+                {
+                  item.directory ? (
+                    <a
+                      href={item.directory}
+                      class="text-link font-medium"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      WordPress.org
+                    </a>
+                  ) : null
+                }
+                <a
+                  href={item.github}
+                  class="text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="max-w-2xl border-t pt-8 text-sm leading-relaxed text-[var(--muted)]" style="border-color: var(--line)">
+      Need a WordPress plugin, nonprofit tooling, or CMS work alongside Concrete? Use the{' '}
+      <a href={SITE_LINKS.contact} class="text-link">contact form</a>
+      {' '}or start from{' '}
+      <a href={SITE_LINKS.hire} class="text-link">Hire</a>.
+    </p>
+  </div>
+</BaseLayout>

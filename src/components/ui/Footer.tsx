@@ -60,6 +60,11 @@ export function Footer() {
                   Concrete CMS
                 </a>
               </li>
+              <li>
+                <a href={SITE_LINKS.wordpress} className="text-link text-sm">
+                  WordPress
+                </a>
+              </li>
             </ul>
           </div>
 

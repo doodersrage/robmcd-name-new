@@ -26,6 +26,7 @@ export const SITE_LINKS = {
   thermalTraceProtocol: '/work/thermaltrace/protocol',
   concreteCms: '/work/concrete-cms',
   concreteCmsProfile: 'https://community.concretecms.com/members/profile/103041',
+  wordpress: '/work/wordpress',
   privacy: '/privacy',
   /** Canonical product path (formerly Prompt Studio / llm-prompt-studio). */
   castcut: '/castcut',
@@ -77,6 +78,7 @@ export const PRIMARY_NAV: SiteNavItem[] = [
       { id: 'work-castcut', label: 'Castcut', href: SITE_LINKS.castcut },
       { id: 'work-thermaltrace', label: 'ThermalTrace', href: SITE_LINKS.thermalTracePage },
       { id: 'work-concrete', label: 'Concrete CMS', href: SITE_LINKS.concreteCms },
+      { id: 'work-wordpress', label: 'WordPress', href: SITE_LINKS.wordpress },
       { id: 'work-protocol', label: 'Ingest protocol', href: SITE_LINKS.thermalTraceProtocol },
     ],
   },

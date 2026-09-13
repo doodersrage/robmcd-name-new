@@ -1,6 +1,7 @@
 import { DOC_PAGES, slugToPath } from '@/content/comfyui-prompt-studio/pages'
 import { WORK_CASE_STUDIES, WORK_REPO_HIGHLIGHTS } from '@/content/work/case-studies'
 import { CONCRETE_CMS_LISTINGS } from '@/content/work/concrete-cms'
+import { WORDPRESS_LISTINGS } from '@/content/work/wordpress'
 import { NOTES } from '@/content/notes'
 import { LAB_ENDPOINTS } from '@/content/lab/endpoints'
 import { SITE_LINKS } from '@/lib/site'
@@ -112,6 +113,14 @@ const SITE_PAGES: SearchHit[] = [
       'Community Store Affirm, Date Counter, Page List Map, RTS Cinema Source, Lasso CRM, and related packages.',
     href: SITE_LINKS.concreteCms,
     source: 'Work · Concrete CMS',
+  },
+  {
+    id: 'page-wordpress',
+    title: 'WordPress plugins',
+    description:
+      'Volunteer Impact Tracker and related WordPress plugins — hours, approvals, reports, certificates.',
+    href: SITE_LINKS.wordpress,
+    source: 'Work · WordPress',
   },
   {
     id: 'page-colophon',
@@ -237,6 +246,34 @@ export function searchLocalContent(term: string): SearchHit[] {
     })
   }
 
+  const wordpressHits: SearchHit[] = WORDPRESS_LISTINGS.filter(
+    (item) =>
+      matches(item.title, q) ||
+      matches(item.blurb, q) ||
+      matches(item.compatibility, q) ||
+      (item.slug ? matches(item.slug, q) : false),
+  ).map((item) => ({
+    id: `wordpress-${item.id}`,
+    title: item.title,
+    description: item.blurb,
+    href: SITE_LINKS.wordpress,
+    source: 'Work · WordPress',
+  }))
+
+  if (
+    wordpressHits.length === 0 &&
+    /wordpress|volunteer|nonprofit|certificate|vit_/.test(q)
+  ) {
+    wordpressHits.push({
+      id: 'wordpress-hub',
+      title: 'WordPress plugins',
+      description:
+        'Volunteer Impact Tracker and related WordPress plugins — hours, approvals, reports, certificates.',
+      href: SITE_LINKS.wordpress,
+      source: 'Work · WordPress',
+    })
+  }
+
   const extras: SearchHit[] = []
   if (/garage|temp|thermal|trace|freeze|flood|leak|iot|dht|probe|sensor|esp32|pico|alert|ingest/.test(q)) {
     extras.push({
@@ -255,6 +292,7 @@ export function searchLocalContent(term: string): SearchHit[] {
     ...noteHits,
     ...workHits,
     ...concreteHits,
+    ...wordpressHits,
     ...labHits,
     ...repoHits,
     ...docHits,
