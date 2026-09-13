@@ -1,5 +1,6 @@
 import { DOC_PAGES, slugToPath } from '@/content/comfyui-prompt-studio/pages'
 import { WORK_CASE_STUDIES, WORK_REPO_HIGHLIGHTS } from '@/content/work/case-studies'
+import { CONCRETE_CMS_LISTINGS } from '@/content/work/concrete-cms'
 import { NOTES } from '@/content/notes'
 import { LAB_ENDPOINTS } from '@/content/lab/endpoints'
 import { SITE_LINKS } from '@/lib/site'
@@ -105,6 +106,14 @@ const SITE_PAGES: SearchHit[] = [
     source: 'Work · Kit',
   },
   {
+    id: 'page-concrete',
+    title: 'Concrete CMS packages',
+    description:
+      'Community Store Affirm, Date Counter, Page List Map, RTS Cinema Source, Lasso CRM, and related packages.',
+    href: SITE_LINKS.concreteCms,
+    source: 'Work · Concrete CMS',
+  },
+  {
     id: 'page-colophon',
     title: 'Colophon',
     description: 'How this site is built.',
@@ -200,6 +209,34 @@ export function searchLocalContent(term: string): SearchHit[] {
     source: 'Work · GitHub',
   }))
 
+  const concreteHits: SearchHit[] = CONCRETE_CMS_LISTINGS.filter(
+    (item) =>
+      matches(item.title, q) ||
+      matches(item.blurb, q) ||
+      matches(item.compatibility, q) ||
+      (item.handle ? matches(item.handle, q) : false),
+  ).map((item) => ({
+    id: `concrete-${item.id}`,
+    title: item.title,
+    description: item.blurb,
+    href: SITE_LINKS.concreteCms,
+    source: 'Work · Concrete CMS',
+  }))
+
+  if (
+    concreteHits.length === 0 &&
+    /concrete|community store|affirm|cinemasource|lasso|page list map|date counter|formwork/.test(q)
+  ) {
+    concreteHits.push({
+      id: 'concrete-hub',
+      title: 'Concrete CMS packages',
+      description:
+        'Community Store Affirm, Date Counter, Page List Map, RTS Cinema Source, Lasso CRM, and related packages.',
+      href: SITE_LINKS.concreteCms,
+      source: 'Work · Concrete CMS',
+    })
+  }
+
   const extras: SearchHit[] = []
   if (/garage|temp|thermal|trace|freeze|flood|leak|iot|dht|probe|sensor|esp32|pico|alert|ingest/.test(q)) {
     extras.push({
@@ -213,8 +250,16 @@ export function searchLocalContent(term: string): SearchHit[] {
   }
 
   const seen = new Set<string>()
-  const merged = [...pageHits, ...noteHits, ...workHits, ...labHits, ...repoHits, ...docHits, ...extras].filter(
-    (hit) => {
+  const merged = [
+    ...pageHits,
+    ...noteHits,
+    ...workHits,
+    ...concreteHits,
+    ...labHits,
+    ...repoHits,
+    ...docHits,
+    ...extras,
+  ].filter((hit) => {
       if (seen.has(hit.id)) return false
       seen.add(hit.id)
       return true

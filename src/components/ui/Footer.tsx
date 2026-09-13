@@ -55,6 +55,11 @@ export function Footer() {
                   ThermalTrace
                 </a>
               </li>
+              <li>
+                <a href={SITE_LINKS.concreteCms} className="text-link text-sm">
+                  Concrete CMS
+                </a>
+              </li>
             </ul>
           </div>
 

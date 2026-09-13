@@ -1,0 +1,124 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import {
+  CONCRETE_CMS_LISTINGS,
+  CONCRETE_CMS_MARKET,
+  CONCRETE_CMS_PROFILE,
+  CONCRETE_CMS_STATUS_LABEL,
+} from '@/content/work/concrete-cms'
+import { SITE_LINKS } from '@/lib/site'
+import { breadcrumbSchema, itemListSchema } from '@/lib/seo'
+
+const description =
+  'Concrete CMS packages by Robert McDowell — Community Store Affirm, Date Counter, Page List Map, RTS Cinema Source, Lasso CRM, and related GitHub packages.'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Work', path: SITE_LINKS.work },
+      { name: 'Concrete CMS', path: SITE_LINKS.concreteCms },
+    ]),
+    itemListSchema(
+      'Concrete CMS packages',
+      description,
+      CONCRETE_CMS_LISTINGS.map((item) => ({
+        name: item.title,
+        path: SITE_LINKS.concreteCms,
+        description: item.blurb,
+      })),
+    ),
+  ],
+}
+---
+
+<BaseLayout
+  title="Concrete CMS"
+  description={description}
+  canonical={SITE_LINKS.concreteCms}
+  jsonLd={jsonLd}
+>
+  <div class="space-y-12">
+    <header class="space-y-3">
+      <p class="eyebrow">Work · packages</p>
+      <h1 class="page-title">Concrete CMS</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        Add-ons and blocks I’ve published for Concrete CMS — payments, maps, cinema ticketing, CRM forms, and countdown.
+        Source is on GitHub; the community profile is the official marketplace presence.
+      </p>
+      <p class="flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm">
+        <a
+          href={CONCRETE_CMS_PROFILE}
+          class="text-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Community profile
+        </a>
+        <a href={CONCRETE_CMS_MARKET} class="text-link" target="_blank" rel="noopener noreferrer">
+          Marketplace add-ons
+        </a>
+        <a href={SITE_LINKS.work} class="text-link">Back to Work</a>
+      </p>
+    </header>
+
+    <ol class="divide-y border-t" style="border-color: var(--line)" role="list">
+      {
+        CONCRETE_CMS_LISTINGS.map((item, i) => (
+          <li class="grid gap-2 py-7 sm:grid-cols-[2rem_1fr] sm:gap-4">
+            <span class="font-mono text-sm text-[var(--muted)] tabular-nums" aria-hidden="true">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <div class="min-w-0 space-y-2">
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h2 class="text-lg font-semibold text-[var(--ink)]">{item.title}</h2>
+                <span class="font-mono text-xs text-[var(--muted)]">
+                  {CONCRETE_CMS_STATUS_LABEL[item.status]}
+                </span>
+              </div>
+              {
+                item.handle ? (
+                  <p class="font-mono text-xs text-[var(--muted)]">{item.handle}</p>
+                ) : null
+              }
+              <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{item.blurb}</p>
+              <p class="font-mono text-xs text-[var(--muted)]">{item.compatibility}</p>
+              <p class="flex flex-wrap gap-x-4 gap-y-1 pt-1 text-sm">
+                <a
+                  href={item.github}
+                  class="text-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                {
+                  item.marketplace ? (
+                    <a
+                      href={item.marketplace}
+                      class="text-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Marketplace
+                    </a>
+                  ) : null
+                }
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+
+    <p class="max-w-2xl border-t pt-8 text-sm leading-relaxed text-[var(--muted)]" style="border-color: var(--line)">
+      Need a Concrete CMS package, Community Store payment method, or cinema/RTS integration? Use the{' '}
+      <a href={SITE_LINKS.contact} class="text-link">contact form</a>
+      {' '}or start from{' '}
+      <a href={SITE_LINKS.hire} class="text-link">Hire</a>.
+    </p>
+  </div>
+</BaseLayout>

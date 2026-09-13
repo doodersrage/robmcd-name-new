@@ -18,6 +18,8 @@
 - ThermalTrace write-up: https://robmcd.name/work/thermaltrace
   Ingest protocol kit: https://robmcd.name/work/thermaltrace/protocol
   Live product: https://thermaltrace.dev/
+- Concrete CMS packages: https://robmcd.name/work/concrete-cms
+  Community profile: https://community.concretecms.com/members/profile/103041
 
 ## Optional
 - Homelab: https://robmcd.name/homelab

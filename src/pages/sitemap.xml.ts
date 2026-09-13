@@ -25,6 +25,7 @@ const staticPaths = [
   '/press',
   '/castcut',
   '/work/thermaltrace/protocol',
+  '/work/concrete-cms',
 ]
 
 export const GET: APIRoute = () => {

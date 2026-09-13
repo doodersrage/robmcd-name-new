@@ -245,16 +245,6 @@ export const WORK_REPO_HIGHLIGHTS: WorkRepoHighlight[] = [
     href: 'https://github.com/doodersrage/wallhaven-plasma-6-plugin',
   },
   {
-    name: 'concrete-cms-rts-cinemasource-blocks',
-    blurb: 'Concrete CMS blocks for RTS POS and the CinemaSource API (listings and showtimes).',
-    href: 'https://github.com/doodersrage/concrete-cms-rts-cinemasource-blocks',
-  },
-  {
-    name: 'community_store_affirm',
-    blurb: 'Affirm payment method for Concrete5 Community Store.',
-    href: 'https://github.com/doodersrage/community_store_affirm',
-  },
-  {
     name: 'next-js-cinemasource',
     blurb: 'TypeScript / Next.js module for the CinemaSource API.',
     href: 'https://github.com/doodersrage/next-js-cinemasource',
