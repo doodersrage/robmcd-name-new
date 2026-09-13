@@ -48,7 +48,7 @@ const jsonLd = {
       <p class="eyebrow">Work · packages</p>
       <h1 class="page-title">Concrete CMS</h1>
       <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
-        Add-ons and blocks for Concrete CMS — maps, countdown, payments, cinema ticketing, and CRM forms.
+        Add-ons and blocks for Concrete CMS — maps, countdown, payments, cinema ticketing, and Lasso CRM.
         {marketplaceCount} listed on the official marketplace so far; more coming. GitHub stays the source for everything else.
       </p>
       <p class="flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm">
@@ -80,6 +80,9 @@ const jsonLd = {
                 <span class="font-mono text-xs text-[var(--muted)]">
                   {CONCRETE_CMS_STATUS_LABEL[item.status]}
                 </span>
+                {item.version ? (
+                  <span class="font-mono text-xs text-[var(--muted)]">v{item.version}</span>
+                ) : null}
                 {item.price ? (
                   <span class="font-mono text-xs text-[var(--muted)]">{item.price}/yr updates</span>
                 ) : null}

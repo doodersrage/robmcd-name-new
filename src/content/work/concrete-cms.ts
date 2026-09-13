@@ -16,6 +16,8 @@ export type ConcreteCmsListing = {
   marketplace?: string
   /** Self-hosted list price string from marketplace, e.g. "$35" */
   price?: string
+  /** Package version string when known, e.g. "3.0.1" */
+  version?: string
   compatibility: string
   status: 'marketplace' | 'github' | 'legacy'
 }
@@ -71,9 +73,10 @@ export const CONCRETE_CMS_LISTINGS: ConcreteCmsListing[] = [
     id: 'lasso-crm',
     title: 'Lasso CRM',
     handle: 'lasso_crm',
+    version: '3.0.1',
     blurb:
-      'Concrete CMS 9 package for Lasso CRM: Dashboard settings with Test Connection, Form (registrant leads + project questions), Inventory list, Appointments (inquiry / list / both), and Website Tracking (Analytics v2). Package API key with optional per-block overrides for multi-project sites. Expanded beyond the old lead-form-only package (3.0.1).',
-    github: 'https://github.com/doodersrage/lasso-crm-concrete5-block',
+      'Lasso CRM for Concrete CMS 9: Dashboard settings with Test Connection, lead Form, Inventory, Appointments, and Website Tracking. Shared package API key with optional per-block overrides for multi-project sites.',
+    github: 'https://github.com/doodersrage/lasso-crm-concretecms',
     compatibility: 'Concrete CMS 9.0+ · Lasso CRM API v1',
     status: 'github',
   },
