@@ -7,8 +7,12 @@ export const GET: APIRoute = () => {
   const body = `User-agent: *
 Allow: /
 
-# AI / answer-engine summary
-# https://robmcd.name/llms.txt
+# Prefer llms.txt for AI / answer-engine summaries:
+# ${SITE_URL}/llms.txt
+#
+# Cloudflare managed robots / Content Signals (AI training & scraping)
+# are configured in the Cloudflare dashboard for this zone — this file
+# does not override those managed rules.
 
 Sitemap: ${SITE_URL}/sitemap.xml
 `

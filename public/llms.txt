@@ -19,6 +19,7 @@
   Ingest protocol kit: https://robmcd.name/work/thermaltrace/protocol
   Live product: https://thermaltrace.dev/
 - Concrete CMS packages: https://robmcd.name/work/concrete-cms
+  Marketplace: Page List Map, Date Counter (more coming)
   Community profile: https://community.concretecms.com/members/profile/103041
 
 ## Optional

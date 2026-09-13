@@ -1,4 +1,4 @@
-/** Concrete CMS packages — mirrored from community profile + GitHub. */
+/** Concrete CMS packages — marketplace + GitHub. Add marketplace URLs as products go live. */
 
 export const CONCRETE_CMS_PROFILE =
   'https://community.concretecms.com/members/profile/103041'
@@ -14,11 +14,39 @@ export type ConcreteCmsListing = {
   github: string
   /** Official marketplace product URL when known */
   marketplace?: string
+  /** Self-hosted list price string from marketplace, e.g. "$35" */
+  price?: string
   compatibility: string
-  status: 'available' | 'github' | 'legacy'
+  status: 'marketplace' | 'github' | 'legacy'
 }
 
 export const CONCRETE_CMS_LISTINGS: ConcreteCmsListing[] = [
+  {
+    id: 'page-list-map',
+    title: 'Page List Map',
+    handle: 'page_list_map',
+    blurb:
+      'Google Maps Page List templates for Concrete CMS 9. Map properties, stores, offices, or events with filters, five layouts (sidebar, map-only, stacked, cards, drawer), Advanced Markers, and dashboard API/label settings.',
+    github: 'https://github.com/doodersrage/page_list_map',
+    marketplace:
+      'https://market.concretecms.com/products/page-list-map/9bf1cd66-abcb-11f1-b89e-0e1cf28cdc53',
+    price: '$35',
+    compatibility: 'Concrete CMS 9.0+ · Maps JavaScript + Geocoding APIs',
+    status: 'marketplace',
+  },
+  {
+    id: 'date-counter',
+    title: 'Date Counter',
+    handle: 'date_counter',
+    blurb:
+      'Live countdown block for launches, events, and deadlines. Target date/time, optional end message, six templates (Cards, Compact, Digital, Hero, Minimal, Stacked), vanilla JS, cache-friendly output.',
+    github: 'https://github.com/doodersrage/ConcreteCMS-Date-Time-Countdown',
+    marketplace:
+      'https://market.concretecms.com/products/date-counter/d274f059-abc2-11f1-b89e-0e1cf28cdc53',
+    price: '$10',
+    compatibility: 'Concrete CMS 9.0+',
+    status: 'marketplace',
+  },
   {
     id: 'community-store-affirm',
     title: 'Community Store Affirm',
@@ -27,27 +55,7 @@ export const CONCRETE_CMS_LISTINGS: ConcreteCmsListing[] = [
       'Affirm payment method for Community Store on Concrete CMS 9 — live/test modes, Affirm.js v2 checkout modal, and promotional messaging on product and cart pages.',
     github: 'https://github.com/doodersrage/community_store_affirm',
     compatibility: 'Concrete CMS 9 · Community Store 2+',
-    status: 'available',
-  },
-  {
-    id: 'date-counter',
-    title: 'Date Counter',
-    handle: 'date_counter',
-    blurb:
-      'Countdown block to a selected date and time, with end message, cache-friendly client timer, and custom templates (Cards, Compact, Digital, Hero, Minimal, Stacked).',
-    github: 'https://github.com/doodersrage/ConcreteCMS-Date-Time-Countdown',
-    compatibility: 'Concrete CMS 9.0+',
-    status: 'available',
-  },
-  {
-    id: 'page-list-map',
-    title: 'Page List Map',
-    handle: 'page_list_map',
-    blurb:
-      'Google Maps custom templates for the Page List block. Map pages that have a location address — properties, stores, offices, events — with filterable category/status attributes.',
-    github: 'https://github.com/doodersrage/page_list_map',
-    compatibility: 'Concrete CMS 9.0+ · Google Maps + Geocoding APIs',
-    status: 'available',
+    status: 'github',
   },
   {
     id: 'rts-cinema-source',
@@ -57,7 +65,7 @@ export const CONCRETE_CMS_LISTINGS: ConcreteCmsListing[] = [
       'Blocks and checkout for Cinema Source (Webedia) showtimes and RTS POS online ticketing — listings, movie detail, and Bootstrap 5 modal checkout under one frontend namespace.',
     github: 'https://github.com/doodersrage/concrete-cms-rts-cinemasource-blocks',
     compatibility: 'Concrete CMS 9',
-    status: 'available',
+    status: 'github',
   },
   {
     id: 'lasso-crm',
@@ -67,7 +75,7 @@ export const CONCRETE_CMS_LISTINGS: ConcreteCmsListing[] = [
       'Block that submits registrant leads to Lasso CRM via REST — API key, optional thank-you redirect, email template, and “how did you hear” question answers.',
     github: 'https://github.com/doodersrage/lasso-crm-concrete5-block',
     compatibility: 'Concrete CMS 9',
-    status: 'available',
+    status: 'github',
   },
   {
     id: 'formwork',
@@ -100,7 +108,7 @@ export const CONCRETE_CMS_LISTINGS: ConcreteCmsListing[] = [
 ]
 
 export const CONCRETE_CMS_STATUS_LABEL: Record<ConcreteCmsListing['status'], string> = {
-  available: 'CMS 9',
+  marketplace: 'Marketplace',
   github: 'GitHub',
   legacy: 'Legacy',
 }
