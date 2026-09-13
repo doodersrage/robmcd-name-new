@@ -69,12 +69,12 @@ export const CONCRETE_CMS_LISTINGS: ConcreteCmsListing[] = [
   },
   {
     id: 'lasso-crm',
-    title: 'Lasso CRM Form',
+    title: 'Lasso CRM',
     handle: 'lasso_crm',
     blurb:
-      'Block that submits registrant leads to Lasso CRM via REST — API key, optional thank-you redirect, email template, and “how did you hear” question answers.',
+      'Concrete CMS 9 package for Lasso CRM: Dashboard settings with Test Connection, Form (registrant leads + project questions), Inventory list, Appointments (inquiry / list / both), and Website Tracking (Analytics v2). Package API key with optional per-block overrides for multi-project sites. Expanded beyond the old lead-form-only package (3.0.1).',
     github: 'https://github.com/doodersrage/lasso-crm-concrete5-block',
-    compatibility: 'Concrete CMS 9',
+    compatibility: 'Concrete CMS 9.0+ · Lasso CRM API v1',
     status: 'github',
   },
   {

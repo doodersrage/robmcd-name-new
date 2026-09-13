@@ -110,7 +110,7 @@ const SITE_PAGES: SearchHit[] = [
     id: 'page-concrete',
     title: 'Concrete CMS packages',
     description:
-      'Community Store Affirm, Date Counter, Page List Map, RTS Cinema Source, Lasso CRM, and related packages.',
+      'Community Store Affirm, Date Counter, Page List Map, RTS Cinema Source, Lasso CRM (forms/inventory/appointments/tracking), and related packages.',
     href: SITE_LINKS.concreteCms,
     source: 'Work · Concrete CMS',
   },
@@ -240,7 +240,7 @@ export function searchLocalContent(term: string): SearchHit[] {
       id: 'concrete-hub',
       title: 'Concrete CMS packages',
       description:
-        'Community Store Affirm, Date Counter, Page List Map, RTS Cinema Source, Lasso CRM, and related packages.',
+        'Community Store Affirm, Date Counter, Page List Map, RTS Cinema Source, Lasso CRM (forms/inventory/appointments/tracking), and related packages.',
       href: SITE_LINKS.concreteCms,
       source: 'Work · Concrete CMS',
     })

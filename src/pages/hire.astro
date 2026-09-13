@@ -18,7 +18,7 @@ const jsonLd = {
       name: 'Hire Robert McDowell',
       url: 'https://robmcd.name/hire',
       description:
-        'Engagement shapes for legacy modernization, servers and databases, and technical advisory.',
+        'Engagement shapes for legacy modernization, servers and databases, CMS packages, and technical advisory.',
     },
   ],
 }
@@ -31,6 +31,10 @@ const shapes = [
   {
     title: 'Servers & databases',
     body: 'Linux/Windows upkeep, upgrades, cloud moves, MySQL/MSSQL tuning so things stay up and stay fast enough.',
+  },
+  {
+    title: 'CMS packages & plugins',
+    body: 'Concrete CMS add-ons and WordPress plugins when you need a block, marketplace package, or custom plugin — not just a theme skin.',
   },
   {
     title: 'Technical advisory',
@@ -47,7 +51,7 @@ const notDoing = [
 
 <BaseLayout
   title="Hire"
-  description="How to engage Robert McDowell — rescue, servers/databases, advisory. What I take, what I don’t, and how a first call works."
+  description="How to engage Robert McDowell — rescue, servers/databases, Concrete/WordPress packages, advisory. What I take, what I don’t, and how a first call works."
   canonical="/hire"
   jsonLd={jsonLd}
 >
@@ -57,6 +61,11 @@ const notDoing = [
       <h1 class="page-title">Hire</h1>
       <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
         About twenty years of full-stack work across Linux and Windows. If something is live and fragile, start there.
+        Shipped{' '}
+        <a href={SITE_LINKS.concreteCms} class="text-link underline">Concrete CMS</a>
+        {' '}add-ons and{' '}
+        <a href={SITE_LINKS.wordpress} class="text-link underline">WordPress</a>
+        {' '}plugins are listed under Work.
       </p>
     </header>
 

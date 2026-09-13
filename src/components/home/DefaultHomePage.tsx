@@ -70,6 +70,21 @@ export function DefaultHomePage() {
         projects={SHIPPED}
       />
 
+      <section className="space-y-3 border-t pt-10 md:pt-14" style={{ borderColor: 'var(--line)' }}>
+        <p className="eyebrow">Also shipping</p>
+        <p className="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+          Installable CMS packages too:{' '}
+          <a href={SITE_LINKS.concreteCms} className="text-link underline">
+            Concrete CMS
+          </a>{' '}
+          add-ons (marketplace and GitHub) and{' '}
+          <a href={SITE_LINKS.wordpress} className="text-link underline">
+            WordPress
+          </a>{' '}
+          plugins — Inkbound, Volunteer Impact Tracker, and related work.
+        </p>
+      </section>
+
       <section className="space-y-6 border-t pt-10 md:pt-14" style={{ borderColor: 'var(--line)' }}>
         <p className="eyebrow">Next</p>
         <p className="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
