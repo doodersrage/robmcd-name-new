@@ -16,6 +16,17 @@ export type WordPressListing = {
 
 export const WORDPRESS_LISTINGS: WordPressListing[] = [
   {
+    id: 'inkbound',
+    title: 'Inkbound',
+    slug: 'inkbound',
+    version: '1.0.0',
+    blurb:
+      'Serialized fiction / web-novel layer for WordPress: stories with numbered chapters (prologue/interlude labels, author’s notes, TOC, add-next-chapter), reader follows and guest email subscribe, on-site update inbox plus chapter mail (full text or excerpt), reading progress and Continue reading for guests and accounts, catalog and paper/sepia/night reader. Not a blog theme — the chapter desk Royal Road / Substack users expect.',
+    github: 'https://github.com/doodersrage/inkbound',
+    compatibility: 'WordPress 6.4+ · PHP 8.1+ · tested to 6.8',
+    status: 'github',
+  },
+  {
     id: 'volunteer-impact-tracker',
     title: 'Volunteer Impact Tracker',
     slug: 'volunteer-impact-tracker',
