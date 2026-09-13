@@ -14,7 +14,7 @@ import { playPages } from './sections/play'
 import { storiesPages } from './sections/stories'
 import { studioPages } from './sections/studio'
 
-/** Documentation pages for LLM Prompt Studio */
+/** Documentation pages for Castcut */
 export const DOC_PAGES = [
   ...storiesPages,
   ...hubPages,

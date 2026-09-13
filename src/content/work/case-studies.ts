@@ -21,19 +21,19 @@ export type WorkCaseStudy = {
 
 export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
   {
-    slug: 'llm-prompt-studio',
-    title: 'LLM Prompt Studio',
-    tagline: 'Prompt, queue, and ship films. ComfyUI takeover plus cloud stills and clips.',
+    slug: 'castcut',
+    title: 'Castcut',
+    tagline: 'Local character films with ComfyUI. Cast → Moodboard → Fitting → Day → Cut film.',
     description:
-      'MIT-licensed Next.js studio that turns topics into model-ready prompts for image, video, audio, and 3D. Heal & ready on first launch, Play campaigns (Moodboard through Cut and Cast), Mobile Studio, workflow takeover, and optional Fal/Replicate/Grok/Gemini when you skip the local graph.',
-    href: SITE_LINKS.promptStudio,
-    externalHref: SITE_LINKS.promptStudioGithub,
+      'MIT-licensed Next.js app for consistent characters, scenes, images, and short films locally with ComfyUI. Formerly Prompt Studio / llm-prompt-studio. Heal & ready, Play campaigns, Mobile Studio, workflow takeover, and optional cloud stills/clips when you skip the graph.',
+    href: SITE_LINKS.castcut,
+    externalHref: SITE_LINKS.castcutGithub,
     linkLabel: 'Read the docs on robmcd.name',
     stack: [
       'Next.js',
       'TypeScript',
       'ComfyUI',
-      'Fal / Replicate / Grok / Gemini',
+      'FLUX / Qwen / WAN',
       'Tauri desktop',
       'Docker',
       'SQLite',
@@ -42,23 +42,22 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'The problem',
         body: [
-          'ComfyUI excels at rendering, but teams still paste prompts into CLIP nodes, Discord pins, and spreadsheets. Switching FLUX ↔ SDXL ↔ Qwen silently breaks tag density and length limits. Gallery folders become unsearchable PNG dumps with no shared character bible or campaign structure.',
-          'Prompt Studio owns the text layer: generate, format, lint, character bibles, Cast homes, Roleplay beats, batch review, and handoff into ComfyUI or cloud engines — without replacing the graph editor or locking you into one vendor.',
+          'ComfyUI excels at rendering, but character consistency still dies in CLIP paste, Discord pins, and PNG dumps. Switching FLUX ↔ SDXL ↔ Qwen silently breaks tag density and length limits. There is no shared Cast home, campaign structure, or film cut step — just more stills.',
+          'Castcut owns the film loop: character bible, Moodboard and Fitting, Day stills/clips, optional Roleplay, Gallery review, Cut film, and Save to Cast — with handoff into ComfyUI or optional cloud engines, without replacing the graph editor or locking you into one vendor.',
         ],
       },
       {
         heading: 'What shipped',
         body: [
-          '25+ tool routes across Generate, Format, Refine, Compose, Image → Prompt, Inpaint/Outpaint, Character, Cast, Roleplay, Video, Audio, 3D Mesh, Gallery, Variations, ControlNet, Workflow editor, Plugins, and Mobile Studio. 40+ ComfyUI image targets (FLUX including Klein, Qwen Image, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX video, and more) with family-aware scaffolds.',
-          'Four workspace modes (Simple · Play · Studio · Full). Play campaigns run Moodboard → Fitting → Day → Roleplay → Cut film → Save to Cast. Draft/Final/Max quality profiles, semantic gallery search, keyboard review ratings, and workflow takeover that patches live prompt values at ComfyUI queue time.',
-          'Heal & ready on first launch, optional Diffusers stills sidecar, cloud engines for stills and clips (Fal, Replicate, Grok, Gemini; ChatGPT stills). Desktop installers via Tauri — macOS .dmg, Windows .exe, Linux .deb preferred (AppImage portable). Docker at ghcr.io/doodersrage/llm-prompt-studio. Local-first persistence (IndexedDB + server SQLite with optional multi-user auth).',
-          'Narrative docs and interactive demos live on robmcd.name at /llm-prompt-studio; operator reference (env tables, API catalog, Play guide, release process) lives on GitHub Pages at doodersrage.github.io/llm-prompt-studio.',
+          'Flagship loop: Cast → Moodboard → Fitting → Day → (optional Roleplay) → Gallery → Cut film. Play is Make; Studio is Control; Full is Build. Specialty tools sit under Extras. 25+ tool routes across Generate, Format, Refine, Compose, Image → Prompt, Inpaint/Outpaint, Character, Cast, Roleplay, Video, Audio, 3D Mesh, Gallery, Variations, ControlNet, Workflow editor, Plugins, and Mobile Studio.',
+          '40+ ComfyUI image targets (FLUX including Klein, Qwen Image, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX video, and more) with family-aware scaffolds. Heal & ready inspects ComfyUI on first launch. Desktop installers via Tauri — macOS .dmg, Windows .exe, Linux .deb preferred (AppImage portable). Docker at ghcr.io/doodersrage/castcut. Local-first persistence (IndexedDB + server SQLite with optional multi-user auth).',
+          'Narrative docs and interactive demos live on robmcd.name at /castcut; operator reference (env tables, API catalog, Play guide, release process) lives on GitHub Pages at doodersrage.github.io/castcut. Product focus for now: workflow reliability, first-run UX, and character consistency over expanding the optional cloud provider matrix.',
         ],
       },
       {
         heading: 'Outcome',
         body: [
-          'Open-source and usable today. Useful if you care about ComfyUI text tooling, Next.js on the edge, or how a prompt layer sits between an LLM and a render farm without owning one vendor graph.',
+          'Open-source and usable today. Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
         ],
       },
     ],
@@ -143,16 +142,21 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
           'Bay Buddy — Glanceable freeze and flood “mood” for one garage, workshop, or cabin space on a second monitor.',
           'Progressive Web App — Install from Chrome, Edge, or Safari Add to Home Screen for a phone-friendly client with the same account, no store wait. Pro can enable browser push from Dashboard → Alerts.',
           'Home Assistant — HACS integration in doodersrage/thermaltrace-home-assistant for dual-run with local notify when you want LAN voice/phone alerts alongside ThermalTrace channels.',
+          'Matter / smart home — Matterbridge plugin (thermaltrace-matter) exposes share-link sensors to Apple Home, Google Home, and Alexa.',
+          'Claim puck — RP2040-Zero field helper (thermaltrace-claim-puck) for boring installs when you would rather flash and claim than babysit a laptop in the garage.',
         ],
         links: [
           { label: 'Apps catalog', href: SITE_LINKS.thermalTraceApps, external: true, note: 'thermaltrace.dev/apps' },
           { label: 'Android (GitHub)', href: SITE_LINKS.thermalTraceAndroid, external: true },
           { label: 'Desktop (GitHub)', href: SITE_LINKS.thermalTraceDesktop, external: true },
+          { label: 'Bay Buddy (GitHub)', href: SITE_LINKS.thermalTraceBayBuddy, external: true },
           {
             label: 'Home Assistant HACS',
             href: SITE_LINKS.thermalTraceHomeAssistant,
             external: true,
           },
+          { label: 'Matter bridge', href: SITE_LINKS.thermalTraceMatter, external: true },
+          { label: 'Claim puck', href: SITE_LINKS.thermalTraceClaimPuck, external: true },
         ],
       },
       {
@@ -217,6 +221,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
 
 const SLUG_ALIASES: Record<string, string> = {
   'garage-temp': 'thermaltrace',
+  'llm-prompt-studio': 'castcut',
 }
 
 export function getWorkBySlug(slug: string): WorkCaseStudy | undefined {

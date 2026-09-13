@@ -1,6 +1,6 @@
 # robmcd-name-new
 
-Astro portfolio for [robmcd.name](https://robmcd.name) — workshop visual language, static MDX pages, LLM Prompt Studio docs, work case studies, and a Cloudflare Worker contact form (Turnstile + SMTP).
+Astro portfolio for [robmcd.name](https://robmcd.name) — workshop visual language, static MDX pages, Castcut docs, work case studies, and a Cloudflare Worker contact form (Turnstile + SMTP).
 
 ## Stack
 
@@ -43,7 +43,7 @@ Set `PUBLIC_TURNSTILE_SITE_KEY` in the Cloudflare project environment / `.env` f
 1. Deploy this Worker/Pages project.
 2. Point `robmcd.name` at the new deployment.
 3. Keep the old `robmcd-name-web` Worker archived until traffic is verified.
-4. `/blog` and `/comfyui-prompt-studio/*` redirect to `/` and `/llm-prompt-studio/*`.
+4. `/blog` redirects to `/`. `/llm-prompt-studio/*` and `/comfyui-prompt-studio/*` redirect to `/castcut/*`.
 
 ## Content
 
@@ -51,6 +51,6 @@ Set `PUBLIC_TURNSTILE_SITE_KEY` in the Cloudflare project environment / `.env` f
 |------|----------|
 | Marketing MDX | `src/content/pages/` |
 | Work case studies | `src/content/work/` |
-| Prompt Studio docs | `src/content/comfyui-prompt-studio/` |
+| Castcut docs | `src/content/comfyui-prompt-studio/` |
 | Site links / nav | `src/lib/site.ts` |
 | Design tokens | `src/styles/globals.scss` |

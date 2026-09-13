@@ -4,20 +4,20 @@ import { SITE_LINKS } from '@/lib/site'
 export const hubPages = [
   page(
     [],
-    'LLM Prompt Studio',
-    'Prompt, queue, and ship films — ComfyUI takeover, Play campaigns, Cast, and cloud stills/clips.',
+    'Castcut',
+    'Local character films with ComfyUI — Cast → Moodboard → Fitting → Day → Cut film.',
     'Hub',
     0,
     [
       ...p(
-        'LLM Prompt Studio (canonical repo: github.com/doodersrage/llm-prompt-studio; the old comfyui-prompt-studio name redirects here) is a self-hosted Next.js app that turns keywords or topics into model-specific prompts for image, video, audio, and 3D workflows. ComfyUI remains the primary local render engine; optional Diffusers stills and cloud engines (Fal, Replicate, ChatGPT, Gemini, Grok) cover stills and clips when you skip the graph editor.',
-        'The app ships 25+ tool routes — Generate, Format, Refine, Compose, Image → Prompt, Inpaint/Outpaint, Character, Cast, Roleplay, Video, Audio, 3D Mesh, Gallery, Variations, ControlNet, Workflow editor, Plugins, Mobile Studio — plus 40+ model targets (FLUX including Klein, Qwen Image, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX video, and more). Four workspace modes (Simple · Play · Studio · Full), Heal & ready on first launch, Play campaigns (Moodboard → Fitting → Day → Cut → Cast), desktop Tauri installers (.dmg / .exe / .deb preferred; AppImage portable), Docker images, and local-first persistence.',
+        'Castcut (canonical repo: github.com/doodersrage/castcut; formerly Prompt Studio / llm-prompt-studio / comfyui-prompt-studio) is a self-hosted Next.js app for consistent characters, scenes, images, and short films locally with ComfyUI. Model support (FLUX, Qwen, WAN, Hunyuan, LTX, and more) is the engine underneath; the product is the film loop.',
+        'Flagship loop: Cast → Moodboard → Fitting → Day → (optional Roleplay) → Gallery → Cut film → Save to Cast. Play is Make; Studio is Control; Full is Build. Specialty tools sit under Extras. Heal & ready inspects ComfyUI on first launch. Mobile Studio (`/m`) is the phone-first capture / review / Play companion. Optional Diffusers stills and cloud engines stay available; the near-term focus is reliability and character consistency, not expanding that matrix.',
       ),
       {
         type: 'callout',
         variant: 'info',
         title: 'Get it running',
-        text: `Local dev: ${LIVE} (Node.js 22+). Heal & ready on Settings → Overview. Desktop: GitHub Releases (.dmg / .exe / .deb preferred on Linux). Docker: ghcr.io/doodersrage/llm-prompt-studio:latest. Full searchable docs at ${DOCS_SITE}.`,
+        text: `Local dev: ${LIVE} (Node.js 22+). Heal & ready on Settings → Overview. Desktop: GitHub Releases (.dmg / .exe / .deb preferred on Linux). Docker: ghcr.io/doodersrage/castcut:latest. Full searchable docs at ${DOCS_SITE}.`,
       },
       {
         type: 'links',
@@ -46,7 +46,7 @@ export const hubPages = [
       {
         type: 'links',
         items: [
-          { label: 'Why Prompt Studio? (sales pitch)', href: `${DOCS_BASE_PATH}/stories/sales-pitch` },
+          { label: 'Why Castcut? (sales pitch)', href: `${DOCS_BASE_PATH}/stories/sales-pitch` },
           { label: 'Quick start (Node 22+)', href: `${DOCS_BASE_PATH}/getting-started/quick-start` },
           { label: 'Tools table & routes', href: `${DOCS_BASE_PATH}/introduction/feature-map` },
           { label: 'Play mode & Roleplay', href: `${DOCS_BASE_PATH}/play/roleplay` },

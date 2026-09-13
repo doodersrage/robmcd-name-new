@@ -3,22 +3,22 @@ import { DOCS_BASE_PATH, GH, LIVE, p, page } from '../helpers'
 export const storiesPages = [
   page(
     ['stories', 'sales-pitch'],
-    'Why Prompt Studio?',
-    'A self-hosted prompt control plane for ComfyUI and cloud engines — 28+ tools, 40+ model targets, Cast, Roleplay, and queue-time workflow takeover.',
+    'Why Castcut?',
+    'Local character films with ComfyUI — Cast → Moodboard → Fitting → Day → Cut film. Formerly Prompt Studio.',
     'Sales & stories',
     -2,
     [
       { type: 'h2', text: 'The problem every ComfyUI power user hits' },
       ...p(
-        'ComfyUI is unmatched at turning checkpoints into pixels, but it was never designed to be a prompt CMS. Most teams end up with prompts scattered across CLIP node text fields, Discord threads, and spreadsheets — while negatives, character bibles, and “what worked last Tuesday” live nowhere central. Every model family wants different prose: FLUX expects subject-first photographic language, SDXL wants scene descriptions, Qwen Edit expects short imperatives, and WAN video needs motion-forward clauses.',
-        'Prompt Studio closes that gap without replacing ComfyUI or locking you into one cloud vendor. It owns the words, the lint rules, the gallery metadata, Cast homes, and the queue handoff; ComfyUI still owns local graphs when you want them, and Fal/Replicate/Grok/Gemini cover clips when you do not. The app is MIT-licensed, runs on Node.js 22+ or desktop installers, and stores production data locally — IndexedDB in the browser for settings, history, and gallery, with server-side persistence and optional multi-user auth when you expose it to a team.',
+        'ComfyUI is unmatched at turning checkpoints into pixels, but it was never designed to be a character-film control plane. Most teams end up with prompts scattered across CLIP node text fields, Discord threads, and spreadsheets — while negatives, character bibles, and “what worked last Tuesday” live nowhere central. Every model family wants different prose: FLUX expects subject-first photographic language, SDXL wants scene descriptions, Qwen Edit expects short imperatives, and WAN video needs motion-forward clauses.',
+        'Castcut closes that gap without replacing ComfyUI or locking you into one cloud vendor. It owns the film loop — Cast homes, Moodboard and Fitting, Day stills/clips, Gallery, Cut film — plus lint rules and queue handoff; ComfyUI still owns local graphs when you want them. The app is MIT-licensed, runs on Node.js 22+ or desktop installers, and stores production data locally — IndexedDB in the browser for settings, history, and gallery, with server-side persistence and optional multi-user auth when you expose it to a team.',
       ),
       { type: 'h2', text: 'Before & after' },
       {
         type: 'callout',
         variant: 'tip',
         title: 'Try the toggle below',
-        text: 'Compare a typical ad-hoc workflow with a Prompt Studio pipeline: Generate → Format/Lint → Send to ComfyUI → Gallery review → re-queue with Draft/Final/Max quality.',
+        text: 'Compare a typical ad-hoc workflow with a Castcut pipeline: Generate → Format/Lint → Send to ComfyUI → Gallery review → Cut film / re-queue with Draft/Final/Max quality.',
       },
       { type: 'interactive-slot' },
       { type: 'h2', text: 'What you get on day one' },
@@ -49,7 +49,7 @@ export const storiesPages = [
       },
       { type: 'h2', text: 'Who this is for' },
       ...p(
-        'Indie creators shipping character IP, studios batching ComfyUI on local or remote GPUs, and technical artists who need repeatable prompts without rebuilding graphs every week. If you already run ComfyUI and an LLM (local or API), Prompt Studio is the missing text layer — with optional cloud stills/clips and desktop installs, not another closed SaaS generator.',
+        'Indie creators shipping character IP, studios batching ComfyUI on local or remote GPUs, and technical artists who need repeatable prompts without rebuilding graphs every week. If you already run ComfyUI and an LLM (local or API), Castcut is the missing text layer — with optional cloud stills/clips and desktop installs, not another closed SaaS generator.',
       ),
       { type: 'h2', text: 'Start now' },
       {
@@ -76,7 +76,7 @@ export const storiesPages = [
         type: 'callout',
         variant: 'info',
         title: 'Illustrative scenario',
-        text: 'This walkthrough is a composite example based on common Prompt Studio workflows — not a named client engagement.',
+        text: 'This walkthrough is a composite example based on common Castcut workflows — not a named client engagement.',
       },
       { type: 'h2', text: 'Profile' },
       {
@@ -89,8 +89,8 @@ export const storiesPages = [
         ],
       },
       ...p(
-        'Maya Chen runs ComfyUI on a local RTX 4090. She uses FLUX Dev and Schnell on Generate for fast dailies, then SDXL Base with Final/Max quality profiles for print-bound delivery. Before Prompt Studio, every episode meant reconstructing prompts from PNG metadata, retyping negatives, and hoping character tags stayed consistent across model families.',
-        'After adopting Prompt Studio, Maya defined her lead character once in `/character`, attached wardrobe catalog tokens, and built a Studio campaign tied to `/topics` rows — one topic per episode. Draft batches ran after work; winners were promoted to Final quality on weekends and reviewed in Gallery review mode with keyboard 1–5 ratings.',
+        'Maya Chen runs ComfyUI on a local RTX 4090. She uses FLUX Dev and Schnell on Generate for fast dailies, then SDXL Base with Final/Max quality profiles for print-bound delivery. Before Castcut, every episode meant reconstructing prompts from PNG metadata, retyping negatives, and hoping character tags stayed consistent across model families.',
+        'After adopting Castcut, Maya defined her lead character once in `/character`, attached wardrobe catalog tokens, and built a Studio campaign tied to `/topics` rows — one topic per episode. Draft batches ran after work; winners were promoted to Final quality on weekends and reviewed in Gallery review mode with keyboard 1–5 ratings.',
       ),
       { type: 'h2', text: 'The challenge' },
       {

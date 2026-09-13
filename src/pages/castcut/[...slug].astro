@@ -17,7 +17,7 @@ const slug = slugParam ? slugParam.split('/').filter(Boolean) : []
 const page = getPageBySlug(slug)
 
 if (!page) {
-  return Astro.redirect('/llm-prompt-studio')
+  return Astro.redirect('/castcut')
 }
 
 const currentPath = slugToPath(page.slug)
@@ -28,7 +28,7 @@ const jsonLd = {
   '@graph': [
     breadcrumbSchema([
       { name: 'Home', path: '/' },
-      { name: 'LLM Prompt Studio', path: '/llm-prompt-studio' },
+      { name: 'Castcut', path: '/castcut' },
       { name: page.title, path: currentPath },
     ]),
     {

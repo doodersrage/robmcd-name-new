@@ -34,9 +34,9 @@ export function DocPageView({ page, currentPath }: { page: DocPage; currentPath:
     body = (
       <div className="space-y-12">
         <Hero
-          title="LLM Prompt Studio"
+          title="Castcut"
           description={page.description}
-          primaryCta={{ label: 'Why Prompt Studio?', href: `${DOCS_BASE_PATH}/stories/sales-pitch` }}
+          primaryCta={{ label: 'Why Castcut?', href: `${DOCS_BASE_PATH}/stories/sales-pitch` }}
           secondaryCta={{ label: 'View on GitHub', href: CPS_GITHUB }}
         />
         <section className="space-y-8">

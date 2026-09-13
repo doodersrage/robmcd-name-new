@@ -3,23 +3,23 @@ import { DOCS, DOCS_SITE, GH, p, page } from '../helpers'
 export const introductionPages = [
   page(
     ['introduction', 'what-is-it'],
-    'What is Prompt Studio?',
-    'Purpose, audience, and how Prompt Studio complements ComfyUI and cloud engines.',
+    'What is Castcut?',
+    'Purpose, audience, and how Castcut runs the local character-film loop on ComfyUI.',
     'Introduction',
     1,
     [
       ...p(
-        'Prompt Studio targets creators who outgrow ad-hoc prompt text files and CLIP node copy-paste. It centralizes generation, formatting, linting, character bibles, Cast homes, Roleplay beats, batch review, and workflow handoff — while ComfyUI still handles local graphs, samplers, and VRAM when you want full control.',
+        'Castcut is for creators who want consistent characters, scenes, images, and short films locally with ComfyUI — not another CLIP paste workflow. Flagship loop: Cast → Moodboard → Fitting → Day → (optional Roleplay) → Gallery → Cut film → Save to Cast. Play is Make; Studio is Control; Full is Build.',
         'The app is built with React, TypeScript, and Next.js on Node.js 22+. A server exposes HTTP APIs consumed by the UI, ComfyUI custom nodes, desktop (Tauri) builds, and headless scripts. Browser state persists in IndexedDB (Dexie); server data lives in SQLite with configurable export paths.',
-        'Primary integration is ComfyUI for generate, Lightning, and specialty graphs. Optional Diffusers engine covers experimental txt2img; Settings → Inference engine adds Fal, Replicate, ChatGPT (stills only), Gemini, and Grok (stills + native video clips). Every tool route is model-aware — switching from FLUX to SDXL or Qwen Edit revalidates length, negatives, and lint profiles automatically.',
+        'Primary integration is ComfyUI for generate, Lightning, and specialty graphs. Optional Diffusers and cloud engines (Fal, Replicate, ChatGPT stills, Gemini, Grok, Runway) stay available; near-term product focus is reliability, first-run UX, and character consistency rather than expanding that matrix.',
       ),
       { type: 'h2', text: 'Core value' },
       {
         type: 'ul',
         items: [
-          'Heal & ready on first launch; 40+ ComfyUI image model targets with architecture-specific scaffolds',
-          'Cloud engines for stills and clips without maintaining every graph locally',
-          'Play campaigns (Moodboard → Cut → Cast), Roleplay, and Mobile Studio for character IP workflows',
+          'Film loop: Cast → Moodboard → Fitting → Day → Cut film; Heal & ready on first launch',
+          '40+ ComfyUI image model targets with architecture-specific scaffolds',
+          'Play campaigns, Roleplay, and Mobile Studio for character IP workflows',
           'Dedicated Format (`/format`) and Lint (`/lint`) — separate tools, not one combined step',
           'Gallery with grid/dense/list layouts, review focus, compare modal, and semantic search',
           'Workflow takeover at queue time — inject live prompts without rebuilding graphs',

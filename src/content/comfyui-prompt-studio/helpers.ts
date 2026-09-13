@@ -1,14 +1,15 @@
 import type { DocBlock, DocPage, DocSection } from './types'
 
-export const GH = 'https://github.com/doodersrage/llm-prompt-studio'
+export const GH = 'https://github.com/doodersrage/castcut'
 export const LIVE = 'http://localhost:47832'
 export const DOCS = `${GH}/tree/main/docs`
-export const DOCS_SITE = 'https://doodersrage.github.io/llm-prompt-studio'
+export const DOCS_SITE = 'https://doodersrage.github.io/castcut'
 export const RELEASES = `${GH}/releases`
-export const DOCKER_IMAGE = 'ghcr.io/doodersrage/llm-prompt-studio:latest'
-export const DOCS_BASE_PATH = '/llm-prompt-studio'
-/** Legacy path — still routed; prefer DOCS_BASE_PATH in new links */
+export const DOCKER_IMAGE = 'ghcr.io/doodersrage/castcut:latest'
+export const DOCS_BASE_PATH = '/castcut'
+/** Legacy paths — middleware redirects both to DOCS_BASE_PATH */
 export const LEGACY_DOCS_BASE_PATH = '/comfyui-prompt-studio'
+export const LEGACY_DOCS_BASE_PATH_LLM = '/llm-prompt-studio'
 export const CPS_GITHUB = GH
 export const CPS_LIVE = LIVE
 

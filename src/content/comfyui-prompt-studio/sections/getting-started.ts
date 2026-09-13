@@ -12,14 +12,14 @@ export const gettingStartedPages = [
         type: 'callout',
         variant: 'tip',
         title: 'Requires Node.js 22+',
-        text: 'Prompt Studio uses modern Node APIs. Verify with `node -v` before installing.',
+        text: 'Castcut uses modern Node APIs. Verify with `node -v` before installing.',
       },
       {
         type: 'code',
-        code: 'git clone https://github.com/doodersrage/llm-prompt-studio.git\ncd llm-prompt-studio\nnpm install\ncp .env.example .env.local\nnpm run dev',
+        code: 'git clone https://github.com/doodersrage/castcut.git\ncd castcut\nnpm install\ncp .env.example .env.local\nnpm run dev',
       },
       ...p(
-        `Dev server defaults to port 47832. Open ${LIVE}/ for Generate and ${LIVE}/dashboard for queue status. The canonical repo is \`llm-prompt-studio\`; the old \`comfyui-prompt-studio\` GitHub name redirects here.`,
+        `Dev server defaults to port 47832. Open ${LIVE}/ for Generate and ${LIVE}/dashboard for queue status. The canonical repo is \`castcut\` (formerly \`llm-prompt-studio\` / \`comfyui-prompt-studio\`; those GitHub names redirect here).`,
         'Before generating, set `COMFYUI_API_URL` (your ComfyUI instance), `LLM_MODEL` (text generation), and ideally `LLM_VISION_MODEL` (Image → Prompt and Refine with image hints) in `.env.local`. For cloud stills or clips, add keys in Settings → Inference engine (Fal, Replicate, ChatGPT, Gemini, Grok).',
         'On first launch, open Settings → Overview and run **Heal & ready** — this validates LLM connectivity, ComfyUI probe, IndexedDB/Dexie, and default export paths. Then generate on **Generate** (`/`) and click **Send to ComfyUI** or queue through your selected cloud engine.',
       ),
@@ -132,12 +132,12 @@ export const gettingStartedPages = [
   page(
     ['getting-started', 'comfyui-nodes'],
     'ComfyUI custom nodes',
-    'Install nodes that pull prompts from Prompt Studio into running workflows.',
+    'Install nodes that pull prompts from Castcut into running workflows.',
     'Getting started',
     9,
     [
       ...p(
-        'Custom nodes under `comfyui/comfyui_image_prompt_tools/` register endpoints that read the latest prompt, negative, and metadata from Prompt Studio. Wire them into CLIP text encode nodes instead of static strings — workflow takeover replaces values at queue time.',
+        'Custom nodes under `comfyui/comfyui_image_prompt_tools/` register endpoints that read the latest prompt, negative, and metadata from Castcut. Wire them into CLIP text encode nodes instead of static strings — workflow takeover replaces values at queue time.',
         'Import pack-accurate graphs via Settings → ComfyUI → workflow library → Import. Download weights with `COMFYUI_ROOT` set, then Settings → ComfyUI → Model assets. Cloud-engine queues bypass ComfyUI graphs entirely — custom nodes apply only to local ComfyUI paths.',
       ),
       { type: 'h2', text: 'Install' },
@@ -146,8 +146,8 @@ export const gettingStartedPages = [
         items: [
           'Copy or submodule `comfyui/comfyui_image_prompt_tools/` into ComfyUI/custom_nodes',
           'Restart ComfyUI and verify probe from Settings → ComfyUI',
-          'Add Prompt Studio source nodes to your workflow graph',
-          'Enable workflow takeover on the Prompt Studio side before queueing',
+          'Add Castcut source nodes to your workflow graph',
+          'Enable workflow takeover on the Castcut side before queueing',
         ],
       },
       {

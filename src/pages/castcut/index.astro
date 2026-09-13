@@ -9,7 +9,7 @@ import { SITE_LINKS, SITE_URL } from '@/lib/site'
 
 const page = getPageBySlug([])
 if (!page) {
-  throw new Error('Missing Prompt Studio hub page')
+  throw new Error('Missing Castcut hub page')
 }
 const currentPath = slugToPath([])
 
@@ -19,17 +19,17 @@ const jsonLd = {
     personSchema(),
     breadcrumbSchema([
       { name: 'Home', path: '/' },
-      { name: 'LLM Prompt Studio', path: currentPath },
+      { name: 'Castcut', path: currentPath },
     ]),
     {
       ...softwareApplicationSchema({
-        name: 'LLM Prompt Studio',
+        name: 'Castcut',
         description: page.description,
         url: currentPath,
-        codeRepository: SITE_LINKS.promptStudioGithub,
+        codeRepository: SITE_LINKS.castcutGithub,
         applicationCategory: 'DeveloperApplication',
-        offersUrl: SITE_LINKS.promptStudioGithub,
-        sameAs: [SITE_LINKS.promptStudioGithub, SITE_LINKS.promptStudioDocs],
+        offersUrl: SITE_LINKS.castcutGithub,
+        sameAs: [SITE_LINKS.castcutGithub, SITE_LINKS.castcutDocs],
       }),
       '@id': `${SITE_URL}${currentPath}#software`,
     },
@@ -38,7 +38,7 @@ const jsonLd = {
 ---
 
 <BaseLayout
-  title="LLM Prompt Studio"
+  title="Castcut"
   description={page.description}
   canonical={currentPath}
   wide

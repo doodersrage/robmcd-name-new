@@ -8,7 +8,7 @@ type DocsBreadcrumbsProps = {
 }
 
 export function DocsBreadcrumbs({ slug, title }: DocsBreadcrumbsProps) {
-  const crumbs: { label: string; href: string }[] = [{ label: 'Prompt Studio', href: DOCS_BASE_PATH }]
+  const crumbs: { label: string; href: string }[] = [{ label: 'Castcut', href: DOCS_BASE_PATH }]
 
   for (let i = 0; i < slug.length; i++) {
     const segment = slug[i]!

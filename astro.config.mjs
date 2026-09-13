@@ -24,7 +24,9 @@ export default defineConfig({
   },
   redirects: {
     '/blog': '/',
-    '/comfyui-prompt-studio': '/llm-prompt-studio',
+    '/llm-prompt-studio': '/castcut',
+    '/comfyui-prompt-studio': '/castcut',
+    '/work/llm-prompt-studio': '/work/castcut',
     '/work/garage-temp': '/work/thermaltrace',
     '/projects': '/homelab',
     '/services': '/homelab',

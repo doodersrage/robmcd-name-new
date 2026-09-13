@@ -23,7 +23,7 @@ const staticPaths = [
   '/tools/triage',
   '/colophon',
   '/press',
-  '/llm-prompt-studio',
+  '/castcut',
   '/work/thermaltrace/protocol',
 ]
 

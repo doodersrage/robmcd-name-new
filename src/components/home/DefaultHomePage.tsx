@@ -29,18 +29,18 @@ const CAPABILITIES = [
 
 const SHIPPED = [
   {
-    title: 'LLM Prompt Studio',
-    tagline: 'ComfyUI + cloud stills and clips',
+    title: 'Castcut',
+    tagline: 'Local character films with ComfyUI',
     description:
-      'MIT-licensed Next.js studio: prompt tools, Play campaigns, workflow takeover, Mobile Studio, and desktop/Docker installs.',
-    href: SITE_LINKS.promptStudio,
+      'Cast → Moodboard → Fitting → Day → Cut film. Heal & ready, Play campaigns, Mobile Studio, desktop and Docker. Formerly Prompt Studio.',
+    href: SITE_LINKS.castcut,
     linkLabel: 'Read the docs',
   },
   {
     title: 'ThermalTrace',
     tagline: 'Freeze and flood alerts for instrumented spaces',
     description:
-      'Open monitoring for garages and workshops. ESP32/Pico ingest, time-to-freeze, household alerts, companion apps.',
+      'Open monitoring for garages and workshops. ESP ingest, time-to-freeze, household alerts, companions (Desktop, Android, Bay Buddy, Matter, HA).',
     href: SITE_LINKS.thermalTracePage,
     linkLabel: 'About ThermalTrace',
   },
@@ -66,7 +66,7 @@ export function DefaultHomePage() {
       <ProjectShowcase
         eyebrow="Shipped"
         title="Open source"
-        description="Prompt Studio docs live on this site. ThermalTrace runs at thermaltrace.dev."
+        description="Castcut docs live on this site. ThermalTrace runs at thermaltrace.dev."
         projects={SHIPPED}
       />
 

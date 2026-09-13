@@ -9,7 +9,7 @@ export const modelsPages = [
     44,
     [
       ...p(
-        'Prompt Studio supports 40+ ComfyUI image model targets grouped by architecture family. Natively supported models include built-in scaffolds, Settings → ComfyUI asset downloads, system workflow paths, and full tool coverage on Generate, Refine, Compose, and Image → Prompt.',
+        'Castcut supports 40+ ComfyUI image model targets grouped by architecture family. Natively supported models include built-in scaffolds, Settings → ComfyUI asset downloads, system workflow paths, and full tool coverage on Generate, Refine, Compose, and Image → Prompt.',
         'Each family defines max length, default negatives, lint rules, generation templates, and queue paths. Switching family revalidates all open tools.',
       ),
       { type: 'h2', text: 'Natively supported highlights' },

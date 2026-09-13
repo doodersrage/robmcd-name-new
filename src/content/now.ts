@@ -6,24 +6,25 @@ export type NowItem = {
 
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
-  updated: '2026-09-07',
-  headline: 'Shop window, sensors, and forms that actually mail.',
+  updated: '2026-09-13',
+  headline: 'Castcut rename, ThermalTrace companions, shop window still open.',
   items: [
     {
-      label: 'robmcd.name',
+      label: 'Castcut',
       detail:
-        'Astro 7 on Cloudflare Workers: Homelab rename, SSR header, notes, tools, hire page, and status board.',
-      href: '/',
+        'Formerly Prompt Studio / llm-prompt-studio. Film loop docs on this domain; upstream at github.com/doodersrage/castcut.',
+      href: '/castcut',
     },
     {
       label: 'ThermalTrace',
-      detail: 'Product at thermaltrace.dev — ingest, alerts, companion apps. Protocol kit mirrored here.',
+      detail:
+        'Product at thermaltrace.dev — ingest, alerts, Desktop/Android/Bay Buddy, Matter bridge, claim puck. Protocol kit mirrored here.',
       href: '/work/thermaltrace',
     },
     {
-      label: 'LLM Prompt Studio',
-      detail: 'Docs hosted on this domain; upstream stays on GitHub / GHCR.',
-      href: '/llm-prompt-studio',
+      label: 'robmcd.name',
+      detail: 'Astro on Cloudflare Workers: hire, notes, tools, status, and product write-ups.',
+      href: '/',
     },
   ] satisfies NowItem[],
   notDoing: [

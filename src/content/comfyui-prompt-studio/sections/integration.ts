@@ -9,7 +9,7 @@ export const integrationPages = [
     49,
     [
       ...p(
-        'Workflow takeover replaces static CLIP text with live Prompt Studio values when a job reaches the ComfyUI queue — no graph rebuild between iterations. Custom nodes under `comfyui/comfyui_image_prompt_tools/` poll or receive updates; enable per-workflow in Settings before sending.',
+        'Workflow takeover replaces static CLIP text with live Castcut values when a job reaches the ComfyUI queue — no graph rebuild between iterations. Custom nodes under `comfyui/comfyui_image_prompt_tools/` poll or receive updates; enable per-workflow in Settings before sending.',
         'Inpaint and Outpaint substitute `{{INPUT_IMAGE}}` and `{{MASK_IMAGE}}` at queue time. Audio jobs replace `{{AUDIO_SECONDS}}`. Confirm target workflow ID, preview prompt diff, and rate-limit API calls to ComfyUI on shared hosts. Cloud-engine queues (Fal, Replicate, etc.) do not use workflow takeover — they call provider APIs directly.',
       ),
       { type: 'h2', text: 'Safety checklist' },

@@ -84,7 +84,7 @@ export const mediaPages = [
     [
       ...p(
         'Workflow editor (`/workflow-editor`) renders Comfy API-format graphs in React Flow — edit prompt nodes, adjust parameters, save to the workflow library, and queue directly. Maps graph nodes to editable prompt fields with snapshots back to Studio templates.',
-        'Import pack-accurate graphs via Settings → ComfyUI → workflow library → Import. Workflow takeover at queue time injects live Prompt Studio text into saved graphs without manual CLIP edits.',
+        'Import pack-accurate graphs via Settings → ComfyUI → workflow library → Import. Workflow takeover at queue time injects live Castcut text into saved graphs without manual CLIP edits.',
       ),
       { type: 'interactive-slot' },
       {

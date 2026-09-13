@@ -7,9 +7,14 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return context.redirect('/', 301)
   }
 
+  if (path === '/llm-prompt-studio' || path.startsWith('/llm-prompt-studio/')) {
+    const rest = path.slice('/llm-prompt-studio'.length)
+    return context.redirect(`/castcut${rest}`, 301)
+  }
+
   if (path === '/comfyui-prompt-studio' || path.startsWith('/comfyui-prompt-studio/')) {
     const rest = path.slice('/comfyui-prompt-studio'.length)
-    return context.redirect(`/llm-prompt-studio${rest}`, 301)
+    return context.redirect(`/castcut${rest}`, 301)
   }
 
   return next()

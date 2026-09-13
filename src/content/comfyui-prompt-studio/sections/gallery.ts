@@ -87,7 +87,7 @@ export const galleryPages = [
     42,
     [
       ...p(
-        'Queue view shows pending ComfyUI jobs sourced from Prompt Studio — Generate sends, Variations batches, campaign schedules, and re-queues from Gallery. Pause, reorder, or cancel when the GPU is saturated.',
+        'Queue view shows pending ComfyUI jobs sourced from Castcut — Generate sends, Variations batches, campaign schedules, and re-queues from Gallery. Pause, reorder, or cancel when the GPU is saturated.',
         'Dashboard (`/dashboard`) mirrors queue status with pending jobs and recent outputs. Workflow takeover applies live prompt text at queue time for each job.',
       ),
       { type: 'h2', text: 'Backpressure' },

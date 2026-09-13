@@ -38,7 +38,7 @@ export function SalesPitchDemo() {
             view === 'before' ? 'ring-2 ring-amber-400/80 dark:ring-amber-600' : 'opacity-70'
           }`}
         >
-          Without Prompt Studio
+          Without Castcut
         </button>
         <button
           type="button"
@@ -47,7 +47,7 @@ export function SalesPitchDemo() {
             view === 'after' ? 'ring-2 ring-emerald-400/80 dark:ring-emerald-600' : 'opacity-70'
           }`}
         >
-          With Prompt Studio
+          With Castcut
         </button>
       </div>
 

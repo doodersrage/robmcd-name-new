@@ -46,8 +46,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={SITE_LINKS.promptStudio} className="text-link text-sm">
-                  LLM Prompt Studio
+                <a href={SITE_LINKS.castcut} className="text-link text-sm">
+                  Castcut
                 </a>
               </li>
               <li>

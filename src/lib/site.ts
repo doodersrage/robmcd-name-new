@@ -25,10 +25,16 @@ export const SITE_LINKS = {
   press: '/press',
   thermalTraceProtocol: '/work/thermaltrace/protocol',
   privacy: '/privacy',
-  promptStudio: '/llm-prompt-studio',
-  promptStudioGithub: 'https://github.com/doodersrage/llm-prompt-studio',
-  promptStudioDocs: 'https://doodersrage.github.io/llm-prompt-studio',
-  promptStudioDocker: 'ghcr.io/doodersrage/llm-prompt-studio:latest',
+  /** Canonical product path (formerly Prompt Studio / llm-prompt-studio). */
+  castcut: '/castcut',
+  castcutGithub: 'https://github.com/doodersrage/castcut',
+  castcutDocs: 'https://doodersrage.github.io/castcut',
+  castcutDocker: 'ghcr.io/doodersrage/castcut:latest',
+  /** @deprecated Use castcut* */
+  promptStudio: '/castcut',
+  promptStudioGithub: 'https://github.com/doodersrage/castcut',
+  promptStudioDocs: 'https://doodersrage.github.io/castcut',
+  promptStudioDocker: 'ghcr.io/doodersrage/castcut:latest',
   thermalTrace: 'https://thermaltrace.dev/',
   thermalTracePage: '/work/thermaltrace',
   thermalTraceDemo: 'https://thermaltrace.dev/demo',
@@ -42,6 +48,9 @@ export const SITE_LINKS = {
   thermalTraceHomeAssistant: 'https://github.com/doodersrage/thermaltrace-home-assistant',
   thermalTraceDesktop: 'https://github.com/doodersrage/thermaltrace-desktop',
   thermalTraceAndroid: 'https://github.com/doodersrage/thermaltrace-android',
+  thermalTraceBayBuddy: 'https://github.com/doodersrage/thermaltrace-bay-buddy',
+  thermalTraceMatter: 'https://github.com/doodersrage/thermaltrace-matter',
+  thermalTraceClaimPuck: 'https://github.com/doodersrage/thermaltrace-claim-puck',
   /** @deprecated Use thermalTrace */
   garageTemp: 'https://thermaltrace.dev/',
 } as const
@@ -63,7 +72,7 @@ export const PRIMARY_NAV: SiteNavItem[] = [
     href: SITE_LINKS.work,
     children: [
       { id: 'work-overview', label: 'Case studies', href: SITE_LINKS.work },
-      { id: 'work-prompt-studio', label: 'LLM Prompt Studio', href: SITE_LINKS.promptStudio },
+      { id: 'work-castcut', label: 'Castcut', href: SITE_LINKS.castcut },
       { id: 'work-thermaltrace', label: 'ThermalTrace', href: SITE_LINKS.thermalTracePage },
       { id: 'work-protocol', label: 'Ingest protocol', href: SITE_LINKS.thermalTraceProtocol },
     ],

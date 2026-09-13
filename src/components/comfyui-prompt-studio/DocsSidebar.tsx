@@ -3,12 +3,18 @@
 import { useEffect, useState } from 'react'
 
 import { DocsSearch } from '@/components/comfyui-prompt-studio/DocsSearch'
-import { DOCS_BASE_PATH, LEGACY_DOCS_BASE_PATH } from '@/content/comfyui-prompt-studio/helpers'
+import {
+  DOCS_BASE_PATH,
+  LEGACY_DOCS_BASE_PATH,
+  LEGACY_DOCS_BASE_PATH_LLM,
+} from '@/content/comfyui-prompt-studio/helpers'
 import { getSections, slugToPath } from '@/content/comfyui-prompt-studio/pages'
 
 function normalizeDocsPath(pathname: string): string {
-  if (pathname === LEGACY_DOCS_BASE_PATH || pathname.startsWith(`${LEGACY_DOCS_BASE_PATH}/`)) {
-    return pathname.replace(LEGACY_DOCS_BASE_PATH, DOCS_BASE_PATH)
+  for (const legacy of [LEGACY_DOCS_BASE_PATH, LEGACY_DOCS_BASE_PATH_LLM]) {
+    if (pathname === legacy || pathname.startsWith(`${legacy}/`)) {
+      return pathname.replace(legacy, DOCS_BASE_PATH)
+    }
   }
   return pathname
 }

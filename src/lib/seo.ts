@@ -71,7 +71,7 @@ export function aboutPageSchema(faqs?: { question: string; answer: string }[]): 
       url: `${SITE_URL}/about`,
       name: `About ${SITE_OWNER}`,
       description:
-        'Robert McDowell, full-stack engineer since 2006. Legacy modernization, servers and databases, SEO/AEO, LLM Prompt Studio, and ThermalTrace.',
+        'Robert McDowell, full-stack engineer since 2006. Legacy modernization, servers and databases, SEO/AEO, Castcut, and ThermalTrace.',
       isPartOf: { '@id': `${SITE_URL}/#website` },
       mainEntity: { '@id': `${SITE_URL}/#person` },
     },

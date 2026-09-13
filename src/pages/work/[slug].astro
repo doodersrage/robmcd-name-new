@@ -7,7 +7,7 @@ import { SITE_LINKS } from '@/lib/site'
 import { softwareApplicationSchema, workCaseStudySchema } from '@/lib/seo'
 
 export function getStaticPaths() {
-  const aliases = [{ params: { slug: 'garage-temp' } }]
+  const aliases = [{ params: { slug: 'garage-temp' } }, { params: { slug: 'llm-prompt-studio' } }]
   return [
     ...WORK_CASE_STUDIES.map((study) => ({ params: { slug: study.slug } })),
     ...aliases,
@@ -21,7 +21,7 @@ if (!study) {
 }
 
 const isThermalTrace = study.slug === 'thermaltrace'
-const isPromptStudio = study.slug === 'llm-prompt-studio'
+const isCastcut = study.slug === 'castcut'
 const primaryHref = study.href ?? study.externalHref ?? SITE_LINKS.contact
 const primaryExternal = Boolean(study.externalHref && !study.href)
 const path = `/work/${study.slug}`
@@ -41,15 +41,15 @@ const software = isThermalTrace
         path,
       ],
     })
-  : isPromptStudio
+  : isCastcut
     ? softwareApplicationSchema({
-        name: 'LLM Prompt Studio',
+        name: 'Castcut',
         description: study.description,
-        url: SITE_LINKS.promptStudio,
-        codeRepository: SITE_LINKS.promptStudioGithub,
+        url: SITE_LINKS.castcut,
+        codeRepository: SITE_LINKS.castcutGithub,
         applicationCategory: 'DeveloperApplication',
-        offersUrl: SITE_LINKS.promptStudioGithub,
-        sameAs: [SITE_LINKS.promptStudioGithub, SITE_LINKS.promptStudioDocs, SITE_LINKS.promptStudio],
+        offersUrl: SITE_LINKS.castcutGithub,
+        sameAs: [SITE_LINKS.castcutGithub, SITE_LINKS.castcutDocs, SITE_LINKS.castcut],
       })
     : undefined
 
@@ -67,7 +67,7 @@ const jsonLd = workCaseStudySchema({
   canonical={path}
   ogType="article"
   ogImage={
-    isPromptStudio
+    isCastcut
       ? '/work/prompt-studio/dashboard.jpg'
       : isThermalTrace
         ? '/work/thermaltrace/overview.jpg'
@@ -266,7 +266,7 @@ const jsonLd = workCaseStudySchema({
   }
 
   {
-    isPromptStudio ? (
+    isCastcut ? (
       <section class="mt-10 space-y-6" aria-labelledby="prompt-studio-shots">
         <div class="space-y-2">
           <h2 id="prompt-studio-shots" class="text-xl font-semibold md:text-2xl">
@@ -281,7 +281,7 @@ const jsonLd = workCaseStudySchema({
             <figure class="space-y-3">
               <img
                 src="/work/prompt-studio/dashboard.jpg"
-                alt="Prompt Studio dashboard showing Play film loop, Studio shortcuts, and ComfyUI queue status"
+                alt="Castcut dashboard showing Play film loop, Studio shortcuts, and ComfyUI queue status"
                 class="w-full rounded-sm border"
                 style="border-color: var(--line)"
                 loading="lazy"
@@ -297,7 +297,7 @@ const jsonLd = workCaseStudySchema({
             <figure class="space-y-3">
               <img
                 src="/work/prompt-studio/generate.jpg"
-                alt="Prompt Studio Generate tool with scene keywords, model picker, and detail controls"
+                alt="Castcut Generate tool with scene keywords, model picker, and detail controls"
                 class="w-full rounded-sm border"
                 style="border-color: var(--line)"
                 loading="lazy"
@@ -313,7 +313,7 @@ const jsonLd = workCaseStudySchema({
             <figure class="space-y-3">
               <img
                 src="/work/prompt-studio/gallery.jpg"
-                alt="Prompt Studio Gallery with search, filters, ratings, and review controls over thousands of outputs"
+                alt="Castcut Gallery with search, filters, ratings, and review controls over thousands of outputs"
                 class="w-full rounded-sm border"
                 style="border-color: var(--line)"
                 loading="lazy"

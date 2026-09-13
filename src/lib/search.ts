@@ -173,7 +173,7 @@ export function searchLocalContent(term: string): SearchHit[] {
     title: page.title,
     description: page.description,
     href: slugToPath(page.slug),
-    source: `Prompt Studio · ${page.section}`,
+    source: `Castcut · ${page.section}`,
   }))
 
   const workHits: SearchHit[] = WORK_CASE_STUDIES.filter(
