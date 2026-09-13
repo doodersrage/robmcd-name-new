@@ -38,6 +38,17 @@ export const WORDPRESS_LISTINGS: WordPressListing[] = [
     status: 'github',
   },
   {
+    id: 'oral-history-archive',
+    title: 'Oral History Archive',
+    slug: 'oral-history-archive',
+    version: '1.0.3',
+    blurb:
+      'Interviews as finding-aid records, not podcast episodes: narrator/interviewer, accession numbers, timed tape logs, and consent that can withhold audio while still listing the conversation. Open / restricted / embargoed rights; reading-room frontend with synced transcript; [oha_clip] for time-range quotes. Restricted interviews never print the audio URL in public HTML. Lives in the wp-spark repo.',
+    github: 'https://github.com/doodersrage/wp-spark',
+    compatibility: 'WordPress 6.4+ · PHP 8.0+',
+    status: 'github',
+  },
+  {
     id: 'file-group-shortcode',
     title: 'File Groups Shortcode',
     slug: 'wordpress-file-group-shortcode',

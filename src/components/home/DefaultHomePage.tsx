@@ -81,7 +81,7 @@ export function DefaultHomePage() {
           <a href={SITE_LINKS.wordpress} className="text-link underline">
             WordPress
           </a>{' '}
-          plugins — Inkbound, Volunteer Impact Tracker, and related work.
+          plugins — Inkbound, Volunteer Impact Tracker, Oral History Archive, and related work.
         </p>
       </section>
 

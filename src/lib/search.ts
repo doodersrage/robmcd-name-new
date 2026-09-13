@@ -118,7 +118,7 @@ const SITE_PAGES: SearchHit[] = [
     id: 'page-wordpress',
     title: 'WordPress plugins',
     description:
-      'Inkbound (serialized fiction) and Volunteer Impact Tracker — WordPress plugins for web novels and nonprofit hours.',
+      'Inkbound, Volunteer Impact Tracker, and Oral History Archive — WordPress plugins for web novels, nonprofit hours, and interview archives.',
     href: SITE_LINKS.wordpress,
     source: 'Work · WordPress',
   },
@@ -262,13 +262,15 @@ export function searchLocalContent(term: string): SearchHit[] {
 
   if (
     wordpressHits.length === 0 &&
-    /wordpress|volunteer|nonprofit|certificate|vit_|inkbound|web.?novel|serial(ized)? fiction|chapter/.test(q)
+    /wordpress|volunteer|nonprofit|certificate|vit_|inkbound|web.?novel|serial(ized)? fiction|chapter|oral.?history|oha_|wp-spark|finding.?aid|tape.?log/.test(
+      q,
+    )
   ) {
     wordpressHits.push({
       id: 'wordpress-hub',
       title: 'WordPress plugins',
       description:
-        'Inkbound (serialized fiction) and Volunteer Impact Tracker — WordPress plugins for web novels and nonprofit hours.',
+        'Inkbound, Volunteer Impact Tracker, and Oral History Archive — WordPress plugins for web novels, nonprofit hours, and interview archives.',
       href: SITE_LINKS.wordpress,
       source: 'Work · WordPress',
     })
