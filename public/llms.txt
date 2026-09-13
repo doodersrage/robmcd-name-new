@@ -22,7 +22,7 @@
   Marketplace: Page List Map, Date Counter (more coming)
   Community profile: https://community.concretecms.com/members/profile/103041
 - WordPress plugins: https://robmcd.name/work/wordpress
-  Volunteer Impact Tracker: https://github.com/doodersrage/volunteer-impact-tracker
+  Volunteer Impact Tracker 1.1.0: https://github.com/doodersrage/volunteer-impact-tracker
 
 ## Optional
 - Homelab: https://robmcd.name/homelab

@@ -118,7 +118,7 @@ const SITE_PAGES: SearchHit[] = [
     id: 'page-wordpress',
     title: 'WordPress plugins',
     description:
-      'Volunteer Impact Tracker and related WordPress plugins — hours, approvals, reports, certificates.',
+      'Volunteer Impact Tracker 1.1 — hours, approvals, emails, my-hours, reports, certificates — and related WordPress plugins.',
     href: SITE_LINKS.wordpress,
     source: 'Work · WordPress',
   },
@@ -268,7 +268,7 @@ export function searchLocalContent(term: string): SearchHit[] {
       id: 'wordpress-hub',
       title: 'WordPress plugins',
       description:
-        'Volunteer Impact Tracker and related WordPress plugins — hours, approvals, reports, certificates.',
+        'Volunteer Impact Tracker 1.1 — hours, approvals, emails, my-hours, reports, certificates — and related WordPress plugins.',
       href: SITE_LINKS.wordpress,
       source: 'Work · WordPress',
     })

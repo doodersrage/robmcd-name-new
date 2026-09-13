@@ -8,6 +8,8 @@ export type WordPressListing = {
   github: string
   /** wordpress.org plugin directory URL when listed */
   directory?: string
+  /** Plugin version string when known, e.g. "1.1.0" */
+  version?: string
   compatibility: string
   status: 'github' | 'directory' | 'legacy'
 }
@@ -17,10 +19,11 @@ export const WORDPRESS_LISTINGS: WordPressListing[] = [
     id: 'volunteer-impact-tracker',
     title: 'Volunteer Impact Tracker',
     slug: 'volunteer-impact-tracker',
+    version: '1.1.0',
     blurb:
-      'Nonprofit volunteer hours after the shift: opportunities CPT, admin + front-end self-report logging, pending approvals, grant-ready reports with in-kind dollar estimates, CSV export, and signed printable certificates. Intentionally narrow — not donations, events, or membership.',
+      'Nonprofit hours after the shift: opportunities CPT; admin add/edit with search and pagination; front-end self-report plus [vit_my_hours]; pending queue with bulk approve/reject; email alerts and certificate delivery; reports with in-kind totals and CSV; signed certificates; dashboard widget; grant Volunteers access to other roles. Intentionally narrow — not donations, events, or membership.',
     github: 'https://github.com/doodersrage/volunteer-impact-tracker',
-    compatibility: 'WordPress 6.0+ · PHP 7.4+',
+    compatibility: 'WordPress 6.0+ · PHP 7.4+ · tested to 6.7',
     status: 'github',
   },
   {
