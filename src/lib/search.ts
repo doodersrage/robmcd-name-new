@@ -177,7 +177,7 @@ export function searchLocalContent(term: string): SearchHit[] {
     title: ep.name,
     description: ep.blurb,
     href: SITE_LINKS.status,
-    source: 'Homelab',
+    source: ep.group === 'products' ? 'Status' : 'Homelab',
   }))
 
   const docHits: SearchHit[] = DOC_PAGES.filter(

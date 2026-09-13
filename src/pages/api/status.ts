@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro'
-import { LAB_ENDPOINTS } from '@/content/lab/endpoints'
+import { LAB_ENDPOINTS, type LabEndpointGroup } from '@/content/lab/endpoints'
 
 export const prerender = false
 
@@ -8,6 +8,7 @@ type Probe = {
   name: string
   href: string
   blurb: string
+  group: LabEndpointGroup
   ok: boolean
   status: number | null
   ms: number | null
@@ -46,6 +47,7 @@ export const GET: APIRoute = async () => {
         name: ep.name,
         href: ep.href,
         blurb: ep.blurb,
+        group: ep.group,
         ...result,
       }
     }),

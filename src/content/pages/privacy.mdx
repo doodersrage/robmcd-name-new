@@ -4,7 +4,7 @@ description: How robmcd.name handles the contact form, Turnstile, analytics (Goo
 path: /privacy
 ---
 
-Last updated: September 7, 2026
+Last updated: September 13, 2026
 
 Robmcd.name (the "Site") is operated by Robert McDowell. This page covers what gets collected and why.
 
@@ -14,7 +14,7 @@ If you use the [contact form](/contact) or the [legacy triage](/tools/triage) br
 
 **Shop tools**
 
-The [log redactor](/tools/redactor) runs only in your browser. The [DNS / HTTPS check](/tools/dns) sends the hostname you enter to this Site’s Worker so it can query public DNS and probe HTTPS. The [status](/status) board probes listed homelab URLs from the edge.
+The [log redactor](/tools/redactor) runs only in your browser. The [DNS / HTTPS check](/tools/dns) sends the hostname you enter to this Site’s Worker so it can query public DNS and probe HTTPS. The [status](/status) board probes listed product and homelab URLs from the edge.
 
 **Cloudflare Turnstile**
 
@@ -28,17 +28,20 @@ The Site uses Google Analytics (gtag.js, measurement ID `G-ETMLWXCT6M`) for aggr
 
 The Site also loads Ahrefs Analytics (`analytics.ahrefs.com`) for site traffic and SEO measurement. Ahrefs may process request/technical signals under [Ahrefs' privacy policy](https://ahrefs.com/privacy). I use that data for site improvement, not for advertising lists.
 
+**Cloudflare Web Analytics**
+
+An optional Cloudflare Web Analytics beacon can be enabled with a site token. It is privacy-oriented and does not use cross-site advertising cookies. It is only loaded when that token is configured; it is not enabled by default on this Site.
+
 **Logs and hosting**
 
-The Site runs on Cloudflare. Like most sites, request logs may include IP address, user agent, referring URL, and pages visited, used for security, debugging, and reliability. Optional Cloudflare Web Analytics (if enabled) is privacy-oriented and does not use cross-site advertising cookies.
-
+The Site runs on Cloudflare. Like most sites, request logs may include IP address, user agent, referring URL, and pages visited, used for security, debugging, and reliability.
 **Theme preference**
 
 A theme choice (light/dark) may be stored in your browser's `localStorage` so the Site can remember it. That value stays on your device.
 
 **Cookies**
 
-Cloudflare or Turnstile may set cookies required for security or delivery. Google Analytics and Ahrefs Analytics may set cookies or use local storage for measurement. We do not run third-party ad networks on this Site. You can refuse cookies in your browser; some features (such as the contact form challenge) may not work if you do, and Analytics may be incomplete.
+Cloudflare or Turnstile may set cookies required for security or delivery. Google Analytics and Ahrefs Analytics may set cookies or use local storage for measurement. Cloudflare Web Analytics (when enabled) does not use advertising cookies. We do not run third-party ad networks on this Site. You can refuse cookies in your browser; some features (such as the contact form challenge) may not work if you do, and Analytics may be incomplete.
 
 **Security**
 

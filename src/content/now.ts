@@ -7,8 +7,14 @@ export type NowItem = {
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
   updated: '2026-09-13',
-  headline: 'Castcut rename, ThermalTrace companions, shop window still open.',
+  headline: 'Lasso CRM 3.0.1, Castcut rename, ThermalTrace companions.',
   items: [
+    {
+      label: 'Lasso CRM',
+      detail:
+        'Concrete CMS 9 package v3.0.1 — Dashboard, Form, Inventory, Appointments, Tracking. Repo: github.com/doodersrage/lasso-crm-concretecms.',
+      href: '/work/concrete-cms',
+    },
     {
       label: 'Castcut',
       detail:

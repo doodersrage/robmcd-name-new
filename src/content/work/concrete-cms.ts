@@ -75,9 +75,9 @@ export const CONCRETE_CMS_LISTINGS: ConcreteCmsListing[] = [
     handle: 'lasso_crm',
     version: '3.0.1',
     blurb:
-      'Lasso CRM for Concrete CMS 9: Dashboard settings with Test Connection, lead Form, Inventory, Appointments, and Website Tracking. Shared package API key with optional per-block overrides for multi-project sites.',
+      'Lasso CRM package for Concrete CMS 9 (v3.0.1): Dashboard settings with Test Connection, lead Form, Inventory, Appointments, and Website Tracking blocks. Shared package API key with optional per-block overrides for multi-project sites. GitHub repo: lasso-crm-concretecms.',
     github: 'https://github.com/doodersrage/lasso-crm-concretecms',
-    compatibility: 'Concrete CMS 9.0+ · Lasso CRM API v1',
+    compatibility: 'Concrete CMS 9.0+ · Lasso CRM REST API v1',
     status: 'github',
   },
   {

@@ -1,0 +1,18 @@
+---
+title: Concrete CMS 9 packages without the 5.6 hangover
+description: Field notes from shipping Lasso CRM and other add-ons — namespaces, ErrorList, Dashboard redirects, and shared package config.
+---
+
+Concrete CMS 9 packages look familiar if you shipped 5.7/8 add-ons, but a few habits will waste an afternoon.
+
+**Own the package, not just the block.** Put credentials and defaults in package config (`$pkg->getConfig()`), expose a Dashboard settings page, and let blocks override only when you truly need multi-project keys. Lasso CRM’s API key is project-scoped — one site-wide default plus an optional block override covers most installs without pasting secrets into every form block.
+
+**Return responses.** Dashboard actions should `return $this->buildRedirect(...)` after `flash()`, not call the deprecated `$this->redirect()`. Block thank-you URLs already use `buildRedirect` for the same reason.
+
+**ErrorList is not a string.** Prefer `StandardFormatter` (or `toText()`) in templates. The old `output()` method echoes and fights `<?= ?>`.
+
+**Upgrade with `$this`.** On upgrade, install missing single pages and block types from the package controller instance. Don’t assume `Package::getByHandle()` gives you the same object shape you got from `parent::install()`.
+
+**Autoload services.** Register Guzzle-backed clients and validators in `on_start()` via `$pkgAutoloaderRegistries`. Keep the block controller thin: validate CSRF, map the request, call the client.
+
+The shop rule: if an editor can configure the same secret three different ways, they will — and one of them will be wrong in production.

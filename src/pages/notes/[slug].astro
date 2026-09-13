@@ -7,6 +7,7 @@ import { breadcrumbSchema } from '@/lib/seo'
 import CloudflareWorkersSmtp from '@/content/notes/cloudflare-workers-smtp.mdx'
 import AstroTailwindOnWorkers from '@/content/notes/astro-tailwind-on-workers.mdx'
 import SensorIngestFirstContact from '@/content/notes/sensor-ingest-first-contact.mdx'
+import ConcreteCms9Packages from '@/content/notes/concrete-cms9-packages.mdx'
 
 export function getStaticPaths() {
   return NOTES.map((note) => ({ params: { slug: note.slug } }))
@@ -19,6 +20,7 @@ if (!note) {
 }
 
 const bodies: Record<string, any> = {
+  'concrete-cms9-packages': ConcreteCms9Packages,
   'cloudflare-workers-smtp': CloudflareWorkersSmtp,
   'astro-tailwind-on-workers': AstroTailwindOnWorkers,
   'sensor-ingest-first-contact': SensorIngestFirstContact,

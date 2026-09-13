@@ -47,6 +47,29 @@ const notDoing = [
   'Open-ended retainers with no failure mode',
   'SEO content mills — technical SEO/AEO only',
 ]
+
+const proof = [
+  {
+    title: 'Concrete CMS packages live in market',
+    body: 'Page List Map and Date Counter on the Concrete marketplace; Lasso CRM, Affirm, Formwork, and RTS Cinema Source on GitHub for C9 installs.',
+    href: SITE_LINKS.concreteCms,
+  },
+  {
+    title: 'ThermalTrace in production',
+    body: 'Hosted freeze/flood monitoring at thermaltrace.dev — ingest edge, alerts, companions, and claim flow — not a demo-only write-up.',
+    href: SITE_LINKS.thermalTracePage,
+  },
+  {
+    title: 'Castcut open and documented',
+    body: 'Local ComfyUI film loop with docs on this domain and operator reference on GitHub Pages. Formerly Prompt Studio.',
+    href: SITE_LINKS.castcut,
+  },
+  {
+    title: 'Shop tooling on Workers',
+    body: 'Contact + triage with Turnstile and SMTP, DNS/HTTPS check, log redactor, and a public status board — all on Cloudflare.',
+    href: SITE_LINKS.tools,
+  },
+]
 ---
 
 <BaseLayout
@@ -84,6 +107,22 @@ const notDoing = [
           ))
         }
       </ol>
+    </section>
+
+    <section class="space-y-6">
+      <h2 class="text-xl font-semibold text-[var(--ink)]">Proof, not pitch decks</h2>
+      <ul class="divide-y border-t" style="border-color: var(--line)">
+        {
+          proof.map((item) => (
+            <li class="py-5">
+              <a href={item.href} class="text-link font-medium">
+                {item.title}
+              </a>
+              <p class="mt-1 max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{item.body}</p>
+            </li>
+          ))
+        }
+      </ul>
     </section>
 
     <section class="space-y-4">

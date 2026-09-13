@@ -9,6 +9,14 @@ export type Note = {
 /** Field journal entries — short shop notes, not a marketing blog. */
 export const NOTES: Note[] = [
   {
+    slug: 'concrete-cms9-packages',
+    title: 'Concrete CMS 9 packages without the 5.6 hangover',
+    date: '2026-09-13',
+    description:
+      'Field notes from shipping Lasso CRM and other add-ons — namespaces, ErrorList, Dashboard redirects, and shared package config.',
+    tags: ['concrete-cms', 'php', 'packages', 'lasso'],
+  },
+  {
     slug: 'cloudflare-workers-smtp',
     title: 'Workers, SMTP, and why the form felt simple until it wasn’t',
     date: '2026-09-06',
