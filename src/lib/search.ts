@@ -262,7 +262,7 @@ export function searchLocalContent(term: string): SearchHit[] {
 
   if (
     wordpressHits.length === 0 &&
-    /wordpress|volunteer|nonprofit|certificate|vit_|inkbound|web.?novel|serial(ized)? fiction|chapter|oral.?history|oha_|wp-spark|finding.?aid|tape.?log|shop.?floor|woocommerce|psf-|made.?to.?order/.test(
+    /wordpress|volunteer|nonprofit|certificate|vit_|inkbound|web.?novel|serial(ized)? fiction|chapter|oral.?history|oha_|finding.?aid|tape.?log|shop.?floor|woocommerce|psf-|made.?to.?order|public-shop-floor/.test(
       q,
     )
   ) {
