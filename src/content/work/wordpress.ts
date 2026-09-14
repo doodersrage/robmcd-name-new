@@ -49,6 +49,17 @@ export const WORDPRESS_LISTINGS: WordPressListing[] = [
     status: 'github',
   },
   {
+    id: 'public-shop-floor',
+    title: 'Public Shop Floor',
+    slug: 'public-shop-floor',
+    version: '1.0.0',
+    blurb:
+      'WooCommerce made-to-order floor: flag a product, paid orders open a job ticket (PSF-####), public board at /shop-floor/ shows station and place in line without customer names, merchant kanban advances or holds jobs. Configurable stations (default Mill → Joinery → Finish → Packed). Not shipment tracking — the board is the benches.',
+    github: 'https://github.com/doodersrage/shop-floor',
+    compatibility: 'WordPress 6.4+ · PHP 8.0+ · WooCommerce',
+    status: 'github',
+  },
+  {
     id: 'file-group-shortcode',
     title: 'File Groups Shortcode',
     slug: 'wordpress-file-group-shortcode',

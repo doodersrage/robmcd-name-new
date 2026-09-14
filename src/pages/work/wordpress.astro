@@ -10,7 +10,7 @@ import { SITE_LINKS } from '@/lib/site'
 import { breadcrumbSchema, itemListSchema } from '@/lib/seo'
 
 const description =
-  'WordPress plugins by Robert McDowell — Inkbound for serialized fiction, Volunteer Impact Tracker for nonprofit hours, Oral History Archive for interview finding aids, plus related GitHub plugins.'
+  'WordPress plugins by Robert McDowell — Inkbound, Volunteer Impact Tracker, Oral History Archive, Public Shop Floor (WooCommerce), plus related GitHub plugins.'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -45,8 +45,8 @@ const jsonLd = {
       <h1 class="page-title">WordPress</h1>
       <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
         Plugins I’ve built or forked for WordPress — Inkbound (serialized fiction / web novels), Volunteer Impact
-        Tracker (nonprofit hours and certificates), and Oral History Archive (interview finding aids with consent-aware
-        audio). Source on GitHub; WordPress.org links go here when published.
+        Tracker (nonprofit hours and certificates), Oral History Archive (interview finding aids), and Public Shop Floor
+        (made-to-order WooCommerce jobs). Source on GitHub; WordPress.org links go here when published.
       </p>
       <p class="flex flex-wrap gap-x-4 gap-y-2 font-mono text-sm">
         <a href={SITE_LINKS.github} class="text-link" target="_blank" rel="noopener noreferrer">
@@ -110,7 +110,8 @@ const jsonLd = {
     </ol>
 
     <p class="max-w-2xl border-t pt-8 text-sm leading-relaxed text-[var(--muted)]" style="border-color: var(--line)">
-      Need a WordPress plugin for serial fiction, nonprofit hours, oral history, or CMS work alongside Concrete? Use the{' '}
+      Need a WordPress plugin for serial fiction, nonprofit hours, oral history, shop-floor jobs, or CMS work alongside
+      Concrete? Use the{' '}
       <a href={SITE_LINKS.contact} class="text-link">contact form</a>
       {' '}or start from{' '}
       <a href={SITE_LINKS.hire} class="text-link">Hire</a>.

@@ -118,7 +118,7 @@ const SITE_PAGES: SearchHit[] = [
     id: 'page-wordpress',
     title: 'WordPress plugins',
     description:
-      'Inkbound, Volunteer Impact Tracker, and Oral History Archive — WordPress plugins for web novels, nonprofit hours, and interview archives.',
+      'Inkbound, Volunteer Impact Tracker, Oral History Archive, and Public Shop Floor — WordPress plugins for fiction, nonprofits, archives, and made-to-order WooCommerce floors.',
     href: SITE_LINKS.wordpress,
     source: 'Work · WordPress',
   },
@@ -262,7 +262,7 @@ export function searchLocalContent(term: string): SearchHit[] {
 
   if (
     wordpressHits.length === 0 &&
-    /wordpress|volunteer|nonprofit|certificate|vit_|inkbound|web.?novel|serial(ized)? fiction|chapter|oral.?history|oha_|wp-spark|finding.?aid|tape.?log/.test(
+    /wordpress|volunteer|nonprofit|certificate|vit_|inkbound|web.?novel|serial(ized)? fiction|chapter|oral.?history|oha_|wp-spark|finding.?aid|tape.?log|shop.?floor|woocommerce|psf-|made.?to.?order/.test(
       q,
     )
   ) {
@@ -270,7 +270,7 @@ export function searchLocalContent(term: string): SearchHit[] {
       id: 'wordpress-hub',
       title: 'WordPress plugins',
       description:
-        'Inkbound, Volunteer Impact Tracker, and Oral History Archive — WordPress plugins for web novels, nonprofit hours, and interview archives.',
+        'Inkbound, Volunteer Impact Tracker, Oral History Archive, and Public Shop Floor — WordPress plugins for fiction, nonprofits, archives, and made-to-order WooCommerce floors.',
       href: SITE_LINKS.wordpress,
       source: 'Work · WordPress',
     })
