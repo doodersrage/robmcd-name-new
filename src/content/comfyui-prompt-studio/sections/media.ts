@@ -10,7 +10,7 @@ export const mediaPages = [
     [
       ...p(
         'Video (`/video`) targets motion-forward language for WAN 2.2, Rapid AIO, Lightning, Hunyuan Video, and LTX when queueing through ComfyUI. The same tool routes cloud clips through Fal, Replicate, Grok, or Gemini — T2V, I2V, and extend paths — when Settings → Inference engine is configured.',
-        'Lint enforces frame-safe descriptions and strips static-only photography tags that confuse T2V and I2V scaffolds. Roleplay **Continue** chains Fal extend-video when the parent clip is Fal; otherwise last-frame I2V applies. Pair Draft quality for motion exploration and Final for delivery clips.',
+        'Lint enforces frame-safe descriptions and strips static-only photography tags that confuse T2V and I2V scaffolds. Story **Continue** chains Fal extend-video when the parent clip is Fal; otherwise last-frame I2V applies. Pair Draft quality for motion exploration and Final for delivery clips.'
       ),
       { type: 'h2', text: 'Video prompt style' },
       {
@@ -23,7 +23,7 @@ export const mediaPages = [
         ],
       },
     ],
-    { related: ['integration/cloud-engines', 'play/roleplay', 'models/video-audio-architectures'] },
+    { related: ['integration/cloud-engines', 'play/story', 'models/video-audio-architectures'] },
   ),
 
   page(

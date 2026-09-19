@@ -9,7 +9,7 @@ Field hardware fails when onboarding is a ceremony. For garage and workshop sens
 2. Point it at an ingest URL.
 3. POST JSON once — the dashboard creates the device from that first contact.
 
-Pull feeds (HTTPS endpoints the edge scrapes on a schedule) are the fallback when a site cannot push. Both paths should share one normalized reading shape so alerts, history, and companion apps do not fork.
+Pull feeds (HTTPS endpoints the edge scrapes on a schedule) are the fallback when a site cannot push. Both paths should land in the same dashboard: alerts, history, and companion apps do not fork by transport. Live ingest accepts several payload shapes (flat `temp1` keys, `sensors[]`, SenML, Home Assistant REST) — keys become sensor IDs on first contact.
 
 **What to put in the payload:** device identity, timestamp, temperature (and units), optional leak / door / humidity channels, and a firmware or sketch revision. Keep auth on the ingest URL or a device token — not in a shared global secret baked into every binary.
 

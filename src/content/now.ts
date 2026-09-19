@@ -6,26 +6,26 @@ export type NowItem = {
 
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
-  updated: '2026-09-13',
-  headline: 'Lasso CRM 3.0.1, Castcut rename, ThermalTrace companions.',
+  updated: '2026-09-19',
+  headline: 'Castcut 2.0 film loop, ThermalTrace companions + integrations.',
   items: [
     {
-      label: 'Lasso CRM',
+      label: 'Castcut 2.0',
       detail:
-        'Concrete CMS 9 package v3.0.1 — Dashboard, Form, Inventory, Appointments, Tracking. Repo: github.com/doodersrage/lasso-crm-concretecms.',
-      href: '/work/concrete-cms',
-    },
-    {
-      label: 'Castcut',
-      detail:
-        'Formerly Prompt Studio / llm-prompt-studio. Film loop docs on this domain; upstream at github.com/doodersrage/castcut.',
+        'Identity-ready film loop — Cast → Look → Outfit → Day → Story. Docs on this domain; upstream at github.com/doodersrage/castcut.',
       href: '/castcut',
     },
     {
       label: 'ThermalTrace',
       detail:
-        'Product at thermaltrace.dev — ingest, alerts, Desktop/Android/Bay Buddy, Matter bridge, claim puck. Protocol kit mirrored here.',
+        'Product at thermaltrace.dev — ingest, alerts, Desktop/Android/Bay Buddy companions, Matter + HACS integrations, claim puck accessory. Protocol kit mirrored here.',
       href: '/work/thermaltrace',
+    },
+    {
+      label: 'Lasso CRM',
+      detail:
+        'Concrete CMS 9 package v3.0.1 — Dashboard, Form, Inventory, Appointments, Tracking. Repo: github.com/doodersrage/lasso-crm-concretecms.',
+      href: '/work/concrete-cms',
     },
     {
       label: 'robmcd.name',

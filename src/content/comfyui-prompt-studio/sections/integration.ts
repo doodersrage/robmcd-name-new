@@ -39,8 +39,8 @@ export const integrationPages = [
     50,
     [
       ...p(
-        'Settings → Inference engine lets you queue beyond ComfyUI. Set the matching env key or a browser-stored key for Fal, Replicate, ChatGPT, Gemini, or Grok, then send a prompt from Generate, Refine, Roleplay, or Video. When Image 1 is attached, the queue path becomes img2img automatically.',
-        'Fal, Replicate, Grok, and Gemini support video clips — T2V, I2V, and extend (Roleplay **Continue** uses Fal extend-video when the parent is Fal). ChatGPT handles stills only. Runway is not configured in Settings. Diffusers remains an optional local experimental txt2img engine separate from cloud providers.',
+        'Settings → Inference engine lets you queue beyond ComfyUI. Set the matching env key or a browser-stored key for Fal, Replicate, ChatGPT, Gemini, or Grok, then send a prompt from Generate, Refine, Story, or Video. When Image 1 is attached, the queue path becomes img2img automatically.',
+        'Fal, Replicate, Grok, and Gemini support video clips — T2V, I2V, and extend (Story **Continue** uses Fal extend-video when the parent is Fal). ChatGPT handles stills only. Runway is not configured in Settings. Diffusers remains an optional local experimental txt2img engine separate from cloud providers.',
       ),
       { type: 'h2', text: 'Engine summary' },
       {
@@ -48,7 +48,7 @@ export const integrationPages = [
         items: [
           'ComfyUI — primary local graphs, workflow takeover, 40+ model targets',
           'Diffusers — optional local experimental txt2img (services/diffusers-engine)',
-          'Fal / Replicate — cloud stills + clips; Fal extend for Roleplay Continue',
+          'Fal / Replicate — cloud stills + clips; Fal extend for Story Continue',
           'Grok / Gemini — stills + native video clips',
           'ChatGPT — stills only',
         ],
@@ -61,7 +61,7 @@ export const integrationPages = [
         ],
       },
     ],
-    { related: ['media/video', 'play/roleplay', 'getting-started/environment'] },
+    { related: ['media/video', 'play/story', 'getting-started/environment'] },
   ),
 
   page(

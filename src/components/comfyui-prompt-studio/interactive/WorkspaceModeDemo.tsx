@@ -4,39 +4,44 @@ import { useState } from 'react'
 
 const MODES = [
   {
-    id: 'simple',
-    label: 'Simple',
-    description: 'Default mode — essentials plus More tools, advanced sections collapsed. History, Compare, Templates, Presets, and Analytics stay available in Studio tabs.',
-    tools: ['Generate', 'Format', 'Character', 'Gallery', 'More tools'],
-  },
-  {
     id: 'play',
     label: 'Play',
-    description: 'Cast, Roleplay, Gallery, and Queue in a lean sidebar — narrative stills and clips without the full Edit/Media/Library rail.',
-    tools: ['Cast', 'Roleplay', 'Gallery', 'Queue', 'Mobile `/m`'],
+    description:
+      'Default Make mode — Cast, Film, Look, Outfit, Day, Story, Gallery, and Queue in a lean sidebar for the character-film loop.',
+    tools: ['Cast', 'Film', 'Look', 'Outfit', 'Day', 'Story', 'Gallery', 'Queue'],
+  },
+  {
+    id: 'simple',
+    label: 'Simple',
+    description:
+      'Lean Make — essentials plus More tools, advanced sections collapsed. History, Compare, Templates, Presets, and Analytics stay available in Studio tabs.',
+    tools: ['Generate', 'Format', 'Character', 'Gallery', 'More tools'],
   },
   {
     id: 'studio',
     label: 'Studio',
-    description: 'Edit / Media / Library groups with collapsed advanced sections — campaigns, analytics, and full tool access.',
+    description:
+      'Edit / Media / Library groups with collapsed advanced sections — campaigns, analytics, and full tool access.',
     tools: ['Edit group', 'Media group', 'Library', 'All Studio tabs'],
   },
   {
     id: 'full',
     label: 'Full',
-    description: 'Same groups as Studio, expanded by default — quality sections open, workflow editor and media tools prominent.',
+    description:
+      'Same groups as Studio, expanded by default — quality sections open, workflow editor and media tools prominent.',
     tools: ['Workflow editor', 'Video', 'Audio', 'Mesh', 'Advanced queue'],
   },
 ] as const
 
 export function WorkspaceModeDemo() {
-  const [active, setActive] = useState<(typeof MODES)[number]['id']>('simple')
+  const [active, setActive] = useState<(typeof MODES)[number]['id']>('play')
   const mode = MODES.find((m) => m.id === active)!
 
   return (
     <div className="not-prose my-8 space-y-4">
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        Four workspace modes — switch from the sidebar footer or Profile → Appearance.
+        Four workspace modes — Play is the default. Switch from the sidebar footer or Profile →
+        Appearance.
       </p>
       <div className="flex flex-wrap gap-2">
         {MODES.map((m) => (

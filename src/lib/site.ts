@@ -54,6 +54,9 @@ export const SITE_LINKS = {
   thermalTraceBayBuddy: 'https://github.com/doodersrage/thermaltrace-bay-buddy',
   thermalTraceMatter: 'https://github.com/doodersrage/thermaltrace-matter',
   thermalTraceClaimPuck: 'https://github.com/doodersrage/thermaltrace-claim-puck',
+  thermalTraceClaimPuckProduct: 'https://thermaltrace.dev/claim-puck',
+  thermalTraceHomeAssistantGuide: 'https://thermaltrace.dev/integrations/home-assistant',
+  thermalTraceMatterGuide: 'https://thermaltrace.dev/integrations/matter',
   /** @deprecated Use thermalTrace */
   garageTemp: 'https://thermaltrace.dev/',
 } as const

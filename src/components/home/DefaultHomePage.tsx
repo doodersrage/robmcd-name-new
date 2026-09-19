@@ -32,7 +32,7 @@ const SHIPPED = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI',
     description:
-      'Cast → Moodboard → Fitting → Day → Cut film. Heal & ready, Play campaigns, Mobile Studio, desktop and Docker. Formerly Prompt Studio.',
+      'Cast → Look → Outfit → Day → Cut film. Castcut 2.0 identity lock, Heal & ready, Play campaigns, Mobile Studio, desktop and Docker. Formerly Prompt Studio.',
     href: SITE_LINKS.castcut,
     linkLabel: 'Read the docs',
   },

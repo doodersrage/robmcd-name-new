@@ -54,17 +54,17 @@ export const gettingStartedPages = [
     [
       ...p(
         'The dashboard (`/dashboard`) shows pending jobs, queue status, recent outputs, and the active project. From there, open **Generate** (`/`) — enter keywords or use random surprise — pick a model family from 40+ targets, set detail level, and generate a model-ready prompt.',
-        'Copy the result, send it to Format (`/format`) to adapt for another architecture, or run Lint (`/lint`) before queueing. Quality profiles in the sidebar (Draft / Final / Max) control step counts and recipe aggressiveness. Switch to **Play** mode if your workflow is Cast + Roleplay; stay in **Simple** or **Studio** for batch campaigns.',
+        'New installs default to **Play** (Make). Quality profiles in the sidebar (Draft / Final / Max) control step counts and recipe aggressiveness. For a film: open Film (`/play`), create a Cast lead (essentials-first), then Look → Outfit → Day → Cut. Use optional Story for episodic beats. Stay in **Simple** or switch to **Studio** / **Full** for batch campaigns and the full tool rail.',
       ),
       { type: 'h2', text: 'Recommended first steps' },
       {
         type: 'ol',
         items: [
-          'Run Heal & ready in Settings → Overview',
-          'Set default model family and workspace mode (Simple, Play, or Studio)',
-          'Generate one prompt with Balanced detail on `/`',
-          'Run Format + Lint on the output before first GPU or cloud spend',
-          'Optional: create a Cast entry at `/characters` for episodic work',
+          'Run Heal & ready in Settings → Overview (Identity ready when a face pack is locked)',
+          'Confirm Play workspace (default) — or Simple / Studio / Full from the sidebar footer',
+          'Create a Cast lead on Film (`/play`) — name + optional From photo',
+          'Run Look → Outfit → Day, then Cut film; unlock Story when you want beats',
+          'Optional: Generate (`/`) + Format + Lint for one-off prompts outside the film loop',
         ],
       },
       { type: 'interactive-slot' },

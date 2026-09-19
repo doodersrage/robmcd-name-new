@@ -9,7 +9,7 @@ export const introductionPages = [
     1,
     [
       ...p(
-        'Castcut is for creators who want consistent characters, scenes, images, and short films locally with ComfyUI — not another CLIP paste workflow. Flagship loop: Cast → Moodboard → Fitting → Day → (optional Roleplay) → Gallery → Cut film → Save to Cast. Play is Make; Studio is Control; Full is Build.',
+        'Castcut is for creators who want consistent characters, scenes, images, and short films locally with ComfyUI — not another CLIP paste workflow. Flagship loop: Cast → Look → Outfit → Day → (optional Story) → Gallery → Cut film → Save to Cast. Play is Make (default); Studio is Control; Full is Build.',
         'The app is built with React, TypeScript, and Next.js on Node.js 22+. A server exposes HTTP APIs consumed by the UI, ComfyUI custom nodes, desktop (Tauri) builds, and headless scripts. Browser state persists in IndexedDB (Dexie); server data lives in SQLite with configurable export paths.',
         'Primary integration is ComfyUI for generate, Lightning, and specialty graphs. Optional Diffusers and cloud engines (Fal, Replicate, ChatGPT stills, Gemini, Grok, Runway) stay available; near-term product focus is reliability, first-run UX, and character consistency rather than expanding that matrix.',
       ),
@@ -17,9 +17,9 @@ export const introductionPages = [
       {
         type: 'ul',
         items: [
-          'Film loop: Cast → Moodboard → Fitting → Day → Cut film; Heal & ready on first launch',
+          'Film loop: Cast → Look → Outfit → Day → Cut film; Heal & ready on first launch',
           '40+ ComfyUI image model targets with architecture-specific scaffolds',
-          'Play campaigns, Roleplay, and Mobile Studio for character IP workflows',
+          'Play campaigns, Film hub, optional Story, and Mobile Studio for character IP workflows',
           'Dedicated Format (`/format`) and Lint (`/lint`) — separate tools, not one combined step',
           'Gallery with grid/dense/list layouts, review focus, compare modal, and semantic search',
           'Workflow takeover at queue time — inject live prompts without rebuilding graphs',
@@ -41,27 +41,27 @@ export const introductionPages = [
   page(
     ['introduction', 'workspace-modes'],
     'Workspace modes',
-    'Simple, Play, Studio, and Full — progressive disclosure for different workflows.',
+    'Play, Simple, Studio, and Full — progressive disclosure for different workflows.',
     'Introduction',
     2,
     [
       ...p(
-        'Workspace modes control how much of the sidebar and shared controls you see. Switch from the sidebar footer or Profile → Appearance. **Simple** is the default for new installs — essentials plus More tools, advanced sections collapsed.',
-        '**Play** narrows the sidebar to Cast, Roleplay, Gallery, and Queue with a lean Roleplay rail for still-and-clip storytelling. **Studio** exposes Edit / Media / Library groups with collapsed advanced sections and all Studio tabs. **Full** matches Studio but expands quality sections and tool groups for daily production work.',
+        'Workspace modes control how much of the sidebar and shared controls you see. Switch from the sidebar footer or Profile → Appearance. **Play** is the default for new installs — Make mode with a lean film sidebar.',
+        '**Play** shows Cast, Film, Look, Outfit, Day, Story, Gallery, and Queue. **Simple** is lean Make with essentials plus More tools and advanced sections collapsed. **Studio** exposes Edit / Media / Library groups with collapsed advanced sections and all Studio tabs. **Full** matches Studio but expands quality sections and tool groups for daily production work.',
       ),
       { type: 'h2', text: 'Mode comparison' },
       {
         type: 'ul',
         items: [
-          'Simple (default) — Essentials + More tools; advanced collapsed; History, Compare, Templates, Presets, Analytics',
-          'Play — Cast, Roleplay, Gallery, Queue; lean Roleplay rail; same Studio tabs as Simple',
+          'Play (default) — Cast, Film, Look, Outfit, Day, Story, Gallery, Queue; lean film rail',
+          'Simple — Essentials + More tools; advanced collapsed; History, Compare, Templates, Presets, Analytics',
           'Studio — Edit / Media / Library groups; collapsed advanced sections; all Studio tabs',
           'Full — Same groups as Studio, expanded by default; quality sections open; workflow editor and media tools prominent',
         ],
       },
       { type: 'interactive-slot' },
     ],
-    { interactive: 'workspace-modes', related: ['play/roleplay', 'getting-started/first-run'] },
+    { interactive: 'workspace-modes', related: ['play/story', 'getting-started/first-run'] },
   ),
 
   page(
@@ -72,7 +72,7 @@ export const introductionPages = [
     3,
     [
       ...p(
-        'The UI is organized around route-per-tool pages — Generate (`/`), Format (`/format`), Character (`/character`), Cast (`/characters`), Roleplay (`/roleplay`), Mobile Studio (`/m`), Gallery (`/gallery`), Studio (`/studio`), Settings (`/settings`), Plugins (`/plugins`), and more. The dashboard (`/dashboard`) surfaces pending jobs, queue status, recent outputs, and the active project.',
+        'The UI is organized around route-per-tool pages — Generate (`/`), Format (`/format`), Character (`/character`), Cast (`/characters`), Film (`/play`), Look (`/moodboard`), Outfit (`/fitting`), Day (`/day`), Story (`/story`; `/roleplay` redirects here), Mobile Studio (`/m`), Gallery (`/gallery`), Studio (`/studio`), Settings (`/settings`), Plugins (`/plugins`), and more. The dashboard (`/dashboard`) surfaces pending jobs, queue status, recent outputs, and the active project.',
         'IndexedDB (Dexie) stores client-side settings, history, and gallery cache for fast offline browsing. SQLite on the server holds generations, characters, cast records, templates, campaign metadata, and user records when auth is enabled. Exports land in configurable directories for backup v2 and team sync.',
       ),
       { type: 'h2', text: 'Data flow' },
@@ -103,15 +103,15 @@ export const introductionPages = [
     4,
     [
       ...p(
-        'Features group into Generate & Refine, Character & Scene, Play (Cast / Roleplay / Mobile), Image & Control, Media (video/audio/mesh), Studio (history, campaigns, analytics), Gallery (review, queue, export), and Integration (ComfyUI, cloud engines, HTTP API). Each layer works independently or chains into production pipelines.',
-        'The README tools table maps every route: Dashboard, Generate, Format, Character, Pet, Fantasy, Roleplay, Topics, Background, Image → Prompt, Inpaint, Outpaint, Mobile Studio, Compose, Workflow editor, Audio, Mesh, Cast, Video, Negative, Studio, Lint, Refine, Settings, Gallery, Variations, ControlNet, and Plugins.',
+        'Features group into Generate & Refine, Character & Scene, Play (Cast / Film / Look / Outfit / Day / Story / Mobile), Image & Control, Media (video/audio/mesh), Studio (history, campaigns, analytics), Gallery (review, queue, export), and Integration (ComfyUI, cloud engines, HTTP API). Each layer works independently or chains into production pipelines.',
+        'The README tools table maps every route: Dashboard, Generate, Format, Character, Pet, Fantasy, Film, Look, Outfit, Day, Story, Topics, Background, Image → Prompt, Inpaint, Outpaint, Mobile Studio, Compose, Workflow editor, Audio, Mesh, Cast, Video, Negative, Studio, Lint, Refine, Settings, Gallery, Variations, ControlNet, and Plugins.',
       ),
       { type: 'h2', text: 'Typical chains' },
       {
         type: 'ul',
         items: [
           'Generate (`/`) → Format (`/format`) → Lint (`/lint`) → Send to ComfyUI → Gallery review',
-          'Cast look → Roleplay beat → Continue (Fal extend or last-frame I2V) → Cut film → Save to Cast',
+          'Film create Cast → Look → Outfit → Day cut → optional Story beats → Continue → Cut film → Save to Cast',
           'Mobile Studio plate capture → Compose isolate on white → Character / Cast identity lock',
           'Image → Prompt (vision LLM) → Refine → Variations matrix → Compare in Gallery',
           'Settings Heal & ready → cloud engine keys → ComfyUI asset downloads → queue',

@@ -17,5 +17,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return context.redirect(`/castcut${rest}`, 301)
   }
 
+  if (path === '/castcut/play/roleplay' || path.startsWith('/castcut/play/roleplay/')) {
+    return context.redirect('/castcut/play/story', 301)
+  }
+
   return next()
 })

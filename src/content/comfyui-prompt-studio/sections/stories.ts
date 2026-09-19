@@ -4,14 +4,14 @@ export const storiesPages = [
   page(
     ['stories', 'sales-pitch'],
     'Why Castcut?',
-    'Local character films with ComfyUI — Cast → Moodboard → Fitting → Day → Cut film. Formerly Prompt Studio.',
+    'Local character films with ComfyUI — Cast → Look → Outfit → Day → Cut film. Formerly Prompt Studio.',
     'Sales & stories',
     -2,
     [
       { type: 'h2', text: 'The problem every ComfyUI power user hits' },
       ...p(
         'ComfyUI is unmatched at turning checkpoints into pixels, but it was never designed to be a character-film control plane. Most teams end up with prompts scattered across CLIP node text fields, Discord threads, and spreadsheets — while negatives, character bibles, and “what worked last Tuesday” live nowhere central. Every model family wants different prose: FLUX expects subject-first photographic language, SDXL wants scene descriptions, Qwen Edit expects short imperatives, and WAN video needs motion-forward clauses.',
-        'Castcut closes that gap without replacing ComfyUI or locking you into one cloud vendor. It owns the film loop — Cast homes, Moodboard and Fitting, Day stills/clips, Gallery, Cut film — plus lint rules and queue handoff; ComfyUI still owns local graphs when you want them. The app is MIT-licensed, runs on Node.js 22+ or desktop installers, and stores production data locally — IndexedDB in the browser for settings, history, and gallery, with server-side persistence and optional multi-user auth when you expose it to a team.',
+        'Castcut closes that gap without replacing ComfyUI or locking you into one cloud vendor. It owns the film loop — Cast homes, Look and Outfit, Day stills/clips, optional Story, Gallery, Cut film — plus lint rules, identity lock across the loop, and queue handoff; ComfyUI still owns local graphs when you want them. The app is MIT-licensed, runs on Node.js 22+ or desktop installers, and stores production data locally — IndexedDB in the browser for settings, history, and gallery, with server-side persistence and optional multi-user auth when you expose it to a team.',
       ),
       { type: 'h2', text: 'Before & after' },
       {
@@ -27,7 +27,7 @@ export const storiesPages = [
         items: [
           { value: '28+', label: 'Tool routes', detail: 'Generate through Plugins & Mobile' },
           { value: '40+', label: 'Model targets', detail: 'FLUX, Qwen, Z-Image, SDXL, video…' },
-          { value: '4', label: 'Workspace modes', detail: 'Simple · Play · Studio · Full' },
+          { value: '4', label: 'Workspace modes', detail: 'Play · Simple · Studio · Full' },
           { value: 'MIT', label: 'License', detail: 'Self-hosted, no cloud lock-in' },
         ],
       },
@@ -37,8 +37,8 @@ export const storiesPages = [
         items: [
           'Keywords or random surprise on Generate (`/`), then Format (`/format`) to adapt drafts for any selected architecture',
           'Dedicated Lint (`/lint`) and Refine (`/refine`) with image + intent hints before you burn GPU time',
-          'Character, Pet, Fantasy, Cast (`/characters`), Roleplay (`/roleplay`), Background, Topics, and Compose',
-          'Mobile Studio (`/m`) — capture plates, watch queue, rate gallery, Roleplay from photo',
+          'Character, Pet, Fantasy, Cast (`/characters`), Film (`/play`), Look, Outfit, Day, Story (`/story`), Background, Topics, and Compose',
+          'Mobile Studio (`/m`) — Film hub, capture plates, watch queue, rate gallery, Story from photo',
           'Image → Prompt (`/image-prompt`) via vision LLM; Inpaint/Outpaint with `{{INPUT_IMAGE}}` / `{{MASK_IMAGE}}` tokens',
           'Cloud engines — Fal, Replicate, ChatGPT, Gemini, Grok via Settings → Inference engine',
           'Gallery (`/gallery`) with grid/dense/list layouts, review focus, compare modal, and semantic search',
