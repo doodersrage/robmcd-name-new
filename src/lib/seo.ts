@@ -21,6 +21,42 @@ export const DEFAULT_OG_IMAGE = ABS('/og/default.png')
 
 export const SITE_LINKEDIN = 'https://www.linkedin.com/in/robertsmcdowell/'
 
+/** Ahrefs flags under ~120; SERP display tops out near 155–160. */
+const META_DESC_MIN = 120
+const META_DESC_MAX = 155
+
+/**
+ * Ensure meta / og:description is long enough for crawlers without inventing
+ * a second description system. Pads short copy; soft-trims overlong copy.
+ */
+export function ensureMetaDescriptionLength(
+  description: string,
+  pathname?: string,
+): string {
+  let text = description.replace(/\s+/g, ' ').trim()
+  if (!text) {
+    text = SITE_DESCRIPTION
+  }
+
+  if (text.length < META_DESC_MIN) {
+    const path = pathname ?? ''
+    const filler = path.includes('/castcut')
+      ? ' Castcut docs on robmcd.name for local ComfyUI character filmmaking — Play film loop, Gallery, and queue.'
+      : path.includes('/work/thermaltrace') || path.includes('thermaltrace')
+        ? ' ThermalTrace write-up on robmcd.name — freeze and flood monitoring for garages and shops.'
+        : ' On robmcd.name — cross-platform engineering, Castcut, ThermalTrace, and shop tools.'
+    text = `${text}${filler}`
+  }
+
+  if (text.length <= META_DESC_MAX) {
+    return text
+  }
+
+  const trimmed = text.slice(0, META_DESC_MAX - 1)
+  const cut = trimmed.lastIndexOf(' ')
+  return `${(cut > 90 ? trimmed.slice(0, cut) : trimmed).trimEnd()}…`
+}
+
 export function personSchema(): Record<string, unknown> {
   return {
     '@type': 'Person',

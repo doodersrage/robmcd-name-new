@@ -104,7 +104,7 @@ export function buildSectionIndexPages(pages: DocPage[]): DocPage[] {
     return page(
       [root],
       section,
-      `Castcut ${section} docs — pages in this section.`,
+      `Castcut ${section} documentation on robmcd.name — guides for this part of the local ComfyUI character-film loop.`,
       section,
       Math.min(...sorted.map((c) => c.order)) - 1,
       [
