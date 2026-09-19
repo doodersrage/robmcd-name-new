@@ -32,6 +32,8 @@ export type DocPage = {
   section: string
   order: number
   layout?: 'default' | 'marketing'
+  /** Section landing page for breadcrumbs (/castcut/{section}). Hidden from sidebar + prev/next. */
+  sectionIndex?: boolean
   interactive?: DocInteractive
   blocks: DocBlock[]
   related?: string[]

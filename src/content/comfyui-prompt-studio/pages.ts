@@ -1,4 +1,4 @@
-import { setDocPages } from './helpers'
+import { buildSectionIndexPages, setDocPages } from './helpers'
 import { characterPages } from './sections/character'
 import { formatAndLintPages } from './sections/format-and-lint'
 import { galleryPages } from './sections/gallery'
@@ -14,8 +14,7 @@ import { playPages } from './sections/play'
 import { storiesPages } from './sections/stories'
 import { studioPages } from './sections/studio'
 
-/** Documentation pages for Castcut */
-export const DOC_PAGES = [
+const DOC_LEAF_PAGES = [
   ...storiesPages,
   ...hubPages,
   ...introductionPages,
@@ -31,6 +30,9 @@ export const DOC_PAGES = [
   ...modelsPages,
   ...integrationPages,
 ]
+
+/** Documentation pages for Castcut (includes section index landings for breadcrumbs). */
+export const DOC_PAGES = [...DOC_LEAF_PAGES, ...buildSectionIndexPages(DOC_LEAF_PAGES)]
 
 setDocPages(DOC_PAGES)
 

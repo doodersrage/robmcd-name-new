@@ -54,7 +54,7 @@ export function page(
   section: string,
   order: number,
   blocks: DocBlock[],
-  extras?: Pick<DocPage, 'interactive' | 'related' | 'layout'>,
+  extras?: Pick<DocPage, 'interactive' | 'related' | 'layout' | 'sectionIndex'>,
 ): DocPage {
   return { slug, title, description, section, order, blocks, ...extras }
 }
@@ -73,11 +73,55 @@ export function getPageBySlug(slug: string[] | undefined): DocPage | undefined {
   return docPagesRef.find((p) => slugKey(p.slug) === key)
 }
 
+/** Leaf + hub pages for sidebar and prev/next (excludes section indexes). */
 export function getAllPages(): DocPage[] {
-  return [...docPagesRef].sort((a, b) => {
-    const bySection = sectionIndex(a.section) - sectionIndex(b.section)
-    if (bySection !== 0) return bySection
-    return a.order - b.order
+  return docPagesRef
+    .filter((p) => !p.sectionIndex)
+    .sort((a, b) => {
+      const bySection = sectionIndex(a.section) - sectionIndex(b.section)
+      if (bySection !== 0) return bySection
+      return a.order - b.order
+    })
+}
+
+/**
+ * Build `/castcut/{section}` landing pages so breadcrumb parents are real URLs.
+ * Titles come from the child pages’ section label.
+ */
+export function buildSectionIndexPages(pages: DocPage[]): DocPage[] {
+  const byRoot = new Map<string, DocPage[]>()
+  for (const doc of pages) {
+    if (doc.slug.length < 1 || doc.sectionIndex) continue
+    const root = doc.slug[0]!
+    const list = byRoot.get(root) ?? []
+    list.push(doc)
+    byRoot.set(root, list)
+  }
+
+  return Array.from(byRoot.entries()).map(([root, children]) => {
+    const sorted = [...children].sort((a, b) => a.order - b.order)
+    const section = sorted[0]!.section
+    return page(
+      [root],
+      section,
+      `Castcut ${section} docs — pages in this section.`,
+      section,
+      Math.min(...sorted.map((c) => c.order)) - 1,
+      [
+        {
+          type: 'p',
+          text: `Guides in the ${section} section of the Castcut docs on robmcd.name.`,
+        },
+        {
+          type: 'links',
+          items: sorted.map((child) => ({
+            label: child.title,
+            href: slugToPath(child.slug),
+          })),
+        },
+      ],
+      { sectionIndex: true },
+    )
   })
 }
 

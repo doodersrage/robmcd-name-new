@@ -182,10 +182,11 @@ export function searchLocalContent(term: string): SearchHit[] {
 
   const docHits: SearchHit[] = DOC_PAGES.filter(
     (page) =>
-      matches(page.title, q) ||
-      matches(page.description, q) ||
-      matches(page.section, q) ||
-      matches(page.slug.join('/'), q),
+      !page.sectionIndex &&
+      (matches(page.title, q) ||
+        matches(page.description, q) ||
+        matches(page.section, q) ||
+        matches(page.slug.join('/'), q)),
   ).map((page) => ({
     id: `doc-${slugToPath(page.slug)}`,
     title: page.title,
