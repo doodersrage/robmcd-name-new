@@ -5,7 +5,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import Content from '@/content/pages/contact.mdx'
 import { ContactForm } from '@/components/react/ContactForm'
 import { personSchema } from '@/lib/seo'
-import { SITE_URL } from '@/lib/site'
+import { absolutePageUrl } from '@/lib/site'
 
 const siteKey =
   import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ||
@@ -15,20 +15,22 @@ const siteKey =
 const description =
   'Message Robert McDowell about infrastructure, legacy stacks, Castcut, or ThermalTrace. Form only; replies usually within a couple of days.'
 
+const contactUrl = absolutePageUrl('/contact')
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     personSchema(),
     {
       '@type': 'ContactPage',
-      '@id': `${SITE_URL}/contact#page`,
-      url: `${SITE_URL}/contact`,
+      '@id': `${contactUrl}#page`,
+      url: contactUrl,
       name: 'Contact',
       description,
       mainEntity: {
         '@type': 'ContactPoint',
         contactType: 'customer support',
-        url: `${SITE_URL}/contact`,
+        url: contactUrl,
         availableLanguage: 'English',
       },
     },

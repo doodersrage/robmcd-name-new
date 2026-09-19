@@ -4,6 +4,7 @@ export const prerender = true
 import ProseLayout from '@/layouts/ProseLayout.astro'
 import { NOTES, getNote } from '@/content/notes'
 import { breadcrumbSchema } from '@/lib/seo'
+import { absolutePageUrl } from '@/lib/site'
 import CloudflareWorkersSmtp from '@/content/notes/cloudflare-workers-smtp.mdx'
 import AstroTailwindOnWorkers from '@/content/notes/astro-tailwind-on-workers.mdx'
 import SensorIngestFirstContact from '@/content/notes/sensor-ingest-first-contact.mdx'
@@ -40,7 +41,7 @@ const jsonLd = {
       headline: note.title,
       datePublished: note.date,
       description: note.description,
-      url: `https://robmcd.name/notes/${note.slug}`,
+      url: absolutePageUrl(`/notes/${note.slug}`),
       author: { '@id': 'https://robmcd.name/#person' },
     },
   ],

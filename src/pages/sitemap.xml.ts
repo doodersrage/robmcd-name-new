@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro'
 import { DOC_PAGES, slugToPath } from '@/content/comfyui-prompt-studio/pages'
 import { WORK_CASE_STUDIES } from '@/content/work/case-studies'
 import { NOTES } from '@/content/notes'
-import { SITE_URL } from '@/lib/site'
+import { absolutePageUrl } from '@/lib/site'
 
 export const prerender = true
 
@@ -42,7 +42,7 @@ export const GET: APIRoute = () => {
 ${urls
   .map(
     (path) => `  <url>
-    <loc>${new URL(path, SITE_URL).toString()}</loc>
+    <loc>${absolutePageUrl(path)}</loc>
     <lastmod>${now}</lastmod>
   </url>`,
   )

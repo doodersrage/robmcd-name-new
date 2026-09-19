@@ -4,6 +4,7 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { NOTES } from '@/content/notes'
 import { breadcrumbSchema } from '@/lib/seo'
+import { absolutePageUrl } from '@/lib/site'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -15,7 +16,7 @@ const jsonLd = {
     {
       '@type': 'CollectionPage',
       name: 'Field notes',
-      url: 'https://robmcd.name/notes',
+      url: absolutePageUrl('/notes'),
       description: 'Short engineering notes from the shop — Workers, Astro, sensors.',
     },
   ],

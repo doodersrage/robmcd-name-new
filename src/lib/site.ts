@@ -1,6 +1,22 @@
 export const SITE_NAME = 'Robmcd.name'
 export const SITE_OWNER = 'Robert McDowell'
 export const SITE_URL = 'https://robmcd.name'
+
+/**
+ * Absolute URL for an HTML page. Always ends with `/` so canonical/og:url match
+ * the trailing-slash form Cloudflare serves (non-slash URLs 307).
+ */
+export function absolutePageUrl(pathOrUrl: string): string {
+  const raw = pathOrUrl.trim() || '/'
+  const url = new URL(raw.startsWith('http') ? raw : raw, `${SITE_URL}/`)
+  if (/\.[a-z0-9]+$/i.test(url.pathname)) {
+    return url.toString()
+  }
+  if (!url.pathname.endsWith('/')) {
+    url.pathname = `${url.pathname}/`
+  }
+  return url.toString()
+}
 export const SITE_TAGLINE = 'Cross-platform engineering, legacy modernization, infrastructure'
 export const SITE_DESCRIPTION =
   'Robert McDowell. About twenty years of full-stack work on Linux and Windows: legacy repair, servers, databases, and tools you can open today.'

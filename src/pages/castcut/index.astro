@@ -5,7 +5,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import { DocPageView } from '@/components/comfyui-prompt-studio/DocPageView'
 import { getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
 import { breadcrumbSchema, personSchema, softwareApplicationSchema } from '@/lib/seo'
-import { SITE_LINKS, SITE_URL } from '@/lib/site'
+import { SITE_LINKS, absolutePageUrl } from '@/lib/site'
 
 const page = getPageBySlug([])
 if (!page) {
@@ -31,7 +31,7 @@ const jsonLd = {
         offersUrl: SITE_LINKS.castcutGithub,
         sameAs: [SITE_LINKS.castcutGithub, SITE_LINKS.castcutDocs],
       }),
-      '@id': `${SITE_URL}${currentPath}#software`,
+      '@id': `${absolutePageUrl(currentPath)}#software`,
     },
   ],
 }

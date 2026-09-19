@@ -2,7 +2,7 @@
 export const prerender = true
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import { SITE_LINKS } from '@/lib/site'
+import { SITE_LINKS, absolutePageUrl } from '@/lib/site'
 import { breadcrumbSchema, personSchema } from '@/lib/seo'
 
 const jsonLd = {
@@ -16,7 +16,7 @@ const jsonLd = {
     {
       '@type': 'WebPage',
       name: 'Hire Robert McDowell',
-      url: 'https://robmcd.name/hire',
+      url: absolutePageUrl('/hire'),
       description:
         'Engagement shapes for legacy modernization, servers and databases, CMS packages, and technical advisory.',
     },

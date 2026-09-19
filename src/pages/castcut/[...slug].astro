@@ -5,6 +5,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import { DocPageView } from '@/components/comfyui-prompt-studio/DocPageView'
 import { DOC_PAGES, getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
 import { breadcrumbSchema } from '@/lib/seo'
+import { absolutePageUrl } from '@/lib/site'
 
 export function getStaticPaths() {
   return DOC_PAGES.filter((p) => p.slug.length > 0).map((page) => ({
@@ -35,7 +36,7 @@ const jsonLd = {
       '@type': 'TechArticle',
       headline: page.title,
       description: page.description,
-      url: `https://robmcd.name${currentPath}`,
+      url: absolutePageUrl(currentPath),
       author: { '@id': 'https://robmcd.name/#person' },
     },
   ],

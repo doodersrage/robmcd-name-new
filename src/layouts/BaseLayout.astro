@@ -16,6 +16,7 @@ import {
   SITE_OWNER,
   SITE_TAGLINE,
   SITE_URL,
+  absolutePageUrl,
 } from '@/lib/site'
 
 interface Props {
@@ -42,9 +43,7 @@ const {
 
 const pageTitle = title ? `${title} | ${SITE_OWNER}` : `${SITE_NAME} — ${SITE_TAGLINE}`
 const canonicalUrl =
-  canonical === null
-    ? null
-    : new URL(canonical ?? Astro.url.pathname, SITE_URL).toString()
+  canonical === null ? null : absolutePageUrl(canonical ?? Astro.url.pathname)
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, SITE_URL).toString()
 ---
 

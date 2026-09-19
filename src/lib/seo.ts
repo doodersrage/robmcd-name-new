@@ -5,12 +5,17 @@ import {
   SITE_OWNER,
   SITE_TAGLINE,
   SITE_URL,
+  absolutePageUrl,
 } from '@/lib/site'
 
 export type JsonLd = Record<string, unknown> | Record<string, unknown>[]
 
 const ABS = (pathOrUrl: string) =>
-  pathOrUrl.startsWith('http') ? pathOrUrl : new URL(pathOrUrl, SITE_URL).toString()
+  pathOrUrl.startsWith('http') || /\.[a-z0-9]+$/i.test(pathOrUrl.split('?')[0] ?? '')
+    ? pathOrUrl.startsWith('http')
+      ? pathOrUrl
+      : new URL(pathOrUrl, SITE_URL).toString()
+    : absolutePageUrl(pathOrUrl)
 
 export const DEFAULT_OG_IMAGE = ABS('/og/default.png')
 
@@ -67,8 +72,8 @@ export function aboutPageSchema(faqs?: { question: string; answer: string }[]): 
     personSchema(),
     {
       '@type': 'AboutPage',
-      '@id': `${SITE_URL}/about#page`,
-      url: `${SITE_URL}/about`,
+      '@id': `${SITE_URL}/about/#page`,
+      url: absolutePageUrl('/about'),
       name: `About ${SITE_OWNER}`,
       description:
         'Robert McDowell, full-stack engineer since 2006. Legacy modernization, servers and databases, SEO/AEO, Castcut, and ThermalTrace.',
@@ -80,7 +85,7 @@ export function aboutPageSchema(faqs?: { question: string; answer: string }[]): 
   if (faqs?.length) {
     graph.push({
       '@type': 'FAQPage',
-      '@id': `${SITE_URL}/about#faq`,
+      '@id': `${SITE_URL}/about/#faq`,
       mainEntity: faqs.map((item) => ({
         '@type': 'Question',
         name: item.question,
@@ -181,7 +186,7 @@ export function itemListSchema(
     '@type': 'CollectionPage',
     name,
     description,
-    url: `${SITE_URL}/work`,
+    url: absolutePageUrl('/work'),
     isPartOf: { '@id': `${SITE_URL}/#website` },
     mainEntity: {
       '@type': 'ItemList',
