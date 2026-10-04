@@ -6,19 +6,19 @@ export type NowItem = {
 
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
-  updated: '2026-09-19',
-  headline: 'Castcut 2.0 film loop, ThermalTrace companions + integrations.',
+  updated: '2026-10-04',
+  headline: 'Castcut 2.2 film loop, ThermalTrace forecast and integrations.',
   items: [
     {
-      label: 'Castcut 2.0',
+      label: 'Castcut 2.2',
       detail:
-        'Identity-ready film loop — Cast → Look → Outfit → Day → Story. Docs on this domain; upstream at github.com/doodersrage/castcut.',
-      href: '/castcut',
+        'Pose editor, per-look outfits, Qwen-Image 2.1 and LTX-2.5, plus optional Castcut nodes on the Comfy Registry. Docs on this domain.',
+      href: '/castcut/play/day',
     },
     {
       label: 'ThermalTrace',
       detail:
-        'Product at thermaltrace.dev — ingest, alerts, Desktop/Android/Bay Buddy companions, Matter + HACS integrations, claim puck accessory. Protocol kit mirrored here.',
+        'Freeze, heat, and flood alerts at thermaltrace.dev, with a public pipe-freeze forecast, embeddable freeze map, and Node-RED / Influx / Matter hooks.',
       href: '/work/thermaltrace',
     },
     {

@@ -107,6 +107,20 @@ const SITE_PAGES: SearchHit[] = [
     source: 'Work · Kit',
   },
   {
+    id: 'page-forecast',
+    title: 'Pipe freeze forecast',
+    description: 'US city or ZIP outlook for nights below freezing, plus the embeddable ThermalTrace freeze map.',
+    href: SITE_LINKS.thermalTraceForecastPage,
+    source: 'Work · Kit',
+  },
+  {
+    id: 'page-integrations',
+    title: 'ThermalTrace integrations',
+    description: 'Home Assistant, Matter, SmartThings, Node-RED, Influx, and webhook automations.',
+    href: SITE_LINKS.thermalTraceIntegrationsPage,
+    source: 'Work · Kit',
+  },
+  {
     id: 'page-concrete',
     title: 'Concrete CMS packages',
     description:
@@ -283,7 +297,7 @@ export function searchLocalContent(term: string): SearchHit[] {
       id: 'thermaltrace',
       title: 'ThermalTrace',
       description:
-        'Open-source garage freeze and flood monitoring — ESP32/Pico ingest, time-to-freeze clock, Home Assistant HACS, Free/Member/Pro/Portfolio at thermaltrace.dev.',
+        'Open-source garage freeze, heat, and flood monitoring — ESP32/Pico ingest, pipe-freeze forecast, Home Assistant, Node-RED, Free/Member/Pro/Portfolio at thermaltrace.dev.',
       href: SITE_LINKS.thermalTracePage,
       source: 'Work · Product',
     })

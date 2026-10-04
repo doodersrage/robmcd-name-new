@@ -1,4 +1,4 @@
-import { LIVE, p, page } from '../helpers'
+import { DOCS_BASE_PATH, GH, LIVE, p, page } from '../helpers'
 
 export const playPages = [
   page(
@@ -10,7 +10,7 @@ export const playPages = [
     [
       ...p(
         'Story (`/story`) is the optional narrative rail in **Play** workspace mode. It continues an existing Cast lead — Part, bible, and From photo live on Film create and Cast, not as a second cast form here. The lean Play sidebar keeps Cast, Film, Look, Outfit, Day, Story, Gallery, and Queue one click away.',
-        '**Castcut 2.0** keeps Cast identity across Look, Outfit, Day, and Story (IP-Adapter + pinned LoRAs) with Identity ready chrome after Heal. **Mood & world** (tone, content, setting, notes) stays collapsed until you need it. **Identity for this story** offers From bio / From photo; Story stills queue with identity lock on by default when a face reference is available. **Continue** extends a clip when the parent upload is Fal (or already on Fal): Fal extend-video chains the motion. Otherwise Continue falls back to last-frame I2V. **Cut** encodes a film from queued clips (crossfade + audio bed); **Save to Cast** pushes the cut back to the character home.',
+        'Castcut keeps Cast identity across Look, Outfit, Day, and Story (IP-Adapter + pinned LoRAs) with Identity ready chrome after Heal. **Mood & world** (tone, content, setting, notes) stays collapsed until you need it. **Identity for this story** offers From bio / From photo; Story stills queue with identity lock on by default when a face reference is available. **Continue** extends a clip when the parent upload is Fal (or already on Fal): Fal extend-video chains the motion. Otherwise Continue falls back to last-frame I2V. **Cut** encodes a film from queued clips (crossfade + audio bed); **Save to Cast** pushes the cut back to the character home.',
         'Legacy path `/roleplay` permanently redirects to `/story`.',
       ),
       { type: 'h2', text: 'Typical Story flow' },
@@ -85,6 +85,40 @@ export const playPages = [
         items: [{ label: 'Open Mobile Studio (local)', href: `${LIVE}/m`, external: true }],
       },
     ],
-    { related: ['play/story', 'gallery/review-mode', 'play/cast'] },
+    { related: ['play/story', 'gallery/review-mode', 'play/cast', 'play/day'] },
+  ),
+
+  page(
+    ['play', 'day'],
+    'Day, poses, and looks',
+    'Pose editor, per-look outfits, and the Day still engines in Castcut 2.2.',
+    'Play',
+    54,
+    [
+      ...p(
+        'Day is the still step of the film loop: one Cast, a plan of beats, then stills you can animate and cut. Castcut 2.2 adds a pose editor (drag joints, start from a named pose or any photo, save under My poses), pose packs that theme a whole Day, and more than one look per Cast. Keeping an Outfit try-on stores that outfit on the active look, so Day and Story pick it up when you switch looks.',
+        'Still engines in regular use are Rapid AIO, Qwen Edit 2511, and Qwen-Image 2.1 (full sampler, Fun-Acc 4-step, Pruna 8-step). The header Engine chip lists installed models first and uses one quality control, Good or Best. Animate uses WAN or LTX-2.5. An optional end pose lets a clip land on a second still of the same Cast. Engine health checks each pickable engine against the connected ComfyUI for missing nodes and model files without rendering.',
+        'Hard poses can take a second render (Best of two) and keep the take closer to the pose guide. With Castcut nodes installed, both takes run inside one ComfyUI job. Open in ComfyUI writes the exact graph that made a still into ComfyUI’s editor so you can change sampler or LoRA settings and bring sampler overrides back.',
+      ),
+      { type: 'h2', text: 'Desk loop' },
+      {
+        type: 'ol',
+        items: [
+          'Pick a Cast lead and a look (plate, face, kept outfit)',
+          'Set clothing and shoes in Outfit, or keep a try-on onto the look',
+          'Pose the Day — editor, a photo, or a pose pack — then queue stills',
+          'Animate, cut the film, or continue the Day as a Story',
+        ],
+      },
+      {
+        type: 'links',
+        items: [
+          { label: 'Castcut nodes', href: `${DOCS_BASE_PATH}/integration/castcut-nodes` },
+          { label: 'Play guide', href: `${GH}/blob/main/docs/play-guide.md`, external: true },
+          { label: 'Qwen, Z-Image & Boogu', href: `${DOCS_BASE_PATH}/models/qwen-edit` },
+        ],
+      },
+    ],
+    { related: ['play/cast', 'play/story', 'integration/castcut-nodes'] },
   ),
 ]

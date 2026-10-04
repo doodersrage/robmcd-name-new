@@ -1,4 +1,4 @@
-import { DOCKER_IMAGE, GH, LIVE, RELEASES, p, page } from '../helpers'
+import { DOCKER_IMAGE, DOCS_BASE_PATH, GH, LIVE, RELEASES, p, page } from '../helpers'
 
 export const gettingStartedPages = [
   page(
@@ -138,7 +138,7 @@ export const gettingStartedPages = [
     [
       ...p(
         'Custom nodes under `comfyui/comfyui_image_prompt_tools/` register endpoints that read the latest prompt, negative, and metadata from Castcut. Wire them into CLIP text encode nodes instead of static strings — workflow takeover replaces values at queue time.',
-        'Import pack-accurate graphs via Settings → ComfyUI → workflow library → Import. Download weights with `COMFYUI_ROOT` set, then Settings → ComfyUI → Model assets. Cloud-engine queues bypass ComfyUI graphs entirely — custom nodes apply only to local ComfyUI paths.',
+        'Import pack-accurate graphs via Settings → ComfyUI → workflow library → Import. Download weights with `COMFYUI_ROOT` set, then Settings → ComfyUI → Model assets. Cloud-engine queues bypass ComfyUI graphs entirely — custom nodes apply only to local ComfyUI paths. Pose scoring and cut-outs are a separate pack: Castcut nodes.',
       ),
       { type: 'h2', text: 'Install' },
       {
@@ -152,7 +152,10 @@ export const gettingStartedPages = [
       },
       {
         type: 'links',
-        items: [{ label: 'Custom nodes README', href: `${GH}/blob/main/comfyui/comfyui_image_prompt_tools/README.md`, external: true }],
+        items: [
+          { label: 'Custom nodes README', href: `${GH}/blob/main/comfyui/comfyui_image_prompt_tools/README.md`, external: true },
+          { label: 'Castcut nodes', href: `${DOCS_BASE_PATH}/integration/castcut-nodes` },
+        ],
       },
     ],
     { related: ['integration/workflow-takeover'] },

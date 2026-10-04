@@ -76,7 +76,7 @@ export const modelsPages = [
     46,
     [
       ...p(
-        'Qwen Image (Edit, Edit-2511, Image-2512, Image-2.0, Lightning, Rapid AIO) uses edit instructions or factual/rich T2I prose. Multi-ref ReferenceLatent on Refine, Compose, and Image → Prompt.',
+        'Qwen Image (Edit, Edit-2511, Image-2512, Image-2.0, Image 2.1, Lightning, Rapid AIO) uses edit instructions or factual/rich T2I prose. Day stills also pick Qwen-Image 2.1 as full sampler, Fun-Acc (4-step), or Pruna (8-step). Multi-ref ReferenceLatent on Refine, Compose, and Image → Prompt.',
         'Z-Image (Base, Turbo) uses photoreal T2I prose with Figure 1 VAEEncode img2img on Refine/Compose. Boogu Image (Base, Turbo, Edit, Edit Turbo) supports photoreal T2I or short edit instructions via TextEncodeBooguEdit on Refine/Compose/Image → Prompt.',
       ),
       { type: 'h2', text: 'Prompt style' },
@@ -101,7 +101,7 @@ export const modelsPages = [
     47,
     [
       ...p(
-        'Video families (WAN 2.2, Rapid AIO, Lightning, Hunyuan Video, LTX) cap adjective chains and require motion-forward clauses. Tools route through `/video` with system scaffolds and asset catalog entries.',
+        'Video families (WAN 2.2, Rapid AIO, Lightning, Hunyuan Video, LTX including LTX-2.5 for Day Animate) cap adjective chains and require motion-forward clauses. Tools route through `/video` with system scaffolds and asset catalog entries.',
         'Stable Audio on `/audio` uses tempo, instrumentation, and `{{AUDIO_SECONDS}}` placeholders — lint profiles emphasize temporal structure over visual quality tokens. Hunyuan3D mesh prompts on `/mesh` use geometry-friendly descriptors.',
       ),
       { type: 'h2', text: 'Route summary' },

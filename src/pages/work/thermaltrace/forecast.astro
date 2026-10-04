@@ -1,0 +1,107 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { SITE_LINKS } from '@/lib/site'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const nights = [
+  { name: 'Tonight', low: '18°F', hours: '9 h below 32°F', risk: 'High' },
+  { name: 'Monday', low: '27°F', hours: '4 h below 32°F', risk: 'Watch' },
+  { name: 'Tuesday', low: '36°F', hours: '—', risk: 'Low' },
+]
+---
+
+<BaseLayout
+  title="Pipe freeze forecast"
+  description="US city or ZIP outlook for the next nights’ lows, hours below freezing, and pipe-freeze risk. Live tool and embed live on thermaltrace.dev."
+  canonical={SITE_LINKS.thermalTraceForecastPage}
+  jsonLd={{
+    '@context': 'https://schema.org',
+    ...breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Work', path: '/work' },
+      { name: 'ThermalTrace', path: SITE_LINKS.thermalTracePage },
+      { name: 'Pipe freeze forecast', path: SITE_LINKS.thermalTraceForecastPage },
+    ]),
+  }}
+>
+  <article class="space-y-10">
+    <header class="space-y-3">
+      <p class="eyebrow">ThermalTrace · kit</p>
+      <h1 class="page-title">Pipe freeze forecast</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        A public outlook for unheated garages, crawlspaces, and attics: enter a US city or ZIP and see the next nights’
+        lows, hours below freezing, and a high / watch / low risk mark. It forecasts outdoor air from the National
+        Weather Service. It does not measure your space — that is the probe dashboard.
+      </p>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <a href={SITE_LINKS.thermalTraceForecast} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Open the forecast
+        </a>
+        <a href={SITE_LINKS.thermalTraceFreezeMap} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+          Freeze map
+        </a>
+      </div>
+    </header>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">What a night means</h2>
+      <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+        Water freezes at 32°F. Pipes in an unheated space usually need colder outdoor air before they freeze. Nights at
+        or below about 20°F are marked high risk. Nights between 21°F and 32°F are watch — a long freeze, wind, or a
+        drafty wall can still ice a line. Wind of 15 mph or more during freezing hours is called out. The hourly
+        forecast refreshes about every 30 minutes and covers the United States and its territories.
+      </p>
+      <div class="max-w-2xl overflow-x-auto border" style="border-color: var(--line)">
+        <table class="w-full text-left text-sm">
+          <caption class="sr-only">Example three-night pipe freeze outlook</caption>
+          <thead class="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">
+            <tr class="border-b" style="border-color: var(--line)">
+              <th class="px-3 py-2 font-medium">Night</th>
+              <th class="px-3 py-2 font-medium">Low</th>
+              <th class="px-3 py-2 font-medium">Below freezing</th>
+              <th class="px-3 py-2 font-medium">Risk</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              nights.map((night) => (
+                <tr class="border-b last:border-b-0" style="border-color: var(--line)">
+                  <td class="px-3 py-2">{night.name}</td>
+                  <td class="px-3 py-2 font-mono text-xs">{night.low}</td>
+                  <td class="px-3 py-2 text-[var(--muted)]">{night.hours}</td>
+                  <td class="px-3 py-2 font-mono text-xs">{night.risk}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="max-w-2xl font-mono text-xs text-[var(--muted)]">
+        Illustrative row. The live page uses the NWS hourly forecast for the place you enter.
+      </p>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">Embed</h2>
+      <div class="prose-site max-w-2xl">
+        <p>
+          Other sites can frame a server-rendered outlook at <code>/embed/pipe-freeze</code> with latitude, longitude,
+          and an optional place name. No client script. The snippet and attribution link are on the forecast page.
+          The public freeze map — opt-in aggregates of spaces approaching freeze — has its own iframe and Markdown
+          badge at <code>/embed/freeze-map</code>.
+        </p>
+      </div>
+    </section>
+
+    <section class="space-y-4 border-t pt-8" style="border-color: var(--line)">
+      <h2 class="text-xl font-semibold">Related</h2>
+      <div class="flex flex-wrap gap-3">
+        <a href={SITE_LINKS.thermalTracePage} class="btn btn-secondary">Case study</a>
+        <a href={SITE_LINKS.thermalTraceProtocol} class="btn btn-secondary">Ingest protocol</a>
+        <a href={SITE_LINKS.thermalTraceIntegrationsPage} class="btn btn-secondary">Integrations</a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

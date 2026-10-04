@@ -17,14 +17,14 @@ export const introductionPages = [
       {
         type: 'ul',
         items: [
-          'Film loop: Cast → Look → Outfit → Day → Cut film; Heal & ready on first launch',
+          'Film loop: Cast → Look → Outfit → Day → Cut film; pose editor and per-look outfits in 2.2',
           '40+ ComfyUI image model targets with architecture-specific scaffolds',
           'Play campaigns, Film hub, optional Story, and Mobile Studio for character IP workflows',
           'Dedicated Format (`/format`) and Lint (`/lint`) — separate tools, not one combined step',
           'Gallery with grid/dense/list layouts, review focus, compare modal, and semantic search',
           'Workflow takeover at queue time — inject live prompts without rebuilding graphs',
           'Desktop installers (.dmg / .exe / .deb preferred) and Docker images via GitHub Releases',
-          'Draft / Final / Max quality profiles for exploration vs delivery',
+          'Good / Best quality on the Engine panel; optional Castcut nodes for in-job pose checks',
         ],
       },
       {

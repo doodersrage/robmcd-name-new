@@ -25,6 +25,8 @@ const staticPaths = [
   '/press',
   '/castcut',
   '/work/thermaltrace/protocol',
+  '/work/thermaltrace/forecast',
+  '/work/thermaltrace/integrations',
   '/work/concrete-cms',
   '/work/wordpress',
 ]

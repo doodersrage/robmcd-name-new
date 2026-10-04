@@ -25,7 +25,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI. Cast → Look → Outfit → Day → Cut film.',
     description:
-      'MIT-licensed Next.js app for consistent characters, scenes, images, and short films locally with ComfyUI. Formerly Prompt Studio / llm-prompt-studio. Castcut 2.0 locks Cast identity across the film loop. Heal & ready, Play campaigns, Mobile Studio, workflow takeover, and optional cloud stills/clips when you skip the graph.',
+      'MIT-licensed Next.js app for consistent characters, scenes, images, and short films locally with ComfyUI. Formerly Prompt Studio / llm-prompt-studio. Castcut 2.2 locks Cast identity across the film loop, with a pose editor, per-look outfits, and optional Castcut nodes. Heal & ready, Play, Mobile Studio, and desktop or Docker installs.',
     href: SITE_LINKS.castcut,
     externalHref: SITE_LINKS.castcutGithub,
     linkLabel: 'Read the docs on robmcd.name',
@@ -50,14 +50,19 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         heading: 'What shipped',
         body: [
           'Flagship loop: Cast → Look → Outfit → Day → (optional Story) → Gallery → Cut film. Play is Make (default); Studio is Control; Full is Build. Specialty tools sit under Extras. Film hub, essentials-first Cast create, featured Part archetypes, and Identity ready chrome. 25+ tool routes across Generate, Format, Refine, Compose, Image → Prompt, Inpaint/Outpaint, Character, Cast, Story, Video, Audio, 3D Mesh, Gallery, Variations, ControlNet, Workflow editor, Plugins, and Mobile Studio.',
-          'Castcut 2.0: Cast face IP-Adapter + pinned LoRAs across Look, Outfit try-on, Day/Story stills & Animate, cinematic Cut (crossfade + audio bed), and LoRA Keep → Train → Register → Prove. 40+ ComfyUI image targets (FLUX including Klein, Qwen Image, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX video, and more) with family-aware scaffolds. Heal & ready inspects ComfyUI on first launch. Desktop installers via Tauri — macOS .dmg, Windows .exe, Linux .deb preferred (AppImage portable). Docker at ghcr.io/doodersrage/castcut. Local-first persistence (IndexedDB + server SQLite with optional multi-user auth).',
-          'Narrative docs and interactive demos live on robmcd.name at /castcut; operator reference (env tables, API catalog, Play guide, release process) lives on GitHub Pages at doodersrage.github.io/castcut. Product focus: workflow reliability, identity-ready film loop, and character consistency over expanding the optional cloud provider matrix.',
+          'Castcut 2.2: identity lock across Look, Outfit, Day, and Story; a pose editor (joints, from a photo, My poses, pose packs); several looks per Cast with the kept outfit stored on the look; clothing and footwear pickers; Engine panel with Good/Best quality. Day stills commonly run on Rapid AIO, Qwen Edit 2511, or Qwen-Image 2.1. Clips use WAN or LTX-2.5. Engine health checks missing nodes and weights without rendering. Open in ComfyUI round-trips the exact graph.',
+          'Optional Castcut nodes (Comfy Registry pack 1.1.0) run Best of two and isolate-on-white cut-outs inside one ComfyUI job. 40+ image targets remain (FLUX including Klein, Qwen, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX, and more). Desktop installers via Tauri — macOS .dmg, Windows .exe, Linux .deb preferred. Docker at ghcr.io/doodersrage/castcut. Narrative docs live here; operator reference stays on GitHub Pages.',
+        ],
+        links: [
+          { label: 'Day, poses, and looks', href: '/castcut/play/day' },
+          { label: 'Castcut nodes', href: '/castcut/integration/castcut-nodes' },
+          { label: 'castcut-nodes on GitHub', href: SITE_LINKS.castcutNodes, external: true },
         ],
       },
       {
         heading: 'Outcome',
         body: [
-          'Open-source and usable today (Castcut 2.0). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
+          'Open-source and usable today (Castcut 2.2). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
         ],
       },
     ],
@@ -67,7 +72,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'ThermalTrace',
     tagline: 'Know before pipes freeze or a space floods. Hosted alerts for hardware you already own.',
     description:
-      'Open monitoring at thermaltrace.dev for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), freeze and flood alerts, household sharing, companion apps, and Free / Member / Pro / Portfolio plans. You do not have to babysit another home server just to watch probes.',
+      'Open monitoring at thermaltrace.dev for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), freeze, heat, and flood alerts, a public pipe-freeze forecast, household sharing, companion apps, and Free / Member / Pro / Portfolio plans.',
     externalHref: SITE_LINKS.thermalTrace,
     linkLabel: 'Open thermaltrace.dev',
     stack: [
@@ -99,7 +104,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         heading: 'How it works',
         body: [
           'Build → Connect → Get alerted. Wire a temperature probe (and optional leak puck), create a push device or pull feed in the dashboard, then POST JSON to a per-device ingest URL — or let ThermalTrace pull an HTTPS feed on a schedule. Sensors auto-import on first contact.',
-          'Set a freeze threshold and enable wet flood/leak contacts. Free and Member cover email plus Discord, Telegram, Slack, Teams, ntfy, and Pushover; Pro adds SMS, WhatsApp, browser push, HMAC webhooks, and official NWS freeze/cold alerts. A forecast-backed time-to-freeze clock shows hours until risk, not only after the probe crosses the line.',
+          'Set a freeze threshold and enable wet flood/leak contacts. Heat alerts sit beside freeze. Free and Member cover email plus Discord, Telegram, Slack, Teams, ntfy, and Pushover; Pro adds SMS, WhatsApp, browser push, HMAC webhooks, and official NWS freeze/cold alerts. A forecast-backed time-to-freeze clock shows hours until risk. “I’m on it” stops repeat freeze alerts until the space recovers. Feeds that stay silent are marked offline.',
         ],
       },
       {
@@ -114,7 +119,8 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         ],
         links: [
           { label: 'About / start here', href: SITE_LINKS.thermalTraceAbout, external: true },
-          { label: 'Ingest & developer docs', href: SITE_LINKS.thermalTraceDocs, external: true },
+          { label: 'Developer docs', href: SITE_LINKS.thermalTraceDocs, external: true },
+          { label: 'Pipe freeze forecast', href: SITE_LINKS.thermalTraceForecastPage },
           { label: 'Source on GitHub', href: SITE_LINKS.thermalTraceGithub, external: true },
         ],
       },
@@ -153,22 +159,17 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'Integrations',
         body: [
-          'Home Assistant — HACS integration for dual-run with local notify when you want LAN voice/phone alerts alongside ThermalTrace channels (some services are Pro).',
-          'Matter / smart home — Matterbridge plugin exposes share-link sensors to Apple Home, Google Home, and Alexa (family live share works on Free).',
+          'Home Assistant (HACS) for local notify beside ThermalTrace channels. Matter exposes share-link sensors to Apple Home, Google Home, Alexa, and SmartThings. Node-RED, Influx/Telegraf, and Pro webhooks (IFTTT, n8n, Grafana) cover the rest of a homelab. A public pipe-freeze forecast and opt-in freeze map can be embedded on another site.',
         ],
         links: [
+          { label: 'Integrations on this site', href: SITE_LINKS.thermalTraceIntegrationsPage },
+          { label: 'Pipe freeze forecast', href: SITE_LINKS.thermalTraceForecastPage },
           {
-            label: 'Home Assistant guide',
-            href: SITE_LINKS.thermalTraceHomeAssistantGuide,
+            label: 'Guides on thermaltrace.dev',
+            href: SITE_LINKS.thermalTraceIntegrations,
             external: true,
           },
-          { label: 'Matter guide', href: SITE_LINKS.thermalTraceMatterGuide, external: true },
-          {
-            label: 'Home Assistant HACS (GitHub)',
-            href: SITE_LINKS.thermalTraceHomeAssistant,
-            external: true,
-          },
-          { label: 'Matter bridge (GitHub)', href: SITE_LINKS.thermalTraceMatter, external: true },
+          { label: 'Developer docs', href: SITE_LINKS.thermalTraceDocs, external: true },
         ],
       },
       {

@@ -32,7 +32,7 @@ const SHIPPED = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI',
     description:
-      'Cast → Look → Outfit → Day → Cut film. Castcut 2.0 identity lock, Heal & ready, Play campaigns, Mobile Studio, desktop and Docker. Formerly Prompt Studio.',
+      'Cast → Look → Outfit → Day → Cut film. Castcut 2.2: pose editor, per-look outfits, Castcut nodes, Heal & ready, desktop and Docker. Formerly Prompt Studio.',
     href: SITE_LINKS.castcut,
     linkLabel: 'Read the docs',
   },
@@ -40,7 +40,7 @@ const SHIPPED = [
     title: 'ThermalTrace',
     tagline: 'Freeze and flood alerts for instrumented spaces',
     description:
-      'Open monitoring for garages and workshops. ESP ingest, time-to-freeze, household alerts, companions (Desktop, Android, Bay Buddy, Matter, HA).',
+      'Open monitoring for garages and workshops. ESP ingest, freeze/heat/flood alerts, pipe-freeze forecast, companions, and Matter, HA, Node-RED, and Influx hooks.',
     href: SITE_LINKS.thermalTracePage,
     linkLabel: 'About ThermalTrace',
   },
