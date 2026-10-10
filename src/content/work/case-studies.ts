@@ -237,6 +237,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
           'It started in October 2026 as a first project back on current .NET and grew into a full self-hosted library. Version 1.3 speaks English, Spanish, French, and German.',
         ],
         links: [
+          { label: 'Running in my homelab', href: SITE_LINKS.shelfLive, external: true, note: 'shelf.robmcd.name' },
           { label: 'Documentation', href: SITE_LINKS.shelfDocs, external: true },
           { label: 'Source on GitHub', href: SITE_LINKS.shelfGithub, external: true },
         ],

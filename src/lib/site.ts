@@ -59,6 +59,7 @@ export const SITE_LINKS = {
   shelf: '/work/shelf',
   shelfGithub: 'https://github.com/doodersrage/shelf',
   shelfDocs: 'https://doodersrage.github.io/shelf/',
+  shelfLive: 'https://shelf.robmcd.name',
   shelfDocker: 'ghcr.io/doodersrage/shelf:latest',
   /** @deprecated Use castcut* */
   promptStudio: '/castcut',

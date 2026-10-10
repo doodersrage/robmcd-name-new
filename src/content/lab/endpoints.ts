@@ -44,6 +44,13 @@ export const LAB_ENDPOINTS: LabEndpoint[] = [
     group: 'homelab',
   },
   {
+    id: 'shelf',
+    name: 'Shelf',
+    href: 'https://shelf.robmcd.name',
+    blurb: 'Personal library: books, e-books, and audiobooks',
+    group: 'homelab',
+  },
+  {
     id: 'jellyfin',
     name: 'Jellyfin',
     href: 'https://jellyfin.robmcd.name/',
