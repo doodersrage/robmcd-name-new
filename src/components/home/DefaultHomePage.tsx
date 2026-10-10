@@ -32,17 +32,25 @@ const SHIPPED = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI',
     description:
-      'Cast → Look → Outfit → Day → Cut film. Castcut 2.2: pose editor, per-look outfits, Castcut nodes, Heal & ready, desktop and Docker. Formerly Prompt Studio.',
+      'Cast → Look → Outfit → Day → Cut film. Castcut 2.4: talking clips, Cast voices, Places, and a score for every cut. The classic tools now ship as Prompt Studio.',
     href: SITE_LINKS.castcut,
     linkLabel: 'Read the docs',
   },
   {
-    title: 'ThermalTrace',
+    title: 'ProbeHarbor',
     tagline: 'Freeze and flood alerts for instrumented spaces',
     description:
-      'Open monitoring for garages and workshops. ESP ingest, freeze/heat/flood alerts, pipe-freeze forecast, companions, and Matter, HA, Node-RED, and Influx hooks.',
-    href: SITE_LINKS.thermalTracePage,
-    linkLabel: 'About ThermalTrace',
+      'Formerly ThermalTrace. Open monitoring for garages and workshops: ESP ingest, freeze/heat/flood alerts, pipe-freeze forecast, Android and iOS apps, and Matter, HA, and Node-RED hooks.',
+    href: SITE_LINKS.probeHarborPage,
+    linkLabel: 'About ProbeHarbor',
+  },
+  {
+    title: 'Shelf',
+    tagline: 'A self-hosted personal library',
+    description:
+      'Books, e-books, and audiobooks for a household on .NET 10: reader with highlights and OCR, audiobook player, lending between readers, KOReader sync, one Docker container.',
+    href: SITE_LINKS.shelf,
+    linkLabel: 'About Shelf',
   },
 ]
 
@@ -66,7 +74,7 @@ export function DefaultHomePage() {
       <ProjectShowcase
         eyebrow="Shipped"
         title="Open source"
-        description="Castcut docs live on this site. ThermalTrace runs at thermaltrace.dev."
+        description="Castcut docs live on this site. ProbeHarbor runs at probeharbor.dev. Shelf runs on your own server."
         projects={SHIPPED}
       />
 

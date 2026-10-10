@@ -37,8 +37,8 @@ export const NOTES: Note[] = [
     title: 'Sensor ingest: first POST should be enough',
     date: '2026-09-07',
     description:
-      'Design note from ThermalTrace: auto-import on first contact, pull feeds as a fallback, keep field installs boring.',
-    tags: ['iot', 'thermaltrace', 'ingest'],
+      'Design note from ProbeHarbor: auto-import on first contact, pull feeds as a fallback, keep field installs boring.',
+    tags: ['iot', 'probeharbor', 'ingest'],
   },
 ]
 

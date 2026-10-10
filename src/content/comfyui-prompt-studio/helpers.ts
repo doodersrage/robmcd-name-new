@@ -7,7 +7,7 @@ export const DOCS_SITE = 'https://doodersrage.github.io/castcut'
 export const RELEASES = `${GH}/releases`
 export const DOCKER_IMAGE = 'ghcr.io/doodersrage/castcut:latest'
 /** Current Castcut release mentioned on this site’s hub copy. */
-export const APP_VERSION = '2.2.0'
+export const APP_VERSION = '2.4.3'
 export const DOCS_BASE_PATH = '/castcut'
 /** Legacy paths — middleware redirects both to DOCS_BASE_PATH */
 export const LEGACY_DOCS_BASE_PATH = '/comfyui-prompt-studio'

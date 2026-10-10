@@ -23,9 +23,9 @@ export const LAB_ENDPOINTS: LabEndpoint[] = [
     group: 'products',
   },
   {
-    id: 'thermaltrace',
-    name: 'ThermalTrace',
-    href: 'https://thermaltrace.dev/',
+    id: 'probeharbor',
+    name: 'ProbeHarbor',
+    href: 'https://probeharbor.dev/',
     blurb: 'Freeze / flood monitoring product',
     group: 'products',
   },

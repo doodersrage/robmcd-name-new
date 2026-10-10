@@ -51,8 +51,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href={SITE_LINKS.thermalTracePage} className="text-link text-sm">
-                  ThermalTrace
+                <a href={SITE_LINKS.probeHarborPage} className="text-link text-sm">
+                  ProbeHarbor
                 </a>
               </li>
               <li>

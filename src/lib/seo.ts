@@ -42,9 +42,9 @@ export function ensureMetaDescriptionLength(
     const path = pathname ?? ''
     const filler = path.includes('/castcut')
       ? ' Castcut docs on robmcd.name for local ComfyUI character filmmaking — Play film loop, Gallery, and queue.'
-      : path.includes('/work/thermaltrace') || path.includes('thermaltrace')
-        ? ' ThermalTrace write-up on robmcd.name — freeze and flood monitoring for garages and shops.'
-        : ' On robmcd.name — cross-platform engineering, Castcut, ThermalTrace, and shop tools.'
+      : path.includes('/work/probeharbor') || path.includes('probeharbor')
+        ? ' ProbeHarbor write-up on robmcd.name — freeze and flood monitoring for garages and shops.'
+        : ' On robmcd.name — cross-platform engineering, Castcut, ProbeHarbor, and shop tools.'
     text = `${text}${filler}`
   }
 
@@ -79,7 +79,7 @@ export function personSchema(): Record<string, unknown> {
       'ComfyUI tooling',
       'IoT monitoring',
     ],
-    sameAs: [SITE_LINKS.github, SITE_LINKEDIN, SITE_LINKS.thermalTrace],
+    sameAs: [SITE_LINKS.github, SITE_LINKEDIN, SITE_LINKS.probeHarbor],
   }
 }
 
@@ -112,7 +112,7 @@ export function aboutPageSchema(faqs?: { question: string; answer: string }[]): 
       url: absolutePageUrl('/about'),
       name: `About ${SITE_OWNER}`,
       description:
-        'Robert McDowell, full-stack engineer since 2006. Legacy modernization, servers and databases, SEO/AEO, Castcut, and ThermalTrace.',
+        'Robert McDowell, full-stack engineer since 2006. Legacy modernization, servers and databases, SEO/AEO, Castcut, and ProbeHarbor.',
       isPartOf: { '@id': `${SITE_URL}/#website` },
       mainEntity: { '@id': `${SITE_URL}/#person` },
     },

@@ -17,10 +17,10 @@ export const introductionPages = [
       {
         type: 'ul',
         items: [
-          'Film loop: Cast → Look → Outfit → Day → Cut film; pose editor and per-look outfits in 2.2',
+          'Film loop: Cast → Look → Outfit → Day → Cut film; talking clips, Cast voices, Places, and film scores in 2.4',
           '40+ ComfyUI image model targets with architecture-specific scaffolds',
           'Play campaigns, Film hub, optional Story, and Mobile Studio for character IP workflows',
-          'Dedicated Format (`/format`) and Lint (`/lint`) — separate tools, not one combined step',
+          'Classic tools (Generate, Format, Lint, Variations, Workflow editor) now ship separately as Prompt Studio on the shared prompt-studio-core package',
           'Gallery with grid/dense/list layouts, review focus, compare modal, and semantic search',
           'Workflow takeover at queue time — inject live prompts without rebuilding graphs',
           'Desktop installers (.dmg / .exe / .deb preferred) and Docker images via GitHub Releases',

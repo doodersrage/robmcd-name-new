@@ -8,64 +8,64 @@ import { breadcrumbSchema } from '@/lib/seo'
 const integrations = [
   {
     title: 'Home Assistant (HACS)',
-    body: 'Dual-run with local notify when you want LAN voice or phone alerts beside ThermalTrace channels.',
-    href: SITE_LINKS.thermalTraceHomeAssistantGuide,
+    body: 'Dual-run with local notify when you want LAN voice or phone alerts beside ProbeHarbor channels.',
+    href: SITE_LINKS.probeHarborHomeAssistantGuide,
   },
   {
     title: 'Matter / Apple Home',
     body: 'Matterbridge plugin exposes share-link sensors to Apple Home, Google Home, and Alexa. Family live share works on Free.',
-    href: SITE_LINKS.thermalTraceMatterGuide,
+    href: SITE_LINKS.probeHarborMatterGuide,
   },
   {
     title: 'SmartThings',
     body: 'Same Matter path into SmartThings, so a share link can show up as home devices.',
-    href: SITE_LINKS.thermalTraceSmartThings,
+    href: SITE_LINKS.probeHarborSmartThings,
   },
   {
     title: 'Node-RED',
     body: 'Flow the ingest and alert events into a LAN flow without standing up the dashboard yourself.',
-    href: SITE_LINKS.thermalTraceNodeRed,
+    href: SITE_LINKS.probeHarborNodeRed,
   },
   {
     title: 'InfluxDB & Telegraf',
     body: 'Ship readings into a time-series store you already graph.',
-    href: SITE_LINKS.thermalTraceInflux,
+    href: SITE_LINKS.probeHarborInflux,
   },
   {
     title: 'IFTTT, n8n & webhooks',
     body: 'Pro outbound webhooks for IFTTT, n8n, Sheets, and HMAC automation. Grafana and Prometheus metrics keys are on Pro.',
-    href: SITE_LINKS.thermalTraceAutomation,
+    href: SITE_LINKS.probeHarborAutomation,
   },
 ]
 ---
 
 <BaseLayout
-  title="ThermalTrace integrations"
-  description="Home Assistant, Matter, SmartThings, Node-RED, Influx, and webhook automations for ThermalTrace freeze and flood alerts."
-  canonical={SITE_LINKS.thermalTraceIntegrationsPage}
+  title="ProbeHarbor integrations"
+  description="Home Assistant, Matter, SmartThings, Node-RED, Influx, and webhook automations for ProbeHarbor freeze and flood alerts."
+  canonical={SITE_LINKS.probeHarborIntegrationsPage}
   jsonLd={{
     '@context': 'https://schema.org',
     ...breadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Work', path: '/work' },
-      { name: 'ThermalTrace', path: SITE_LINKS.thermalTracePage },
-      { name: 'Integrations', path: SITE_LINKS.thermalTraceIntegrationsPage },
+      { name: 'ProbeHarbor', path: SITE_LINKS.probeHarborPage },
+      { name: 'Integrations', path: SITE_LINKS.probeHarborIntegrationsPage },
     ]),
   }}
 >
   <article class="space-y-10">
     <header class="space-y-3">
-      <p class="eyebrow">ThermalTrace · kit</p>
+      <p class="eyebrow">ProbeHarbor · kit</p>
       <h1 class="page-title">Integrations</h1>
       <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
-        ThermalTrace keeps the hosted history and household alerts. These hooks are how that account meets a stack you
-        already run. Step-by-step guides stay on thermaltrace.dev; this page is the map.
+        ProbeHarbor keeps the hosted history and household alerts. These hooks are how that account meets a stack you
+        already run. Step-by-step guides stay on probeharbor.dev; this page is the map.
       </p>
       <div class="flex flex-wrap gap-3 pt-2">
-        <a href={SITE_LINKS.thermalTraceIntegrations} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-          Guides on thermaltrace.dev
+        <a href={SITE_LINKS.probeHarborIntegrations} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+          Guides on probeharbor.dev
         </a>
-        <a href={SITE_LINKS.thermalTraceDocs} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+        <a href={SITE_LINKS.probeHarborDocs} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
           Developer docs
         </a>
       </div>
@@ -96,12 +96,12 @@ const integrations = [
       </p>
       <ul class="max-w-2xl space-y-2 border-l pl-4" style="border-color: var(--line)">
         <li>
-          <a href={SITE_LINKS.thermalTraceHomeAssistant} class="text-sm font-medium text-link" target="_blank" rel="noopener noreferrer">
+          <a href={SITE_LINKS.probeHarborHomeAssistant} class="text-sm font-medium text-link" target="_blank" rel="noopener noreferrer">
             Home Assistant HACS
           </a>
         </li>
         <li>
-          <a href={SITE_LINKS.thermalTraceMatter} class="text-sm font-medium text-link" target="_blank" rel="noopener noreferrer">
+          <a href={SITE_LINKS.probeHarborMatter} class="text-sm font-medium text-link" target="_blank" rel="noopener noreferrer">
             Matter bridge
           </a>
         </li>
@@ -111,9 +111,9 @@ const integrations = [
     <section class="space-y-4 border-t pt-8" style="border-color: var(--line)">
       <h2 class="text-xl font-semibold">Related</h2>
       <div class="flex flex-wrap gap-3">
-        <a href={SITE_LINKS.thermalTracePage} class="btn btn-secondary">Case study</a>
-        <a href={SITE_LINKS.thermalTraceProtocol} class="btn btn-secondary">Ingest protocol</a>
-        <a href={SITE_LINKS.thermalTraceForecastPage} class="btn btn-secondary">Pipe freeze forecast</a>
+        <a href={SITE_LINKS.probeHarborPage} class="btn btn-secondary">Case study</a>
+        <a href={SITE_LINKS.probeHarborProtocol} class="btn btn-secondary">Ingest protocol</a>
+        <a href={SITE_LINKS.probeHarborForecastPage} class="btn btn-secondary">Pipe freeze forecast</a>
       </div>
     </section>
   </article>

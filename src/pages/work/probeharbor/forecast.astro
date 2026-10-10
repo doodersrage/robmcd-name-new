@@ -14,21 +14,21 @@ const nights = [
 
 <BaseLayout
   title="Pipe freeze forecast"
-  description="US city or ZIP outlook for the next nights’ lows, hours below freezing, and pipe-freeze risk. Live tool and embed live on thermaltrace.dev."
-  canonical={SITE_LINKS.thermalTraceForecastPage}
+  description="US city or ZIP outlook for the next nights’ lows, hours below freezing, and pipe-freeze risk. Live tool and embed live on probeharbor.dev."
+  canonical={SITE_LINKS.probeHarborForecastPage}
   jsonLd={{
     '@context': 'https://schema.org',
     ...breadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Work', path: '/work' },
-      { name: 'ThermalTrace', path: SITE_LINKS.thermalTracePage },
-      { name: 'Pipe freeze forecast', path: SITE_LINKS.thermalTraceForecastPage },
+      { name: 'ProbeHarbor', path: SITE_LINKS.probeHarborPage },
+      { name: 'Pipe freeze forecast', path: SITE_LINKS.probeHarborForecastPage },
     ]),
   }}
 >
   <article class="space-y-10">
     <header class="space-y-3">
-      <p class="eyebrow">ThermalTrace · kit</p>
+      <p class="eyebrow">ProbeHarbor · kit</p>
       <h1 class="page-title">Pipe freeze forecast</h1>
       <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
         A public outlook for unheated garages, crawlspaces, and attics: enter a US city or ZIP and see the next nights’
@@ -36,10 +36,10 @@ const nights = [
         Weather Service. It does not measure your space — that is the probe dashboard.
       </p>
       <div class="flex flex-wrap gap-3 pt-2">
-        <a href={SITE_LINKS.thermalTraceForecast} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <a href={SITE_LINKS.probeHarborForecast} class="btn btn-primary" target="_blank" rel="noopener noreferrer">
           Open the forecast
         </a>
-        <a href={SITE_LINKS.thermalTraceFreezeMap} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+        <a href={SITE_LINKS.probeHarborFreezeMap} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
           Freeze map
         </a>
       </div>
@@ -98,9 +98,9 @@ const nights = [
     <section class="space-y-4 border-t pt-8" style="border-color: var(--line)">
       <h2 class="text-xl font-semibold">Related</h2>
       <div class="flex flex-wrap gap-3">
-        <a href={SITE_LINKS.thermalTracePage} class="btn btn-secondary">Case study</a>
-        <a href={SITE_LINKS.thermalTraceProtocol} class="btn btn-secondary">Ingest protocol</a>
-        <a href={SITE_LINKS.thermalTraceIntegrationsPage} class="btn btn-secondary">Integrations</a>
+        <a href={SITE_LINKS.probeHarborPage} class="btn btn-secondary">Case study</a>
+        <a href={SITE_LINKS.probeHarborProtocol} class="btn btn-secondary">Ingest protocol</a>
+        <a href={SITE_LINKS.probeHarborIntegrationsPage} class="btn btn-secondary">Integrations</a>
       </div>
     </section>
   </article>

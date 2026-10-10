@@ -16,29 +16,29 @@ const example = `{
 ---
 
 <BaseLayout
-  title="ThermalTrace ingest protocol"
-  description="Open ingest sketch for ThermalTrace-style sensors — first POST auto-import, flexible payload shapes, push and pull."
-  canonical={SITE_LINKS.thermalTraceProtocol}
+  title="ProbeHarbor ingest protocol"
+  description="Open ingest sketch for ProbeHarbor-style sensors — first POST auto-import, flexible payload shapes, push and pull."
+  canonical={SITE_LINKS.probeHarborProtocol}
   jsonLd={{
     '@context': 'https://schema.org',
     ...breadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Work', path: '/work' },
-      { name: 'ThermalTrace', path: SITE_LINKS.thermalTracePage },
-      { name: 'Ingest protocol', path: SITE_LINKS.thermalTraceProtocol },
+      { name: 'ProbeHarbor', path: SITE_LINKS.probeHarborPage },
+      { name: 'Ingest protocol', path: SITE_LINKS.probeHarborProtocol },
     ]),
   }}
 >
   <article class="space-y-10">
     <header class="space-y-3">
-      <p class="eyebrow">ThermalTrace · kit</p>
+      <p class="eyebrow">ProbeHarbor · kit</p>
       <h1 class="page-title">Ingest protocol</h1>
       <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
         Engineering home for push/pull ingest. The live product, dashboard, and billing live at{' '}
-        <a href={SITE_LINKS.thermalTrace} class="text-link" target="_blank" rel="noopener noreferrer">thermaltrace.dev</a>.
-        Case study: <a href={SITE_LINKS.thermalTracePage} class="text-link">ThermalTrace</a>. Full operator
+        <a href={SITE_LINKS.probeHarbor} class="text-link" target="_blank" rel="noopener noreferrer">probeharbor.dev</a>.
+        Case study: <a href={SITE_LINKS.probeHarborPage} class="text-link">ProbeHarbor</a>. Full operator
         ingest docs:{' '}
-        <a href={SITE_LINKS.thermalTraceDocs} class="text-link" target="_blank" rel="noopener noreferrer">thermaltrace.dev/developers</a>.
+        <a href={SITE_LINKS.probeHarborDocs} class="text-link" target="_blank" rel="noopener noreferrer">probeharbor.dev/developers</a>.
       </p>
     </header>
 
@@ -83,11 +83,11 @@ const example = `{
     <section class="space-y-4 border-t pt-8" style="border-color: var(--line)">
       <h2 class="text-xl font-semibold">Related</h2>
       <div class="flex flex-wrap gap-3">
-        <a href={SITE_LINKS.thermalTracePage} class="btn btn-secondary">Case study</a>
-        <a href={SITE_LINKS.thermalTraceForecastPage} class="btn btn-secondary">Pipe freeze forecast</a>
-        <a href={SITE_LINKS.thermalTraceIntegrationsPage} class="btn btn-secondary">Integrations</a>
-        <a href={SITE_LINKS.thermalTraceDemo} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Live demo</a>
-        <a href={SITE_LINKS.thermalTraceGithub} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href={SITE_LINKS.probeHarborPage} class="btn btn-secondary">Case study</a>
+        <a href={SITE_LINKS.probeHarborForecastPage} class="btn btn-secondary">Pipe freeze forecast</a>
+        <a href={SITE_LINKS.probeHarborIntegrationsPage} class="btn btn-secondary">Integrations</a>
+        <a href={SITE_LINKS.probeHarborDemo} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Live demo</a>
+        <a href={SITE_LINKS.probeHarborGithub} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="/notes/sensor-ingest-first-contact" class="btn btn-secondary">Field note</a>
       </div>
     </section>

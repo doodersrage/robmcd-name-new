@@ -101,23 +101,23 @@ const SITE_PAGES: SearchHit[] = [
   },
   {
     id: 'page-protocol',
-    title: 'ThermalTrace ingest protocol',
+    title: 'ProbeHarbor ingest protocol',
     description: 'Open ingest sketch — first POST auto-import, normalized readings.',
-    href: SITE_LINKS.thermalTraceProtocol,
+    href: SITE_LINKS.probeHarborProtocol,
     source: 'Work · Kit',
   },
   {
     id: 'page-forecast',
     title: 'Pipe freeze forecast',
-    description: 'US city or ZIP outlook for nights below freezing, plus the embeddable ThermalTrace freeze map.',
-    href: SITE_LINKS.thermalTraceForecastPage,
+    description: 'US city or ZIP outlook for nights below freezing, plus the embeddable ProbeHarbor freeze map.',
+    href: SITE_LINKS.probeHarborForecastPage,
     source: 'Work · Kit',
   },
   {
     id: 'page-integrations',
-    title: 'ThermalTrace integrations',
+    title: 'ProbeHarbor integrations',
     description: 'Home Assistant, Matter, SmartThings, Node-RED, Influx, and webhook automations.',
-    href: SITE_LINKS.thermalTraceIntegrationsPage,
+    href: SITE_LINKS.probeHarborIntegrationsPage,
     source: 'Work · Kit',
   },
   {
@@ -292,13 +292,13 @@ export function searchLocalContent(term: string): SearchHit[] {
   }
 
   const extras: SearchHit[] = []
-  if (/garage|temp|thermal|trace|freeze|flood|leak|iot|dht|probe|sensor|esp32|pico|alert|ingest/.test(q)) {
+  if (/garage|temp|thermal|trace|harbor|freeze|flood|leak|iot|dht|probe|sensor|esp32|pico|alert|ingest/.test(q)) {
     extras.push({
-      id: 'thermaltrace',
-      title: 'ThermalTrace',
+      id: 'probeharbor',
+      title: 'ProbeHarbor',
       description:
-        'Open-source garage freeze, heat, and flood monitoring — ESP32/Pico ingest, pipe-freeze forecast, Home Assistant, Node-RED, Free/Member/Pro/Portfolio at thermaltrace.dev.',
-      href: SITE_LINKS.thermalTracePage,
+        'Open-source garage freeze, heat, and flood monitoring (formerly ThermalTrace) — ESP32/Pico ingest, pipe-freeze forecast, Home Assistant, Node-RED, Free/Member/Pro/Portfolio at probeharbor.dev.',
+      href: SITE_LINKS.probeHarborPage,
       source: 'Work · Product',
     })
   }

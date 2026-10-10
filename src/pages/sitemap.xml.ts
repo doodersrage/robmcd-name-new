@@ -24,9 +24,9 @@ const staticPaths = [
   '/colophon',
   '/press',
   '/castcut',
-  '/work/thermaltrace/protocol',
-  '/work/thermaltrace/forecast',
-  '/work/thermaltrace/integrations',
+  '/work/probeharbor/protocol',
+  '/work/probeharbor/forecast',
+  '/work/probeharbor/integrations',
   '/work/concrete-cms',
   '/work/wordpress',
 ]

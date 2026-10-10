@@ -91,13 +91,14 @@ export const playPages = [
   page(
     ['play', 'day'],
     'Day, poses, and looks',
-    'Pose editor, per-look outfits, and the Day still engines in Castcut 2.2.',
+    'Pose editor, per-look outfits, talking clips, Places, and the Day engines in Castcut 2.4.',
     'Play',
     54,
     [
       ...p(
         'Day is the still step of the film loop: one Cast, a plan of beats, then stills you can animate and cut. Castcut 2.2 adds a pose editor (drag joints, start from a named pose or any photo, save under My poses), pose packs that theme a whole Day, and more than one look per Cast. Keeping an Outfit try-on stores that outfit on the active look, so Day and Story pick it up when you switch looks.',
         'Still engines in regular use are Rapid AIO, Qwen Edit 2511, and Qwen-Image 2.1 (full sampler, Fun-Acc 4-step, Pruna 8-step). The header Engine chip lists installed models first and uses one quality control, Good or Best. Animate uses WAN or LTX-2.5. An optional end pose lets a clip land on a second still of the same Cast. Engine health checks each pickable engine against the connected ComfyUI for missing nodes and model files without rendering.',
+        'Castcut 2.4 gives Day sound. Put a line on a slot and Animate makes a lip-synced talking clip on LTX-2.5; Suggest a line asks the LLM for one that fits the scene, and a reply line turns a two-person still into a conversation in one shot. Voices are auditioned and kept on the Cast page. Places give each Cast one home and one workplace, so the bedroom, kitchen, and office look the same in every still. Cut film keeps each clip’s speech, ducks the music under it, and Score this film can write an original instrumental with ACE-Step 1.5.',
         'Hard poses can take a second render (Best of two) and keep the take closer to the pose guide. With Castcut nodes installed, both takes run inside one ComfyUI job. Open in ComfyUI writes the exact graph that made a still into ComfyUI’s editor so you can change sampler or LoRA settings and bring sampler overrides back.',
       ),
       { type: 'h2', text: 'Desk loop' },
@@ -107,7 +108,8 @@ export const playPages = [
           'Pick a Cast lead and a look (plate, face, kept outfit)',
           'Set clothing and shoes in Outfit, or keep a try-on onto the look',
           'Pose the Day — editor, a photo, or a pose pack — then queue stills',
-          'Animate, cut the film, or continue the Day as a Story',
+          'Give slots a line for talking clips, then Animate',
+          'Cut the film (optionally scored), or continue the Day as a Story',
         ],
       },
       {
