@@ -32,7 +32,7 @@ const SHIPPED = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI',
     description:
-      'Cast → Look → Outfit → Day → Cut film. Castcut 2.4: talking clips, Cast voices, Places, and a score for every cut. The classic tools now ship as Prompt Studio.',
+      'Cast → Look → Outfit → Day → Cut film. Castcut 2.6: talking clips, Cast voices, a score for every cut, and a cut you can preview, trim, and re-cut in any shape. The classic tools now ship as Prompt Studio.',
     href: SITE_LINKS.castcut,
     linkLabel: 'Read the docs',
   },
@@ -48,7 +48,7 @@ const SHIPPED = [
     title: 'Shelf',
     tagline: 'A self-hosted personal library',
     description:
-      'Books, e-books, and audiobooks for a household on .NET 10: reader with highlights and OCR, audiobook player, lending between readers, KOReader sync, one Docker container.',
+      'Books, e-books, and audiobooks for a household on .NET 10: a full-screen page-turning reader, an audiobook player, lending between readers, Kobo and KOReader sync, and books found and fetched for you. One Docker container.',
     href: SITE_LINKS.shelf,
     linkLabel: 'About Shelf',
   },

@@ -52,6 +52,7 @@ export const SITE_LINKS = {
   castcutDocs: 'https://doodersrage.github.io/castcut',
   castcutDocker: 'ghcr.io/doodersrage/castcut:latest',
   castcutNodes: 'https://github.com/doodersrage/castcut-nodes',
+  castcutLive: 'https://castcut.robmcd.name',
   /** Classic prompt and image tools split out of Castcut, on the shared prompt-studio-core package. */
   promptStudioApp: '/work/prompt-studio',
   promptStudioAppGithub: 'https://github.com/doodersrage/prompt-studio',

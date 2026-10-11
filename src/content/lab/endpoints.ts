@@ -44,6 +44,13 @@ export const LAB_ENDPOINTS: LabEndpoint[] = [
     group: 'homelab',
   },
   {
+    id: 'castcut',
+    name: 'Castcut',
+    href: 'https://castcut.robmcd.name',
+    blurb: 'Character films with ComfyUI',
+    group: 'homelab',
+  },
+  {
     id: 'shelf',
     name: 'Shelf',
     href: 'https://shelf.robmcd.name',

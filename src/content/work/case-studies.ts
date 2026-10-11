@@ -25,7 +25,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI. Cast → Look → Outfit → Day → Cut film.',
     description:
-      'MIT-licensed Next.js app for consistent characters, scenes, and short films locally with ComfyUI. Castcut 2.4 adds talking clips with sound, auditioned Cast voices, a fixed home and workplace per Cast, and an original score for each cut. The classic prompt and image tools now ship separately as Prompt Studio, on a shared core package.',
+      'MIT-licensed Next.js app for consistent characters, scenes, and short films locally with ComfyUI. Castcut 2.6 has talking clips with sound, Cast voices, a fixed home and workplace per Cast, and an original score for each cut, plus a cut you can preview, trim, frame, and re-cut in another shape. The classic prompt and image tools now ship separately as Prompt Studio, on a shared core package.',
     href: SITE_LINKS.castcut,
     externalHref: SITE_LINKS.castcutGithub,
     linkLabel: 'Read the docs on robmcd.name',
@@ -52,10 +52,14 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
           'Flagship loop: Cast → Look → Outfit → Day → (optional Story) → Gallery → Cut film. Play is Make (default); Studio is Control; Full is Build. Specialty tools sit under Extras. Film hub, essentials-first Cast create, featured Part archetypes, and Identity ready chrome. 25+ tool routes across Generate, Format, Refine, Compose, Image → Prompt, Inpaint/Outpaint, Character, Cast, Story, Video, Audio, 3D Mesh, Gallery, Variations, ControlNet, Workflow editor, Plugins, and Mobile Studio.',
           'Castcut 2.2–2.3: identity lock across Look, Outfit, Day, and Story; a pose editor (joints, from a photo, My poses, pose packs) backed by a library of real reference poses; several looks per Cast with the kept outfit stored on the look; clothing and footwear pickers; one Quality preset (Fast / Balanced / Best) on Day and Outfit; a board-first Day with one slot sheet and one ⋯ menu per card. Day stills commonly run on Rapid AIO, Qwen Edit 2511, or Qwen-Image 2.1. Open in ComfyUI round-trips the exact graph.',
           'Castcut 2.4 gives the film sound. Put a line on a Day slot or Story scene and Animate makes a lip-synced talking clip with LTX-2.5; a reply line makes a two-person conversation in one shot. Cast voices are auditioned and kept on the Cast page. Places give each Cast one home and one workplace, so the bedroom, kitchen, and office are the same rooms in every still. Cut film keeps each clip’s speech, ducks the music under it, and can score the cut with an original instrumental from ACE-Step 1.5. Make it 30 s carries a short clip on to about 30 seconds in chained segments.',
+          'Castcut 2.5 lets you direct the film: Make it 30 s takes your own beats and a spoken line per part, a Cast voice can come from your own recording, and a line can be said eleven ways (Whisper, Laughing, Nervous, Shouting, Sing-song, and more). Animate asks what should happen in the clip, Made with shows what each still came from, and Film, Studio, and More tools are three clear levels.',
+          'Castcut 2.6 is about the cut. Preview the cut and Preview the mix play the film and its sound in the browser before any encode; clips trim in the shot list, stills crop waist-up or chest-up around the face, the poster can be any shot, and cuts come out widescreen, vertical, or square at 720p or 1080p. Every film keeps its recipe, so it can be re-cut in another shape later, and each episode can reopen the Day it came from. Talking clips get room sound from their place and settle from a mid-movement still before speaking; LTX-2.5 is the clip engine for nearly everything. A security pass makes it safe behind a reverse proxy, which is how it runs in my homelab.',
           'Optional Castcut nodes (Comfy Registry pack 1.1.0) run Best of two and isolate-on-white cut-outs inside one ComfyUI job. 40+ image targets remain (FLUX including Klein, Qwen, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX, and more). Desktop installers via Tauri — macOS .dmg, Windows .exe, Linux .deb preferred. Docker at ghcr.io/doodersrage/castcut. Narrative docs live here; operator reference stays on GitHub Pages.',
         ],
         links: [
           { label: 'Day, poses, and looks', href: '/castcut/play/day' },
+          { label: 'Running in my homelab', href: SITE_LINKS.castcutLive, external: true, note: 'castcut.robmcd.name' },
+          { label: 'Changelog', href: `${SITE_LINKS.castcutGithub}/blob/main/CHANGELOG.md`, external: true },
           { label: 'Castcut nodes', href: '/castcut/integration/castcut-nodes' },
           { label: 'castcut-nodes on GitHub', href: SITE_LINKS.castcutNodes, external: true },
         ],
@@ -74,7 +78,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'Outcome',
         body: [
-          'Open-source and usable today (Castcut 2.4). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
+          'Open-source and usable today (Castcut 2.6). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
         ],
       },
     ],
@@ -225,49 +229,90 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'Shelf',
     tagline: 'A self-hosted personal library: books, e-books, audiobooks, and the readers who share them.',
     description:
-      'AGPL-licensed library server on .NET 10 and Blazor. Catalog, reading log, quotes, loans, and a yearly goal, plus an EPUB/PDF reader with highlights and OCR, an audiobook player, OPDS and KOReader sync, and imports from Goodreads, Calibre, and Audiobookshelf. One Docker container, SQLite inside.',
-    externalHref: SITE_LINKS.shelfGithub,
-    linkLabel: 'View on GitHub',
-    stack: ['.NET 10', 'ASP.NET Core', 'Blazor', 'EF Core', 'SQLite', 'Docker', 'Playwright'],
+      'AGPL-licensed library server on .NET 10 and Blazor. Paper books, e-books, and audiobooks as one book each, with a reading log, quotes, loans, and yearly goals; a full-screen page-turning reader, an audiobook player, Kobo and KOReader sync, and books found and fetched the way Sonarr fetches shows. Shelf 2.5, one Docker container, SQLite inside.',
+    externalHref: SITE_LINKS.shelfDocs,
+    linkLabel: 'Read the docs',
+    stack: ['.NET 10', 'ASP.NET Core', 'Blazor', 'EF Core', 'SQLite', 'epub.js', '.NET Aspire', 'Docker', 'Playwright'],
     sections: [
       {
         heading: 'What it is',
         body: [
-          'Shelf keeps a household’s books in one place: the catalog, what each reader is reading, the quotes and highlights worth keeping, who has borrowed what, and a yearly reading goal. Each reader signs in to a shelf of their own; no reader sees another’s books, notes, or reading log unless they open their shelf, and even then only the titles.',
-          'It started in October 2026 as a first project back on current .NET and grew into a full self-hosted library. Version 1.3 speaks English, Spanish, French, and German.',
+          'Shelf keeps a household’s books in one place: the copies on paper, the e-books, and the audiobooks, one book at a time. A paperback, its EPUB, and its audiobook are the same book with one reading log, and Continue in the e-book or Continue in the audiobook carries the place across. Each reader signs in to a shelf of their own; no reader sees another’s books, notes, or reading log unless they open their shelf, and even then only the titles.',
+          'Good self-hosted book apps already exist, and each is built around one kind of book: Calibre-Web for e-books, Audiobookshelf for audiobooks, Goodreads and StoryGraph for the reading log on someone else’s server. Shelf is for a library that is all of these at once, on your own hardware.',
+          'It started in October 2026 as a first project back on current .NET and grew into a full self-hosted library. Shelf 2.0 reorganized it around a Home page that leads with the book you were last in, a library led by covers, and Insights that tell the year’s story; 2.1 through 2.5 followed within days. It speaks English, Spanish, French, and German.',
         ],
         links: [
+          { label: 'Documentation', href: SITE_LINKS.shelfDocs, external: true, note: 'doodersrage.github.io/shelf' },
           { label: 'Running in my homelab', href: SITE_LINKS.shelfLive, external: true, note: 'shelf.robmcd.name' },
-          { label: 'Documentation', href: SITE_LINKS.shelfDocs, external: true },
           { label: 'Source on GitHub', href: SITE_LINKS.shelfGithub, external: true },
+          { label: 'Changelog', href: `${SITE_LINKS.shelfGithub}/blob/main/CHANGELOG.md`, external: true },
         ],
+      },
+      {
+        heading: 'The catalog',
+        body: [
+          'Series, editions, translators, narrators, where each copy sits, its condition, who recommended it, ratings, reviews, and tags. Add a book from an ISBN typed, scanned with a phone’s camera, or shared from another app; Open Library, Google Books, and Hardcover fill in the details, including series and number. Saved searches, hand-made collections, reading lists shared by link, new books in your series, and duplicates merged in a click.',
+          'Tidy up makes one author of names written several ways and takes series out of titles. Insights cover goals for books, pages, and hours, a year of the days you read and listened, milestones, and a picture of the year to share.',
+        ],
+        links: [{ label: 'The library', href: `${SITE_LINKS.shelfDocs}library.html`, external: true }],
       },
       {
         heading: 'Reading and listening',
         body: [
-          'Upload an EPUB, PDF, comic (.cbz), or Kindle file and read it in the browser at your own text size, back where you stopped. Select a passage to highlight it and leave a note; scanned PDFs are read with Tesseract OCR in the background so their words can be highlighted too. The reader can read aloud with the browser’s own voices, and books kept for offline reading open when the server cannot be reached, syncing the place and highlights when it comes back.',
-          'Audiobooks — one file or a zip of tracks — get a player with chapters, speed, a sleep timer, bookmarks, and lock-screen controls. Full-text search finds a phrase across every e-book on the shelf.',
+          'EPUBs open in a page-turning reader built on epub.js, as Audiobookshelf’s does: tap, swipe, or use the keys across chapters, with the place kept to the word (an EPUB CFI) so it opens where you stopped on any device. Shelf 2.5 adds a full-screen mode where the book fills the screen and a tap in the middle brings back the bars. PDFs, comics (manga too), and Kindle files read in the browser as well, with highlights, notes, a dictionary, read aloud, a recap when you come back, search inside every book, Tesseract OCR for scanned PDFs, and offline reading.',
+          'Audiobooks — one file or a folder of tracks — play as one book with chapters, bookmarks, speeds from 0.5× to 3×, a sleep timer, lock-screen controls, and a mini player that keeps going while you browse. Read-along marks each word of the e-book as the audiobook reads it, podcasts play in the same player, and Audiobookshelf’s phone apps sign in to Shelf as to their own server, with downloads, Android Auto, and CarPlay.',
+        ],
+        links: [
+          { label: 'Reading', href: `${SITE_LINKS.shelfDocs}reading.html`, external: true },
+          { label: 'Audiobooks', href: `${SITE_LINKS.shelfDocs}audiobooks.html`, external: true },
         ],
       },
       {
         heading: 'Lending and sharing',
         body: [
-          'A book can be lent to another reader, who reads or listens with their own place and highlights while the owner’s stay private. Readers can open their shelf so others can ask to borrow, and reminders go out when a loan is overdue or a borrowed book is due. Two shelves on different servers can trade e-books and audiobooks with a key, keeping the furthest place.',
-          'Sign-in covers passwords, authenticator codes, passkeys, and OpenID Connect providers such as Authentik, Authelia, Keycloak, or Pocket ID.',
+          'A book can be lent to another reader, who reads or listens with their own place and highlights while the owner’s stay private. Loans have due dates and reminders, readers can open their shelf so others can ask to borrow, children get accounts of their own, and book clubs talk in one place. Two shelves on different servers can trade e-books and audiobooks with a key, keeping the furthest place.',
+          'Notifications go to a phone or computer, or through ntfy or Gotify, when a book is lent or asked for, a loan is due, a series has a new book, or a club talks; webhooks reach Home Assistant, Discord, and Slack.',
+        ],
+        links: [
+          { label: 'Readers and lending', href: `${SITE_LINKS.shelfDocs}lending.html`, external: true },
+          { label: 'Notifications', href: `${SITE_LINKS.shelfDocs}notifications.html`, external: true },
         ],
       },
       {
-        heading: 'Bringing books in and getting them out',
+        heading: 'Bringing books in',
         body: [
-          'ISBN look-up (Open Library, then Google Books), a barcode scanner on a phone’s camera, a watched import folder, Goodreads and StoryGraph CSV imports, a Calibre library on the server, an Audiobookshelf server, and Project Gutenberg and LibriVox for public-domain books. KOReader downloads from the OPDS catalog, syncs its place, and sends its highlights back; Send to Kindle emails an e-book to a reader’s device.',
-          'Every shelf backs itself up each night, with optional copies to a second folder or S3-compatible storage, and a full zip backup carries every file.',
+          'A new shelf opens on a welcome that asks where your books are now: Audiobookshelf, Calibre, Goodreads or StoryGraph, a folder of files, by hand, or free books from Project Gutenberg and LibriVox. Large imports show their progress on every page and can be stopped, and Shelf can keep in step with an Audiobookshelf library, bringing across what is added there each day.',
+          'Find new books searches Open Library for books you don’t have yet and puts them on a want list; follow an author and their new books are offered daily. With Jackett or Prowlarr to search and Deluge, qBittorrent, or SABnzbd to download, Shelf finds and fetches a wanted book the way Sonarr fetches shows, and the finished file lands on the book. For a book with no file, Where to get it points to a free copy, Open Library, WorldCat, or Libby.',
+        ],
+        links: [{ label: 'Adding books', href: `${SITE_LINKS.shelfDocs}adding.html`, external: true }],
+      },
+      {
+        heading: 'Devices and services',
+        body: [
+          'Kobo e-readers sync with Shelf as with their own store. KOReader downloads from the OPDS catalog, trades its place with Shelf’s reader to the word, and sends its highlights and reading statistics back. Kindles get books by email and their highlights come across; highlights go to and come from Readwise, and reading status runs both ways with Hardcover.',
+        ],
+        links: [{ label: 'Devices and services', href: `${SITE_LINKS.shelfDocs}devices.html`, external: true }],
+      },
+      {
+        heading: 'Running it',
+        body: [
+          'One docker run with a single volume, on amd64 or arm64, so it runs on a Raspberry Pi or a NAS; the first account becomes the admin. Templates cover Unraid, TrueNAS, and CasaOS, and the install guide covers running from source, updating, and putting Shelf on the internet behind a reverse proxy.',
+          'Sign-in covers passwords, authenticator codes, passkeys, and OpenID Connect providers such as Authentik, Authelia, Keycloak, or Pocket ID, with an activity log and API tokens for scripts and Home Assistant. Shelf 2.4.1 was a security sweep: addresses readers hand the server can’t reach the local network or a cloud metadata service, reset links only go to the shelf’s own address, and forwarded headers are trusted only from known proxies. Every shelf backs itself up nightly, with copies to a second folder or S3-compatible storage, and a restore drill runs in the tests.',
+        ],
+        links: [
+          { label: 'Install', href: `${SITE_LINKS.shelfDocs}install.html`, external: true },
+          { label: 'Configuration', href: `${SITE_LINKS.shelfDocs}configuration.html`, external: true },
+          { label: 'Security', href: `${SITE_LINKS.shelfDocs}security.html`, external: true },
+          { label: 'Backups', href: `${SITE_LINKS.shelfDocs}backups.html`, external: true },
+          { label: 'API', href: `${SITE_LINKS.shelfDocs}api.html`, external: true },
         ],
       },
       {
         heading: 'How it is built',
         body: [
-          'ASP.NET Core with Blazor pages and a JSON API (OpenAPI in Development), EF Core migrations on SQLite, and .NET Aspire for local development with logs and traces. Releases follow semantic versioning and publish amd64 and arm64 images to ghcr.io/doodersrage/shelf, so it runs on a Raspberry Pi or a NAS. Playwright drives the reader, player, lending, offline mode, and an accessibility audit of every page in both themes on each push.',
+          'ASP.NET Core with Blazor pages and a JSON API (OpenAPI in Development), EF Core migrations on SQLite, epub.js for the reader, and .NET Aspire for local development with logs and traces. Releases follow semantic versioning with a Keep a Changelog file, and publish amd64 and arm64 images to ghcr.io/doodersrage/shelf. Playwright drives the reader, player, lending, offline mode, and an accessibility audit of every page in both themes, in Chromium and Firefox, on each push.',
         ],
+        links: [{ label: 'Development', href: `${SITE_LINKS.shelfDocs}development.html`, external: true }],
       },
     ],
   },

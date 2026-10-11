@@ -6,13 +6,13 @@ export type NowItem = {
 
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
-  updated: '2026-10-10',
-  headline: 'Castcut 2.4 talking clips, Prompt Studio on its own, ProbeHarbor, and Shelf.',
+  updated: '2026-10-11',
+  headline: 'Castcut 2.6 cuts, Prompt Studio on its own, ProbeHarbor, and Shelf.',
   items: [
     {
-      label: 'Castcut 2.4',
+      label: 'Castcut 2.6',
       detail:
-        'Talking clips and two-person conversations on LTX-2.5, auditioned Cast voices, one home and workplace per Cast, and an original score for each cut. Docs on this domain.',
+        'Preview the cut and the mix before encoding, trim clips, frame stills waist- or chest-up, cut square or 1080p, and re-cut any film in another shape. Talking clips get room sound and settle from a mid-movement still. Docs on this domain; running at castcut.robmcd.name.',
       href: '/castcut/play/day',
     },
     {
@@ -30,7 +30,7 @@ export const NOW = {
     {
       label: 'Shelf',
       detail:
-        'A self-hosted personal library on .NET 10: e-book reader, audiobook player, lending between readers, KOReader sync, and imports from Calibre and Audiobookshelf.',
+        'Shelf 2.5: a full-screen page-turning reader, find and fetch books the way Sonarr does, follow authors for their new books, and keep in step with Audiobookshelf. Docs at doodersrage.github.io/shelf.',
       href: '/work/shelf',
     },
     {

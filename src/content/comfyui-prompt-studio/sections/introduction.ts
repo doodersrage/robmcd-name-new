@@ -17,7 +17,7 @@ export const introductionPages = [
       {
         type: 'ul',
         items: [
-          'Film loop: Cast → Look → Outfit → Day → Cut film; talking clips, Cast voices, Places, and film scores in 2.4',
+          'Film loop: Cast → Look → Outfit → Day → Cut film; talking clips, Cast voices, Places, and film scores since 2.4; Preview the cut, trims, re-cuts, and room sound in 2.6',
           '40+ ComfyUI image model targets with architecture-specific scaffolds',
           'Play campaigns, Film hub, optional Story, and Mobile Studio for character IP workflows',
           'Classic tools (Generate, Format, Lint, Variations, Workflow editor) now ship separately as Prompt Studio on the shared prompt-studio-core package',

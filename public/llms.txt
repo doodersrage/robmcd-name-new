@@ -29,7 +29,8 @@
   Live product: https://probeharbor.dev/
   Developer docs: https://probeharbor.dev/developers/
 - Shelf write-up: https://robmcd.name/work/shelf
-  Self-hosted personal library on .NET 10
+  Self-hosted personal library on .NET 10 (Shelf 2.5)
+  Live: https://shelf.robmcd.name
   Source: https://github.com/doodersrage/shelf
   Docs: https://doodersrage.github.io/shelf/
 - Concrete CMS packages: https://robmcd.name/work/concrete-cms
@@ -41,6 +42,8 @@
 
 ## Optional
 - Homelab: https://robmcd.name/homelab
+  Castcut: https://castcut.robmcd.name
+  Shelf: https://shelf.robmcd.name
 - Status board: https://robmcd.name/status
 - Colophon: https://robmcd.name/colophon
 - Press kit: https://robmcd.name/press
