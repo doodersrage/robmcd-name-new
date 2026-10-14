@@ -91,7 +91,7 @@ export const playPages = [
   page(
     ['play', 'day'],
     'Day, poses, and looks',
-    'Pose editor, per-look outfits, talking clips, Places, and the Day engines in Castcut 2.6.',
+    'Pose editor, per-look outfits, talking clips, Places, and the Day engines in Castcut 2.9.',
     'Play',
     54,
     [

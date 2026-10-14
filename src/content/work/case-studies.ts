@@ -25,7 +25,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI. Cast → Look → Outfit → Day → Cut film.',
     description:
-      'MIT-licensed Next.js app for consistent characters, scenes, and short films locally with ComfyUI. Castcut 2.6 has talking clips with sound, Cast voices, a fixed home and workplace per Cast, and an original score for each cut, plus a cut you can preview, trim, frame, and re-cut in another shape. The classic prompt and image tools now ship separately as Prompt Studio, on a shared core package.',
+      'MIT-licensed Next.js app for consistent characters, scenes, and short films locally with ComfyUI. Castcut 2.9 has talking clips with sound, Cast voices, narration, and an original score for each cut; Cast homes that keep marks, props, people, and a wardrobe; widescreen cuts with close-ups; review links; and an export to DaVinci Resolve, Premiere, or Final Cut. The classic prompt and image tools now ship separately as Prompt Studio, on a shared core package.',
     href: SITE_LINKS.castcut,
     externalHref: SITE_LINKS.castcutGithub,
     linkLabel: 'Read the docs on robmcd.name',
@@ -54,6 +54,10 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
           'Castcut 2.4 gives the film sound. Put a line on a Day slot or Story scene and Animate makes a lip-synced talking clip with LTX-2.5; a reply line makes a two-person conversation in one shot. Cast voices are auditioned and kept on the Cast page. Places give each Cast one home and one workplace, so the bedroom, kitchen, and office are the same rooms in every still. Cut film keeps each clip’s speech, ducks the music under it, and can score the cut with an original instrumental from ACE-Step 1.5. Make it 30 s carries a short clip on to about 30 seconds in chained segments.',
           'Castcut 2.5 lets you direct the film: Make it 30 s takes your own beats and a spoken line per part, a Cast voice can come from your own recording, and a line can be said eleven ways (Whisper, Laughing, Nervous, Shouting, Sing-song, and more). Animate asks what should happen in the clip, Made with shows what each still came from, and Film, Studio, and More tools are three clear levels.',
           'Castcut 2.6 is about the cut. Preview the cut and Preview the mix play the film and its sound in the browser before any encode; clips trim in the shot list, stills crop waist-up or chest-up around the face, the poster can be any shot, and cuts come out widescreen, vertical, or square at 720p or 1080p. Every film keeps its recipe, so it can be re-cut in another shape later, and each episode can reopen the Day it came from. Talking clips get room sound from their place and settle from a mid-movement still before speaking; LTX-2.5 is the clip engine for nearly everything. A security pass makes it safe behind a reverse proxy, which is how it runs in my homelab.',
+          'Castcut 2.7 adds One event: one line such as “a quiet afternoon reading at the beach” becomes consecutive moments from one fixed camera, each clip ending on the next still so the cut plays as one continuous video. Day clips default to LTX-2.5, talking clips no longer freeze an arm or leg mid-action, and Gender swap redraws a Cast bible picture as the other-gender version of the same scene. 2.7.3 brings a one-folder Docker setup, a pictures backup, and Gallery deletes that actually free their disk space.',
+          'Castcut 2.8 makes a Cast portable and recoverable: Export bundle writes the Cast with every look’s plate, earlier plates, and films as one .tar to import on another install, each look keeps its last six plates to restore, and Cast home can generate a look’s plate itself. A replay whose source picture has gone from ComfyUI now says which one and how to get it back.',
+          'Castcut 2.9 deepens the Cast home and the film. A Cast carries marks (glasses, tattoos, scars) that Day checks with the vision model and repairs on each still, props, the people in their life, pronunciations for the clip voice, a wardrobe, a likeness chart over time, and a printable reference sheet. Films can be widened to 16:9, cut in close-ups, narrated in the Cast’s voice, open with “Previously on”, and be shared on an expiring review link that takes comments pinned to a moment. A Fountain screenplay imports straight into Day, each card can render on its own engine, MiniMax-H3 joins LTX-2.5 and WAN as a clip engine, and Export for an editor writes an FCPXML timeline, an EDL, SRT captions, and the shots. A new install needs no secrets in its env file: the first admin is made on the sign-in page.',
+          'Next, unreleased: Outfit in 3D turns a try-on or a Wardrobe outfit into a textured model to turn around (TRELLIS.2 through ComfyUI), kept outfits go straight to the Wardrobe with a runway clip, a new look plate is measured against the Cast so it stays the same person, and the Gallery flags what needs a look — a missed pose, a clip that cuts or came out silent — with Redo these.',
           'Optional Castcut nodes (Comfy Registry pack 1.1.0) run Best of two and isolate-on-white cut-outs inside one ComfyUI job. 40+ image targets remain (FLUX including Klein, Qwen, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX, and more). Desktop installers via Tauri — macOS .dmg, Windows .exe, Linux .deb preferred. Docker at ghcr.io/doodersrage/castcut. Narrative docs live here; operator reference stays on GitHub Pages.',
         ],
         links: [
@@ -78,7 +82,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'Outcome',
         body: [
-          'Open-source and usable today (Castcut 2.6). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
+          'Open-source and usable today (Castcut 2.9). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
         ],
       },
     ],
@@ -88,7 +92,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'ProbeHarbor',
     tagline: 'Know before pipes freeze or a space floods. Hosted alerts for hardware you already own.',
     description:
-      'Open monitoring at probeharbor.dev (formerly ThermalTrace) for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), freeze, heat, and flood alerts, a public pipe-freeze forecast with free freeze-night emails, household sharing, Android and iOS apps, and Free / Member / Pro / Portfolio plans.',
+      'Open monitoring at probeharbor.dev (formerly ThermalTrace) for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), an ESP32 freeze sensor flashed from the browser with no IDE, freeze, heat, and flood alerts, a public pipe-freeze forecast with free freeze-night emails, household sharing, Android and iOS apps, and Free / Member / Pro / Portfolio plans.',
     externalHref: SITE_LINKS.probeHarbor,
     linkLabel: 'Open probeharbor.dev',
     stack: [
@@ -121,8 +125,10 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         heading: 'How it works',
         body: [
           'Build → Connect → Get alerted. Wire a temperature probe (and optional leak puck), create a push device or pull feed in the dashboard, then POST JSON to a per-device ingest URL — or let ProbeHarbor pull an HTTPS feed on a schedule. Sensors auto-import on first contact.',
+          'The quickest path is the web flasher: plug an ESP32, ESP32-S3, or ESP32-C3 into a desktop running Chrome or Edge, flash prebuilt open-source firmware from the page, and send it your Wi‑Fi and device key — no Arduino IDE, nothing to compile. It reads up to four DS18B20 probes or a DHT22/DHT11, finds an SHT31, BME280, or AHT20 air sensor on I²C, and can report a leak contact, a door switch, and battery level. The dashboard shows each board’s firmware version and offers updates.',
           'No probe yet? The public pipe-freeze forecast now takes a US ZIP and emails before freezing nights — the first freezing night of a cold spell and every night at 20°F or colder — with the protective steps and a link to the five-night forecast. Double opt-in and one-click unsubscribe; no hardware or account needed.',
           'Set a freeze threshold and enable wet flood/leak contacts. Heat alerts sit beside freeze. Free and Member cover email plus Discord, Telegram, Slack, Teams, ntfy, and Pushover; Pro adds SMS, WhatsApp, browser push, HMAC webhooks, and official NWS freeze/cold alerts. A forecast-backed time-to-freeze clock shows hours until risk. “I’m on it” stops repeat freeze alerts until the space recovers. Feeds that stay silent are marked offline.',
+          'Alerts now say when things recover and close themselves when the condition clears, catch a probe stuck on one value, and warn when a device loses power. A freeze window explains why a night is at risk, rules can fire on any of several conditions, and a sensor can be replaced without losing its history. Before buying anything, the payload checker shows whether ProbeHarbor will understand a sensor’s JSON, and cold-snap replay runs your rules against a past cold spell.',
         ],
       },
       {
@@ -146,9 +152,10 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         heading: 'Hardware & firmware',
         body: [
           'ProbeHarbor does not lock you into a proprietary puck. Sample sketches and recipes live in the product repo under sketches/ and in the guides: ESP32 freeze kits with waterproof DS18B20, Raspberry Pi Pico W, Arduino Ethernet, STM32 Zephyr, CH32V RISC-V, Teensy, PIC18, AVR assembly, and cellular (Particle Boron) samples.',
-          'Typical path: flash a personalized sketch, POST so sensors auto-import, optionally add OTA / QR stickers for field installs. Accessories — claim puck, leak puck, door puck, mounts — are catalogued separately from companion apps.',
+          'Typical path: flash the firmware from the browser (or a personalized sketch), POST so sensors auto-import, optionally add OTA / QR stickers for field installs. Accessories — claim puck, leak puck, door puck, mounts — are catalogued separately from companion apps.',
         ],
         links: [
+          { label: 'Flash from the browser', href: SITE_LINKS.probeHarborFlash, external: true, note: 'probeharbor.dev/flash' },
           {
             label: 'Adding devices guide',
             href: 'https://probeharbor.dev/about/adding-devices',
@@ -229,7 +236,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'Shelf',
     tagline: 'A self-hosted personal library: books, e-books, audiobooks, and the readers who share them.',
     description:
-      'AGPL-licensed library server on .NET 10 and Blazor. Paper books, e-books, and audiobooks as one book each, with a reading log, quotes, loans, and yearly goals; a full-screen page-turning reader, an audiobook player, Kobo and KOReader sync, and books found and fetched the way Sonarr fetches shows. Shelf 2.5, one Docker container, SQLite inside.',
+      'AGPL-licensed library server on .NET 10 and Blazor. Paper books, e-books, and audiobooks as one book each, with a reading log, quotes, loans, and yearly goals; a full-screen page-turning reader, an audiobook player, Kobo and KOReader sync, and books found and fetched the way Sonarr fetches shows; shelves read from a photo of the spines, nested places, a trash and undo, and a compact view for 70,000 books. Shelf 2.14, one Docker container, SQLite inside.',
     externalHref: SITE_LINKS.shelfDocs,
     linkLabel: 'Read the docs',
     stack: ['.NET 10', 'ASP.NET Core', 'Blazor', 'EF Core', 'SQLite', 'epub.js', '.NET Aspire', 'Docker', 'Playwright'],
@@ -239,7 +246,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         body: [
           'Shelf keeps a household’s books in one place: the copies on paper, the e-books, and the audiobooks, one book at a time. A paperback, its EPUB, and its audiobook are the same book with one reading log, and Continue in the e-book or Continue in the audiobook carries the place across. Each reader signs in to a shelf of their own; no reader sees another’s books, notes, or reading log unless they open their shelf, and even then only the titles.',
           'Good self-hosted book apps already exist, and each is built around one kind of book: Calibre-Web for e-books, Audiobookshelf for audiobooks, Goodreads and StoryGraph for the reading log on someone else’s server. Shelf is for a library that is all of these at once, on your own hardware.',
-          'It started in October 2026 as a first project back on current .NET and grew into a full self-hosted library. Shelf 2.0 reorganized it around a Home page that leads with the book you were last in, a library led by covers, and Insights that tell the year’s story; 2.1 through 2.5 followed within days. It speaks English, Spanish, French, and German.',
+          'It started in October 2026 as a first project back on current .NET and grew into a full self-hosted library. Shelf 2.0 reorganized it around a Home page that leads with the book you were last in, a library led by covers, and Insights that tell the year’s story; 2.1 through 2.14 followed within days. It speaks English, Spanish, French, and German.',
         ],
         links: [
           { label: 'Documentation', href: SITE_LINKS.shelfDocs, external: true, note: 'doodersrage.github.io/shelf' },
@@ -253,13 +260,15 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         body: [
           'Series, editions, translators, narrators, where each copy sits, its condition, who recommended it, ratings, reviews, and tags. Add a book from an ISBN typed, scanned with a phone’s camera, or shared from another app; Open Library, Google Books, and Hardcover fill in the details, including series and number. Saved searches, hand-made collections, reading lists shared by link, new books in your series, and duplicates merged in a click.',
           'Tidy up makes one author of names written several ways and takes series out of titles. Insights cover goals for books, pages, and hours, a year of the days you read and listened, milestones, and a picture of the year to share.',
+          'Places nest as rooms, bookcases, shelves, and boxes, each with a QR label, and a move is packed and unpacked by scanning. A scanning run reads barcodes one after another, checks a shelf for what is missing, or reads the titles off a photo of the spines with Tesseract and matches them to the catalog. Deleted books wait 30 days in a trash, a change to many books is undone as one, and every book keeps a year of its own history. A compact table holds every match and draws only the lines in view, and Go to (Ctrl K) reaches any page, book, author, series, or place from the keyboard.',
+          'Shelf 2.8 through 2.12 grew a reading life around the catalog: rereads that keep every read, a daily reading journal, links between editions and the books that answer them, goals of your own, an Up next queue, Reading DNA, a calendar, a reference desk with citations, rules that act on books as they are added or finished, and plain-language questions answered from your own shelf.',
         ],
         links: [{ label: 'The library', href: `${SITE_LINKS.shelfDocs}library.html`, external: true }],
       },
       {
         heading: 'Reading and listening',
         body: [
-          'EPUBs open in a page-turning reader built on epub.js, as Audiobookshelf’s does: tap, swipe, or use the keys across chapters, with the place kept to the word (an EPUB CFI) so it opens where you stopped on any device. Shelf 2.5 adds a full-screen mode where the book fills the screen and a tap in the middle brings back the bars. PDFs, comics (manga too), and Kindle files read in the browser as well, with highlights, notes, a dictionary, read aloud, a recap when you come back, search inside every book, Tesseract OCR for scanned PDFs, and offline reading.',
+          'EPUBs open in a page-turning reader built on epub.js, as Audiobookshelf’s does: tap, swipe, or use the keys across chapters, with the place kept to the word (an EPUB CFI) so it opens where you stopped on any device. The reader fills the window, with a tap in the middle bringing back the bars, a contents list by the book’s own chapter names, and text settings as taps that come up from the bottom on a phone. PDFs, comics (manga too), and Kindle files read in the browser as well, with highlights, notes, a dictionary, read aloud, a recap when you come back, search inside every book, Tesseract OCR for scanned PDFs, and offline reading.',
           'Audiobooks — one file or a folder of tracks — play as one book with chapters, bookmarks, speeds from 0.5× to 3×, a sleep timer, lock-screen controls, and a mini player that keeps going while you browse. Read-along marks each word of the e-book as the audiobook reads it, podcasts play in the same player, and Audiobookshelf’s phone apps sign in to Shelf as to their own server, with downloads, Android Auto, and CarPlay.',
         ],
         links: [
@@ -297,7 +306,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         heading: 'Running it',
         body: [
           'One docker run with a single volume, on amd64 or arm64, so it runs on a Raspberry Pi or a NAS; the first account becomes the admin. Templates cover Unraid, TrueNAS, and CasaOS, and the install guide covers running from source, updating, and putting Shelf on the internet behind a reverse proxy.',
-          'Sign-in covers passwords, authenticator codes, passkeys, and OpenID Connect providers such as Authentik, Authelia, Keycloak, or Pocket ID, with an activity log and API tokens for scripts and Home Assistant. Shelf 2.4.1 was a security sweep: addresses readers hand the server can’t reach the local network or a cloud metadata service, reset links only go to the shelf’s own address, and forwarded headers are trusted only from known proxies. Every shelf backs itself up nightly, with copies to a second folder or S3-compatible storage, and a restore drill runs in the tests.',
+          'Sign-in covers passwords, authenticator codes, passkeys, and OpenID Connect providers such as Authentik, Authelia, Keycloak, or Pocket ID, with an activity log and API tokens for scripts and Home Assistant. Shelf 2.4.1 was a security sweep: addresses readers hand the server can’t reach the local network or a cloud metadata service, reset links only go to the shelf’s own address, and forwarded headers are trusted only from known proxies. Every shelf backs itself up nightly, with copies to a second folder or S3-compatible storage; each backup is read back and proved before it is sent, one book can be brought back from it alone, and a weekly check reads every stored file. Server health shows admins what needs them first.',
         ],
         links: [
           { label: 'Install', href: `${SITE_LINKS.shelfDocs}install.html`, external: true },
@@ -313,6 +322,49 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
           'ASP.NET Core with Blazor pages and a JSON API (OpenAPI in Development), EF Core migrations on SQLite, epub.js for the reader, and .NET Aspire for local development with logs and traces. Releases follow semantic versioning with a Keep a Changelog file, and publish amd64 and arm64 images to ghcr.io/doodersrage/shelf. Playwright drives the reader, player, lending, offline mode, and an accessibility audit of every page in both themes, in Chromium and Firefox, on each push.',
         ],
         links: [{ label: 'Development', href: `${SITE_LINKS.shelfDocs}development.html`, external: true }],
+      },
+    ],
+  },
+  {
+    slug: 'printbridge',
+    title: 'PrintBridge',
+    tagline: 'Drop in a model, get a print. A self-hosted slicer and print host for the Ender-3 V3 SE.',
+    description:
+      'A small self-hosted web app for a Creality Ender-3 V3 SE. It takes a 3MF, STL, or OBJ, slices it with PrusaSlicer on a built-in V3 SE profile, and sends it to the printer through a Creality Wi-Fi Box, OctoPrint, or Moonraker — with printer controls, spool tracking, calibration prints, and Home Assistant over MQTT. PrintBridge 0.3, one Docker container.',
+    externalHref: SITE_LINKS.printBridgeGithub,
+    linkLabel: 'Source on GitHub',
+    stack: ['Python', 'FastAPI', 'PrusaSlicer', 'MQTT', 'Docker', 'Playwright'],
+    sections: [
+      {
+        heading: 'What it is',
+        body: [
+          'The Ender-3 V3 SE has no network of its own, and Creality’s slicer wants a desktop. PrintBridge is a web page on the home server instead: drop in a model from a phone or laptop, pick a quality and material, and it slices and uploads the G-code to whatever is plugged into the printer’s USB port, then starts the print or just leaves it there.',
+          'For the Creality Wi-Fi Box 2.0 it speaks the box’s own LAN protocol — the local API on port 81 for status and control, and FTP onto the box’s microSD card — the same one CrealityPrint uses. OctoPrint and Moonraker (Klipper) work through their REST APIs. It was built and released in a day, from 0.1 to 0.3, and verified on a Wi-Fi Box 2.0 with an Ender-3 V3 SE.',
+        ],
+        links: [
+          { label: 'Source on GitHub', href: SITE_LINKS.printBridgeGithub, external: true },
+          { label: 'Changelog', href: `${SITE_LINKS.printBridgeGithub}/blob/main/CHANGELOG.md`, external: true },
+        ],
+      },
+      {
+        heading: 'Slicing',
+        body: [
+          'The built-in profile targets the stock printer: a 220 × 220 × 250 mm bed, a 0.4 mm nozzle, the direct-drive extruder, and a bed that heats fully before homing so the probe measures it hot. Draft, Standard, and Fine in PLA, PETG, or TPU, with per-job infill, supports, brim, temperatures, scale, rotation, copies, and an optional fresh bed probe; saved presets load in one click, and several jobs can be combined onto one bed.',
+          'Settings inside a 3MF from Bambu Studio, Orca, Cura, or PrusaSlicer are ignored, so the G-code always matches this printer. Multi-plate 3MFs get a plate picker, and a file made for another printer says so — “made for a Bambu Lab A1 mini”, “scales the model to 80%” — with Use original size to undo it. A 3D view resizes by dimensions and previews the toolpath.',
+        ],
+      },
+      {
+        heading: 'At the printer',
+        body: [
+          'Start, pause, resume, and cancel; preheat, cool down, home, the light, and Live Z babystepping during a print; nozzle and bed temperatures and progress from M73 lines; and a webcam relay. Spool tracking deducts filament after each print and warns before one that won’t fit on what is left. Calibration prints — a temperature tower, retraction test, size check, and first-layer test — save the chosen band to the profile.',
+          'Print history keeps totals, success rate, and a cost per print from filament prices. Email notifications carry a picture of the model, and Home Assistant discovers PrintBridge over MQTT with sensors and buttons. Models come in by upload, zip, a link, or a watch folder that slices whatever lands in it, and one click searches Printables, MakerWorld, Thingiverse, MyMiniFactory, and Cults3D.',
+        ],
+      },
+      {
+        heading: 'Running it',
+        body: [
+          'One compose file pulls ghcr.io/doodersrage/printbridge for amd64 or arm64, built on Debian 13 with PrusaSlicer from the Debian archive; settings, jobs, and daily backups live in one volume. 0.3 was a security pass: cross-site writes are refused so another page can’t drive the printer, saved secrets never go back to the browser, link imports can’t reach local or metadata addresses, and zip imports are capped. Playwright tests run against the Docker image in CI before it is published.',
+        ],
       },
     ],
   },

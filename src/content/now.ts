@@ -6,13 +6,13 @@ export type NowItem = {
 
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
-  updated: '2026-10-11',
-  headline: 'Castcut 2.6 cuts, Prompt Studio on its own, ProbeHarbor, and Shelf.',
+  updated: '2026-10-14',
+  headline: 'Castcut 2.9, a browser flasher for ProbeHarbor, Shelf 2.14, and PrintBridge.',
   items: [
     {
-      label: 'Castcut 2.6',
+      label: 'Castcut 2.9',
       detail:
-        'Preview the cut and the mix before encoding, trim clips, frame stills waist- or chest-up, cut square or 1080p, and re-cut any film in another shape. Talking clips get room sound and settle from a mid-movement still. Docs on this domain; running at castcut.robmcd.name.',
+        'Cast homes keep marks, props, people, and a wardrobe, checked and repaired on every still; films get narration, close-ups, widescreen, “Previously on”, and expiring review links; a Fountain script imports into Day; and Export for an editor writes an FCPXML timeline for Resolve, Premiere, or Final Cut. Next: outfits in 3D. Docs on this domain; running at castcut.robmcd.name.',
       href: '/castcut/play/day',
     },
     {
@@ -24,14 +24,20 @@ export const NOW = {
     {
       label: 'ProbeHarbor',
       detail:
-        'ThermalTrace is now ProbeHarbor at probeharbor.dev. New: free freeze-night emails for any US ZIP without hardware, and a native iOS app beside Android.',
+        'Flash an ESP32 freeze sensor straight from the browser at probeharbor.dev/flash — DS18B20, DHT22, I²C air sensors, leak, door, and battery, no IDE. Alerts now say when things recover, catch stuck probes and power loss, and a sensor can be replaced without losing its history.',
       href: '/work/probeharbor',
     },
     {
       label: 'Shelf',
       detail:
-        'Shelf 2.5: a full-screen page-turning reader, find and fetch books the way Sonarr does, follow authors for their new books, and keep in step with Audiobookshelf. Docs at doodersrage.github.io/shelf.',
+        'Shelf 2.14: shelves read from a photo of the spines, nested places and moving house by scanning, a trash and undo, rereads and a reading journal, Go to (Ctrl K), and a compact table for 70,000 books. Docs at doodersrage.github.io/shelf.',
       href: '/work/shelf',
+    },
+    {
+      label: 'PrintBridge',
+      detail:
+        'New: a self-hosted slicer and print host for my Ender-3 V3 SE. Drop in a model, PrusaSlicer slices it, and it goes to the printer through the Creality Wi-Fi Box, OctoPrint, or Moonraker. 0.3 adds a watch folder and daily backups.',
+      href: '/work/printbridge',
     },
     {
       label: 'Lasso CRM',

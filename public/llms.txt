@@ -29,10 +29,13 @@
   Live product: https://probeharbor.dev/
   Developer docs: https://probeharbor.dev/developers/
 - Shelf write-up: https://robmcd.name/work/shelf
-  Self-hosted personal library on .NET 10 (Shelf 2.5)
+  Self-hosted personal library on .NET 10 (Shelf 2.14)
   Live: https://shelf.robmcd.name
   Source: https://github.com/doodersrage/shelf
   Docs: https://doodersrage.github.io/shelf/
+- PrintBridge write-up: https://robmcd.name/work/printbridge
+  Self-hosted slicer and print host for the Creality Ender-3 V3 SE (PrintBridge 0.3)
+  Source: https://github.com/doodersrage/printbridge
 - Concrete CMS packages: https://robmcd.name/work/concrete-cms
   Marketplace: Page List Map, Date Counter (more coming)
   Community profile: https://community.concretecms.com/members/profile/103041

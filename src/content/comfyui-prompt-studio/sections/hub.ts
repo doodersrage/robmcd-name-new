@@ -41,7 +41,7 @@ export const hubPages = [
           'Sales pitch and case study for production ComfyUI and cloud hybrid workflows',
           'Tool routes from Generate through Cast, Film, Story, Mobile Studio, Gallery, and Integration',
           '40+ model families — FLUX (incl. Klein), Qwen, Z-Image, Boogu, SDXL, WAN / LTX video, Stable Audio, Hunyuan3D',
-          'Play film loop in Castcut 2.6: talking clips, Cast voices, Places, film scores, Preview the cut, re-cuts in any shape, pose editor, per-look outfits, Heal & ready, desktop/Docker install',
+          'Play film loop in Castcut 2.9: talking clips, Cast voices, Places, film scores, Preview the cut, re-cuts in any shape, narration, review links, export for an editor, pose editor, per-look outfits, Heal & ready, desktop/Docker install',
           'Optional Castcut nodes (Comfy Registry) for Best of two and cut-outs inside one job',
         ],
       },

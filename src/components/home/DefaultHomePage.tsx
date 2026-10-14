@@ -32,7 +32,7 @@ const SHIPPED = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI',
     description:
-      'Cast → Look → Outfit → Day → Cut film. Castcut 2.6: talking clips, Cast voices, a score for every cut, and a cut you can preview, trim, and re-cut in any shape. The classic tools now ship as Prompt Studio.',
+      'Cast → Look → Outfit → Day → Cut film. Castcut 2.9: talking clips, narration, and a score for every cut, Cast homes that keep marks and a wardrobe, review links, and export to Resolve, Premiere, or Final Cut. The classic tools now ship as Prompt Studio.',
     href: SITE_LINKS.castcut,
     linkLabel: 'Read the docs',
   },
@@ -40,7 +40,7 @@ const SHIPPED = [
     title: 'ProbeHarbor',
     tagline: 'Freeze and flood alerts for instrumented spaces',
     description:
-      'Formerly ThermalTrace. Open monitoring for garages and workshops: ESP ingest, freeze/heat/flood alerts, pipe-freeze forecast, Android and iOS apps, and Matter, HA, and Node-RED hooks.',
+      'Formerly ThermalTrace. Open monitoring for garages and workshops: an ESP32 sensor flashed from the browser, freeze/heat/flood alerts, pipe-freeze forecast, Android and iOS apps, and Matter, HA, and Node-RED hooks.',
     href: SITE_LINKS.probeHarborPage,
     linkLabel: 'About ProbeHarbor',
   },
@@ -48,7 +48,7 @@ const SHIPPED = [
     title: 'Shelf',
     tagline: 'A self-hosted personal library',
     description:
-      'Books, e-books, and audiobooks for a household on .NET 10: a full-screen page-turning reader, an audiobook player, lending between readers, Kobo and KOReader sync, and books found and fetched for you. One Docker container.',
+      'Books, e-books, and audiobooks for a household on .NET 10: a page-turning reader, an audiobook player, shelves read from a photo of the spines, lending between readers, Kobo and KOReader sync, and books found and fetched for you. One Docker container.',
     href: SITE_LINKS.shelf,
     linkLabel: 'About Shelf',
   },
