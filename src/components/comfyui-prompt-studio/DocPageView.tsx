@@ -36,7 +36,7 @@ export function DocPageView({ page, currentPath }: { page: DocPage; currentPath:
         <Hero
           title="Castcut"
           description={page.description}
-          primaryCta={{ label: 'Why Castcut?', href: `${DOCS_BASE_PATH}/stories/sales-pitch` }}
+          primaryCta={{ label: 'Why Castcut?', href: `${DOCS_BASE_PATH}/stories/sales-pitch/` }}
           secondaryCta={{ label: 'View on GitHub', href: CPS_GITHUB }}
         />
         <section className="space-y-8">

@@ -64,7 +64,7 @@ export const integrationPages = [
         items: [
           { label: 'castcut-nodes on GitHub', href: SITE_LINKS.castcutNodes, external: true },
           { label: 'Install notes', href: `${GH}/blob/main/docs/castcut-nodes.md`, external: true },
-          { label: 'Prompt nodes (workflow takeover)', href: `${DOCS_BASE_PATH}/getting-started/comfyui-nodes` },
+          { label: 'Prompt nodes (workflow takeover)', href: `${DOCS_BASE_PATH}/getting-started/comfyui-nodes/` },
         ],
       },
     ],
@@ -97,7 +97,7 @@ export const integrationPages = [
         type: 'links',
         items: [
           { label: 'Configuration & env vars', href: `${GH}/blob/main/docs/configuration.md`, external: true },
-          { label: 'Video tool (local + cloud)', href: `${DOCS_BASE_PATH}/media/video` },
+          { label: 'Video tool (local + cloud)', href: `${DOCS_BASE_PATH}/media/video/` },
         ],
       },
     ],

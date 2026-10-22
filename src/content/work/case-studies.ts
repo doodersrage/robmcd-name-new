@@ -61,10 +61,10 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
           'Optional Castcut nodes (Comfy Registry pack 1.1.0) run Best of two and isolate-on-white cut-outs inside one ComfyUI job. 40+ image targets remain (FLUX including Klein, Qwen, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX, and more). Desktop installers via Tauri — macOS .dmg, Windows .exe, Linux .deb preferred. Docker at ghcr.io/doodersrage/castcut. Narrative docs live here; operator reference stays on GitHub Pages.',
         ],
         links: [
-          { label: 'Day, poses, and looks', href: '/castcut/play/day' },
+          { label: 'Day, poses, and looks', href: '/castcut/play/day/' },
           { label: 'Running in my homelab', href: SITE_LINKS.castcutLive, external: true, note: 'castcut.robmcd.name' },
           { label: 'Changelog', href: `${SITE_LINKS.castcutGithub}/blob/main/CHANGELOG.md`, external: true },
-          { label: 'Castcut nodes', href: '/castcut/integration/castcut-nodes' },
+          { label: 'Castcut nodes', href: '/castcut/integration/castcut-nodes/' },
           { label: 'castcut-nodes on GitHub', href: SITE_LINKS.castcutNodes, external: true },
         ],
       },
@@ -386,7 +386,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         ],
         links: [
           { label: 'Source on GitHub', href: SITE_LINKS.promptStudioAppGithub, external: true },
-          { label: 'Castcut write-up', href: '/work/castcut' },
+          { label: 'Castcut write-up', href: '/work/castcut/' },
         ],
       },
       {

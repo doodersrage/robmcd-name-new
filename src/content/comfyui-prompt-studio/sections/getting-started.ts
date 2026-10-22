@@ -154,7 +154,7 @@ export const gettingStartedPages = [
         type: 'links',
         items: [
           { label: 'Custom nodes README', href: `${GH}/blob/main/comfyui/comfyui_image_prompt_tools/README.md`, external: true },
-          { label: 'Castcut nodes', href: `${DOCS_BASE_PATH}/integration/castcut-nodes` },
+          { label: 'Castcut nodes', href: `${DOCS_BASE_PATH}/integration/castcut-nodes/` },
         ],
       },
     ],

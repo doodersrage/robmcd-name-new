@@ -59,9 +59,10 @@ export function page(
   return { slug, title, description, section, order, blocks, ...extras }
 }
 
+/** Page URL for a docs slug, always with a trailing slash (the form the site serves). */
 export function slugToPath(slug: string[]): string {
-  if (slug.length === 0) return DOCS_BASE_PATH
-  return `${DOCS_BASE_PATH}/${slug.join('/')}`
+  if (slug.length === 0) return `${DOCS_BASE_PATH}/`
+  return `${DOCS_BASE_PATH}/${slug.join('/')}/`
 }
 
 export function slugKey(slug: string[]): string {

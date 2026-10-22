@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DOCS_BASE_PATH, getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
+import { getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
 
 type DocsBreadcrumbsProps = {
   slug: string[]
@@ -8,7 +8,7 @@ type DocsBreadcrumbsProps = {
 }
 
 export function DocsBreadcrumbs({ slug, title }: DocsBreadcrumbsProps) {
-  const crumbs: { label: string; href?: string }[] = [{ label: 'Castcut', href: DOCS_BASE_PATH }]
+  const crumbs: { label: string; href?: string }[] = [{ label: 'Castcut', href: slugToPath([]) }]
 
   for (let i = 0; i < slug.length; i++) {
     const segment = slug[i]!

@@ -17,7 +17,7 @@ export function getStaticPaths() {
 const { slug } = Astro.params
 const note = getNote(slug!)
 if (!note) {
-  return Astro.redirect('/notes')
+  return Astro.redirect('/notes/')
 }
 
 const bodies: Record<string, any> = {
@@ -34,14 +34,14 @@ const jsonLd = {
     breadcrumbSchema([
       { name: 'Home', path: '/' },
       { name: 'Notes', path: '/notes' },
-      { name: note.title, path: `/notes/${note.slug}` },
+      { name: note.title, path: `/notes/${note.slug}/` },
     ]),
     {
       '@type': 'BlogPosting',
       headline: note.title,
       datePublished: note.date,
       description: note.description,
-      url: absolutePageUrl(`/notes/${note.slug}`),
+      url: absolutePageUrl(`/notes/${note.slug}/`),
       author: { '@id': 'https://robmcd.name/#person' },
     },
   ],
@@ -51,13 +51,13 @@ const jsonLd = {
 <ProseLayout
   title={note.title}
   description={note.description}
-  path={`/notes/${note.slug}`}
+  path={`/notes/${note.slug}/`}
   eyebrow={`${note.date} · note`}
   ogType="article"
   jsonLd={jsonLd}
 >
   {Body ? <Body /> : <p>Missing note body.</p>}
   <p>
-    <a href="/notes">← All notes</a>
+    <a href="/notes/">← All notes</a>
   </p>
 </ProseLayout>

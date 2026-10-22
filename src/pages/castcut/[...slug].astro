@@ -18,7 +18,7 @@ const slug = slugParam ? slugParam.split('/').filter(Boolean) : []
 const page = getPageBySlug(slug)
 
 if (!page) {
-  return Astro.redirect('/castcut')
+  return Astro.redirect('/castcut/')
 }
 
 const currentPath = slugToPath(page.slug)

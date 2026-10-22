@@ -115,9 +115,9 @@ export const playPages = [
       {
         type: 'links',
         items: [
-          { label: 'Castcut nodes', href: `${DOCS_BASE_PATH}/integration/castcut-nodes` },
+          { label: 'Castcut nodes', href: `${DOCS_BASE_PATH}/integration/castcut-nodes/` },
           { label: 'Play guide', href: `${GH}/blob/main/docs/play-guide.md`, external: true },
-          { label: 'Qwen, Z-Image & Boogu', href: `${DOCS_BASE_PATH}/models/qwen-edit` },
+          { label: 'Qwen, Z-Image & Boogu', href: `${DOCS_BASE_PATH}/models/qwen-edit/` },
         ],
       },
     ],

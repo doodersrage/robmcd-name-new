@@ -53,7 +53,7 @@ export function ToolRoutesDemo() {
         {TOOLS.map((tool) => (
           <a
             key={tool.route}
-            href={`${DOCS_BASE_PATH}/${tool.slug}`}
+            href={`${DOCS_BASE_PATH}/${tool.slug}/`}
             onMouseEnter={() => setHovered(tool.route)}
             onMouseLeave={() => setHovered(null)}
             className={`rounded-sm border border-[var(--line)] bg-[var(--paper)] p-3  transition-all duration-300  ${

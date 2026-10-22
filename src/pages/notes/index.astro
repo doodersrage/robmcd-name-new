@@ -45,7 +45,7 @@ const jsonLd = {
             <span class="font-mono text-sm text-[var(--muted)]">{String(i + 1).padStart(2, '0')}</span>
             <div class="min-w-0 space-y-2">
               <p class="font-mono text-xs text-[var(--muted)]">{note.date}</p>
-              <a href={`/notes/${note.slug}`} class="text-link text-lg font-semibold">
+              <a href={`/notes/${note.slug}/`} class="text-link text-lg font-semibold">
                 {note.title}
               </a>
               <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">{note.description}</p>

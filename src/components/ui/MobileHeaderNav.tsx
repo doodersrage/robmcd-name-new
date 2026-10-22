@@ -11,7 +11,7 @@ export function MobileHeaderNav() {
   return (
     <div className="md:hidden">
       <div className="flex items-center gap-3 pt-4">
-        <form action="/search" method="get" className="relative min-w-0 flex-1">
+        <form action="/search/" method="get" className="relative min-w-0 flex-1">
           <label htmlFor="site-search-mobile" className="sr-only">
             Search
           </label>

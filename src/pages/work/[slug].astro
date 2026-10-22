@@ -17,14 +17,14 @@ export function getStaticPaths() {
 const { slug } = Astro.params
 const study = getWorkBySlug(slug!)
 if (!study) {
-  return Astro.redirect('/work')
+  return Astro.redirect('/work/')
 }
 
 const isProbeHarbor = study.slug === 'probeharbor'
 const isCastcut = study.slug === 'castcut'
 const primaryHref = study.href ?? study.externalHref ?? SITE_LINKS.contact
 const primaryExternal = Boolean(study.externalHref && !study.href)
-const path = `/work/${study.slug}`
+const path = `/work/${study.slug}/`
 
 const software = isProbeHarbor
   ? softwareApplicationSchema({
@@ -77,7 +77,7 @@ const jsonLd = workCaseStudySchema({
 >
   <section class="space-y-4">
     <p class="eyebrow">
-      <a href="/work" class="hover:underline">Work</a>
+      <a href="/work/" class="hover:underline">Work</a>
       <span class="mx-2 text-[var(--muted)]">/</span>
       {isProbeHarbor ? 'Product' : 'Case study'}
     </p>
@@ -369,7 +369,7 @@ const jsonLd = workCaseStudySchema({
 
   <div class="mt-12 flex flex-wrap gap-3 border-t pt-10" style="border-color: var(--line)">
     <a href={SITE_LINKS.contact} class="btn btn-primary">Contact</a>
-    <a href="/work" class="btn btn-secondary">All case studies</a>
+    <a href="/work/" class="btn btn-secondary">All case studies</a>
     {
       isProbeHarbor ? (
         <a href={SITE_LINKS.probeHarbor} class="btn btn-secondary" target="_blank" rel="noopener noreferrer">

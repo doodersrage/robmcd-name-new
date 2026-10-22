@@ -56,8 +56,8 @@ export const storiesPages = [
         type: 'links',
         items: [
           { label: 'GitHub repository', href: GH, external: true },
-          { label: 'Quick start guide', href: `${DOCS_BASE_PATH}/getting-started/quick-start` },
-          { label: 'Read the case study', href: `${DOCS_BASE_PATH}/stories/case-study` },
+          { label: 'Quick start guide', href: `${DOCS_BASE_PATH}/getting-started/quick-start/` },
+          { label: 'Read the case study', href: `${DOCS_BASE_PATH}/stories/case-study/` },
           { label: 'Open dashboard (local)', href: `${LIVE}/dashboard`, external: true },
         ],
       },
@@ -134,9 +134,9 @@ export const storiesPages = [
       {
         type: 'links',
         items: [
-          { label: 'Studio campaigns', href: `${DOCS_BASE_PATH}/studio/campaigns-scheduled` },
-          { label: 'Gallery review mode', href: `${DOCS_BASE_PATH}/gallery/review-mode` },
-          { label: 'Workflow takeover', href: `${DOCS_BASE_PATH}/integration/workflow-takeover` },
+          { label: 'Studio campaigns', href: `${DOCS_BASE_PATH}/studio/campaigns-scheduled/` },
+          { label: 'Gallery review mode', href: `${DOCS_BASE_PATH}/gallery/review-mode/` },
+          { label: 'Workflow takeover', href: `${DOCS_BASE_PATH}/integration/workflow-takeover/` },
           { label: 'View on GitHub', href: GH, external: true },
         ],
       },

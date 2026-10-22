@@ -19,7 +19,7 @@ const hits = searchLocalContent(query)
       {query ? `Search Results for "${query}"` : 'Search'}
     </h1>
 
-    <form action="/search" method="get" class="max-w-md">
+    <form action="/search/" method="get" class="max-w-md">
       <label for="search-query" class="form-label">Query</label>
       <input id="search-query" name="query" type="search" class="input-field" value={query} />
     </form>

@@ -180,7 +180,7 @@ export function searchLocalContent(term: string): SearchHit[] {
     id: `note-${note.slug}`,
     title: note.title,
     description: note.description,
-    href: `/notes/${note.slug}`,
+    href: `/notes/${note.slug}/`,
     source: 'Notes',
   }))
 
@@ -219,7 +219,7 @@ export function searchLocalContent(term: string): SearchHit[] {
     id: `work-${study.slug}`,
     title: study.title,
     description: study.description,
-    href: `/work/${study.slug}`,
+    href: `/work/${study.slug}/`,
     source: 'Work · Case study',
   }))
 
