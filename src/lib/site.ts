@@ -38,6 +38,7 @@ export const SITE_LINKS = {
   toolsDns: '/tools/dns/',
   toolsTriage: '/tools/triage/',
   colophon: '/colophon/',
+  developers: '/developers/',
   press: '/press/',
   probeHarborProtocol: '/work/probeharbor/protocol/',
   probeHarborForecastPage: '/work/probeharbor/forecast/',

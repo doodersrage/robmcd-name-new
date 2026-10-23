@@ -92,6 +92,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href={SITE_LINKS.developers} className="text-link text-sm">
+                  Developers
+                </a>
+              </li>
+              <li>
                 <a href={SITE_LINKS.press} className="text-link text-sm">
                   Press kit
                 </a>

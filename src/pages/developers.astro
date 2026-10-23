@@ -1,0 +1,91 @@
+---
+export const prerender = true
+
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { SITE_LINKS, SITE_URL } from '@/lib/site'
+
+const code = 'font-mono text-xs'
+const pre =
+  'max-w-full overflow-x-auto rounded border border-[var(--line)] bg-[var(--paper)] p-4 font-mono text-xs leading-relaxed'
+---
+
+<BaseLayout
+  title="Developers"
+  description="Free, unauthenticated APIs on robmcd.name: a DNS / HTTPS check and a status board, with an OpenAPI spec and an RFC 9727 API catalog."
+  canonical="/developers"
+>
+  <div class="space-y-10">
+    <header class="space-y-3">
+      <p class="eyebrow">API</p>
+      <h1 class="page-title">Developers</h1>
+      <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
+        The tools on this site run on two small public APIs. They need no key. Please keep request rates low; they
+        run on a personal Cloudflare Workers account.
+      </p>
+    </header>
+
+    <section class="space-y-4">
+      <h2 class="text-xl font-semibold">Discovery</h2>
+      <ul class="max-w-2xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
+        <li>
+          API catalog (<a href="https://www.rfc-editor.org/rfc/rfc9727" class="text-link">RFC 9727</a>):{' '}
+          <a href="/.well-known/api-catalog" class="text-link"><code class={code}>/.well-known/api-catalog</code></a>
+        </li>
+        <li>
+          OpenAPI 3.1 spec: <a href="/api/openapi.json" class="text-link"><code class={code}>/api/openapi.json</code></a>
+        </li>
+        <li>
+          Health: <a href="/api/health/" class="text-link"><code class={code}>/api/health/</code></a> returns{' '}
+          <code class={code}>{'{"status":"pass"}'}</code>
+        </li>
+      </ul>
+      <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+        Endpoint URLs end in a slash. Requests without one get a permanent redirect.
+      </p>
+    </section>
+
+    <section id="dns-check" class="space-y-4">
+      <h2 class="text-xl font-semibold">DNS / HTTPS check</h2>
+      <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+        <code class={code}>GET /api/dns-check/?host=example.com</code> looks up A, AAAA, MX, and TXT records over
+        Cloudflare DNS-over-HTTPS and makes one HTTPS request to the host's root page. <code class={code}>host</code>{' '}
+        accepts a hostname or a full URL. Bad input returns 400; a failed lookup returns 502. The browser version is
+        the <a href={SITE_LINKS.toolsDns} class="text-link">DNS / HTTPS check</a> tool.
+      </p>
+      <pre class={pre}>{`curl "${SITE_URL}/api/dns-check/?host=example.com"
+
+{
+  "host": "example.com",
+  "checkedAt": "2026-10-23T12:00:00.000Z",
+  "dns": {
+    "a":    [{ "type": "A", "ttl": 300, "data": "93.184.215.14" }],
+    "aaaa": [...], "mx": [...], "txt": [...]
+  },
+  "https": { "ok": true, "status": 200, "finalUrl": "https://example.com/", "ms": 120 }
+}`}</pre>
+    </section>
+
+    <section id="status" class="space-y-4">
+      <h2 class="text-xl font-semibold">Status board</h2>
+      <p class="max-w-2xl text-sm leading-relaxed text-[var(--muted)]">
+        <code class={code}>GET /api/status/</code> probes each product and homelab service shown on the{' '}
+        <a href={SITE_LINKS.status} class="text-link">status page</a> and reports whether it answered, its HTTP status,
+        and response time. Results are cached for 60 seconds.
+      </p>
+      <pre class={pre}>{`curl "${SITE_URL}/api/status/"
+
+{
+  "checkedAt": "2026-10-23T12:00:00.000Z",
+  "results": [
+    { "id": "robmcd", "name": "robmcd.name", "href": "https://robmcd.name/",
+      "group": "products", "ok": true, "status": 200, "ms": 85, ... }
+  ]
+}`}</pre>
+    </section>
+
+    <p class="text-sm text-[var(--muted)]">
+      The contact and triage forms also post to APIs, but those need a Turnstile token and aren't meant for scripts. Use
+      the <a href={SITE_LINKS.contact} class="text-link">contact form</a> instead.
+    </p>
+  </div>
+</BaseLayout>

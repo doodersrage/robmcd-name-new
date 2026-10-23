@@ -60,6 +60,7 @@ const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, SITE_
     <meta name="theme-color" content="#141814" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="api-catalog" href="/.well-known/api-catalog" type="application/linkset+json" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <meta name="description" content={metaDescription} />

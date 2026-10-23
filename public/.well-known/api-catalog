@@ -1,0 +1,28 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://robmcd.name/api/dns-check/",
+      "service-desc": [
+        { "href": "https://robmcd.name/api/openapi.json", "type": "application/json" }
+      ],
+      "service-doc": [
+        { "href": "https://robmcd.name/developers/#dns-check", "type": "text/html" }
+      ],
+      "status": [
+        { "href": "https://robmcd.name/api/health/", "type": "application/health+json" }
+      ]
+    },
+    {
+      "anchor": "https://robmcd.name/api/status/",
+      "service-desc": [
+        { "href": "https://robmcd.name/api/openapi.json", "type": "application/json" }
+      ],
+      "service-doc": [
+        { "href": "https://robmcd.name/developers/#status", "type": "text/html" }
+      ],
+      "status": [
+        { "href": "https://robmcd.name/api/health/", "type": "application/health+json" }
+      ]
+    }
+  ]
+}

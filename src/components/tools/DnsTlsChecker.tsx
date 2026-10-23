@@ -50,7 +50,7 @@ export function DnsTlsChecker() {
     setResult(null)
     setLoading(true)
     try {
-      const res = await fetch(`/api/dns-check?host=${encodeURIComponent(host.trim())}`)
+      const res = await fetch(`/api/dns-check/?host=${encodeURIComponent(host.trim())}`)
       const data = (await res.json().catch(() => ({}))) as Result & { error?: string }
       if (!res.ok) {
         setError(data.error || 'Lookup failed.')

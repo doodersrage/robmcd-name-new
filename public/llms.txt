@@ -11,6 +11,9 @@
 - https://robmcd.name/notes — field journal
 - https://robmcd.name/now — current focus
 - https://robmcd.name/tools — shop tools
+- https://robmcd.name/developers/ — public APIs (DNS / HTTPS check, status board)
+  API catalog (RFC 9727): https://robmcd.name/.well-known/api-catalog
+  OpenAPI spec: https://robmcd.name/api/openapi.json
 
 ## Products documented here
 - Castcut docs: https://robmcd.name/castcut

@@ -22,6 +22,7 @@ const staticPaths = [
   '/tools/dns',
   '/tools/triage',
   '/colophon',
+  '/developers',
   '/press',
   '/castcut',
   '/work/probeharbor/protocol',

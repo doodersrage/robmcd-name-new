@@ -31,7 +31,7 @@ export function StatusBoard() {
     setLoading(true)
     setError('')
     try {
-      const res = await fetch('/api/status')
+      const res = await fetch('/api/status/')
       const json = (await res.json().catch(() => ({}))) as Payload & { error?: string }
       if (!res.ok) {
         setError(json.error || 'Could not load status.')
