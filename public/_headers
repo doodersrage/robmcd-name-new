@@ -7,3 +7,6 @@
   Link: </api/openapi.json>; rel="service-desc"; type="application/json"
   Link: </developers/>; rel="service-doc"; type="text/html"
   Link: </llms.txt>; rel="describedby"; type="text/plain"
+
+/auth.md
+  Content-Type: text/markdown; charset=utf-8
