@@ -1,3 +1,9 @@
 /.well-known/api-catalog
   Content-Type: application/linkset+json
   Access-Control-Allow-Origin: *
+
+/
+  Link: </.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"
+  Link: </api/openapi.json>; rel="service-desc"; type="application/json"
+  Link: </developers/>; rel="service-doc"; type="text/html"
+  Link: </llms.txt>; rel="describedby"; type="text/plain"
