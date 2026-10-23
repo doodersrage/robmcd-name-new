@@ -19,6 +19,7 @@ export function DocPageView({ page, currentPath }: { page: DocPage; currentPath:
   if (isMarketing) {
     body = (
       <div className="space-y-12">
+        <DocsBreadcrumbs slug={page.slug} title={page.title} />
         <section className="space-y-4 border-l-2 border-[var(--ink)] pl-6">
           <p className="eyebrow">{page.section}</p>
           <h1 className="page-title">{page.title}</h1>

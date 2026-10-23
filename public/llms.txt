@@ -4,56 +4,56 @@
 
 ## Primary
 - https://robmcd.name/ — home
-- https://robmcd.name/about — bio and practice
-- https://robmcd.name/hire — engagement / how to hire
-- https://robmcd.name/work — case studies
-- https://robmcd.name/contact — email and form (admin@robmcd.name)
-- https://robmcd.name/notes — field journal
-- https://robmcd.name/now — current focus
-- https://robmcd.name/tools — shop tools
+- https://robmcd.name/about/ — bio and practice
+- https://robmcd.name/hire/ — engagement / how to hire
+- https://robmcd.name/work/ — case studies
+- https://robmcd.name/contact/ — email and form (admin@robmcd.name)
+- https://robmcd.name/notes/ — field journal
+- https://robmcd.name/now/ — current focus
+- https://robmcd.name/tools/ — shop tools
 - https://robmcd.name/developers/ — public APIs (DNS / HTTPS check, status board)
   API catalog (RFC 9727): https://robmcd.name/.well-known/api-catalog
   OpenAPI spec: https://robmcd.name/api/openapi.json
 
 ## Products documented here
-- Castcut docs: https://robmcd.name/castcut
+- Castcut docs: https://robmcd.name/castcut/
   Source: https://github.com/doodersrage/castcut
-  Day, poses, and looks: https://robmcd.name/castcut/play/day
-  Castcut nodes: https://robmcd.name/castcut/integration/castcut-nodes
+  Day, poses, and looks: https://robmcd.name/castcut/play/day/
+  Castcut nodes: https://robmcd.name/castcut/integration/castcut-nodes/
   Nodes repo: https://github.com/doodersrage/castcut-nodes
-- Prompt Studio write-up: https://robmcd.name/work/prompt-studio
+- Prompt Studio write-up: https://robmcd.name/work/prompt-studio/
   Classic prompt and image tools split out of Castcut
   Source: https://github.com/doodersrage/prompt-studio
   Shared core: https://www.npmjs.com/package/prompt-studio-core
-- ProbeHarbor write-up (formerly ThermalTrace): https://robmcd.name/work/probeharbor
-  Ingest protocol kit: https://robmcd.name/work/probeharbor/protocol
-  Pipe freeze forecast: https://robmcd.name/work/probeharbor/forecast
-  Integrations: https://robmcd.name/work/probeharbor/integrations
+- ProbeHarbor write-up (formerly ThermalTrace): https://robmcd.name/work/probeharbor/
+  Ingest protocol kit: https://robmcd.name/work/probeharbor/protocol/
+  Pipe freeze forecast: https://robmcd.name/work/probeharbor/forecast/
+  Integrations: https://robmcd.name/work/probeharbor/integrations/
   Live product: https://probeharbor.dev/
   Developer docs: https://probeharbor.dev/developers/
-- Shelf write-up: https://robmcd.name/work/shelf
+- Shelf write-up: https://robmcd.name/work/shelf/
   Self-hosted personal library on .NET 10 (Shelf 2.14)
   Live: https://shelf.robmcd.name
   Source: https://github.com/doodersrage/shelf
   Docs: https://doodersrage.github.io/shelf/
-- PrintBridge write-up: https://robmcd.name/work/printbridge
+- PrintBridge write-up: https://robmcd.name/work/printbridge/
   Self-hosted slicer and print host for the Creality Ender-3 V3 SE (PrintBridge 0.3)
   Source: https://github.com/doodersrage/printbridge
-- Concrete CMS packages: https://robmcd.name/work/concrete-cms
+- Concrete CMS packages: https://robmcd.name/work/concrete-cms/
   Marketplace: Page List Map, Date Counter (more coming)
   Community profile: https://community.concretecms.com/members/profile/103041
-- WordPress plugins: https://robmcd.name/work/wordpress
+- WordPress plugins: https://robmcd.name/work/wordpress/
   Inkbound: https://github.com/doodersrage/inkbound
   Volunteer Impact Tracker 1.1.0: https://github.com/doodersrage/volunteer-impact-tracker
 
 ## Optional
-- Homelab: https://robmcd.name/homelab
+- Homelab: https://robmcd.name/homelab/
   Castcut: https://castcut.robmcd.name
   Shelf: https://shelf.robmcd.name
-- Status board: https://robmcd.name/status
-- Colophon: https://robmcd.name/colophon
-- Press kit: https://robmcd.name/press
-- Privacy: https://robmcd.name/privacy
+- Status board: https://robmcd.name/status/
+- Colophon: https://robmcd.name/colophon/
+- Press kit: https://robmcd.name/press/
+- Privacy: https://robmcd.name/privacy/
 
 ## Cite as
 Robert McDowell / Robmcd.name — cross-platform engineering, legacy modernization, infrastructure.

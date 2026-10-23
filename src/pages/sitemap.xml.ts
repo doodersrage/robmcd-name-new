@@ -33,20 +33,20 @@ const staticPaths = [
 ]
 
 export const GET: APIRoute = () => {
-  const urls = [
-    ...staticPaths,
-    ...WORK_CASE_STUDIES.map((s) => `/work/${s.slug}`),
-    ...NOTES.map((n) => `/notes/${n.slug}`),
-    ...DOC_PAGES.filter((p) => p.slug.length > 0).map((p) => slugToPath(p.slug)),
+  // lastmod only where we know a real date (notes). A build-time date on every
+  // URL changes each deploy, so search engines learn to ignore it.
+  const urls: { path: string; lastmod?: string }[] = [
+    ...staticPaths.map((path) => ({ path })),
+    ...WORK_CASE_STUDIES.map((s) => ({ path: `/work/${s.slug}` })),
+    ...NOTES.map((n) => ({ path: `/notes/${n.slug}`, lastmod: n.date })),
+    ...DOC_PAGES.filter((p) => p.slug.length > 0).map((p) => ({ path: slugToPath(p.slug) })),
   ]
-  const now = new Date().toISOString()
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls
   .map(
-    (path) => `  <url>
-    <loc>${absolutePageUrl(path)}</loc>
-    <lastmod>${now}</lastmod>
+    ({ path, lastmod }) => `  <url>
+    <loc>${absolutePageUrl(path)}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
   </url>`,
   )
   .join('\n')}
