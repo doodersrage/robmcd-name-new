@@ -3,12 +3,25 @@ export const prerender = true
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { DnsTlsChecker } from '@/components/tools/DnsTlsChecker'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Tools', path: '/tools' },
+      { name: 'DNS / HTTPS check', path: '/tools/dns' },
+    ]),
+  ],
+}
 ---
 
 <BaseLayout
   title="DNS / HTTPS check"
   description="Look up A/AAAA/MX/TXT records and probe HTTPS reachability from robmcd.name’s edge Worker — quick DNS and TLS sanity checks."
   canonical="/tools/dns"
+  jsonLd={jsonLd}
 >
   <div class="space-y-8">
     <header class="space-y-3">

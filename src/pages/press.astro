@@ -4,12 +4,24 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { SITE_DESCRIPTION, SITE_LINKS, SITE_OWNER, SITE_TAGLINE, SITE_URL } from '@/lib/site'
 import { SITE_LINKEDIN } from '@/lib/seo'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Press kit', path: '/press' },
+    ]),
+  ],
+}
 ---
 
 <BaseLayout
   title="Press kit"
   description="One-pager for Robert McDowell / robmcd.name — short bio, Castcut and ProbeHarbor products, Concrete/WordPress packages, and contact. Print or Save as PDF."
   canonical="/press"
+  jsonLd={jsonLd}
 >
   <div class="space-y-10 print:space-y-6">
     <header class="flex flex-wrap items-end justify-between gap-4 space-y-3 print:block">

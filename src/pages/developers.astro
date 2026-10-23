@@ -3,6 +3,17 @@ export const prerender = true
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { SITE_LINKS, SITE_URL } from '@/lib/site'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Developers', path: '/developers' },
+    ]),
+  ],
+}
 
 const code = 'font-mono text-xs'
 const pre =
@@ -13,6 +24,7 @@ const pre =
   title="Developers"
   description="Free, unauthenticated APIs on robmcd.name: a DNS / HTTPS check and a status board, with an OpenAPI spec and an RFC 9727 API catalog."
   canonical="/developers"
+  jsonLd={jsonLd}
 >
   <div class="space-y-10">
     <header class="space-y-3">

@@ -3,12 +3,24 @@ export const prerender = true
 
 import ProseLayout from '@/layouts/ProseLayout.astro'
 import Content from '@/content/pages/privacy.mdx'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Privacy Policy', path: '/privacy' },
+    ]),
+  ],
+}
 ---
 
 <ProseLayout
   title="Privacy Policy"
   description="How robmcd.name handles the contact form, Turnstile, analytics (Google and Ahrefs), logs, and theme preference."
   path="/privacy"
+  jsonLd={jsonLd}
 >
   <Content />
 </ProseLayout>

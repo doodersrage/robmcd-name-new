@@ -41,7 +41,13 @@ const {
   jsonLd = null,
 } = Astro.props
 
-const pageTitle = title ? `${title} | ${SITE_OWNER}` : `${SITE_NAME} — ${SITE_TAGLINE}`
+// Search results cut titles off around 60 characters; drop the name suffix rather than lose the title.
+const TITLE_MAX = 60
+const pageTitle = title
+  ? `${title} | ${SITE_OWNER}`.length <= TITLE_MAX
+    ? `${title} | ${SITE_OWNER}`
+    : title
+  : `${SITE_OWNER} — Legacy modernization & infrastructure`
 const canonicalUrl =
   canonical === null ? null : absolutePageUrl(canonical ?? Astro.url.pathname)
 const metaDescription = ensureMetaDescriptionLength(

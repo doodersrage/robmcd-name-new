@@ -3,12 +3,24 @@ export const prerender = true
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { SITE_LINKS, SITE_OWNER, SITE_TAGLINE, SITE_URL } from '@/lib/site'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Colophon', path: '/colophon' },
+    ]),
+  ],
+}
 ---
 
 <BaseLayout
   title="Colophon"
   description="How robmcd.name is built — Astro 7 on Cloudflare Workers, IBM Plex type, workshop design tokens, and MDX/TypeScript content modules."
   canonical="/colophon"
+  jsonLd={jsonLd}
 >
   <div class="space-y-10">
     <header class="space-y-3">

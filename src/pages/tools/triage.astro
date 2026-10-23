@@ -4,6 +4,18 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { TriageForm } from '@/components/tools/TriageForm'
 import { SITE_LINKS } from '@/lib/site'
+import { breadcrumbSchema } from '@/lib/seo'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    breadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Tools', path: '/tools' },
+      { name: 'Legacy triage', path: '/tools/triage' },
+    ]),
+  ],
+}
 
 const siteKey =
   import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ||
@@ -15,6 +27,7 @@ const siteKey =
   title="Legacy triage"
   description="Structured intake for legacy stack rescue — stack, failure mode, urgency, and constraints — sent to Robert McDowell via the shop form."
   canonical="/tools/triage"
+  jsonLd={jsonLd}
 >
   <div class="space-y-8">
     <header class="space-y-3">
