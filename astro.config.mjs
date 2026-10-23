@@ -4,6 +4,7 @@ import cloudflare from '@astrojs/cloudflare'
 import react from '@astrojs/react'
 import mdx from '@astrojs/mdx'
 import tailwindcss from '@tailwindcss/vite'
+import markdownPages from './src/integrations/markdown-pages.ts'
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,7 +15,7 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: 'compile',
   }),
-  integrations: [react(), mdx()],
+  integrations: [react(), mdx(), markdownPages()],
   vite: {
     plugins: [tailwindcss()],
     resolve: {

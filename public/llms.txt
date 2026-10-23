@@ -14,6 +14,7 @@
 - https://robmcd.name/developers/ — public APIs (DNS / HTTPS check, status board)
   API catalog (RFC 9727): https://robmcd.name/.well-known/api-catalog
   OpenAPI spec: https://robmcd.name/api/openapi.json
+- Markdown: every page is available as Markdown. Send `Accept: text/markdown`, or append `index.md` to a page URL (https://robmcd.name/about/index.md).
 
 ## Products documented here
 - Castcut docs: https://robmcd.name/castcut/

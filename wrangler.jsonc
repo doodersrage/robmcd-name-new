@@ -5,10 +5,14 @@
   // https://github.com/withastro/astro/issues/14511
   "compatibility_date": "2025-10-01",
   "compatibility_flags": ["nodejs_compat", "disable_nodejs_process_v2"],
-  "main": "@astrojs/cloudflare/entrypoints/server",
+  // Astro handler plus Markdown for Agents (Accept: text/markdown → page .md)
+  "main": "./src/worker.ts",
   "assets": {
     "directory": "./dist",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    // The worker must see page requests to negotiate Markdown; hashed build
+    // assets skip it.
+    "run_worker_first": ["/*", "!/_astro/*"]
   },
   "observability": {
     "enabled": true
