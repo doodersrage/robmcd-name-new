@@ -13,7 +13,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h4 className="eyebrow">Quick Links</h4>
+            <h2 className="eyebrow">Quick Links</h2>
             <ul className="space-y-3">
               <li>
                 <a href="/" className="text-link text-sm">
@@ -69,7 +69,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h4 className="eyebrow">Shop</h4>
+            <h2 className="eyebrow">Shop</h2>
             <ul className="space-y-3">
               <li>
                 <a href={SITE_LINKS.homelab} className="text-link text-sm">
