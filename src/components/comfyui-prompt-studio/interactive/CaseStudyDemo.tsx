@@ -7,28 +7,24 @@ const PHASES = [
     id: 'week1',
     week: 'Week 1',
     title: 'Baseline chaos',
-    metric: '34% wasted renders',
     body: 'Maya kept prompts in three places. Flux shots looked great; SDXL exports for print failed lint silently. Gallery was an unsorted output folder.',
   },
   {
     id: 'week2',
     week: 'Week 2',
     title: 'Character bible + lint',
-    metric: '12 min → 4 min per prompt',
     body: 'Imported the lead character into /character, attached wardrobe catalog tokens, and ran Format + Lint before every queue. Workflow takeover replaced static CLIP strings.',
   },
   {
     id: 'week3',
     week: 'Week 3',
     title: 'Campaign batch',
-    metric: '48 frames / 2 evenings',
     body: 'Studio campaign tied 12 episode topics to templates. Draft quality for exploration, Final for delivery. Review mode culled rejects without opening Finder.',
   },
   {
     id: 'week4',
     week: 'Week 4',
     title: 'Analytics loop',
-    metric: '91% character consistency',
     body: 'Studio analytics surfaced high-rated lighting tags. Param experiment queue swept CFG on the best gallery frame. Client signed off the series bible export.',
   },
 ]
@@ -67,9 +63,6 @@ export function CaseStudyDemo() {
             </p>
             <h4 className="mt-1 text-xl font-bold text-[var(--ink)]">{phase.title}</h4>
           </div>
-          <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
-            {phase.metric}
-          </span>
         </div>
         <p className="mt-4 text-base leading-relaxed text-[var(--muted)]">{phase.body}</p>
 

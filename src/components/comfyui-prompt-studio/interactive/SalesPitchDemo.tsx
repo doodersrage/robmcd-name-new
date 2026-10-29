@@ -18,12 +18,6 @@ const AFTER = [
   'Export for an editor hands Resolve, Premiere, or Final Cut a timeline'
 ]
 
-const METRICS = [
-  { id: 'time', label: 'Time to approved prompt', before: 18, after: 4, unit: 'min' },
-  { id: 'waste', label: 'Wasted renders (lint failures)', before: 34, after: 8, unit: '%' },
-  { id: 'consistency', label: 'Character match rate (series)', before: 62, after: 91, unit: '%' },
-]
-
 export function SalesPitchDemo() {
   const [view, setView] = useState<'before' | 'after'>('before')
   const items = view === 'before' ? BEFORE : AFTER
@@ -68,37 +62,6 @@ export function SalesPitchDemo() {
           </li>
         ))}
       </ul>
-
-      <div className="grid gap-4 sm:grid-cols-3">
-        {METRICS.map((m) => (
-          <div
-            key={m.id}
-            className="rounded-sm border border-[var(--line)] bg-[var(--paper)] p-5 "
-          >
-            <p className="text-xs font-medium uppercase tracking-wide text-[var(--muted)]">
-              {m.label}
-            </p>
-            <div className="mt-3 flex items-end gap-2">
-              <span className="text-lg tabular-nums text-slate-400 line-through dark:text-zinc-600">
-                {m.before}
-                {m.unit}
-              </span>
-              <span className="text-3xl font-bold tabular-nums text-[var(--ink)]">
-                {m.after}
-                {m.unit}
-              </span>
-            </div>
-            <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-slate-200 dark:bg-zinc-800">
-              <div
-                className="h-full rounded-full bg-emerald-500 dark:bg-emerald-600 transition-all duration-700 ease-out"
-                style={{
-                  width: `${view === 'after' ? (m.id === 'waste' ? 100 - m.after : m.after) : m.before}%`,
-                }}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   )
 }

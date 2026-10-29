@@ -69,7 +69,7 @@ export const storiesPages = [
   page(
     ['stories', 'case-study'],
     'Case study: episodic FLUX → SDXL series',
-    'Illustrative scenario — how structured campaigns, lint, and gallery review cut wasted renders.',
+    'Illustrative scenario — how structured campaigns, lint, and gallery review fit an episodic series.',
     'Sales & stories',
     -1,
     [
@@ -85,7 +85,6 @@ export const storiesPages = [
         items: [
           { value: '12', label: 'Episodes', detail: 'Single character IP' },
           { value: 'FLUX→SDXL', label: 'Pipeline', detail: 'Explore then deliver' },
-          { value: '76%', label: 'Fewer wasted renders', detail: 'After lint + family rules' },
           { value: '48', label: 'Final frames', detail: 'Campaign output' },
         ],
       },
@@ -110,7 +109,7 @@ export const storiesPages = [
         type: 'comparison',
         before: [
           'Prompts in Notion + manual CLIP paste',
-          'No Lint — ~34% failed renders',
+          'No lint before rendering',
           'Unsorted output folder',
           'Manual seed hunting for re-runs',
         ],
@@ -122,15 +121,6 @@ export const storiesPages = [
           'Workflow takeover into existing SDXL graph',
           'Backup v2 export before client handoff',
         ],
-      },
-      ...p(
-        'Prompt prep dropped from roughly eighteen minutes to four minutes per approved frame. Client rubric scores for character consistency rose from 62% to 91%. Wasted renders fell from 34% to 8% once model-family lint enforced FLUX brevity before SDXL export.',
-      ),
-      {
-        type: 'quote',
-        text: 'The campaign + Topics combo was the unlock — I set up all twelve episode hooks once, ran Draft batches on weeknights, and only promoted winners to Final on weekends.',
-        attribution: 'Composite scenario',
-        role: 'Illustrative workflow',
       },
       {
         type: 'links',
