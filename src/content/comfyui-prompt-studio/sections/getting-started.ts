@@ -19,9 +19,9 @@ export const gettingStartedPages = [
         code: 'git clone https://github.com/doodersrage/castcut.git\ncd castcut\nnpm install\ncp .env.example .env.local\nnpm run dev',
       },
       ...p(
-        `Dev server defaults to port 47832. Open ${LIVE}/ for Generate and ${LIVE}/dashboard for queue status. The canonical repo is \`castcut\` (formerly \`llm-prompt-studio\` / \`comfyui-prompt-studio\`; those GitHub names redirect here).`,
-        'Before generating, set `COMFYUI_API_URL` (your ComfyUI instance), `LLM_MODEL` (text generation), and ideally `LLM_VISION_MODEL` (Image → Prompt and Refine with image hints) in `.env.local`. For cloud stills or clips, add keys in Settings → Inference engine (Fal, Replicate, ChatGPT, Gemini, Grok).',
-        'On first launch, open Settings → Overview and run **Heal & ready** — this validates LLM connectivity, ComfyUI probe, IndexedDB/Dexie, and default export paths. Then generate on **Generate** (`/`) and click **Send to ComfyUI** or queue through your selected cloud engine.',
+        `Dev server defaults to port 47832. Open ${LIVE}/ — it opens Film — and ${LIVE}/dashboard for queue status. The canonical repo is \`castcut\` (formerly \`llm-prompt-studio\` / \`comfyui-prompt-studio\`; those GitHub names redirect here).`,
+        'Set `COMFYUI_API_URL` (your ComfyUI instance) in `.env.local`. For the LLM, either point `LLM_API_BASE_URL` at LM Studio or Ollama, or install the **Built-in LLM** from Settings → LLM (llama.cpp and a Qwen3-VL vision model, started on first use). A new install needs no secrets in its env file: the first admin is made on the sign-in page.',
+        'On first launch, run **Heal & ready** — it checks the LLM and ComfyUI, maps your models, and says what to install (Settings → ComfyUI → Models lists every model each tool needs). Then follow Your first film: create a Cast on Film, dress her, plan a Day, and cut.',
       ),
       { type: 'h2', text: 'Other install paths' },
       {
@@ -48,28 +48,29 @@ export const gettingStartedPages = [
   page(
     ['getting-started', 'first-run'],
     'First run walkthrough',
-    'Dashboard, workspace mode, Play vs Studio, and your first generated prompt.',
+    'Welcome, workspace level, Heal & ready, and your first film.',
     'Getting started',
     6,
     [
       ...p(
-        'The dashboard (`/dashboard`) shows pending jobs, queue status, recent outputs, and the active project. From there, open **Generate** (`/`) — enter keywords or use random surprise — pick a model family from 40+ targets, set detail level, and generate a model-ready prompt.',
-        'New installs default to **Play** (Make). Quality profiles in the sidebar (Draft / Final / Max) control step counts and recipe aggressiveness. For a film: open Film (`/play`), create a Cast lead (essentials-first), then Outfit → Day → Cut. Use optional Story for episodic beats. Stay in **Simple** or switch to **Studio** / **Full** for batch campaigns and the full tool rail.',
+        'First launch asks **What do you want to make?** and says up front whether ComfyUI is ready. Every answer opens in **Film** (`/play`), the default workspace; **Studio** (Profile → Appearance) adds control, with the film in progress kept at the top of its sidebar. The dashboard (`/dashboard`) shows pending jobs, queue status, and recent outputs.',
+        'For a film: create a Cast lead on Film (a photo or traits), then Outfit → Day → Cut. **Make a starter film** does it all in one step, and **Use demo stills** lets you practise the cut while ComfyUI is offline. Add Story for scene-by-scene beats, or Scene and Script when you want each shot exactly so.',
       ),
       { type: 'h2', text: 'Recommended first steps' },
       {
         type: 'ol',
         items: [
           'Run Heal & ready in Settings → Overview (Identity ready when a face pack is locked)',
-          'Confirm Play workspace (default) — or Simple / Studio / Full from the sidebar footer',
-          'Create a Cast lead on Film (`/play`) — name + optional From photo',
+          'Stay in Film (default), or switch to Studio in Profile → Appearance',
+          'Create a Cast lead on Film (`/play`) — a photo or traits',
           'Run Outfit → Day, then Cut film; unlock Story when you want beats',
-          'Optional: Generate (`/`) + Format + Lint for one-off prompts outside the film loop',
+          'For a longer film: import a screenplay on the Scene page and prepare a run',
+          'For one-off prompts outside the film loop, use Prompt Studio',
         ],
       },
       { type: 'interactive-slot' },
     ],
-    { interactive: 'prompt-detail', related: ['introduction/workspace-modes', 'play/cast'] },
+    { interactive: 'prompt-detail', related: ['play/first-film', 'introduction/workspace-modes', 'play/cast'] },
   ),
 
   page(
@@ -81,7 +82,7 @@ export const gettingStartedPages = [
     [
       ...p(
         'Configuration lives in `.env.local` (server) and Settings (`/settings`) in the UI. Key env vars: `COMFYUI_API_URL`, `LLM_MODEL`, `LLM_VISION_MODEL`, optional `COMFYUI_ROOT` for asset downloads, cloud provider keys (Fal, Replicate, etc.), and auth/SMTP vars for multi-user deployments. See the full env table in the repository configuration docs.',
-        'Settings → Overview provides **Heal & ready** (connectivity checks), backup export, and data repair. Settings → LLM configures text and vision models. Settings → ComfyUI covers cluster URLs, workflow library import (API-format JSON), and model asset downloads. Settings → Inference engine selects ComfyUI, Diffusers, or cloud providers — set matching env keys or browser-stored keys, then queue (Image 1 becomes img2img when attached).',
+        'Settings → Overview provides **Heal & ready** (connectivity checks), backup export, and data repair. Settings → LLM configures text and vision models. Settings → ComfyUI covers cluster URLs, workflow library import (API-format JSON), and model asset downloads. Settings → ComfyUI → Engine for Generate & Video picks the engine for the tools under More only — Film, Day, Outfit, Scene, and Story always render on ComfyUI. Cloud engines wait behind Show cloud engines, and the Diffusers engine is an add-on (Install Diffusers engine).',
       ),
       { type: 'h2', text: 'Settings & plugins' },
       {
@@ -90,7 +91,6 @@ export const gettingStartedPages = [
           'Default port: 47832',
           'IndexedDB (Dexie) for browser settings, history, gallery cache',
           'Gallery export and backup v2 folders — schedule from Settings → Data',
-          'Plugins (`/plugins`) — installable manifests for nav items, queue mutators, and custom tool pages',
           'Optional auth, quotas, and per-user gallery for exposed deployments',
           'Runway is not exposed in Settings — use Fal/Replicate/Grok/Gemini for cloud clips',
         ],

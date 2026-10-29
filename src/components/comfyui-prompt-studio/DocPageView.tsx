@@ -3,7 +3,7 @@
 import React from 'react'
 
 import { ComfyuiDocsLayout } from '@/components/comfyui-prompt-studio/ComfyuiDocsLayout'
-import { DocPageContent } from '@/components/comfyui-prompt-studio/DocPageContent'
+import { DocPageContent, Inline } from '@/components/comfyui-prompt-studio/DocPageContent'
 import { DocPageNav } from '@/components/comfyui-prompt-studio/DocPageNav'
 import { DocsBreadcrumbs } from '@/components/comfyui-prompt-studio/DocsBreadcrumbs'
 import { Hero } from '@/components/ui/Hero'
@@ -23,7 +23,9 @@ export function DocPageView({ page, currentPath }: { page: DocPage; currentPath:
         <section className="space-y-4 border-l-2 border-[var(--ink)] pl-6">
           <p className="eyebrow">{page.section}</p>
           <h1 className="page-title">{page.title}</h1>
-          <p className="max-w-2xl text-lg leading-relaxed text-[var(--muted)]">{page.description}</p>
+          <p className="max-w-2xl text-lg leading-relaxed text-[var(--muted)]">
+            <Inline text={page.description} />
+          </p>
         </section>
         <section className="space-y-8">
           <DocPageContent page={page} showLead={false} />

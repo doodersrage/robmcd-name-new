@@ -4,6 +4,7 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { DocPageView } from '@/components/comfyui-prompt-studio/DocPageView'
 import { DOC_PAGES, getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
+import { plainText } from '@/content/comfyui-prompt-studio/helpers'
 import { breadcrumbSchema } from '@/lib/seo'
 import { absolutePageUrl } from '@/lib/site'
 
@@ -35,7 +36,7 @@ const jsonLd = {
     {
       '@type': 'TechArticle',
       headline: page.title,
-      description: page.description,
+      description: plainText(page.description),
       url: absolutePageUrl(currentPath),
       author: { '@id': 'https://robmcd.name/#person' },
     },
@@ -45,7 +46,7 @@ const jsonLd = {
 
 <BaseLayout
   title={page.title}
-  description={page.description}
+  description={plainText(page.description)}
   canonical={currentPath}
   wide
   ogType="article"

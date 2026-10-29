@@ -4,6 +4,37 @@ import { DocInteractivePanel } from '@/components/comfyui-prompt-studio/DocInter
 import type { DocBlock, DocPage } from '@/content/comfyui-prompt-studio/types'
 import { slugToPath } from '@/content/comfyui-prompt-studio/pages'
 
+/** Light inline formatting for doc text: `code`, **bold**, and *italic*. */
+const INLINE = /(`[^`]+`|\*\*[^*]+\*\*|\*[^*\s][^*]*\*)/g
+
+export function Inline({ text }: { text: string }) {
+  const parts = text.split(INLINE)
+  return (
+    <>
+      {parts.map((part, i) => {
+        if (part.startsWith('`') && part.endsWith('`') && part.length > 2) {
+          return (
+            <code key={i} className="rounded-sm bg-slate-100 px-1 py-0.5 font-mono text-[0.9em] text-[var(--ink)] dark:bg-zinc-800">
+              {part.slice(1, -1)}
+            </code>
+          )
+        }
+        if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+          return (
+            <strong key={i} className="font-semibold text-[var(--ink)]">
+              {part.slice(2, -2)}
+            </strong>
+          )
+        }
+        if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
+          return <em key={i}>{part.slice(1, -1)}</em>
+        }
+        return part
+      })}
+    </>
+  )
+}
+
 function DocBlockRenderer({
   block,
   page,
@@ -13,7 +44,7 @@ function DocBlockRenderer({
 }) {
   switch (block.type) {
     case 'p':
-      return <p className="text-base leading-relaxed text-[var(--muted)]">{block.text}</p>
+      return <p className="text-base leading-relaxed text-[var(--muted)]"><Inline text={block.text} /></p>
     case 'h2':
       return (
         <h2 className="text-2xl font-bold tracking-tight text-[var(--ink)] pt-4 first:pt-0">{block.text}</h2>
@@ -24,7 +55,9 @@ function DocBlockRenderer({
       return (
         <ul className="list-disc space-y-2 pl-5 text-base leading-relaxed text-[var(--muted)] marker:text-[var(--muted)]">
           {block.items.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item}>
+              <Inline text={item} />
+            </li>
           ))}
         </ul>
       )
@@ -32,7 +65,9 @@ function DocBlockRenderer({
       return (
         <ol className="list-decimal space-y-2 pl-5 text-base leading-relaxed text-[var(--muted)]">
           {block.items.map((item) => (
-            <li key={item}>{item}</li>
+            <li key={item}>
+              <Inline text={item} />
+            </li>
           ))}
         </ol>
       )
@@ -47,7 +82,9 @@ function DocBlockRenderer({
           {block.title ? (
             <p className="mb-1 font-semibold text-[var(--ink)]">{block.title}</p>
           ) : null}
-          <p className="text-sm leading-relaxed text-[var(--muted)]">{block.text}</p>
+          <p className="text-sm leading-relaxed text-[var(--muted)]">
+            <Inline text={block.text} />
+          </p>
         </div>
       )
     }
@@ -181,7 +218,9 @@ export function DocPageContent({ page, showLead = true }: { page: DocPage; showL
   return (
     <div className="doc-content space-y-6">
       {showLead ? (
-        <p className="text-lg leading-relaxed text-[var(--muted)]">{page.description}</p>
+        <p className="text-lg leading-relaxed text-[var(--muted)]">
+          <Inline text={page.description} />
+        </p>
       ) : null}
       {!inlineInteractive && page.interactive ? <DocInteractivePanel type={page.interactive} /> : null}
       {page.blocks.map((block, i) => (

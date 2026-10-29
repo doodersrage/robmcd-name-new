@@ -11,19 +11,19 @@ export const hubPages = [
     [
       ...p(
         'Castcut (canonical repo: github.com/doodersrage/castcut; formerly Prompt Studio / llm-prompt-studio / comfyui-prompt-studio) is a self-hosted Next.js app for consistent characters, scenes, images, and short films locally with ComfyUI. Model support (FLUX, Qwen, WAN, Hunyuan, LTX, and more) is the engine underneath; the product is the film loop.',
-        `Flagship loop: Cast → Outfit → Day → (optional Story or Scene) → Gallery → Cut film → Save to Cast. Play is Make (default workspace); Studio is Control; Full is Build. Specialty tools sit under Extras. Heal & ready inspects ComfyUI on first launch. Mobile Studio (\`/m\`) is the phone-first Film / review / Story companion. Current release: v${APP_VERSION}. Cloud engines and the Diffusers add-on stay optional; the near-term focus is reliability and character consistency, not expanding that matrix.`,
+        `Flagship loop: Cast → Outfit → Day → (optional Story or Scene) → Gallery → Cut film → Save to Cast. Castcut 3.x adds a production path beside the Day loop: import a screenplay, plan its shots, render Scenes one take at a time, see a storyboard and animatic, and track it all on the Film Director page. Film is the default workspace and Studio adds control. Heal & ready inspects ComfyUI on first launch. Mobile Studio (\`/m\`) carries the same Film, Day, Outfit, Story, Scene, and Cut tabs to a phone. Current release: v${APP_VERSION}. Cloud engines and the Diffusers add-on stay optional; the near-term focus is reliability and character consistency, not expanding that matrix.`,
       ),
       {
         type: 'callout',
         variant: 'info',
         title: 'Looking for the classic tools?',
-        text: 'Generate, Prompt Editor, Variations, Format, Lint, the Workflow editor, plugins, and the other general prompt and image tools now ship as a separate app, Prompt Studio (github.com/doodersrage/prompt-studio). Both apps share one core package, prompt-studio-core on npm. Castcut keeps the film pages: Film, Cast, Look, Outfit, Day, Story, Character, Video, Refine, Inpaint, Compose, Gallery, and Queue.',
+        text: 'Generate, Prompt Editor, Variations, Format, Lint, ControlNet, Outpaint, Topics, the Workflow editor, plugins, and the other general prompt and image tools ship as a separate app, Prompt Studio (github.com/doodersrage/prompt-studio). Both apps share one core package, prompt-studio-core on npm. Castcut keeps the film pages: Film, Cast, Outfit, Day, Scene, Story, Cut, Film Director, Character, Video, Refine, Inpaint, Compose, Gallery, and Queue. Pages here for the moved tools are marked Now in Prompt Studio.',
       },
       {
         type: 'callout',
         variant: 'info',
         title: 'Get it running',
-        text: `Local dev: ${LIVE} (Node.js 22+). Heal & ready on Settings → Overview. Desktop: GitHub Releases (.dmg / .exe / .deb preferred on Linux). Docker: ghcr.io/doodersrage/castcut:latest. Full searchable docs at ${DOCS_SITE}.`,
+        text: `Local dev: ${LIVE} (Node.js 22+). Heal & ready on Settings → Overview. Desktop: GitHub Releases (.dmg / .exe / .deb preferred on Linux, or .AppImage). Docker: ghcr.io/doodersrage/castcut:latest. Full searchable docs at ${DOCS_SITE}.`,
       },
       {
         type: 'links',
@@ -31,7 +31,7 @@ export const hubPages = [
           { label: 'GitHub repository', href: GH, external: true },
           { label: 'GitHub Releases (desktop)', href: RELEASES, external: true },
           { label: 'Official docs site', href: DOCS_SITE, external: true },
-          { label: 'Open dashboard (local)', href: `${LIVE}/dashboard`, external: true },
+          { label: 'Open Film (local)', href: `${LIVE}/play`, external: true },
         ],
       },
       { type: 'h2', text: 'What this guide covers' },
@@ -39,7 +39,7 @@ export const hubPages = [
         type: 'ul',
         items: [
           'Sales pitch and case study for production ComfyUI and cloud hybrid workflows',
-          'Tool routes from Generate through Cast, Film, Story, Mobile Studio, Gallery, and Integration',
+          'The film loop page by page: your first film, Cast, Outfit, Day, Scene and takes, Script and runs, Story, Cut, Film Director, finishing tools, and Mobile Studio',
           '40+ model families — FLUX (incl. Klein), Qwen, Z-Image, Boogu, SDXL, WAN / LTX video, Stable Audio, Hunyuan3D',
           'Film loop in Castcut 3.2: Script import, Scenes and takes, Film Director, storyboard and animatic, finishing tools (lip-sync, copy moves, relight), talking clips, Cast voices, Places, film scores, Preview the cut, re-cuts in any shape, narration, review links, export for an editor, pose editor, per-look outfits, Heal & ready, desktop/Docker install',
           'Optional Castcut nodes (Comfy Registry) for Best of two and cut-outs inside one job',
@@ -55,6 +55,9 @@ export const hubPages = [
         items: [
           { label: 'Why Castcut? (sales pitch)', href: `${DOCS_BASE_PATH}/stories/sales-pitch/` },
           { label: 'Quick start (Node 22+)', href: `${DOCS_BASE_PATH}/getting-started/quick-start/` },
+          { label: 'Your first film', href: `${DOCS_BASE_PATH}/play/first-film/` },
+          { label: 'Script, runs, and locations', href: `${DOCS_BASE_PATH}/play/script/` },
+          { label: 'Cut a film', href: `${DOCS_BASE_PATH}/play/cut/` },
           { label: 'Tools table & routes', href: `${DOCS_BASE_PATH}/introduction/feature-map/` },
           { label: 'Day, poses, and looks', href: `${DOCS_BASE_PATH}/play/day/` },
           { label: 'Castcut nodes', href: `${DOCS_BASE_PATH}/integration/castcut-nodes/` },

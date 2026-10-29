@@ -20,10 +20,10 @@ const SECTION_ORDER = [
   'Sales & stories',
   'Introduction',
   'Getting started',
+  'Film',
   'Generate',
   'Format & lint',
   'Character',
-  'Play',
   'Image tools',
   'Media',
   'Studio',
@@ -63,6 +63,11 @@ export function page(
 export function slugToPath(slug: string[]): string {
   if (slug.length === 0) return `${DOCS_BASE_PATH}/`
   return `${DOCS_BASE_PATH}/${slug.join('/')}/`
+}
+
+/** Text without inline doc formatting (`code`, **bold**, *italic*), for meta tags. */
+export function plainText(text: string): string {
+  return text.replace(/`([^`]+)`/g, '$1').replace(/\*\*([^*]+)\*\*/g, '$1').replace(/\*([^*\s][^*]*)\*/g, '$1')
 }
 
 export function slugKey(slug: string[]): string {

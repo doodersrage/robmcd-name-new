@@ -4,44 +4,36 @@ import { useState } from 'react'
 
 const MODES = [
   {
-    id: 'play',
-    label: 'Play',
+    id: 'film',
+    label: 'Film',
     description:
-      'Default Make mode — Cast, Film, Look, Outfit, Day, Story, Gallery, and Queue in a lean sidebar for the character-film loop.',
-    tools: ['Cast', 'Film', 'Look', 'Outfit', 'Day', 'Story', 'Gallery', 'Queue'],
-  },
-  {
-    id: 'simple',
-    label: 'Simple',
-    description:
-      'Lean Make — essentials plus More tools, advanced sections collapsed. History, Compare, Templates, Presets, and Analytics stay available in Studio tabs.',
-    tools: ['Generate', 'Format', 'Character', 'Gallery', 'More tools'],
+      'The default: the film loop in a lean sidebar — Cast, Outfit, Day, Scene, Story, Gallery, and Cut, with Film Director in the Film menu.',
+    tools: ['Film', 'Cast', 'Outfit', 'Day', 'Scene', 'Story', 'Cut', 'Gallery'],
   },
   {
     id: 'studio',
     label: 'Studio',
     description:
-      'Edit / Media / Library groups with collapsed advanced sections — campaigns, analytics, and full tool access.',
-    tools: ['Edit group', 'Media group', 'Library', 'All Studio tabs'],
+      'More control — prompts, references, model settings, and every tool, with the film in progress kept at the top of the sidebar.',
+    tools: ['Film in progress', 'Character', 'Compose', 'Inpaint', 'Refine', 'Video', 'Queue'],
   },
   {
-    id: 'full',
-    label: 'Full',
+    id: 'more',
+    label: 'More tools',
     description:
-      'Same groups as Studio, expanded by default — quality sections open, workflow editor and media tools prominent.',
-    tools: ['Workflow editor', 'Video', 'Audio', 'Mesh', 'Advanced queue'],
+      'Inside Studio: specialist tools, workflow graphs, and integrations. A saved Simple opens Film; a saved Full opens Studio.',
+    tools: ['Specialist tools', 'Open in ComfyUI', 'Integrations', 'Settings'],
   },
 ] as const
 
 export function WorkspaceModeDemo() {
-  const [active, setActive] = useState<(typeof MODES)[number]['id']>('play')
+  const [active, setActive] = useState<(typeof MODES)[number]['id']>('film')
   const mode = MODES.find((m) => m.id === active)!
 
   return (
     <div className="not-prose my-8 space-y-4">
       <p className="text-sm leading-relaxed text-[var(--muted)]">
-        Four workspace modes — Play is the default. Switch from the sidebar footer or Profile →
-        Appearance.
+        Three workspace levels — Film is the default. Switch in Profile → Appearance.
       </p>
       <div className="flex flex-wrap gap-2">
         {MODES.map((m) => (

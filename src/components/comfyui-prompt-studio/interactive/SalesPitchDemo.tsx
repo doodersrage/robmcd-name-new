@@ -4,18 +4,18 @@ import { useState } from 'react'
 
 const BEFORE = [
   'Prompts scattered across Notion, Discord pins, and ComfyUI node text fields',
-  'No shared negative library — every workflow drifts',
+  'The character’s face, clothes, and room drift from one still to the next',
   'Gallery is a folder of PNGs with filenames like output_00347.png',
   'Re-running a good shot means hunting the old seed in chat logs',
-  'Switching Flux → SDXL breaks tag density silently',
+  'Stills and clips get cut together by hand in a separate editor',
 ]
 
 const AFTER = [
-  'One character bible, one linted prompt pipeline, one gallery index',
-  'Workflow takeover pushes live text into CLIP nodes — no graph surgery',
-  'Review mode rates batches in minutes; analytics show what tags win',
-  'Re-queue from gallery with Final/Max quality or new variation in one click',
-  'Model family rules enforce limits before GPU time is spent',
+  'One Cast with a plate, a dressed plate, places, and a voice — the same person in every shot',
+  'A screenplay becomes shot lists, Scenes, and takes; a run renders them one at a time',
+  'Every take records its engine, seed, prompt, and graph, and replays exactly',
+  'Cut mixes Day, Story, and Scenes with subtitles, a score, and sound effects',
+  'Export for an editor hands Resolve, Premiere, or Final Cut a timeline'
 ]
 
 const METRICS = [
