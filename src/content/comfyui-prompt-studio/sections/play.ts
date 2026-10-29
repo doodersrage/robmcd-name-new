@@ -18,7 +18,7 @@ export const playPages = [
         type: 'ol',
         items: [
           'Create or pick a Cast lead on Film (`/play`) — essentials-first name + optional From photo',
-          'Run Look → Outfit → Day, then unlock Story when you want episodic beats',
+          'Run Outfit → Day, then unlock Story when you want episodic beats',
           'Pick a beat and queue a still or clip (local ComfyUI or cloud engine)',
           'Continue, Cut, or Save to Cast to build sequences',
         ],
@@ -50,7 +50,7 @@ export const playPages = [
         items: [
           'Character (`/character`) — generate solo/duo/sport prompts from traits and wardrobe',
           'Cast (`/characters`) — persistent home for looks, clips, films, and production history',
-          'Film (`/play`) — create/pick the active Cast lead for the Look → Outfit → Day → Story loop',
+          'Film (`/play`) — create/pick the active Cast lead for the Outfit → Day → Story loop',
           'Studio campaigns and Topics still batch-generate; Cast organizes what ships',
         ],
       },
@@ -91,7 +91,7 @@ export const playPages = [
   page(
     ['play', 'day'],
     'Day, poses, and looks',
-    'Pose editor, per-look outfits, talking clips, Places, and the Day engines in Castcut 2.9.',
+    'Pose editor, per-look outfits, talking clips, Places, and the Day engines in Castcut 3.2.',
     'Play',
     54,
     [

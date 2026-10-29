@@ -4,7 +4,7 @@ export const storiesPages = [
   page(
     ['stories', 'sales-pitch'],
     'Why Castcut?',
-    'Local character films with ComfyUI — Cast → Look → Outfit → Day → Cut film. Started as Prompt Studio.',
+    'Local character films with ComfyUI — Cast → Outfit → Day → Scene → Cut film. Started as Prompt Studio.',
     'Sales & stories',
     -2,
     [

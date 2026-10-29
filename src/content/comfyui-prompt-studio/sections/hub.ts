@@ -5,13 +5,13 @@ export const hubPages = [
   page(
     [],
     'Castcut',
-    'Local character films with ComfyUI — Cast → Look → Outfit → Day → Cut film.',
+    'Local character films with ComfyUI — Cast → Outfit → Day → Scene → Cut film.',
     'Hub',
     0,
     [
       ...p(
         'Castcut (canonical repo: github.com/doodersrage/castcut; formerly Prompt Studio / llm-prompt-studio / comfyui-prompt-studio) is a self-hosted Next.js app for consistent characters, scenes, images, and short films locally with ComfyUI. Model support (FLUX, Qwen, WAN, Hunyuan, LTX, and more) is the engine underneath; the product is the film loop.',
-        `Flagship loop: Cast → Look → Outfit → Day → (optional Story) → Gallery → Cut film → Save to Cast. Play is Make (default workspace); Studio is Control; Full is Build. Specialty tools sit under Extras. Heal & ready inspects ComfyUI on first launch. Mobile Studio (\`/m\`) is the phone-first Film / review / Story companion. Current release: v${APP_VERSION}. Optional Diffusers stills and cloud engines stay available; the near-term focus is reliability and character consistency, not expanding that matrix.`,
+        `Flagship loop: Cast → Outfit → Day → (optional Story or Scene) → Gallery → Cut film → Save to Cast. Play is Make (default workspace); Studio is Control; Full is Build. Specialty tools sit under Extras. Heal & ready inspects ComfyUI on first launch. Mobile Studio (\`/m\`) is the phone-first Film / review / Story companion. Current release: v${APP_VERSION}. Cloud engines and the Diffusers add-on stay optional; the near-term focus is reliability and character consistency, not expanding that matrix.`,
       ),
       {
         type: 'callout',
@@ -41,7 +41,7 @@ export const hubPages = [
           'Sales pitch and case study for production ComfyUI and cloud hybrid workflows',
           'Tool routes from Generate through Cast, Film, Story, Mobile Studio, Gallery, and Integration',
           '40+ model families — FLUX (incl. Klein), Qwen, Z-Image, Boogu, SDXL, WAN / LTX video, Stable Audio, Hunyuan3D',
-          'Play film loop in Castcut 2.9: talking clips, Cast voices, Places, film scores, Preview the cut, re-cuts in any shape, narration, review links, export for an editor, pose editor, per-look outfits, Heal & ready, desktop/Docker install',
+          'Film loop in Castcut 3.2: Script import, Scenes and takes, Film Director, storyboard and animatic, finishing tools (lip-sync, copy moves, relight), talking clips, Cast voices, Places, film scores, Preview the cut, re-cuts in any shape, narration, review links, export for an editor, pose editor, per-look outfits, Heal & ready, desktop/Docker install',
           'Optional Castcut nodes (Comfy Registry) for Best of two and cut-outs inside one job',
         ],
       },

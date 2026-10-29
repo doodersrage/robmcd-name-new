@@ -54,7 +54,7 @@ export const gettingStartedPages = [
     [
       ...p(
         'The dashboard (`/dashboard`) shows pending jobs, queue status, recent outputs, and the active project. From there, open **Generate** (`/`) — enter keywords or use random surprise — pick a model family from 40+ targets, set detail level, and generate a model-ready prompt.',
-        'New installs default to **Play** (Make). Quality profiles in the sidebar (Draft / Final / Max) control step counts and recipe aggressiveness. For a film: open Film (`/play`), create a Cast lead (essentials-first), then Look → Outfit → Day → Cut. Use optional Story for episodic beats. Stay in **Simple** or switch to **Studio** / **Full** for batch campaigns and the full tool rail.',
+        'New installs default to **Play** (Make). Quality profiles in the sidebar (Draft / Final / Max) control step counts and recipe aggressiveness. For a film: open Film (`/play`), create a Cast lead (essentials-first), then Outfit → Day → Cut. Use optional Story for episodic beats. Stay in **Simple** or switch to **Studio** / **Full** for batch campaigns and the full tool rail.',
       ),
       { type: 'h2', text: 'Recommended first steps' },
       {
@@ -63,7 +63,7 @@ export const gettingStartedPages = [
           'Run Heal & ready in Settings → Overview (Identity ready when a face pack is locked)',
           'Confirm Play workspace (default) — or Simple / Studio / Full from the sidebar footer',
           'Create a Cast lead on Film (`/play`) — name + optional From photo',
-          'Run Look → Outfit → Day, then Cut film; unlock Story when you want beats',
+          'Run Outfit → Day, then Cut film; unlock Story when you want beats',
           'Optional: Generate (`/`) + Format + Lint for one-off prompts outside the film loop',
         ],
       },

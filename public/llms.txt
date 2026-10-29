@@ -33,7 +33,7 @@
   Live product: https://probeharbor.dev/
   Developer docs: https://probeharbor.dev/developers/
 - Shelf write-up: https://robmcd.name/work/shelf/
-  Self-hosted personal library on .NET 10 (Shelf 2.14)
+  Self-hosted personal library on .NET 10 (Shelf 2.22)
   Live: https://shelf.robmcd.name
   Source: https://github.com/doodersrage/shelf
   Docs: https://doodersrage.github.io/shelf/

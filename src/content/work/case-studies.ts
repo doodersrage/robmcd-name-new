@@ -23,9 +23,9 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
   {
     slug: 'castcut',
     title: 'Castcut',
-    tagline: 'Local character films with ComfyUI. Cast → Look → Outfit → Day → Cut film.',
+    tagline: 'Local character films with ComfyUI. Cast → Outfit → Day → Scene → Cut.',
     description:
-      'MIT-licensed Next.js app for consistent characters, scenes, and short films locally with ComfyUI. Castcut 2.9 has talking clips with sound, Cast voices, narration, and an original score for each cut; Cast homes that keep marks, props, people, and a wardrobe; widescreen cuts with close-ups; review links; and an export to DaVinci Resolve, Premiere, or Final Cut. The classic prompt and image tools now ship separately as Prompt Studio, on a shared core package.',
+      'MIT-licensed Next.js app for consistent characters, scenes, and short films locally with ComfyUI. Castcut 3.2 takes a screenplay through Scenes, takes, and a storyboard to a finished cut: talking clips with Cast voices, narration, and an original score; finishing tools such as lip-sync, copy moves from a video, and relight; a Film Director page for the whole production; and an export to DaVinci Resolve, Premiere, or Final Cut. The classic prompt and image tools ship separately as Prompt Studio, on a shared core package.',
     href: SITE_LINKS.castcut,
     externalHref: SITE_LINKS.castcutGithub,
     linkLabel: 'Read the docs on robmcd.name',
@@ -43,13 +43,13 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         heading: 'The problem',
         body: [
           'ComfyUI excels at rendering, but character consistency still dies in CLIP paste, Discord pins, and PNG dumps. Switching FLUX ↔ SDXL ↔ Qwen silently breaks tag density and length limits. There is no shared Cast home, campaign structure, or film cut step — just more stills.',
-          'Castcut owns the film loop: character bible, Look and Outfit, Day stills/clips, optional Story, Gallery review, Cut film, and Save to Cast — with identity lock across Look / Outfit / Day / Story, handoff into ComfyUI or optional cloud engines, without replacing the graph editor or locking you into one vendor.',
+          'Castcut owns the film loop: character bible, Outfit, Day stills/clips, optional Story and Scene, Gallery review, Cut film, and Save to Cast — with identity lock across Outfit / Day / Story / Scene, handoff into ComfyUI or optional cloud engines, without replacing the graph editor or locking you into one vendor.',
         ],
       },
       {
         heading: 'What shipped',
         body: [
-          'Flagship loop: Cast → Look → Outfit → Day → (optional Story) → Gallery → Cut film. Play is Make (default); Studio is Control; Full is Build. Specialty tools sit under Extras. Film hub, essentials-first Cast create, featured Part archetypes, and Identity ready chrome. 25+ tool routes across Generate, Format, Refine, Compose, Image → Prompt, Inpaint/Outpaint, Character, Cast, Story, Video, Audio, 3D Mesh, Gallery, Variations, ControlNet, Workflow editor, Plugins, and Mobile Studio.',
+          'Flagship loop: Cast → Outfit → Day → (optional Story or Scene) → Gallery → Cut film; the old Look step is gone, and a Cast’s looks live on its page. Play is Make (default); Studio is Control; Full is Build. Specialty tools sit under Extras. Film hub, essentials-first Cast create, featured Part archetypes, and Identity ready chrome. 25+ tool routes across Generate, Format, Refine, Compose, Image → Prompt, Inpaint/Outpaint, Character, Cast, Story, Video, Audio, 3D Mesh, Gallery, Variations, ControlNet, Workflow editor, Plugins, and Mobile Studio.',
           'Castcut 2.2–2.3: identity lock across Look, Outfit, Day, and Story; a pose editor (joints, from a photo, My poses, pose packs) backed by a library of real reference poses; several looks per Cast with the kept outfit stored on the look; clothing and footwear pickers; one Quality preset (Fast / Balanced / Best) on Day and Outfit; a board-first Day with one slot sheet and one ⋯ menu per card. Day stills commonly run on Rapid AIO, Qwen Edit 2511, or Qwen-Image 2.1. Open in ComfyUI round-trips the exact graph.',
           'Castcut 2.4 gives the film sound. Put a line on a Day slot or Story scene and Animate makes a lip-synced talking clip with LTX-2.5; a reply line makes a two-person conversation in one shot. Cast voices are auditioned and kept on the Cast page. Places give each Cast one home and one workplace, so the bedroom, kitchen, and office are the same rooms in every still. Cut film keeps each clip’s speech, ducks the music under it, and can score the cut with an original instrumental from ACE-Step 1.5. Make it 30 s carries a short clip on to about 30 seconds in chained segments.',
           'Castcut 2.5 lets you direct the film: Make it 30 s takes your own beats and a spoken line per part, a Cast voice can come from your own recording, and a line can be said eleven ways (Whisper, Laughing, Nervous, Shouting, Sing-song, and more). Animate asks what should happen in the clip, Made with shows what each still came from, and Film, Studio, and More tools are three clear levels.',
@@ -57,11 +57,14 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
           'Castcut 2.7 adds One event: one line such as “a quiet afternoon reading at the beach” becomes consecutive moments from one fixed camera, each clip ending on the next still so the cut plays as one continuous video. Day clips default to LTX-2.5, talking clips no longer freeze an arm or leg mid-action, and Gender swap redraws a Cast bible picture as the other-gender version of the same scene. 2.7.3 brings a one-folder Docker setup, a pictures backup, and Gallery deletes that actually free their disk space.',
           'Castcut 2.8 makes a Cast portable and recoverable: Export bundle writes the Cast with every look’s plate, earlier plates, and films as one .tar to import on another install, each look keeps its last six plates to restore, and Cast home can generate a look’s plate itself. A replay whose source picture has gone from ComfyUI now says which one and how to get it back.',
           'Castcut 2.9 deepens the Cast home and the film. A Cast carries marks (glasses, tattoos, scars) that Day checks with the vision model and repairs on each still, props, the people in their life, pronunciations for the clip voice, a wardrobe, a likeness chart over time, and a printable reference sheet. Films can be widened to 16:9, cut in close-ups, narrated in the Cast’s voice, open with “Previously on”, and be shared on an expiring review link that takes comments pinned to a moment. A Fountain screenplay imports straight into Day, each card can render on its own engine, MiniMax-H3 joins LTX-2.5 and WAN as a clip engine, and Export for an editor writes an FCPXML timeline, an EDL, SRT captions, and the shots. A new install needs no secrets in its env file: the first admin is made on the sign-in page.',
-          'Next, unreleased: Outfit in 3D turns a try-on or a Wardrobe outfit into a textured model to turn around (TRELLIS.2 through ComfyUI), kept outfits go straight to the Wardrobe with a runway clip, a new look plate is measured against the Cast so it stays the same person, and the Gallery flags what needs a look — a missed pose, a clip that cuts or came out silent — with Redo these.',
-          'Optional Castcut nodes (Comfy Registry pack 1.1.0) run Best of two and isolate-on-white cut-outs inside one ComfyUI job. 40+ image targets remain (FLUX including Klein, Qwen, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX, and more). Desktop installers via Tauri — macOS .dmg, Windows .exe, Linux .deb preferred. Docker at ghcr.io/doodersrage/castcut. Narrative docs live here; operator reference stays on GitHub Pages.',
+          'Castcut 2.10–2.12 added finishing tools for any still or clip: Sharpen & smooth (SeedVR2 and RIFE), Copy moves from a video (Wan Animate 2), Lip-sync to a recording (InfiniteTalk, one or two people), Dance to music (Wan-Dancer), Relight, and Sketch over a still. A Cast’s places can come from a photo of a real room, and a built-in LLM (llama.cpp with a Qwen3-VL model) means LM Studio is optional. Cut grew into an editor: faces followed in vertical cuts, speed, reverse, and freeze frames, J and L cuts, lower thirds and a logo, a film look with shot matching, New take, Make longer, Generate a shot for missing B-roll, and Make a reel for a 15, 30, or 60 second vertical. Kept outfits go to the Wardrobe with a runway clip and a Turn around viewer (it replaced a 3D-model attempt that wasn’t presentable), and the Gallery’s Needs a look flags missed poses and clips that cut or came out silent, with Redo these.',
+          'Castcut 3.0 is about production. A screenplay (Fountain or plain text) imports into Script with who’s who, locations, and shot lists. Scene renders one shot exactly as you want it, keeping every take, and a run renders a script’s Scenes one take at a time with pause, resume, and cancel. Film Director shows the whole production on one page and what to do next. Every take records how it was made, Cut pins each shot to the take it was cut with, continuity findings from every check land in one list, and cuts gain versions that merge across devices, mute and solo, a loudness target, editable subtitles, a missing-media check with Relink, and a package to move a cut to another machine.',
+          'Castcut 3.0.1 was a validation release: a ten-minute film end to end, and timings on large projects. 3.1 adds locations — a script’s places resolve to locations with their own picture, and shots set there are checked against it — plus take review and compare. 3.2 adds search, a storyboard, and an animatic to see a film before rendering it, a sound-effects track, timed subtitles, Script on the phone, and longer clips whose parts each do their own beat while keeping the Cast’s face, outfit, and colour across the joins. The pose Director can now take its moves from motion capture or a video of your own.',
+          'Optional Castcut nodes (Comfy Registry pack 1.1.0) run Best of two and isolate-on-white cut-outs inside one ComfyUI job. 40+ image targets remain (FLUX including Klein, Qwen, Z-Image, Boogu, SDXL, Hunyuan, WAN / LTX, and more). Desktop installers via Tauri — macOS .dmg, Windows .exe, Linux .deb (preferred) or .AppImage. Docker at ghcr.io/doodersrage/castcut. Narrative docs live here; operator reference stays on GitHub Pages.',
         ],
         links: [
           { label: 'Day, poses, and looks', href: '/castcut/play/day/' },
+          { label: 'Castcut docs on GitHub Pages', href: 'https://doodersrage.github.io/castcut/', external: true },
           { label: 'Running in my homelab', href: SITE_LINKS.castcutLive, external: true, note: 'castcut.robmcd.name' },
           { label: 'Changelog', href: `${SITE_LINKS.castcutGithub}/blob/main/CHANGELOG.md`, external: true },
           { label: 'Castcut nodes', href: '/castcut/integration/castcut-nodes/' },
@@ -71,8 +74,8 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'Prompt Studio split out',
         body: [
-          'Castcut started life as Prompt Studio, a general prompt and image toolbox. As the film loop took over, the classic tools — Generate, Prompt Editor, Variations, Format, Lint, the Workflow editor, plugins, and the rest — moved into their own app. Castcut now opens on Film and lists only the film pages; Prompt Studio keeps the toolbox without film copy or Play links.',
-          'Both apps run on one shared core published to npm as prompt-studio-core (the ComfyUI pipeline, Gallery, settings, and app shell). A boundary test fails the build on any new import from shared code into Castcut’s Play layer, so the split stays clean.',
+          'Castcut started life as Prompt Studio, a general prompt and image toolbox. As the film loop took over, the classic tools — Generate, Prompt Editor, Variations, Format, Lint, the Workflow editor, plugins, and the rest — moved into their own app. Castcut now opens on Film and lists only the film pages; Prompt Studio keeps the toolbox without film copy or Play links. In October 2026 the tools’ own pages, API routes, and about 180 components moved into the Prompt Studio repository with their tests, so Castcut no longer carries them.',
+          'Both apps run on one shared core published to npm as prompt-studio-core 3 (the ComfyUI pipeline, Gallery, settings, and app shell). A boundary test fails the build on any new import from shared code into Castcut’s Play layer, so the split stays clean.',
         ],
         links: [
           { label: 'Prompt Studio write-up', href: SITE_LINKS.promptStudioApp },
@@ -82,7 +85,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'Outcome',
         body: [
-          'Open-source and usable today (Castcut 2.9). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
+          'Open-source and usable today (Castcut 3.2). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
         ],
       },
     ],
@@ -92,7 +95,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'ProbeHarbor',
     tagline: 'Know before pipes freeze or a space floods. Hosted alerts for hardware you already own.',
     description:
-      'Open monitoring at probeharbor.dev (formerly ThermalTrace) for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), an ESP32 freeze sensor flashed from the browser with no IDE, freeze, heat, and flood alerts, a public pipe-freeze forecast with free freeze-night emails, household sharing, Android and iOS apps, and Free / Member / Pro / Portfolio plans.',
+      'Open monitoring at probeharbor.dev (formerly ThermalTrace) for garages, workshops, attics, crawlspaces, and shops. Push or pull sensors (ESP32, Pico W, Arduino, and more), an ESP32 freeze sensor flashed from the browser with no IDE, freeze, heat, and flood alerts, a public pipe-freeze forecast with free freeze-night emails, door history, household sharing, Android and iOS apps, a site in five languages, and Free / Member / Pro / Portfolio plans.',
     externalHref: SITE_LINKS.probeHarbor,
     linkLabel: 'Open probeharbor.dev',
     stack: [
@@ -129,16 +132,18 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
           'No probe yet? The public pipe-freeze forecast now takes a US ZIP and emails before freezing nights — the first freezing night of a cold spell and every night at 20°F or colder — with the protective steps and a link to the five-night forecast. Double opt-in and one-click unsubscribe; no hardware or account needed.',
           'Set a freeze threshold and enable wet flood/leak contacts. Heat alerts sit beside freeze. Free and Member cover email plus Discord, Telegram, Slack, Teams, ntfy, and Pushover; Pro adds SMS, WhatsApp, browser push, HMAC webhooks, and official NWS freeze/cold alerts. A forecast-backed time-to-freeze clock shows hours until risk. “I’m on it” stops repeat freeze alerts until the space recovers. Feeds that stay silent are marked offline.',
           'Alerts now say when things recover and close themselves when the condition clears, catch a probe stuck on one value, and warn when a device loses power. A freeze window explains why a night is at risk, rules can fire on any of several conditions, and a sensor can be replaced without losing its history. Before buying anything, the payload checker shows whether ProbeHarbor will understand a sensor’s JSON, and cold-snap replay runs your rules against a past cold spell.',
+          'Doors now keep a history of their own: each opening is one row with how long it lasted and how much the temperature and humidity moved while it was open, shaded on the charts and exportable as CSV, and a “door open longer than N minutes” rule waits that long and clears when it closes. Firmware 1.2.3 posts the moment a door changes. Alerts follow each recipient’s °C or °F, say how old a reading is, send one recap when quiet hours end, and a snooze never mutes a freeze alert. Long history ranges read hourly rollups, so a year of readings charts in one call.',
         ],
       },
       {
         heading: 'Core product components',
         body: [
-          'Web app & ingest edge — Astro 6 on Cloudflare Workers serves the marketing site, authenticated dashboard, and ingest APIs close to visitors. Live job and ingest health is published on the product’s system-status page rather than a marketing uptime claim.',
+          'Web app & ingest edge — Astro 6 on Cloudflare Workers serves the marketing site, authenticated dashboard, and ingest APIs close to visitors. Live job and ingest health is published on the product’s system-status page rather than a marketing uptime claim. Share, invite, and status-page links are stored hashed and shown once, webhooks are signed with a timestamp against replays, ingest is rate limited, and deploys are blocked by failing accessibility (axe and Lighthouse) checks.',
           'Dashboard Overview — Simple or Insights mode: 7-day probe curves, freeze hours and degree-hours, indoor−outdoor ΔT, probe spread, condensation risk, feed health, plus cards for doors, power, motion, battery/RSSI, and air quality.',
           'Devices & feeds — Push devices with API keys, pull HTTPS JSON feeds, MQTT bridge so Mosquitto can stay on the LAN, Home Assistant recipes, and Nest/Ecobee thermostat hooks (Pro) for outdoor/context readings.',
           'Alerts & evidence — Threshold freeze and automatic flood/leak alerts on every plan. Member adds outdoor forecast warnings; Pro adds NWS alerts, richer channels, Grafana/Prometheus metrics keys, and a printable claims evidence pack with matching readings and alert CSVs for a date range you choose.',
           'Households & portfolios — Invite family (including read-only viewers), publish a free family live share link, and scale to Portfolio / property-manager logins for multi-unit sites.',
+          'Languages — the marketing site, dashboard, sign-in, emails, and alerts are in English, Spanish, French, German, and Brazilian Portuguese.',
           'Plans — Free forever with 7-day history; Member ($4/mo), Pro ($10/mo), and Portfolio (~$29/mo) unlock longer retention, CSV export (Member+), and higher alert/automation ceilings. See pricing for current amounts; annual billing is discounted versus monthly.',
         ],
         links: [
@@ -236,7 +241,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'Shelf',
     tagline: 'A self-hosted personal library: books, e-books, audiobooks, and the readers who share them.',
     description:
-      'AGPL-licensed library server on .NET 10 and Blazor. Paper books, e-books, and audiobooks as one book each, with a reading log, quotes, loans, and yearly goals; a full-screen page-turning reader, an audiobook player, Kobo and KOReader sync, and books found and fetched the way Sonarr fetches shows; shelves read from a photo of the spines, nested places, a trash and undo, and a compact view for 70,000 books. Shelf 2.14, one Docker container, SQLite inside.',
+      'AGPL-licensed library server on .NET 10 and Blazor. Paper books, e-books, and audiobooks as one book each, with a reading log, quotes, loans, and yearly goals; a full-screen page-turning reader, an audiobook player, Kobo and KOReader sync, and books found and fetched the way Sonarr fetches shows; fields of your own and Calibre’s other formats, playlists, casting, and household libraries; shelves read from a photo of the spines, a trash and undo, and a compact view for 70,000 books. Shelf 2.22, one Docker container, SQLite inside (PostgreSQL if wanted).',
     externalHref: SITE_LINKS.shelfDocs,
     linkLabel: 'Read the docs',
     stack: ['.NET 10', 'ASP.NET Core', 'Blazor', 'EF Core', 'SQLite', 'epub.js', '.NET Aspire', 'Docker', 'Playwright'],
@@ -246,7 +251,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         body: [
           'Shelf keeps a household’s books in one place: the copies on paper, the e-books, and the audiobooks, one book at a time. A paperback, its EPUB, and its audiobook are the same book with one reading log, and Continue in the e-book or Continue in the audiobook carries the place across. Each reader signs in to a shelf of their own; no reader sees another’s books, notes, or reading log unless they open their shelf, and even then only the titles.',
           'Good self-hosted book apps already exist, and each is built around one kind of book: Calibre-Web for e-books, Audiobookshelf for audiobooks, Goodreads and StoryGraph for the reading log on someone else’s server. Shelf is for a library that is all of these at once, on your own hardware.',
-          'It started in October 2026 as a first project back on current .NET and grew into a full self-hosted library. Shelf 2.0 reorganized it around a Home page that leads with the book you were last in, a library led by covers, and Insights that tell the year’s story; 2.1 through 2.14 followed within days. It speaks English, Spanish, French, and German.',
+          'It started in October 2026 as a first project back on current .NET and grew into a full self-hosted library. Shelf 2.0 reorganized it around a Home page that leads with the book you were last in, a library led by covers, and Insights that tell the year’s story; 2.1 through 2.22 followed within a month. It speaks English, Spanish, French, and German.',
         ],
         links: [
           { label: 'Documentation', href: SITE_LINKS.shelfDocs, external: true, note: 'doodersrage.github.io/shelf' },
@@ -262,6 +267,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
           'Tidy up makes one author of names written several ways and takes series out of titles. Insights cover goals for books, pages, and hours, a year of the days you read and listened, milestones, and a picture of the year to share.',
           'Places nest as rooms, bookcases, shelves, and boxes, each with a QR label, and a move is packed and unpacked by scanning. A scanning run reads barcodes one after another, checks a shelf for what is missing, or reads the titles off a photo of the spines with Tesseract and matches them to the catalog. Deleted books wait 30 days in a trash, a change to many books is undone as one, and every book keeps a year of its own history. A compact table holds every match and draws only the lines in view, and Go to (Ctrl K) reaches any page, book, author, series, or place from the keyboard.',
           'Shelf 2.8 through 2.12 grew a reading life around the catalog: rereads that keep every read, a daily reading journal, links between editions and the books that answer them, goals of your own, an Up next queue, Reading DNA, a calendar, a reference desk with citations, rules that act on books as they are added or finished, and plain-language questions answered from your own shelf.',
+          'Shelf 2.20 through 2.22 took the best of Calibre: fields of your own (text, number, date, or yes or no) that search, sort, and filter the API, with a Calibre import that brings its custom columns across; other formats kept beside the main e-book, converted by Calibre if you like; downloaded EPUBs that carry Shelf’s details; and a download of the whole library laid out as Calibre lays out its folders.',
         ],
         links: [{ label: 'The library', href: `${SITE_LINKS.shelfDocs}library.html`, external: true }],
       },
@@ -270,6 +276,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         body: [
           'EPUBs open in a page-turning reader built on epub.js, as Audiobookshelf’s does: tap, swipe, or use the keys across chapters, with the place kept to the word (an EPUB CFI) so it opens where you stopped on any device. The reader fills the window, with a tap in the middle bringing back the bars, a contents list by the book’s own chapter names, and text settings as taps that come up from the bottom on a phone. PDFs, comics (manga too), and Kindle files read in the browser as well, with highlights, notes, a dictionary, read aloud, a recap when you come back, search inside every book, Tesseract OCR for scanned PDFs, and offline reading.',
           'Audiobooks — one file or a folder of tracks — play as one book with chapters, bookmarks, speeds from 0.5× to 3×, a sleep timer, lock-screen controls, and a mini player that keeps going while you browse. Read-along marks each word of the e-book as the audiobook reads it, podcasts play in the same player, and Audiobookshelf’s phone apps sign in to Shelf as to their own server, with downloads, Android Auto, and CarPlay.',
+          'From Audiobookshelf too: playlists that mix audiobooks and podcast episodes, a book shared by a secret link or as a feed for any podcast app, Play on another device to a Chromecast or AirPlay through the browser, listening sessions with what played where and for how long, and recordings downloaded with the book’s details in their files. Each reader keeps a time zone, so an evening’s reading counts on that evening.',
         ],
         links: [
           { label: 'Reading', href: `${SITE_LINKS.shelfDocs}reading.html`, external: true },
@@ -279,7 +286,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'Lending and sharing',
         body: [
-          'A book can be lent to another reader, who reads or listens with their own place and highlights while the owner’s stay private. Loans have due dates and reminders, readers can open their shelf so others can ask to borrow, children get accounts of their own, and book clubs talk in one place. Two shelves on different servers can trade e-books and audiobooks with a key, keeping the furthest place.',
+          'A book can be lent to another reader, who reads or listens with their own place and highlights while the owner’s stay private. Loans have due dates and reminders, readers can open their shelf so others can ask to borrow, children get accounts of their own, and book clubs talk in one place. Household libraries share a collection with chosen readers, who read and listen as if lent, with downloads and books tagged explicit allowed per member. Two shelves on different servers can trade e-books and audiobooks with a key, keeping the furthest place.',
           'Notifications go to a phone or computer, or through ntfy or Gotify, when a book is lent or asked for, a loan is due, a series has a new book, or a club talks; webhooks reach Home Assistant, Discord, and Slack.',
         ],
         links: [
@@ -307,6 +314,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         body: [
           'One docker run with a single volume, on amd64 or arm64, so it runs on a Raspberry Pi or a NAS; the first account becomes the admin. Templates cover Unraid, TrueNAS, and CasaOS, and the install guide covers running from source, updating, and putting Shelf on the internet behind a reverse proxy.',
           'Sign-in covers passwords, authenticator codes, passkeys, and OpenID Connect providers such as Authentik, Authelia, Keycloak, or Pocket ID, with an activity log and API tokens for scripts and Home Assistant. Shelf 2.4.1 was a security sweep: addresses readers hand the server can’t reach the local network or a cloud metadata service, reset links only go to the shelf’s own address, and forwarded headers are trusted only from known proxies. Every shelf backs itself up nightly, with copies to a second folder or S3-compatible storage; each backup is read back and proved before it is sent, one book can be brought back from it alone, and a weekly check reads every stored file. Server health shows admins what needs them first.',
+          'Shelf 2.15 added Cloudflare Turnstile on sign-in, an admin page in tabs, and account emails in the shelf’s own colours. 2.18 through 2.22 were a reliability and security run: a proved backup before every update, a merge made by mistake that comes apart, restores that bring back collections and loans, single-use two-step codes and passkey challenges, common passwords refused, sign-in that tells no one who has an account, and a recent sign-in required before adding a passkey, a token, or a new email address.',
         ],
         links: [
           { label: 'Install', href: `${SITE_LINKS.shelfDocs}install.html`, external: true },
@@ -381,7 +389,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'What it is',
         body: [
-          'Prompt Studio is the general-purpose half of what used to be one app. When Castcut narrowed to character films (Cast → Look → Outfit → Day → Cut film), the prompt and image tools that did not belong in a film loop moved here, so people who want a ComfyUI toolbox get one without the film pages.',
+          'Prompt Studio is the general-purpose half of what used to be one app. When Castcut narrowed to character films (Cast → Outfit → Day → Cut film), the prompt and image tools that did not belong in a film loop moved here, so people who want a ComfyUI toolbox get one without the film pages.',
           'It picks the workflow, sampler, and size for the model you choose and your GPU, so you spend your time on pictures rather than graphs. Heal & ready checks ComfyUI, maps your models, enables the system workflows, and installs missing node packs.',
         ],
         links: [
@@ -399,7 +407,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'How it is built',
         body: [
-          'The shared code — the ComfyUI pipeline, Gallery, settings, app shell, and the tools — is published on npm as prompt-studio-core and developed in the Castcut repository. Prompt Studio is the thin app around it: generated routes, its own layout, configuration, and public assets. A daily workflow installs a newer core when one is published, regenerates the routes, builds, and opens a pull request.',
+          'Prompt Studio owns its tools: the pages, the API routes only they call, and about 180 components, hooks, and modules moved here from Castcut in October 2026, with their unit and Playwright tests. The shared code — the ComfyUI pipeline, Gallery, settings, and app shell — is published on npm as prompt-studio-core 3 and developed in the Castcut repository. A daily workflow installs a newer core when one is published, regenerates the routes, builds, and opens a pull request.',
         ],
         links: [{ label: 'prompt-studio-core on npm', href: SITE_LINKS.promptStudioCore, external: true }],
       },

@@ -32,7 +32,7 @@ const SHIPPED = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI',
     description:
-      'Cast → Look → Outfit → Day → Cut film. Castcut 2.9: talking clips, narration, and a score for every cut, Cast homes that keep marks and a wardrobe, review links, and export to Resolve, Premiere, or Final Cut. The classic tools now ship as Prompt Studio.',
+      'Cast → Outfit → Day → Scene → Cut film. Castcut 3.2: screenplay import, Scenes and takes, a storyboard, talking clips, narration, and a score for every cut, and export to Resolve, Premiere, or Final Cut. The classic tools now ship as Prompt Studio.',
     href: SITE_LINKS.castcut,
     linkLabel: 'Read the docs',
   },

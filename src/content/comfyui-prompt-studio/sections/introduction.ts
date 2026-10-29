@@ -9,7 +9,7 @@ export const introductionPages = [
     1,
     [
       ...p(
-        'Castcut is for creators who want consistent characters, scenes, images, and short films locally with ComfyUI — not another CLIP paste workflow. Flagship loop: Cast → Look → Outfit → Day → (optional Story) → Gallery → Cut film → Save to Cast. Play is Make (default); Studio is Control; Full is Build.',
+        'Castcut is for creators who want consistent characters, scenes, images, and short films locally with ComfyUI — not another CLIP paste workflow. Flagship loop: Cast → Outfit → Day → (optional Story or Scene) → Gallery → Cut film → Save to Cast. Play is Make (default); Studio is Control; Full is Build.',
         'The app is built with React, TypeScript, and Next.js on Node.js 22+. A server exposes HTTP APIs consumed by the UI, ComfyUI custom nodes, desktop (Tauri) builds, and headless scripts. Browser state persists in IndexedDB (Dexie); server data lives in SQLite with configurable export paths.',
         'Primary integration is ComfyUI for generate, Lightning, and specialty graphs. Optional Diffusers and cloud engines (Fal, Replicate, ChatGPT stills, Gemini, Grok, Runway) stay available; near-term product focus is reliability, first-run UX, and character consistency rather than expanding that matrix.',
       ),
@@ -17,7 +17,7 @@ export const introductionPages = [
       {
         type: 'ul',
         items: [
-          'Film loop: Cast → Look → Outfit → Day → Cut film; talking clips, Cast voices, Places, and film scores since 2.4; Preview the cut, trims, re-cuts, and room sound in 2.6; One event in 2.7; Cast bundles in 2.8; marks, narration, widescreen cuts, review links, and editor export in 2.9',
+          'Film loop: Cast → Outfit → Day → Scene → Cut film; talking clips, Cast voices, Places, and film scores since 2.4; Preview the cut, trims, re-cuts, and room sound in 2.6; One event in 2.7; Cast bundles in 2.8; marks, narration, widescreen cuts, review links, and editor export in 2.9; finishing tools and a fuller Cut in 2.10–2.12; Script, Scenes, takes, and Film Director in 3.0; locations in 3.1; storyboard, sound effects, and longer clips in 3.2',
           '40+ ComfyUI image model targets with architecture-specific scaffolds',
           'Play campaigns, Film hub, optional Story, and Mobile Studio for character IP workflows',
           'Classic tools (Generate, Format, Lint, Variations, Workflow editor) now ship separately as Prompt Studio on the shared prompt-studio-core package',
@@ -111,7 +111,7 @@ export const introductionPages = [
         type: 'ul',
         items: [
           'Generate (`/`) → Format (`/format`) → Lint (`/lint`) → Send to ComfyUI → Gallery review',
-          'Film create Cast → Look → Outfit → Day cut → optional Story beats → Continue → Cut film → Save to Cast',
+          'Film create Cast → Outfit → Day cut → optional Story beats → Continue → Cut film → Save to Cast',
           'Mobile Studio plate capture → Compose isolate on white → Character / Cast identity lock',
           'Image → Prompt (vision LLM) → Refine → Variations matrix → Compare in Gallery',
           'Settings Heal & ready → cloud engine keys → ComfyUI asset downloads → queue',

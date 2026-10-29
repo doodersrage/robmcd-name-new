@@ -6,31 +6,31 @@ export type NowItem = {
 
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
-  updated: '2026-10-14',
-  headline: 'Castcut 2.9, a browser flasher for ProbeHarbor, Shelf 2.14, and PrintBridge.',
+  updated: '2026-10-29',
+  headline: 'Castcut 3.2, door history for ProbeHarbor, Shelf 2.22, and PrintBridge.',
   items: [
     {
-      label: 'Castcut 2.9',
+      label: 'Castcut 3.2',
       detail:
-        'Cast homes keep marks, props, people, and a wardrobe, checked and repaired on every still; films get narration, close-ups, widescreen, “Previously on”, and expiring review links; a Fountain script imports into Day; and Export for an editor writes an FCPXML timeline for Resolve, Premiere, or Final Cut. Next: outfits in 3D. Docs on this domain; running at castcut.robmcd.name.',
+        'From screenplay to cut: import a script, render Scenes one take at a time, see the film as a storyboard and animatic, then cut it with sound effects, timed subtitles, and a score. Film Director shows the whole production on one page; finishing tools lip-sync, copy moves from a video, relight, and sharpen any still or clip. Docs on this domain; running at castcut.robmcd.name.',
       href: '/castcut/play/day/',
     },
     {
       label: 'Prompt Studio',
       detail:
-        'The classic prompt and image tools split out of Castcut into their own app, on the shared prompt-studio-core npm package.',
+        'The classic prompt and image tools now live entirely in their own app — pages, routes, and tests moved out of Castcut — on prompt-studio-core 3 from npm.',
       href: '/work/prompt-studio/',
     },
     {
       label: 'ProbeHarbor',
       detail:
-        'Flash an ESP32 freeze sensor straight from the browser at probeharbor.dev/flash — DS18B20, DHT22, I²C air sensors, leak, door, and battery, no IDE. Alerts now say when things recover, catch stuck probes and power loss, and a sensor can be replaced without losing its history.',
+        'Door history: every opening with how long it lasted and what the temperature did, shaded on the charts, plus a “door open longer than N minutes” alert. The site now speaks Spanish, French, German, and Portuguese, alerts follow your °C or °F, and a round of security work hashes share and invite links. ESP32 sensors still flash straight from the browser at probeharbor.dev/flash.',
       href: '/work/probeharbor/',
     },
     {
       label: 'Shelf',
       detail:
-        'Shelf 2.14: shelves read from a photo of the spines, nested places and moving house by scanning, a trash and undo, rereads and a reading journal, Go to (Ctrl K), and a compact table for 70,000 books. Docs at doodersrage.github.io/shelf.',
+        'Shelf 2.22: fields of your own with Calibre’s custom columns imported, other formats beside each e-book, playlists, casting to Chromecast or AirPlay, household libraries, and a proved backup before every update. Docs at doodersrage.github.io/shelf.',
       href: '/work/shelf/',
     },
     {
