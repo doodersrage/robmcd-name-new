@@ -1,4 +1,5 @@
 import { SITE_LINKS } from '@/lib/site'
+import { VERSIONS } from '@/lib/versions'
 
 export type WorkSectionLink = {
   label: string
@@ -25,7 +26,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI. Cast → Outfit → Day → Scene → Cut.',
     description:
-      'MIT-licensed Next.js app for consistent characters, scenes, and short films locally with ComfyUI. Castcut 3.2 takes a screenplay through Scenes, takes, and a storyboard to a finished cut: talking clips with Cast voices, narration, and an original score; finishing tools such as lip-sync, copy moves from a video, and relight; a Film Director page for the whole production; and an export to DaVinci Resolve, Premiere, or Final Cut. The classic prompt and image tools ship separately as Prompt Studio, on a shared core package.',
+      `MIT-licensed Next.js app for consistent characters, scenes, and short films locally with ComfyUI. Castcut ${VERSIONS.castcut} takes a screenplay through Scenes, takes, and a storyboard to a finished cut: talking clips with Cast voices, narration, and an original score; finishing tools such as lip-sync, copy moves from a video, and relight; a Film Director page for the whole production; and an export to DaVinci Resolve, Premiere, or Final Cut. The classic prompt and image tools ship separately as Prompt Studio, on a shared core package.`,
     href: SITE_LINKS.castcut,
     externalHref: SITE_LINKS.castcutGithub,
     linkLabel: 'Read the docs on robmcd.name',
@@ -75,7 +76,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         heading: 'Prompt Studio split out',
         body: [
           'Castcut started life as Prompt Studio, a general prompt and image toolbox. As the film loop took over, the classic tools — Generate, Prompt Editor, Variations, Format, Lint, the Workflow editor, plugins, and the rest — moved into their own app. Castcut now opens on Film and lists only the film pages; Prompt Studio keeps the toolbox without film copy or Play links. In October 2026 the tools’ own pages, API routes, and about 180 components moved into the Prompt Studio repository with their tests, so Castcut no longer carries them.',
-          'Both apps run on one shared core published to npm as prompt-studio-core 3 (the ComfyUI pipeline, Gallery, settings, and app shell). A boundary test fails the build on any new import from shared code into Castcut’s Play layer, so the split stays clean.',
+          `Both apps run on one shared core published to npm as prompt-studio-core ${VERSIONS.promptStudioCore} (the ComfyUI pipeline, Gallery, settings, and app shell). A boundary test fails the build on any new import from shared code into Castcut’s Play layer, so the split stays clean.`,
         ],
         links: [
           { label: 'Prompt Studio write-up', href: SITE_LINKS.promptStudioApp },
@@ -85,7 +86,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'Outcome',
         body: [
-          'Open-source and usable today (Castcut 3.2). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.',
+          `Open-source and usable today (Castcut ${VERSIONS.castcut}). Useful if you care about local AI character filmmaking on ComfyUI, Next.js tooling beside a render farm, or how a film loop sits between an LLM and a queue without owning one vendor graph.`,
         ],
       },
     ],
@@ -241,7 +242,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'Shelf',
     tagline: 'A self-hosted personal library: books, e-books, audiobooks, and the readers who share them.',
     description:
-      'AGPL-licensed library server on .NET 10 and Blazor. Paper books, e-books, and audiobooks as one book each, with a reading log, quotes, loans, and yearly goals; a full-screen page-turning reader, an audiobook player, Kobo and KOReader sync, and books found and fetched the way Sonarr fetches shows; fields of your own and Calibre’s other formats, playlists, casting, and household libraries; shelves read from a photo of the spines, a trash and undo, and a compact view for 70,000 books. Shelf 2.22, one Docker container, SQLite inside (PostgreSQL if wanted).',
+      `AGPL-licensed library server on .NET 10 and Blazor. Paper books, e-books, and audiobooks as one book each, with a reading log, quotes, loans, and yearly goals; a full-screen page-turning reader, an audiobook player, Kobo and KOReader sync, and books found and fetched the way Sonarr fetches shows; fields of your own and Calibre’s other formats, playlists, casting, and household libraries; shelves read from a photo of the spines, a trash and undo, and a compact view for 70,000 books. Shelf ${VERSIONS.shelf}, one Docker container, SQLite inside (PostgreSQL if wanted).`,
     externalHref: SITE_LINKS.shelfDocs,
     linkLabel: 'Read the docs',
     stack: ['.NET 10', 'ASP.NET Core', 'Blazor', 'EF Core', 'SQLite', 'epub.js', '.NET Aspire', 'Docker', 'Playwright'],
@@ -338,7 +339,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     title: 'PrintBridge',
     tagline: 'Drop in a model, get a print. A self-hosted slicer and print host for the Ender-3 V3 SE.',
     description:
-      'A small self-hosted web app for a Creality Ender-3 V3 SE. It takes a 3MF, STL, or OBJ, slices it with PrusaSlicer on a built-in V3 SE profile, and sends it to the printer through a Creality Wi-Fi Box, OctoPrint, or Moonraker — with printer controls, spool tracking, calibration prints, and Home Assistant over MQTT. PrintBridge 0.3, one Docker container.',
+      `A small self-hosted web app for a Creality Ender-3 V3 SE. It takes a 3MF, STL, or OBJ, slices it with PrusaSlicer on a built-in V3 SE profile, and sends it to the printer through a Creality Wi-Fi Box, OctoPrint, or Moonraker — with printer controls, spool tracking, calibration prints, and Home Assistant over MQTT. PrintBridge ${VERSIONS.printBridge}, one Docker container.`,
     externalHref: SITE_LINKS.printBridgeGithub,
     linkLabel: 'Source on GitHub',
     stack: ['Python', 'FastAPI', 'PrusaSlicer', 'MQTT', 'Docker', 'Playwright'],
@@ -407,7 +408,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
       {
         heading: 'How it is built',
         body: [
-          'Prompt Studio owns its tools: the pages, the API routes only they call, and about 180 components, hooks, and modules moved here from Castcut in October 2026, with their unit and Playwright tests. The shared code — the ComfyUI pipeline, Gallery, settings, and app shell — is published on npm as prompt-studio-core 3 and developed in the Castcut repository. A daily workflow installs a newer core when one is published, regenerates the routes, builds, and opens a pull request.',
+          `Prompt Studio owns its tools: the pages, the API routes only they call, and about 180 components, hooks, and modules moved here from Castcut in October 2026, with their unit and Playwright tests. The shared code — the ComfyUI pipeline, Gallery, settings, and app shell — is published on npm as prompt-studio-core ${VERSIONS.promptStudioCore} and developed in the Castcut repository. A daily workflow installs a newer core when one is published, regenerates the routes, builds, and opens a pull request.`,
         ],
         links: [{ label: 'prompt-studio-core on npm', href: SITE_LINKS.promptStudioCore, external: true }],
       },
@@ -464,7 +465,7 @@ export const WORK_REPO_HIGHLIGHTS: WorkRepoHighlight[] = [
   {
     name: 'wallhaven-plasma-6-plugin',
     blurb:
-      'KDE Plasma 6 wallpaper plugin for wallhaven.cc. Search, slideshow, multi-monitor, KRunner, D-Bus.',
+      'KDE Plasma 6 wallpaper plugin for wallhaven.cc. Search, slideshow, multi-monitor, Ken Burns and parallax motion, lock-screen sync, KRunner, and a D-Bus helper; the API key stays in KWallet.',
     href: 'https://github.com/doodersrage/wallhaven-plasma-6-plugin',
   },
   {

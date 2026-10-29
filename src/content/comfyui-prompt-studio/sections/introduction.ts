@@ -67,7 +67,7 @@ export const introductionPages = [
   page(
     ['introduction', 'architecture'],
     'Architecture overview',
-    'Frontend routes, IndexedDB + SQLite persistence, ComfyUI bridge, cloud engines, and plugin hooks.',
+    'Routes, IndexedDB + SQLite persistence, the ComfyUI bridge, and how a take gets from a plan to a cut.',
     'Introduction',
     3,
     [
@@ -79,11 +79,11 @@ export const introductionPages = [
       {
         type: 'ol',
         items: [
-          'User edits prompt in a tool page (or vision LLM writes one via Image → Prompt)',
-          'Server validates against model family limits, lint rules, and quality profile (Draft/Final/Max)',
-          'Queue submission routes to ComfyUI, Diffusers, or a cloud engine (Image 1 becomes img2img when attached)',
-          'Workflow takeover pushes live text into ComfyUI graphs at render time when using local paths',
-          'Outputs indexed in gallery with embeddings for semantic search, Cast looks, and review ratings',
+          'A Day slot, Story scene, or Scene shot is planned — setting, beat, pose, camera, clothing, and the Cast’s references',
+          'The server builds the ComfyUI graph for the chosen engine (Edit 2511, Rapid AIO, Qwen-Image 2.1, or a clip engine) and queues it',
+          'The finished render lands in the Gallery with its graph, seed, and prompt stored, so it can replay exactly',
+          'Checks run on it — pose, face, marks, outfit, and place — and a miss can redo it on a new seed',
+          'You keep the best take; Cut plays kept takes and pins each shot to the take it was cut with',
         ],
       },
       { type: 'interactive-slot' },
@@ -92,7 +92,7 @@ export const introductionPages = [
         items: [{ label: 'Full architecture doc', href: `${GH}/blob/main/docs/architecture.md`, external: true }],
       },
     ],
-    { interactive: 'workflow-pipeline', related: ['models/model-families', 'integration/workflow-takeover'] },
+    { interactive: 'workflow-pipeline', related: ['play/scene', 'integration/castcut-nodes'] },
   ),
 
   page(
@@ -119,6 +119,6 @@ export const introductionPages = [
       },
       { type: 'interactive-slot' },
     ],
-    { interactive: 'tool-routes', related: ['play/first-film', 'play/script', 'gallery/gallery-overview'] },
+    { interactive: 'tool-routes', related: ['play/first-film', 'play/script', 'play/cut'] },
   ),
 ]

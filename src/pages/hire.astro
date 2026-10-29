@@ -4,6 +4,7 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { SITE_LINKS, absolutePageUrl } from '@/lib/site'
 import { breadcrumbSchema, personSchema } from '@/lib/seo'
+import { VERSIONS } from '@/lib/versions'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -61,7 +62,7 @@ const proof = [
   },
   {
     title: 'Castcut open and documented',
-    body: 'Local ComfyUI film loop (Castcut 3.2) with docs on this domain and operator reference on GitHub Pages. Its classic tools ship separately as Prompt Studio on a shared npm core.',
+    body: `Local ComfyUI film loop (Castcut ${VERSIONS.castcut}) with docs on this domain and operator reference on GitHub Pages. Its classic tools ship separately as Prompt Studio on a shared npm core.`,
     href: SITE_LINKS.castcut,
   },
   {

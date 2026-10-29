@@ -1,3 +1,4 @@
+import { RELEASES as PRODUCT_RELEASES, VERSIONS } from '@/lib/versions'
 import type { DocBlock, DocPage, DocSection } from './types'
 
 export const GH = 'https://github.com/doodersrage/castcut'
@@ -7,7 +8,9 @@ export const DOCS_SITE = 'https://doodersrage.github.io/castcut'
 export const RELEASES = `${GH}/releases`
 export const DOCKER_IMAGE = 'ghcr.io/doodersrage/castcut:latest'
 /** Current Castcut release mentioned on this site’s hub copy. */
-export const APP_VERSION = '3.2.0'
+export const APP_VERSION = PRODUCT_RELEASES.castcut
+/** Castcut release as the site shows it ("3.2"). */
+export const CASTCUT_VERSION = VERSIONS.castcut
 export const DOCS_BASE_PATH = '/castcut'
 /** Legacy paths — middleware redirects both to DOCS_BASE_PATH */
 export const LEGACY_DOCS_BASE_PATH = '/comfyui-prompt-studio'
@@ -21,14 +24,6 @@ const SECTION_ORDER = [
   'Introduction',
   'Getting started',
   'Film',
-  'Generate',
-  'Format & lint',
-  'Character',
-  'Image tools',
-  'Media',
-  'Studio',
-  'Gallery',
-  'Models',
   'Integration',
 ]
 

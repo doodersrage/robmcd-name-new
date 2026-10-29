@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "deploy": "astro build && wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "versions:sync": "node scripts/sync-versions.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.0",

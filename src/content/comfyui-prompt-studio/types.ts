@@ -1,14 +1,4 @@
-export type DocInteractive =
-  | 'workspace-modes'
-  | 'model-families'
-  | 'quality-profiles'
-  | 'workflow-pipeline'
-  | 'prompt-detail'
-  | 'tool-routes'
-  | 'gallery-review'
-  | 'api-endpoint'
-  | 'sales-pitch'
-  | 'case-study'
+export type DocInteractive = 'workspace-modes' | 'workflow-pipeline' | 'tool-routes' | 'sales-pitch'
 
 export type DocBlock =
   | { type: 'p'; text: string }

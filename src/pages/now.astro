@@ -4,11 +4,12 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { NOW } from '@/content/now'
 import { breadcrumbSchema } from '@/lib/seo'
+import { VERSIONS } from '@/lib/versions'
 ---
 
 <BaseLayout
   title="Now"
-  description={`What Robert McDowell is building as of ${NOW.updated} — Castcut 3.2, ProbeHarbor, Shelf, PrintBridge, and updates on robmcd.name.`}
+  description={`What Robert McDowell is building as of ${NOW.updated} — Castcut ${VERSIONS.castcut}, ProbeHarbor, Shelf, PrintBridge, and updates on robmcd.name.`}
   canonical="/now"
   jsonLd={{
     '@context': 'https://schema.org',

@@ -1,11 +1,11 @@
 'use client'
 
 const STEPS = [
-  { label: 'Edit prompt', detail: 'Generate, Format, or Character tool' },
-  { label: 'Validate', detail: 'Lint + model family limits' },
-  { label: 'Takeover', detail: 'Push to ComfyUI CLIP nodes' },
-  { label: 'Render', detail: 'Queue job on GPU host' },
-  { label: 'Gallery', detail: 'Index, embed, review' },
+  { label: 'Plan', detail: 'Cast, Day, or a Script’s shots' },
+  { label: 'Render', detail: 'Takes queued on ComfyUI' },
+  { label: 'Check', detail: 'Pose, face, outfit, and place' },
+  { label: 'Keep', detail: '★ the best take' },
+  { label: 'Cut', detail: 'Edit, mix, subtitle, export' },
 ]
 
 export function WorkflowPipelineDemo() {

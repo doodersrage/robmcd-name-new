@@ -42,7 +42,7 @@ export const gettingStartedPages = [
         ],
       },
     ],
-    { related: ['getting-started/environment', 'getting-started/docker'] },
+    { related: ['getting-started/first-run', 'play/first-film'] },
   ),
 
   page(
@@ -68,96 +68,7 @@ export const gettingStartedPages = [
           'For one-off prompts outside the film loop, use Prompt Studio',
         ],
       },
-      { type: 'interactive-slot' },
     ],
-    { interactive: 'prompt-detail', related: ['play/first-film', 'introduction/workspace-modes', 'play/cast'] },
-  ),
-
-  page(
-    ['getting-started', 'environment'],
-    'Environment & configuration',
-    'Ports, env vars, Settings, cloud engines, Plugins, heal, backup, and export directories.',
-    'Getting started',
-    7,
-    [
-      ...p(
-        'Configuration lives in `.env.local` (server) and Settings (`/settings`) in the UI. Key env vars: `COMFYUI_API_URL`, `LLM_MODEL`, `LLM_VISION_MODEL`, optional `COMFYUI_ROOT` for asset downloads, cloud provider keys (Fal, Replicate, etc.), and auth/SMTP vars for multi-user deployments. See the full env table in the repository configuration docs.',
-        'Settings → Overview provides **Heal & ready** (connectivity checks), backup export, and data repair. Settings → LLM configures text and vision models. Settings → ComfyUI covers cluster URLs, workflow library import (API-format JSON), and model asset downloads. Settings → ComfyUI → Engine for Generate & Video picks the engine for the tools under More only — Film, Day, Outfit, Scene, and Story always render on ComfyUI. Cloud engines wait behind Show cloud engines, and the Diffusers engine is an add-on (Install Diffusers engine).',
-      ),
-      { type: 'h2', text: 'Settings & plugins' },
-      {
-        type: 'ul',
-        items: [
-          'Default port: 47832',
-          'IndexedDB (Dexie) for browser settings, history, gallery cache',
-          'Gallery export and backup v2 folders — schedule from Settings → Data',
-          'Optional auth, quotas, and per-user gallery for exposed deployments',
-          'Runway is not exposed in Settings — use Fal/Replicate/Grok/Gemini for cloud clips',
-        ],
-      },
-      {
-        type: 'links',
-        items: [{ label: 'Full configuration doc', href: `${GH}/blob/main/docs/configuration.md`, external: true }],
-      },
-    ],
-    { related: ['getting-started/docker', 'integration/cloud-engines'] },
-  ),
-
-  page(
-    ['getting-started', 'docker'],
-    'Docker & desktop deployment',
-    'Container images, desktop installers, and homelab deployment.',
-    'Getting started',
-    8,
-    [
-      ...p(
-        `Pull the published image with \`docker pull ${DOCKER_IMAGE}\`. Docker Compose bundles the Node app with volume mounts for SQLite, exports, and optional ComfyUI output ingestion. Mount your ComfyUI output folder for automatic gallery indexing when configured.`,
-        'Desktop installers from GitHub Releases (macOS .dmg, Windows .exe, Linux .deb preferred; AppImage is portable but can feel slower on rolling distros) wrap the same Next.js server with Tauri — configure env vars or use in-app Settings. Set the same keys as bare-metal: `COMFYUI_API_URL`, `LLM_MODEL`, `LLM_VISION_MODEL`, cloud engine keys, and production auth secrets.',
-      ),
-      {
-        type: 'callout',
-        variant: 'info',
-        text: 'See docs/configuration.md and docs/desktop.md for compose files, production checklist, and second-GPU operator notes.',
-      },
-      {
-        type: 'links',
-        items: [
-          { label: 'GitHub Releases', href: RELEASES, external: true },
-          { label: 'Configuration & deployment', href: `${GH}/blob/main/docs/configuration.md`, external: true },
-        ],
-      },
-    ],
-  ),
-
-  page(
-    ['getting-started', 'comfyui-nodes'],
-    'ComfyUI custom nodes',
-    'Install nodes that pull prompts from Castcut into running workflows.',
-    'Getting started',
-    9,
-    [
-      ...p(
-        'Custom nodes under `comfyui/comfyui_image_prompt_tools/` register endpoints that read the latest prompt, negative, and metadata from Castcut. Wire them into CLIP text encode nodes instead of static strings — workflow takeover replaces values at queue time.',
-        'Import pack-accurate graphs via Settings → ComfyUI → workflow library → Import. Download weights with `COMFYUI_ROOT` set, then Settings → ComfyUI → Model assets. Cloud-engine queues bypass ComfyUI graphs entirely — custom nodes apply only to local ComfyUI paths. Pose scoring and cut-outs are a separate pack: Castcut nodes.',
-      ),
-      { type: 'h2', text: 'Install' },
-      {
-        type: 'ol',
-        items: [
-          'Copy or submodule `comfyui/comfyui_image_prompt_tools/` into ComfyUI/custom_nodes',
-          'Restart ComfyUI and verify probe from Settings → ComfyUI',
-          'Add Castcut source nodes to your workflow graph',
-          'Enable workflow takeover on the Castcut side before queueing',
-        ],
-      },
-      {
-        type: 'links',
-        items: [
-          { label: 'Custom nodes README', href: `${GH}/blob/main/comfyui/comfyui_image_prompt_tools/README.md`, external: true },
-          { label: 'Castcut nodes', href: `${DOCS_BASE_PATH}/integration/castcut-nodes/` },
-        ],
-      },
-    ],
-    { related: ['integration/workflow-takeover'] },
+    { related: ['play/first-film', 'introduction/workspace-modes', 'play/cast'] },
   ),
 ]

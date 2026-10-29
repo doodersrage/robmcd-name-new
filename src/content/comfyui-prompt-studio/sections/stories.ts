@@ -57,81 +57,11 @@ export const storiesPages = [
         items: [
           { label: 'GitHub repository', href: GH, external: true },
           { label: 'Quick start guide', href: `${DOCS_BASE_PATH}/getting-started/quick-start/` },
-          { label: 'Read the case study', href: `${DOCS_BASE_PATH}/stories/case-study/` },
           { label: 'Your first film', href: `${DOCS_BASE_PATH}/play/first-film/` },
           { label: 'Open Film (local)', href: `${LIVE}/play`, external: true },
         ],
       },
     ],
-    { interactive: 'sales-pitch', layout: 'marketing', related: ['stories/case-study', 'getting-started/quick-start'] },
-  ),
-
-  page(
-    ['stories', 'case-study'],
-    'Case study: episodic FLUX → SDXL series',
-    'Illustrative scenario — how structured campaigns, lint, and gallery review fit an episodic series.',
-    'Sales & stories',
-    -1,
-    [
-      {
-        type: 'callout',
-        variant: 'info',
-        title: 'Illustrative scenario',
-        text: 'This walkthrough is a composite example — not a named client engagement. It was written before the split: the lint, campaign, and Studio tools it uses now ship in Prompt Studio, and Castcut focuses on the film loop.',
-      },
-      { type: 'h2', text: 'Profile' },
-      {
-        type: 'stats',
-        items: [
-          { value: '12', label: 'Episodes', detail: 'Single character IP' },
-          { value: 'FLUX→SDXL', label: 'Pipeline', detail: 'Explore then deliver' },
-          { value: '48', label: 'Final frames', detail: 'Campaign output' },
-        ],
-      },
-      ...p(
-        'Maya Chen runs ComfyUI on a local RTX 4090. She uses FLUX Dev and Schnell on Generate for fast dailies, then SDXL Base with Final/Max quality profiles for print-bound delivery. Before Castcut, every episode meant reconstructing prompts from PNG metadata, retyping negatives, and hoping character tags stayed consistent across model families.',
-        'After adopting Castcut, Maya defined her lead character once in `/character`, attached wardrobe catalog tokens, and built a Studio campaign tied to `/topics` rows — one topic per episode. Draft batches ran after work; winners were promoted to Final quality on weekends and reviewed in Gallery review mode with keyboard 1–5 ratings.',
-      ),
-      { type: 'h2', text: 'The challenge' },
-      {
-        type: 'ul',
-        items: [
-          'Character drift between FLUX exploration and SDXL print exports',
-          'No shared negative library — `/negative` sport-aware blocks re-applied by hand',
-          'Hundreds of unsorted ComfyUI outputs with no semantic search',
-          'Client review required side-by-side prompt diffs between similar frames',
-          'Tight deadline: 12 episodes in three weeks',
-        ],
-      },
-      { type: 'interactive-slot' },
-      { type: 'h2', text: 'Stack & features used' },
-      {
-        type: 'comparison',
-        before: [
-          'Prompts in Notion + manual CLIP paste',
-          'No lint before rendering',
-          'Unsorted output folder',
-          'Manual seed hunting for re-runs',
-        ],
-        after: [
-          '/character + wardrobe catalog + /topics campaign',
-          '/format + /lint before every Send to ComfyUI',
-          '/gallery review + semantic search + compare modal',
-          'Re-queue from gallery with Final/Max quality profiles',
-          'Workflow takeover into existing SDXL graph',
-          'Backup v2 export before client handoff',
-        ],
-      },
-      {
-        type: 'links',
-        items: [
-          { label: 'Studio campaigns', href: `${DOCS_BASE_PATH}/studio/campaigns-scheduled/` },
-          { label: 'Gallery review mode', href: `${DOCS_BASE_PATH}/gallery/review-mode/` },
-          { label: 'Workflow takeover', href: `${DOCS_BASE_PATH}/integration/workflow-takeover/` },
-          { label: 'View on GitHub', href: GH, external: true },
-        ],
-      },
-    ],
-    { interactive: 'case-study', layout: 'marketing', related: ['stories/sales-pitch', 'studio/campaigns-scheduled'] },
+    { interactive: 'sales-pitch', layout: 'marketing', related: ['play/first-film', 'getting-started/quick-start'] },
   ),
 ]

@@ -5,6 +5,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import { SITE_DESCRIPTION, SITE_LINKS, SITE_OWNER, SITE_TAGLINE, SITE_URL } from '@/lib/site'
 import { SITE_LINKEDIN } from '@/lib/seo'
 import { breadcrumbSchema } from '@/lib/seo'
+import { VERSIONS } from '@/lib/versions'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -42,8 +43,8 @@ const jsonLd = {
       <h2 class="text-lg font-semibold">Products</h2>
       <ul class="max-w-2xl list-disc space-y-2 pl-5 text-sm leading-relaxed text-[var(--muted)]">
         <li>
-          <strong class="text-[var(--ink)]">Castcut</strong> — local AI character filmmaking with ComfyUI; Castcut 3.2
-          film loop with talking clips, a score for each cut, and re-cuts in any shape; docs at {SITE_URL}{SITE_LINKS.castcut}
+          <strong class="text-[var(--ink)]">Castcut</strong> — local AI character filmmaking with ComfyUI; Castcut {VERSIONS.castcut} film
+          loop with talking clips, a score for each cut, and re-cuts in any shape; docs at {SITE_URL}{SITE_LINKS.castcut}
         </li>
         <li>
           <strong class="text-[var(--ink)]">Prompt Studio</strong> — the classic prompt and image tools for ComfyUI,

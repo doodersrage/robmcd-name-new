@@ -3,6 +3,8 @@ title: About
 description: Robert McDowell, full-stack engineer since 2006. Legacy modernization, servers and databases, SEO/AEO, Castcut, and ProbeHarbor.
 path: /about
 ---
+import { VERSIONS } from '@/lib/versions'
+
 
 I build and repair production software on Linux and Windows: CMS sites, custom apps, servers, and databases. When the same problem keeps biting me at home, I sometimes turn it into an open tool.
 
@@ -38,7 +40,7 @@ When we do modernize, I try to keep years of content and business logic intact a
 
 ## Open products
 
-**[Castcut](/castcut/)** is an MIT-licensed Next.js app for local AI character filmmaking with ComfyUI: Cast → Outfit → Day → Scene → Cut film. Castcut 3.2 imports a screenplay, renders Scenes one take at a time, shows a storyboard and animatic, and has talking clips with sound and room tone, Cast voices (auditioned or your own recording), narration, an original score for each cut, Cast homes that keep marks, props, and a wardrobe, widescreen cuts with close-ups, review links, finishing tools (lip-sync, copy moves from a video, relight), a Film Director page, and export to an editor's timeline, alongside identity lock, the pose editor, optional [Castcut nodes](/castcut/integration/castcut-nodes/), Heal & ready, Mobile Studio, desktop and Docker. Docs on this domain; operator reference on GitHub Pages; a live instance runs in my [homelab](/homelab/).
+**[Castcut](/castcut/)** is an MIT-licensed Next.js app for local AI character filmmaking with ComfyUI: Cast → Outfit → Day → Scene → Cut film. Castcut {VERSIONS.castcut} imports a screenplay, renders Scenes one take at a time, shows a storyboard and animatic, and has talking clips with sound and room tone, Cast voices (auditioned or your own recording), narration, an original score for each cut, Cast homes that keep marks, props, and a wardrobe, widescreen cuts with close-ups, review links, finishing tools (lip-sync, copy moves from a video, relight), a Film Director page, and export to an editor's timeline, alongside identity lock, the pose editor, optional [Castcut nodes](/castcut/integration/castcut-nodes/), Heal & ready, Mobile Studio, desktop and Docker. Docs on this domain; operator reference on GitHub Pages; a live instance runs in my [homelab](/homelab/).
 
 **[Prompt Studio](/work/prompt-studio/)** is where Castcut started. The classic prompt, image, video, and audio tools now ship as their own app, built on the shared [prompt-studio-core](https://www.npmjs.com/package/prompt-studio-core) package, so Castcut can stay focused on films.
 
@@ -76,7 +78,7 @@ No. Most useful work starts with what’s already running. Greenfield only when 
 
 ### What is Castcut?
 
-Local character films with ComfyUI — Cast → Outfit → Day → Scene → Cut film, now from a screenplay to a finished cut, with talking clips, a score, re-cuts in any shape, and export to an editor (Castcut 3.2). It began as Prompt Studio; the classic tools now ship separately as [Prompt Studio](/work/prompt-studio/). Docs: [/castcut](/castcut/).
+Local character films with ComfyUI — Cast → Outfit → Day → Scene → Cut film, now from a screenplay to a finished cut, with talking clips, a score, re-cuts in any shape, and export to an editor (Castcut {VERSIONS.castcut}). It began as Prompt Studio; the classic tools now ship separately as [Prompt Studio](/work/prompt-studio/). Docs: [/castcut](/castcut/).
 
 ### What is ProbeHarbor?
 

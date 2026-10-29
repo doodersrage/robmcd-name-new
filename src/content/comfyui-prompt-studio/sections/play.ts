@@ -1,4 +1,4 @@
-import { DOCS_BASE_PATH, DOCS_SITE, GH, LIVE, p, page } from '../helpers'
+import { CASTCUT_VERSION, DOCS_BASE_PATH, DOCS_SITE, GH, LIVE, p, page } from '../helpers'
 
 const SECTION = 'Film'
 
@@ -140,7 +140,7 @@ export const playPages = [
   page(
     ['play', 'day'],
     'Day, poses, and looks',
-    'A day in the Cast’s life: plan slots, the 3D pose editor and camera row, talking clips, longer clips, and the still engines in Castcut 3.2.',
+    `A day in the Cast’s life: plan slots, the 3D pose editor and camera row, talking clips, longer clips, and the still engines in Castcut ${CASTCUT_VERSION}.`,
     SECTION,
     53,
     [

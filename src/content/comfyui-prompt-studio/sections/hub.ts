@@ -1,5 +1,6 @@
 import { APP_VERSION, DOCS_BASE_PATH, DOCS_SITE, GH, LIVE, RELEASES, p, page } from '../helpers'
 import { SITE_LINKS } from '@/lib/site'
+import { VERSIONS } from '@/lib/versions'
 
 export const hubPages = [
   page(
@@ -17,7 +18,7 @@ export const hubPages = [
         type: 'callout',
         variant: 'info',
         title: 'Looking for the classic tools?',
-        text: 'Generate, Prompt Editor, Variations, Format, Lint, ControlNet, Outpaint, Topics, the Workflow editor, plugins, and the other general prompt and image tools ship as a separate app, Prompt Studio (github.com/doodersrage/prompt-studio). Both apps share one core package, prompt-studio-core on npm. Castcut keeps the film pages: Film, Cast, Outfit, Day, Scene, Story, Cut, Film Director, Character, Video, Refine, Inpaint, Compose, Gallery, and Queue. Pages here for the moved tools are marked Now in Prompt Studio.',
+        text: 'Generate, Prompt Editor, Variations, Format, Lint, ControlNet, Outpaint, Topics, the Workflow editor, plugins, and the other general prompt and image tools ship as a separate app, Prompt Studio (github.com/doodersrage/prompt-studio). Both apps share one core package, prompt-studio-core on npm. Castcut keeps the film pages: Film, Cast, Outfit, Day, Scene, Story, Cut, Film Director, Character, Video, Refine, Inpaint, Compose, Gallery, and Queue. Their old pages here now point to the Prompt Studio write-up.',
       },
       {
         type: 'callout',
@@ -38,22 +39,25 @@ export const hubPages = [
       {
         type: 'ul',
         items: [
-          'Sales pitch and case study for production ComfyUI and cloud hybrid workflows',
+          'Why Castcut, what it is, and how it is built',
           'The film loop page by page: your first film, Cast, Outfit, Day, Scene and takes, Script and runs, Story, Cut, Film Director, finishing tools, and Mobile Studio',
-          '40+ model families — FLUX (incl. Klein), Qwen, Z-Image, Boogu, SDXL, WAN / LTX video, Stable Audio, Hunyuan3D',
-          'Film loop in Castcut 3.2: Script import, Scenes and takes, Film Director, storyboard and animatic, finishing tools (lip-sync, copy moves, relight), talking clips, Cast voices, Places, film scores, Preview the cut, re-cuts in any shape, narration, review links, export for an editor, pose editor, per-look outfits, Heal & ready, desktop/Docker install',
+          'Install and first run, then each step of the film loop',
+          `Film loop in Castcut ${VERSIONS.castcut}: Script import, Scenes and takes, Film Director, storyboard and animatic, finishing tools (lip-sync, copy moves, relight), talking clips, Cast voices, Places, film scores, Preview the cut, re-cuts in any shape, narration, review links, export for an editor, pose editor, per-look outfits, Heal & ready, desktop/Docker install`,
           'Optional Castcut nodes (Comfy Registry) for Best of two and cut-outs inside one job',
         ],
       },
       { type: 'h2', text: 'Documentation on this site vs GitHub' },
       ...p(
-        'This section on robmcd.name is the narrative hub — sales pitch, case study, interactive demos, and guided tool docs. Operator reference (env tables, API catalog, Play guide, release process) lives on the official GitHub Pages docs site linked below. Bookmark both: this hub for onboarding and storytelling, GitHub Pages for day-to-day ops lookup.',
+        'This section on robmcd.name is the narrative guide: what Castcut is, why it exists, and a page for each step of the film loop. Reference detail — models, configuration, the HTTP API, workflow takeover, troubleshooting, and every tool outside the film loop — lives on the official docs site on GitHub Pages, kept with the code so it stays current.',
         'More of my open work sits alongside this product: ProbeHarbor (garage freeze, heat, and flood monitoring, pipe-freeze forecast, companion apps at probeharbor.dev) and case studies under /work.',
       ),
       {
         type: 'links',
         items: [
           { label: 'Why Castcut? (sales pitch)', href: `${DOCS_BASE_PATH}/stories/sales-pitch/` },
+          { label: 'Models (GitHub Pages)', href: `${DOCS_SITE}/models/`, external: true },
+          { label: 'Configuration (GitHub Pages)', href: `${DOCS_SITE}/configuration/`, external: true },
+          { label: 'Features in depth (GitHub Pages)', href: `${DOCS_SITE}/features/`, external: true },
           { label: 'Quick start (Node 22+)', href: `${DOCS_BASE_PATH}/getting-started/quick-start/` },
           { label: 'Your first film', href: `${DOCS_BASE_PATH}/play/first-film/` },
           { label: 'Script, runs, and locations', href: `${DOCS_BASE_PATH}/play/script/` },

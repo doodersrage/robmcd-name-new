@@ -1,5 +1,7 @@
 import { handle } from '@astrojs/cloudflare/handler'
 
+import { legacyRedirectTarget } from './lib/legacy-redirects'
+
 /**
  * Worker entry: Astro's handler plus "Markdown for Agents". A GET/HEAD for a page
  * with `Accept: text/markdown` gets the build-time index.md for that page (see
@@ -40,6 +42,12 @@ function canonicalRedirect(request: Request): Response | null {
 
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    if (request.method === 'GET' || request.method === 'HEAD') {
+      const url = new URL(request.url)
+      const target = legacyRedirectTarget(url.pathname)
+      if (target) return Response.redirect(new URL(target, url).toString(), 301)
+    }
+
     const redirect = canonicalRedirect(request)
     if (redirect) return redirect
 

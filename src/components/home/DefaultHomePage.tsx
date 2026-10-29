@@ -3,6 +3,7 @@ import { BentoGrid } from '@/components/ui/BentoGrid'
 import { Hero } from '@/components/ui/Hero'
 import { ProjectShowcase } from '@/components/ui/ProjectShowcase'
 import { SITE_LINKS } from '@/lib/site'
+import { VERSIONS } from '@/lib/versions'
 
 const CAPABILITIES = [
   {
@@ -32,7 +33,7 @@ const SHIPPED = [
     title: 'Castcut',
     tagline: 'Local character films with ComfyUI',
     description:
-      'Cast → Outfit → Day → Scene → Cut film. Castcut 3.2: screenplay import, Scenes and takes, a storyboard, talking clips, narration, and a score for every cut, and export to Resolve, Premiere, or Final Cut. The classic tools now ship as Prompt Studio.',
+      `Cast → Outfit → Day → Scene → Cut film. Castcut ${VERSIONS.castcut}: screenplay import, Scenes and takes, a storyboard, talking clips, narration, and a score for every cut, and export to Resolve, Premiere, or Final Cut. The classic tools now ship as Prompt Studio.`,
     href: SITE_LINKS.castcut,
     linkLabel: 'Read the docs',
   },

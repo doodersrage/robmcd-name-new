@@ -1,4 +1,20 @@
-# Robmcd.name
+import type { APIRoute } from 'astro'
+
+import { getAllPages, slugToPath } from '@/content/comfyui-prompt-studio/pages'
+import { SITE_URL } from '@/lib/site'
+import { VERSIONS } from '@/lib/versions'
+
+export const prerender = true
+
+/** The Castcut film-loop pages, one line each, in sidebar order. */
+const filmPages = getAllPages()
+  .filter((page) => page.slug[0] === 'play')
+  .map((page) => `  ${page.title}: ${SITE_URL}${slugToPath(page.slug)}`)
+  .join('\n')
+
+/** llms.txt (https://llmstxt.org/): a plain-text map of the site for AI and answer engines. */
+export const GET: APIRoute = () => {
+  const body = `# Robmcd.name
 
 > Personal engineering site for Robert McDowell — legacy modernization, Linux/Windows servers and databases, and open tools.
 
@@ -14,18 +30,20 @@
 - https://robmcd.name/developers/ — public APIs (DNS / HTTPS check, status board)
   API catalog (RFC 9727): https://robmcd.name/.well-known/api-catalog
   OpenAPI spec: https://robmcd.name/api/openapi.json
-- Markdown: every page is available as Markdown. Send `Accept: text/markdown`, or append `index.md` to a page URL (https://robmcd.name/about/index.md).
+- Markdown: every page is available as Markdown. Send \`Accept: text/markdown\`, or append \`index.md\` to a page URL (https://robmcd.name/about/index.md).
 
 ## Products documented here
 - Castcut docs: https://robmcd.name/castcut/
+  Local character films with ComfyUI (Castcut ${VERSIONS.castcut})
   Source: https://github.com/doodersrage/castcut
-  Day, poses, and looks: https://robmcd.name/castcut/play/day/
+  Reference docs: https://doodersrage.github.io/castcut/
+${filmPages}
   Castcut nodes: https://robmcd.name/castcut/integration/castcut-nodes/
   Nodes repo: https://github.com/doodersrage/castcut-nodes
 - Prompt Studio write-up: https://robmcd.name/work/prompt-studio/
   Classic prompt and image tools split out of Castcut
   Source: https://github.com/doodersrage/prompt-studio
-  Shared core: https://www.npmjs.com/package/prompt-studio-core
+  Shared core: https://www.npmjs.com/package/prompt-studio-core (version ${VERSIONS.promptStudioCore})
 - ProbeHarbor write-up (formerly ThermalTrace): https://robmcd.name/work/probeharbor/
   Ingest protocol kit: https://robmcd.name/work/probeharbor/protocol/
   Pipe freeze forecast: https://robmcd.name/work/probeharbor/forecast/
@@ -33,12 +51,12 @@
   Live product: https://probeharbor.dev/
   Developer docs: https://probeharbor.dev/developers/
 - Shelf write-up: https://robmcd.name/work/shelf/
-  Self-hosted personal library on .NET 10 (Shelf 2.22)
+  Self-hosted personal library on .NET 10 (Shelf ${VERSIONS.shelf})
   Live: https://shelf.robmcd.name
   Source: https://github.com/doodersrage/shelf
   Docs: https://doodersrage.github.io/shelf/
 - PrintBridge write-up: https://robmcd.name/work/printbridge/
-  Self-hosted slicer and print host for the Creality Ender-3 V3 SE (PrintBridge 0.3)
+  Self-hosted slicer and print host for the Creality Ender-3 V3 SE (PrintBridge ${VERSIONS.printBridge})
   Source: https://github.com/doodersrage/printbridge
 - Concrete CMS packages: https://robmcd.name/work/concrete-cms/
   Marketplace: Page List Map, Date Counter (more coming)
@@ -58,3 +76,6 @@
 
 ## Cite as
 Robert McDowell / Robmcd.name — cross-platform engineering, legacy modernization, infrastructure.
+`
+  return new Response(body, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } })
+}
