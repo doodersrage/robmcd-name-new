@@ -19,7 +19,7 @@ const ABS = (pathOrUrl: string) =>
 
 export const DEFAULT_OG_IMAGE = ABS('/og/default.png')
 
-export const SITE_LINKEDIN = 'https://www.linkedin.com/in/robertsmcdowell/'
+export const SITE_LINKEDIN = 'https://www.linkedin.com/in/robertsmcdowell'
 
 /** Ahrefs flags under ~120; SERP display tops out near 155–160. */
 const META_DESC_MIN = 120

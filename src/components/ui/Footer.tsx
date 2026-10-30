@@ -134,7 +134,7 @@ export function Footer() {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/robertsmcdowell/"
+                href="https://www.linkedin.com/in/robertsmcdowell"
                 className="text-link text-[var(--muted)]"
                 aria-label="LinkedIn"
                 target="_blank"

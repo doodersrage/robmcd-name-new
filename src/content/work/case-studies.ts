@@ -222,11 +222,6 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
             href: 'https://github.com/doodersrage/arduino-network-json-temperature-sever',
             external: true,
           },
-          {
-            label: 'garage-temp (earlier front end)',
-            href: 'https://github.com/doodersrage/garage-temp',
-            external: true,
-          },
         ],
       },
       {

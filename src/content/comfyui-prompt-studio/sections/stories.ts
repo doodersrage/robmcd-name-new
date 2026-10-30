@@ -1,4 +1,4 @@
-import { DOCS_BASE_PATH, GH, LIVE, p, page } from '../helpers'
+import { DOCS_BASE_PATH, GH, p, page } from '../helpers'
 
 export const storiesPages = [
   page(
@@ -58,7 +58,6 @@ export const storiesPages = [
           { label: 'GitHub repository', href: GH, external: true },
           { label: 'Quick start guide', href: `${DOCS_BASE_PATH}/getting-started/quick-start/` },
           { label: 'Your first film', href: `${DOCS_BASE_PATH}/play/first-film/` },
-          { label: 'Open Film (local)', href: `${LIVE}/play`, external: true },
         ],
       },
     ],

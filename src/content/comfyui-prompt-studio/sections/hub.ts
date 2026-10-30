@@ -31,8 +31,7 @@ export const hubPages = [
         items: [
           { label: 'GitHub repository', href: GH, external: true },
           { label: 'GitHub Releases (desktop)', href: RELEASES, external: true },
-          { label: 'Official docs site', href: DOCS_SITE, external: true },
-          { label: 'Open Film (local)', href: `${LIVE}/play`, external: true },
+          { label: 'Official docs site', href: `${DOCS_SITE}/`, external: true },
         ],
       },
       { type: 'h2', text: 'What this guide covers' },

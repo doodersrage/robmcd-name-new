@@ -37,13 +37,6 @@ export const LAB_ENDPOINTS: LabEndpoint[] = [
     group: 'products',
   },
   {
-    id: 'audiobookshelf',
-    name: 'AudioBookShelf',
-    href: 'https://audiobookshelf.robmcd.name',
-    blurb: 'Personal audiobook library',
-    group: 'homelab',
-  },
-  {
     id: 'castcut',
     name: 'Castcut',
     href: 'https://castcut.robmcd.name',

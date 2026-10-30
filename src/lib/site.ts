@@ -50,7 +50,7 @@ export const SITE_LINKS = {
   /** Canonical product path (formerly Prompt Studio / llm-prompt-studio). */
   castcut: '/castcut/',
   castcutGithub: 'https://github.com/doodersrage/castcut',
-  castcutDocs: 'https://doodersrage.github.io/castcut',
+  castcutDocs: 'https://doodersrage.github.io/castcut/',
   castcutDocker: 'ghcr.io/doodersrage/castcut:latest',
   castcutNodes: 'https://github.com/doodersrage/castcut-nodes',
   castcutLive: 'https://castcut.robmcd.name',
@@ -68,7 +68,7 @@ export const SITE_LINKS = {
   /** @deprecated Use castcut* */
   promptStudio: '/castcut/',
   promptStudioGithub: 'https://github.com/doodersrage/castcut',
-  promptStudioDocs: 'https://doodersrage.github.io/castcut',
+  promptStudioDocs: 'https://doodersrage.github.io/castcut/',
   promptStudioDocker: 'ghcr.io/doodersrage/castcut:latest',
   /** Formerly ThermalTrace (thermaltrace.dev). */
   probeHarbor: 'https://probeharbor.dev/',

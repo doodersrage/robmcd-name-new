@@ -54,16 +54,11 @@ export function ToolRoutesDemo() {
         ))}
       </div>
       <p className="mt-4 text-center text-sm text-[var(--muted)]">
-        Open live tool:{' '}
-        <a
-          href={`${LIVE}${hovered ?? '/play'}`}
-          className="font-medium text-slate-900 underline decoration-slate-300 underline-offset-2 hover:decoration-slate-600 dark:text-zinc-100 dark:decoration-zinc-600"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        In a local install:{' '}
+        <code className="font-mono font-medium text-[var(--ink)]">
           {LIVE}
           {hovered ?? '/play'}
-        </a>
+        </code>
       </p>
     </div>
   )

@@ -1,4 +1,4 @@
-import { DOCS, DOCS_SITE, GH, p, page } from '../helpers'
+import { DOCS_SITE, GH, p, page } from '../helpers'
 
 export const introductionPages = [
   page(
@@ -31,8 +31,8 @@ export const introductionPages = [
       {
         type: 'links',
         items: [
-          { label: 'Architecture docs on GitHub', href: `${DOCS}/architecture.md`, external: true },
-          { label: 'Official docs site', href: DOCS_SITE, external: true },
+          { label: 'Architecture docs on GitHub', href: `${GH}/blob/main/docs/architecture.md`, external: true },
+          { label: 'Official docs site', href: `${DOCS_SITE}/`, external: true },
         ],
       },
     ],

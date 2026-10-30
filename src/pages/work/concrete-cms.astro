@@ -107,14 +107,18 @@ const jsonLd = {
                     </a>
                   ) : null
                 }
-                <a
-                  href={item.github}
-                  class="text-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
+                {
+                  item.github ? (
+                    <a
+                      href={item.github}
+                      class="text-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </a>
+                  ) : null
+                }
               </p>
             </div>
           </li>

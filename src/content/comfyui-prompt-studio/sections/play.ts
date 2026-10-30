@@ -1,4 +1,4 @@
-import { CASTCUT_VERSION, DOCS_BASE_PATH, DOCS_SITE, GH, LIVE, p, page } from '../helpers'
+import { CASTCUT_VERSION, DOCS_BASE_PATH, DOCS_SITE, GH, p, page } from '../helpers'
 
 const SECTION = 'Film'
 
@@ -485,7 +485,6 @@ export const playPages = [
       {
         type: 'links',
         items: [
-          { label: 'Open Mobile Studio (local)', href: `${LIVE}/m`, external: true },
           { label: 'Source on GitHub', href: GH, external: true },
         ],
       },
