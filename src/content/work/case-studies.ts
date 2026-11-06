@@ -101,7 +101,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     externalHref: SITE_LINKS.probeHarbor,
     linkLabel: 'Open probeharbor.dev',
     stack: [
-      'Astro 6',
+      'Astro 7',
       'Cloudflare Workers',
       'Supabase',
       'ESP32 / Pico W',
@@ -130,17 +130,18 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
         heading: 'How it works',
         body: [
           'Build → Connect → Get alerted. Wire a temperature probe (and optional leak puck), create a push device or pull feed in the dashboard, then POST JSON to a per-device ingest URL — or let ProbeHarbor pull an HTTPS feed on a schedule. Sensors auto-import on first contact.',
-          'The quickest path is the web flasher: plug an ESP32, ESP32-S3, or ESP32-C3 into a desktop running Chrome or Edge, flash prebuilt open-source firmware from the page, and send it your Wi‑Fi and device key — no Arduino IDE, nothing to compile. It reads up to four DS18B20 probes or a DHT22/DHT11, finds an SHT31, BME280, or AHT20 air sensor on I²C, and can report a leak contact, a door switch, and battery level. The dashboard shows each board’s firmware version and offers updates.',
+          'The quickest path is the web flasher: plug an ESP32, ESP32-S3, or ESP32-C3 into a desktop running Chrome or Edge, flash prebuilt open-source firmware from the page, and send it your Wi‑Fi and device key — no Arduino IDE, nothing to compile. It reads up to four DS18B20 probes or a DHT22/DHT11, finds an SHT31, BME280, or AHT20 air sensor on I²C, and can report a leak contact, a door switch, and battery level. The dashboard shows each board’s firmware version and offers updates. The classic ESP32 and the ESP32-S3 are tested on real boards, with the DS18B20, DHT22, BME280, SHT31, AHT20, and door switch; the ESP32-C3 image, leak contact, and battery reporting are built in but not yet hardware-tested, and the hardware page says which is which. Firmware 1.2.4 lets an ESP32-S3 take its settings over its native USB port.',
           'No probe yet? The public pipe-freeze forecast now takes a US ZIP and emails before freezing nights — the first freezing night of a cold spell and every night at 20°F or colder — with the protective steps and a link to the five-night forecast. Double opt-in and one-click unsubscribe; no hardware or account needed.',
           'Set a freeze threshold and enable wet flood/leak contacts. Heat alerts sit beside freeze. Free and Member cover email plus Discord, Telegram, Slack, Teams, ntfy, and Pushover; Pro adds SMS, WhatsApp, browser push, HMAC webhooks, and official NWS freeze/cold alerts. A forecast-backed time-to-freeze clock shows hours until risk. “I’m on it” stops repeat freeze alerts until the space recovers. Feeds that stay silent are marked offline.',
           'Alerts now say when things recover and close themselves when the condition clears, catch a probe stuck on one value, and warn when a device loses power. A freeze window explains why a night is at risk, rules can fire on any of several conditions, and a sensor can be replaced without losing its history. Before buying anything, the payload checker shows whether ProbeHarbor will understand a sensor’s JSON, and cold-snap replay runs your rules against a past cold spell.',
           'Doors now keep a history of their own: each opening is one row with how long it lasted and how much the temperature and humidity moved while it was open, shaded on the charts and exportable as CSV, and a “door open longer than N minutes” rule waits that long and clears when it closes. Firmware 1.2.3 posts the moment a door changes. Alerts follow each recipient’s °C or °F, say how old a reading is, send one recap when quiet hours end, and a snooze never mutes a freeze alert. Long history ranges read hourly rollups, so a year of readings charts in one call.',
+          'The whole dashboard now reads in °C for °C users — tiles, charts, the time-to-freeze clock, alert thresholds, and device pages, not just the alert messages. Alerts show what happened to each delivery (sent, partly sent, held, failed, or no channel set up) with a next step, a safety alert that was held or failed counts as unhandled until someone acknowledges it, and the Overview flags a channel whose last send failed. First-time setup waits for a real board’s first reading, offers a checklist when nothing arrives, and the demo feed is labelled as simulated and never alerts.',
         ],
       },
       {
         heading: 'Core product components',
         body: [
-          'Web app & ingest edge — Astro 6 on Cloudflare Workers serves the marketing site, authenticated dashboard, and ingest APIs close to visitors. Live job and ingest health is published on the product’s system-status page rather than a marketing uptime claim. Share, invite, and status-page links are stored hashed and shown once, webhooks are signed with a timestamp against replays, ingest is rate limited, and deploys are blocked by failing accessibility (axe and Lighthouse) checks.',
+          'Web app & ingest edge — Astro 7 on Cloudflare Workers serves the marketing site, authenticated dashboard, and ingest APIs close to visitors. Live job and ingest health is published on the product’s system-status page rather than a marketing uptime claim. Share, invite, and status-page links are stored hashed and shown once, webhooks are signed with a timestamp against replays, ingest is rate limited, and deploys are blocked by failing accessibility (axe and Lighthouse) checks.',
           'Dashboard Overview — Simple or Insights mode: 7-day probe curves, freeze hours and degree-hours, indoor−outdoor ΔT, probe spread, condensation risk, feed health, plus cards for doors, power, motion, battery/RSSI, and air quality.',
           'Devices & feeds — Push devices with API keys, pull HTTPS JSON feeds, MQTT bridge so Mosquitto can stay on the LAN, Home Assistant recipes, and Nest/Ecobee thermostat hooks (Pro) for outdoor/context readings.',
           'Alerts & evidence — Threshold freeze and automatic flood/leak alerts on every plan. Member adds outdoor forecast warnings; Pro adds NWS alerts, richer channels, Grafana/Prometheus metrics keys, and a printable claims evidence pack with matching readings and alert CSVs for a date range you choose.',
@@ -168,6 +169,7 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
             href: 'https://probeharbor.dev/about/adding-devices',
             external: true,
           },
+          { label: 'Tested hardware', href: SITE_LINKS.probeHarborHardware, external: true },
           { label: 'Hardware accessories', href: SITE_LINKS.probeHarborAccessories, external: true },
           { label: 'Claim puck', href: SITE_LINKS.probeHarborClaimPuckProduct, external: true },
         ],

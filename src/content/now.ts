@@ -7,7 +7,7 @@ export type NowItem = {
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
   updated: '2026-11-06',
-  headline: 'Castcut 3.8, door history for ProbeHarbor, Shelf 2.22, PrintBridge, and two Linux audio apps.',
+  headline: 'Castcut 3.8, ProbeHarbor in °C with clearer alerts, Shelf 2.22, PrintBridge, and two Linux audio apps.',
   items: [
     {
       label: 'Castcut 3.8',
@@ -24,7 +24,7 @@ export const NOW = {
     {
       label: 'ProbeHarbor',
       detail:
-        'Door history: every opening with how long it lasted and what the temperature did, shaded on the charts, plus a “door open longer than N minutes” alert. The site now speaks Spanish, French, German, and Portuguese, alerts follow your °C or °F, and a round of security work hashes share and invite links. ESP32 sensors still flash straight from the browser at probeharbor.dev/flash.',
+        'The whole dashboard now reads in °C for °C users, alerts say whether each one was sent, held, or failed (and a failed safety alert waits to be acknowledged), and first-time setup waits for a real board’s first reading. The ESP32-S3 and AHT20 are now tested on hardware, and firmware 1.2.4 takes settings over the S3’s native USB. Door history from last month still shades every opening on the charts. Sensors flash straight from the browser at probeharbor.dev/flash.',
       href: '/work/probeharbor/',
     },
     {

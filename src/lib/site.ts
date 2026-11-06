@@ -78,6 +78,7 @@ export const SITE_LINKS = {
   probeHarborGuides: 'https://probeharbor.dev/guides',
   probeHarborApps: 'https://probeharbor.dev/apps',
   probeHarborAccessories: 'https://probeharbor.dev/accessories',
+  probeHarborHardware: 'https://probeharbor.dev/hardware',
   probeHarborFlash: 'https://probeharbor.dev/flash',
   probeHarborPricing: 'https://probeharbor.dev/pricing',
   probeHarborGithub: 'https://github.com/doodersrage/probeharbor',
