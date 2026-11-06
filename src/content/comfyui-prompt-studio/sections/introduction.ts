@@ -9,17 +9,17 @@ export const introductionPages = [
     1,
     [
       ...p(
-        'Castcut is for creators who want consistent characters, scenes, images, and short films locally with ComfyUI — not another CLIP paste workflow. Flagship loop: Cast → Outfit → Day → (optional Story or Scene) → Gallery → Cut film → Save to Cast. Castcut 3.x adds a production path for longer films: Script, Scenes and takes, runs, locations, a storyboard, and the Film Director page.',
-        'The app is built with React, TypeScript, and Next.js on Node.js 22+. A server exposes HTTP APIs consumed by the UI, ComfyUI custom nodes, desktop (Tauri) builds, and headless scripts. Browser state persists in IndexedDB (Dexie); server data lives in SQLite with configurable export paths.',
+        'Castcut is for creators who want consistent characters, scenes, images, and short films locally with ComfyUI — not another CLIP paste workflow. Flagship loop: Cast → Outfit → Day → (optional Story or Scene) → Gallery → Cut film → Save to Cast. Castcut 3.x adds a production path for longer films: Script, Scenes and takes, runs, locations, a storyboard, and the Film Director page, and since 3.8 whole episodes, written from a premise and rendered with the best take kept.',
+        'The app is built with React, TypeScript, and Next.js on Node.js 24+. A server exposes HTTP APIs consumed by the UI, ComfyUI custom nodes, desktop (Tauri) builds, and headless scripts. Browser state persists in IndexedDB (Dexie); server data lives in SQLite with configurable export paths.',
         'Every film step renders on ComfyUI. A built-in LLM (llama.cpp with a Qwen3-VL model) means LM Studio is optional. Cloud engines (Fal, Replicate, OpenAI, Gemini, Grok, Runway, Luma) wait behind Show cloud engines for the tools under More, and the Diffusers engine is an add-on installed from Settings.',
       ),
       { type: 'h2', text: 'Core value' },
       {
         type: 'ul',
         items: [
-          'Film loop: Cast → Outfit → Day → Scene → Cut film; talking clips, Cast voices, Places, and film scores since 2.4; Preview the cut, trims, re-cuts, and room sound in 2.6; One event in 2.7; Cast bundles in 2.8; marks, narration, widescreen cuts, review links, and editor export in 2.9; finishing tools and a fuller Cut in 2.10–2.12; Script, Scenes, takes, and Film Director in 3.0; locations in 3.1; storyboard, sound effects, and longer clips in 3.2',
+          'Film loop: Cast → Outfit → Day → Scene → Cut film; talking clips, Cast voices, Places, and film scores since 2.4; Preview the cut, trims, re-cuts, and room sound in 2.6; One event in 2.7; Cast bundles in 2.8; marks, narration, widescreen cuts, review links, and editor export in 2.9; finishing tools and a fuller Cut in 2.10–2.12; Script, Scenes, takes, and Film Director in 3.0; locations in 3.1; storyboard, sound effects, and longer clips in 3.2; the Cut editing loop on one screen in 3.3; two people talking, each in their own voice, by 3.4; Restyle, Remove or replace, a new background, and the motion brush in 3.6; continuity reports and production sheets in 3.7; episodes and long films in 3.8',
           '40+ ComfyUI image model targets with architecture-specific scaffolds',
-          'Screenplay import, Scenes and takes, runs, locations, storyboard and animatic, and the Film Director page (3.0–3.2)',
+          'Screenplay import, Scenes and takes, runs, locations, storyboard and animatic, and the Film Director page (3.0–3.2); Write an episode, episode runs, and long films rendered in pieces (3.8)',
           'Finishing tools: sharpen & smooth, make more realistic, copy moves, direct a move, dance, lip-sync, relight, sketch, upscale to 4K',
           'Classic tools (Generate, Format, Lint, Variations, Workflow editor) ship separately as Prompt Studio on the shared prompt-studio-core package',
           'Gallery with grid/dense/list layouts, review focus, compare modal, and semantic search',

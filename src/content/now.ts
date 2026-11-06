@@ -7,12 +7,12 @@ export type NowItem = {
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
   updated: '2026-11-06',
-  headline: 'Castcut 3.2, door history for ProbeHarbor, Shelf 2.22, PrintBridge, and two Linux audio apps.',
+  headline: 'Castcut 3.8, door history for ProbeHarbor, Shelf 2.22, PrintBridge, and two Linux audio apps.',
   items: [
     {
-      label: 'Castcut 3.2',
+      label: 'Castcut 3.8',
       detail:
-        'From screenplay to cut: import a script, render Scenes one take at a time, see the film as a storyboard and animatic, then cut it with sound effects, timed subtitles, and a score. Film Director shows the whole production on one page; finishing tools lip-sync, copy moves from a video, relight, and sharpen any still or clip. Docs on this domain; running at castcut.robmcd.name.',
+        'Whole episodes: write one from a premise scene by scene, run the script keeping each Scene’s best take by its checks, and cut a half-hour film in pieces with music by scene and Foley. New clip tools restyle a clip, remove or replace something in it, or change the place behind the people, and a motion brush moves a still along strokes you draw. Cut gains trailers, a press kit, a colour script, and continuity reports. Docs on this domain; running at castcut.robmcd.name.',
       href: '/castcut/play/day/',
     },
     {

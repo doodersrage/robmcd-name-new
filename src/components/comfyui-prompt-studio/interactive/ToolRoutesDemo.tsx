@@ -33,7 +33,7 @@ export function ToolRoutesDemo() {
   return (
     <div className="not-prose my-8">
       <p className="mb-4 text-sm leading-relaxed text-[var(--muted)]">
-        Castcut {CASTCUT_VERSION}’s routes — click a card for docs, hover for the live local URL (Node.js 22+, port 47832). The classic tools (Generate, Format, Lint, Variations, Workflow editor, and more) are in Prompt Studio.
+        Castcut {CASTCUT_VERSION}’s routes — click a card for docs, hover for the live local URL (Node.js 24+, port 47832). The classic tools (Generate, Format, Lint, Variations, Workflow editor, and more) are in Prompt Studio.
       </p>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
         {TOOLS.map((tool) => (

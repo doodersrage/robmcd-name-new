@@ -186,8 +186,8 @@ export const playPages = [
         items: [
           '**Redo** — requeue with a new seed, Looks wrong · redo, retry, queue this slot only',
           '**Touch up the still** — fix an area, sketch, relight, upscale to 4K',
-          '**Make it move** — animate, copy moves, direct a move, dance to music, lip-sync',
-          '**The clip** — sharpen & smooth, make more realistic, make it 30 s, continue with a directed move, add sound',
+          '**Make it move** — animate, copy moves, direct a move, motion brush, dance to music, lip-sync',
+          '**The clip** — sharpen & smooth, make more realistic, restyle, remove or replace, change the background, make it 30 s, continue with a directed move, add sound',
         ],
       },
       {
@@ -268,6 +268,7 @@ export const playPages = [
         type: 'ul',
         items: [
           '**Import a script** — paste it, or upload a `.fountain`, `.txt`, or `.md` file. It reads as a screenplay, scene by scene (heading, place, time of day, who speaks, each line), and anything it couldn’t understand is listed first. Text with no scene headings reads as an outline, one beat per paragraph.',
+          '**Write an episode…** (Castcut 3.8, with the LLM on) — no script yet? Give a premise, a length, and a tone. **Write the outline** gives a title, a logline, and each scene’s heading and what happens; **Write the screenplay** then writes the scenes one at a time, each told how the one before ended, and you can stop and carry on. It lands in the script box like any imported script.',
           '**Who’s who** — each speaking part gets a Cast picker; a matching name is only suggested until you **Confirm** it, and nothing is created for you',
           '**Where** — each place shows how Castcut reads it (a kitchen as her home’s kitchen, an office as her workplace) or can be set to one of your Locations',
           '**Shots** — **Draft shots** proposes a list (an establishing wide, each line of dialogue, a reaction when an exchange ends); change purpose, framing, length, and priority, reorder, split, merge, add, or remove',
@@ -291,6 +292,9 @@ export const playPages = [
       },
       ...p(
         'A run never keeps a take — choosing stays yours. It stops by itself and says why when a take fails, and closing the tab pauses it; after a reload **Resume** carries on without queueing the same take twice.',
+      ),
+      ...p(
+        'An **episode run** (Castcut 3.8) is for a whole script — a half-hour episode is 200–350 shots — without clicking Keep on every one. It keeps each Scene’s best take by its checks (no check missed, then the best face and pose scores), redoes a failing take up to three times, and can animate each kept take before moving on, as a talking clip when the shot has a line. A Scene whose best take still missed a check is kept anyway, with a note, and listed under **To check**: that list is the review pass.',
       ),
       { type: 'h2', text: 'Locations' },
       ...p(
@@ -364,7 +368,7 @@ export const playPages = [
           '**Timeline** — every shot as long as it plays: drag to move, drag edges to hold or trim, scrub on the ruler; each join picks cut, crossfade, fade through black, flash of white, or slide',
           '**Shots** — drag to reorder, frame a still (waist up, chest up), trim a clip, set the poster, a still’s move, and a clip’s speed (0.25×–4×), reverse, and J / L cuts',
           '**Add** — from the Gallery, a text card, **Generate a shot…** for missing B-roll, **Bridge to next** for a clip that moves into the next shot',
-          '**New take** renders a shot again with a new seed; **Make longer…** carries a clip on by 4, 8, or 15 s; **Make a reel…** makes a 15 / 30 / 60 s vertical',
+          '**New take** renders a shot again with a new seed; **Make longer…** carries a clip on by 4, 8, or 15 s; **Make a reel…** makes a 15 / 30 / 60 s vertical or a 30 / 60 s trailer with a title card and a closing card',
           '**Overlay…** adds a lower third or a picture in a corner; **Add a logo** watermarks the film',
           'Keys: Space play · J / K / L · S split · I / O trim · F freeze frame · D duplicate · Ctrl+Z undo (it survives a reload)',
         ],
@@ -376,7 +380,7 @@ export const playPages = [
           '**Made for** — Review copy (720p, subtitles burned in), Widescreen master (1080p), Vertical social, or Square social, each with a shape, size, and loudness target',
           '**Look** — natural, warm, cool, filmic, vivid, faded, or black & white, with **Match shots** pulling separately made shots toward one colour',
           '**Follow faces** in vertical and square cuts, **Smooth motion** (RIFE in-between frames), and a light **Sharpen**',
-          '**Sound** — the Cast’s lines, narration, room sound, and music (your track or **Score this film**), with the music ducked under speech, an ambience bed, mute and solo per track, and placed **sound effects** (Castcut 3.2)',
+          '**Sound** — the Cast’s lines, narration, room sound, and music (your track or **Score this film**), with the music ducked under speech, an ambience bed, mute and solo per track, and placed **sound effects** (Castcut 3.2); **Make a sound** writes an effect from words, **Foley** suggests the sounds each shot says happen, and **Music by scene** scores each stretch of the film in its own mood, ducked under the lines (Castcut 3.6–3.8)',
           '**Measure loudness** reads a film’s LUFS and true peak against −14 LUFS for the web or −23 for broadcast',
         ],
       },
@@ -390,7 +394,9 @@ export const playPages = [
         items: [
           '**Before cutting** — a live checklist: shots, missing media, subtitles, something to hear, picture size, whether the server can encode, and free disk space',
           '**Missing media** — a shot whose file is gone is listed with **Relink** to another take or a Gallery item',
-          '**Continuity** — face, pose, outfit, and place jumps between shots, each decided **It’s fine** or **It’s real**',
+          '**Continuity** — face, pose, outfit, and place jumps between shots, each decided **It’s fine** or **It’s real**, and two shots that cross the 180° line',
+          '**Reports** — a colour script of the whole film, a continuity report with a prop list, a dialogue list that shows which lines still have no sound, a shot report of what made each shot, and a press kit, each a page to print or save as PDF (Castcut 3.7–3.8)',
+          '**Long films** — a film of more than 40 shots is rendered in pieces of about 30 shots, joined, then given its music, effects, and finish in one pass (Castcut 3.8)',
           '**Pinned takes** — once a shot is edited or cut, it stays on its take; a newer take in its source is offered as **New take available**, never swapped in',
           '**Versions** merge across devices (another device’s edit is kept as a version), and **Package** moves a cut, with or without its media, to another machine',
           'After a cut: **Export for an editor** (FCPXML, EDL, subtitles, and media for Resolve, Premiere, or Final Cut), **Re-cut** in another shape, or **Share for review** on an expiring link that takes comments pinned to a moment',
@@ -448,8 +454,12 @@ export const playPages = [
         items: [
           '**Sharpen & smooth** (a clip, ~3 min) — SeedVR2 brings it to 1280 on the long side and RIFE doubles a 16 fps clip’s frames; the sound is kept',
           '**Make more realistic** (a clip, a few minutes per 5 s) — a low-strength WAN 2.2 re-render that turns waxy skin and over-smooth detail into real texture, keeping motion, framing, and faces',
+          '**Restyle** (a clip, ~6 min for 5 s) — repaint it as anime, film noir, claymation, watercolour, vintage film, 3D animated, or a look in your own words, keeping its scene, framing, motion, and sound; the vision model names its colours first, so a red dress stays red (WAN 2.2 Fun VACE)',
+          '**Remove or replace** (a clip, ~6 min for 5 s) — paint over something in the first frame and it is followed through the clip (SAM 3.1) and filled from the scene, or turned into what you name',
+          '**Change the background** (a clip, ~6 min for 5 s) — say where they are now and the place behind the people is redrawn, with the people kept exactly as they were',
           '**Copy moves from a video** (a still, ~5 min for 5 s) — film yourself or pick a video of one person, and the still’s person does the same moves, body, hands, and face (Wan Animate 2), up to 30 s',
           '**Direct a move** (a still, ~3 min for 5 s) — line up beats on a 3D body: poses, ready-made moves from real motion capture (walk, turn, sit, wave, shrug, bow), or moves read from your own video (Castcut 3.2); feet stay planted and the camera frames her like the still. **Continue with a directed move** carries a finished clip on',
+          '**Motion brush** (a still, a few minutes for 5 s) — drag from something to where it goes and pin what stays put; the still moves along your strokes (WAN-Move)',
           '**Dance to music** (a still, ~10 min for 6 s) — a song, a style (street, K-pop, Latin, Chinese classical, tap), and how big the moves are, on Wan-Dancer',
           '**Lip-sync to a recording** (a still, ~7 min for 5 s) — your voice, a TTS file, or a song, on InfiniteTalk; a second recording makes two people talk in turn',
           '**Relight** (a still, ~1 min) — golden hour, window daylight, lamp at night, overcast, neon, or candlelight, with face, pose, and room kept',

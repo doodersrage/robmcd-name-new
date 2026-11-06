@@ -4,14 +4,14 @@ export const gettingStartedPages = [
   page(
     ['getting-started', 'quick-start'],
     'Quick start',
-    'Node 22+, clone, env vars, Heal & ready, desktop/Docker options, and your first queue.',
+    'Node 24+, clone, env vars, Heal & ready, desktop/Docker options, and your first queue.',
     'Getting started',
     5,
     [
       {
         type: 'callout',
         variant: 'tip',
-        title: 'Requires Node.js 22+',
+        title: 'Requires Node.js 24+',
         text: 'Castcut uses modern Node APIs. Verify with `node -v` before installing.',
       },
       {

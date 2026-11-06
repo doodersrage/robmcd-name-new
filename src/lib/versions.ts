@@ -5,10 +5,10 @@
  * write-ups, and the Now page is a dated snapshot with its own numbers.
  */
 export const RELEASES = {
-  castcut: '3.2.0',
+  castcut: '3.8.0',
   shelf: '2.22.0',
   printBridge: '0.3.0',
-  promptStudioCore: '3.0.1',
+  promptStudioCore: '3.5.0',
 } as const
 
 /** Major.minor, the form the site shows ("Castcut 3.2"). */
