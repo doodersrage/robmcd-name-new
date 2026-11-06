@@ -458,9 +458,21 @@ export type WorkRepoHighlight = {
 
 export const WORK_REPO_HIGHLIGHTS: WorkRepoHighlight[] = [
   {
+    name: 'fiio-k7-linux',
+    blurb:
+      'Linux app for the FiiO K7 DAC/amp (FiiO only ships Windows software). Switches PipeWire to the native rate of what is playing, shows which apps are being resampled and why, and adds AutoEQ headphone profiles, crossfeed, native DSD, and latency presets. Settings window, tray icon, CLI; packages for Arch, Debian, and Fedora.',
+    href: 'https://github.com/doodersrage/fiio-k7-linux',
+  },
+  {
+    name: 'btwctl',
+    blurb:
+      'Linux app for the Creative BT-W5 and BT-W6 Bluetooth dongles: aptX Adaptive High Quality or Low Latency, headset mic on or off, pairing and switching headsets. Settings window, tray icon, CLI, and a status bar module. Grew out of a fork of btw5-switch by Raphael Wimmer.',
+    href: 'https://github.com/doodersrage/btwctl',
+  },
+  {
     name: 'wallhaven-plasma-6-plugin',
     blurb:
-      'KDE Plasma 6 wallpaper plugin for wallhaven.cc. Search, slideshow, multi-monitor, Ken Burns and parallax motion, lock-screen sync, KRunner, and a D-Bus helper; the API key stays in KWallet.',
+      'KDE Plasma 6 wallpaper plugin for wallhaven.cc, on the KDE Store as Wallhaven Extended. Search, collections, slideshow, multi-monitor, Ken Burns and parallax motion, offline cache, lock-screen sync, KRunner, and a D-Bus helper; the API key stays in KWallet.',
     href: 'https://github.com/doodersrage/wallhaven-plasma-6-plugin',
   },
   {

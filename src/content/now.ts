@@ -6,8 +6,8 @@ export type NowItem = {
 
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
-  updated: '2026-10-29',
-  headline: 'Castcut 3.2, door history for ProbeHarbor, Shelf 2.22, and PrintBridge.',
+  updated: '2026-11-06',
+  headline: 'Castcut 3.2, door history for ProbeHarbor, Shelf 2.22, PrintBridge, and two Linux audio apps.',
   items: [
     {
       label: 'Castcut 3.2',
@@ -38,6 +38,12 @@ export const NOW = {
       detail:
         'New: a self-hosted slicer and print host for my Ender-3 V3 SE. Drop in a model, PrusaSlicer slices it, and it goes to the printer through the Creality Wi-Fi Box, OctoPrint, or Moonraker. 0.3 adds a watch folder and daily backups.',
       href: '/work/printbridge/',
+    },
+    {
+      label: 'Linux audio apps',
+      detail:
+        'Two small apps for hardware whose makers only ship Windows or macOS software. fiio-k7-linux (k7ctl 0.4) gets bit-perfect playback out of the FiiO K7 on PipeWire and adds headphone EQ and crossfeed. btwctl 0.9 controls the Creative BT-W5 and BT-W6 Bluetooth dongles: aptX mode, headset mic, and pairing. Both have a settings window, tray icon, and CLI.',
+      href: 'https://github.com/doodersrage/fiio-k7-linux',
     },
     {
       label: 'Lasso CRM',

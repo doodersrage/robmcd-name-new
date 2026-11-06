@@ -40,6 +40,7 @@ export const GET: APIRoute = () => {
 ${filmPages}
   Castcut nodes: https://robmcd.name/castcut/integration/castcut-nodes/
   Nodes repo: https://github.com/doodersrage/castcut-nodes
+  Diffusers engine (optional stills add-on): https://github.com/doodersrage/castcut-diffusers
 - Prompt Studio write-up: https://robmcd.name/work/prompt-studio/
   Classic prompt and image tools split out of Castcut
   Source: https://github.com/doodersrage/prompt-studio
@@ -64,6 +65,10 @@ ${filmPages}
 - WordPress plugins: https://robmcd.name/work/wordpress/
   Inkbound: https://github.com/doodersrage/inkbound
   Volunteer Impact Tracker 1.1.0: https://github.com/doodersrage/volunteer-impact-tracker
+- Linux desktop tools (GitHub):
+  fiio-k7-linux, FiiO K7 DAC control on PipeWire: https://github.com/doodersrage/fiio-k7-linux
+  btwctl, Creative BT-W5/BT-W6 dongle control: https://github.com/doodersrage/btwctl
+  Wallhaven wallpaper plugin for KDE Plasma 6: https://github.com/doodersrage/wallhaven-plasma-6-plugin
 
 ## Optional
 - Homelab: https://robmcd.name/homelab/
