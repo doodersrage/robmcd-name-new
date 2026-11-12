@@ -112,6 +112,16 @@ const jsonLd = itemListSchema(
                 >
                   {repo.name}
                 </a>
+                {repo.source ? (
+                  <a
+                    href={repo.source}
+                    class="font-mono text-xs text-link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Source
+                  </a>
+                ) : null}
                 {repo.note ? (
                   <span class="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">{repo.note}</span>
                 ) : null}
