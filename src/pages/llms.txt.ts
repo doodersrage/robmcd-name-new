@@ -65,6 +65,8 @@ ${filmPages}
 - WordPress plugins: https://robmcd.name/work/wordpress/
   Inkbound: https://github.com/doodersrage/inkbound
   Volunteer Impact Tracker 1.1.0: https://github.com/doodersrage/volunteer-impact-tracker
+- ESP32 Bench: https://esp32bench.dev/
+  ESP32 project library, pinouts, and a Web Serial workbench and flasher in the browser
 - Linux desktop tools (GitHub):
   fiio-k7-linux, FiiO K7 DAC control on PipeWire: https://github.com/doodersrage/fiio-k7-linux
   btwctl, Creative BT-W5/BT-W6 dongle control: https://github.com/doodersrage/btwctl

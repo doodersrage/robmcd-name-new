@@ -461,6 +461,13 @@ export type WorkRepoHighlight = {
 
 export const WORK_REPO_HIGHLIGHTS: WorkRepoHighlight[] = [
   {
+    name: 'esp32bench.dev',
+    blurb:
+      'Free ESP32 project library and serial workbench in the browser. Thirty-eight projects with pinouts, wiring tables, parts lists, and Arduino sketches or firmware you flash from the page; board pages for the ESP32, S2, S3, C3, C6, XIAO, and ESP32-CAM; a Web Serial monitor with a live plotter, a crash translator and backtrace decoder, a wiring checker, and a pin detective. Static Astro site; installs as an offline app.',
+    href: 'https://esp32bench.dev/',
+    note: 'Live site',
+  },
+  {
     name: 'fiio-k7-linux',
     blurb:
       'Linux app for the FiiO K7 DAC/amp (FiiO only ships Windows software). Switches PipeWire to the native rate of what is playing, shows which apps are being resampled and why, and adds AutoEQ headphone profiles, crossfeed, native DSD, and latency presets. Settings window, tray icon, CLI; packages for Arch, Debian, and Fedora.',
