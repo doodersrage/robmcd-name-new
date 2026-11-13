@@ -59,15 +59,16 @@ ${filmPages}
 - PrintBridge write-up: https://robmcd.name/work/printbridge/
   Self-hosted slicer and print host for the Creality Ender-3 V3 SE (PrintBridge ${VERSIONS.printBridge})
   Source: https://github.com/doodersrage/printbridge
+- ESP32 Bench write-up: https://robmcd.name/work/esp32-bench/
+  ESP32 project library and serial workbench: flash, monitor, and build sketches in the browser
+  Live: https://esp32bench.dev/
+  Source: https://github.com/doodersrage/esp32-bench
 - Concrete CMS packages: https://robmcd.name/work/concrete-cms/
   Marketplace: Page List Map, Date Counter (more coming)
   Community profile: https://community.concretecms.com/members/profile/103041
 - WordPress plugins: https://robmcd.name/work/wordpress/
   Inkbound: https://github.com/doodersrage/inkbound
   Volunteer Impact Tracker 1.1.0: https://github.com/doodersrage/volunteer-impact-tracker
-- ESP32 Bench: https://esp32bench.dev/
-  ESP32 project library, pinouts, and a Web Serial workbench and flasher in the browser
-  Source: https://github.com/doodersrage/esp32-bench
 - Linux desktop tools (GitHub):
   fiio-k7-linux, FiiO K7 DAC control on PipeWire: https://github.com/doodersrage/fiio-k7-linux
   btwctl, Creative BT-W5/BT-W6 dongle control: https://github.com/doodersrage/btwctl

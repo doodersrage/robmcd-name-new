@@ -7,7 +7,7 @@ import { itemListSchema } from '@/lib/seo'
 import { SITE_LINKS } from '@/lib/site'
 
 const description =
-  'Case studies for Castcut, ProbeHarbor, Shelf, PrintBridge, Prompt Studio, legacy modernization, Concrete CMS and WordPress packages, and related open-source repos.'
+  'Case studies for Castcut, ProbeHarbor, Shelf, PrintBridge, ESP32 Bench, Prompt Studio, legacy modernization, Concrete CMS and WordPress packages, and related open-source repos.'
 
 const jsonLd = itemListSchema(
   'Work',
@@ -91,7 +91,7 @@ const jsonLd = itemListSchema(
         Selected repositories
       </h2>
       <p class="max-w-2xl text-base leading-relaxed text-[var(--muted)]">
-        Other projects worth a look: an ESP32 workbench site, Linux desktop and audio tools, a cinema API module, and older ecommerce.
+        Other repos worth a look: Linux desktop and audio tools, a cinema API module, and older ecommerce.
       </p>
     </div>
 
@@ -112,16 +112,6 @@ const jsonLd = itemListSchema(
                 >
                   {repo.name}
                 </a>
-                {repo.source ? (
-                  <a
-                    href={repo.source}
-                    class="font-mono text-xs text-link"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Source
-                  </a>
-                ) : null}
                 {repo.note ? (
                   <span class="font-mono text-xs uppercase tracking-wider text-[var(--muted)]">{repo.note}</span>
                 ) : null}

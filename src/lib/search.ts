@@ -303,6 +303,17 @@ export function searchLocalContent(term: string): SearchHit[] {
     })
   }
 
+  if (/esp32|arduino|pinout|web.?serial|serial monitor|flash(er|ing)?|sketch|microcontroller|bench/.test(q)) {
+    extras.push({
+      id: 'esp32-bench',
+      title: 'ESP32 Bench',
+      description:
+        'ESP32 project library and serial workbench at esp32bench.dev: pinouts, wiring diagrams, browser flashing, a Web Serial monitor, and cloud sketch builds.',
+      href: SITE_LINKS.esp32Bench,
+      source: 'Work · Product',
+    })
+  }
+
   const seen = new Set<string>()
   const merged = [
     ...pageHits,

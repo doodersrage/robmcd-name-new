@@ -376,6 +376,66 @@ export const WORK_CASE_STUDIES: WorkCaseStudy[] = [
     ],
   },
   {
+    slug: 'esp32-bench',
+    title: 'ESP32 Bench',
+    tagline: 'Pick a project, wire it, flash it, watch it talk. An ESP32 workbench in the browser.',
+    description:
+      'A free ESP32 project library and serial workbench at esp32bench.dev. Forty-six projects with pinouts, wiring diagrams, and parts lists, nearly all compiled for every board they support and flashed from the page; pages for eight boards; a Web Serial monitor with a live plotter and crash translator; a wiring checker, a pin detective, and a sketch editor that builds firmware in the cloud, so nothing needs the Arduino IDE. Static Astro site on Cloudflare; MIT-licensed code, CC BY content.',
+    externalHref: SITE_LINKS.esp32BenchLive,
+    linkLabel: 'Open esp32bench.dev',
+    stack: [
+      'Astro 7',
+      'TypeScript',
+      'Web Serial',
+      'esptool-js',
+      'PlatformIO',
+      'Cloudflare Workers',
+      'Cloudflare Containers',
+      'R2 / D1 / KV',
+    ],
+    sections: [
+      {
+        heading: 'What it is',
+        body: [
+          'Most ESP32 tutorials are a blog post, a pin diagram from somewhere else, and an Arduino IDE install that fails on the USB driver. ESP32 Bench puts the whole loop on one site: pick a project, see exactly which pins it uses on your board, wire it, flash it from the browser, and watch the serial output on the same page.',
+          'It grew out of ProbeHarbor’s hardware work. The S3 and C3 pin choices, hardware test results, field notes, and the ProbeHarbor probe firmware all come from there, and the probe flashes and takes its settings from ESP32 Bench too. It went from 0.1 to 0.12 in two days.',
+        ],
+        links: [
+          { label: 'esp32bench.dev', href: SITE_LINKS.esp32BenchLive, external: true },
+          { label: 'Source on GitHub', href: SITE_LINKS.esp32BenchGithub, external: true },
+          { label: 'What’s new', href: `${SITE_LINKS.esp32BenchLive}changes/`, external: true },
+        ],
+      },
+      {
+        heading: 'The library',
+        body: [
+          'Forty-six projects, from Blink and an I2C scanner to ESP-NOW pairs, an ESP32-CAM stream, a BME280 web dashboard, Home Assistant over MQTT, over-the-air updates, an IR sonar sweep, and a self-levelling platform, plus games and toys: Simon, OLED Pong, electronic dice, an ultrasonic theremin, and a NeoPixel fire. Each has a highlighted pinout, a wiring diagram with a step-by-step build mode, a parts card with resistor colour bands, and sample output so you can see what a working build prints before you own the board. Fifteen can be played in the browser first.',
+          'Projects that run on more than one board have a board switch that rewrites the pins, wiring, and sketch. A library filter can pick a project from the parts already in your drawer, and a bench log of what you have built earns badges and a streak, kept in the browser. Projects are honest about testing: each one says whether it has been checked on real hardware.',
+        ],
+      },
+      {
+        heading: 'No Arduino IDE',
+        body: [
+          'A GitHub Actions job compiles every sketch for every board it supports on the current Arduino-ESP32 core and uploads the images to R2, so project pages get a Flash button (45 of the 46 so far). The upload API accepts only a GitHub OIDC token from the repo’s main branch, so no upload secret exists, and nothing is published unless every build passed. Projects that need Wi-Fi or account details take them over USB from a form on the page after flashing.',
+          'Edit and build opens a sketch in a CodeMirror editor; Build sends it to a PlatformIO service in Cloudflare Containers that returns compiler errors on the right lines or an image to flash, with per-visitor quotas and containers that stop two minutes after the last build. A Raspberry Pi lab runner flashes projects onto real boards and checks their serial output against what they should print.',
+        ],
+      },
+      {
+        heading: 'On the bench',
+        body: [
+          'The bench is a serial monitor on Web Serial, with a second board alongside for sender and receiver projects. Numbers that keep appearing in the output are charted live, the Wi-Fi scanner’s output becomes a channel radar, and crash lines are explained in plain language. Logs can be shared as a link, compressed into the URL fragment so nothing is uploaded.',
+          'Around it: pages for eight boards (ESP32, S2, S3, C3, C6, two Seeed XIAOs, and the ESP32-CAM) with every pin’s functions and a safe-to-use verdict; a wiring pad that checks each wire for boot pins, input-only pins, and 5 V signals; a pin detective firmware that lights up whichever pad you touch with a ground jumper; a backtrace decoder that parses the ELF in the browser; a partition table builder; a flasher for your own .bin files; twenty-eight error reference pages; and Flames, a gallery of real failures with what the serial port said and what was actually wrong.',
+        ],
+      },
+      {
+        heading: 'Running it',
+        body: [
+          'The site is static Astro 7 on Cloudflare and installs as an offline app. Beside it run small Workers: a report API with Turnstile and Email Routing, where build reports a sender chooses to publish wait for approval from a confirmation page so email link scanners can’t approve them; an uptime monitor that checks six endpoints every five minutes; and the compile service. A weekly job recompiles every sketch on the newest core and checks every outside link, opening an issue if anything fails.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'prompt-studio',
     title: 'Prompt Studio',
     tagline: 'Prompt, image, video, and audio tools for ComfyUI, running on your own machine.',
@@ -456,20 +516,10 @@ export type WorkRepoHighlight = {
   name: string
   blurb: string
   href: string
-  /** Source repo, when `href` points at a live site instead. */
-  source?: string
   note?: string
 }
 
 export const WORK_REPO_HIGHLIGHTS: WorkRepoHighlight[] = [
-  {
-    name: 'esp32bench.dev',
-    blurb:
-      'Free ESP32 project library and serial workbench in the browser. Thirty-eight projects with pinouts, wiring tables, parts lists, and Arduino sketches or firmware you flash from the page; board pages for the ESP32, S2, S3, C3, C6, XIAO, and ESP32-CAM; a Web Serial monitor with a live plotter, a crash translator and backtrace decoder, a wiring checker, and a pin detective. Static Astro site; installs as an offline app.',
-    href: 'https://esp32bench.dev/',
-    source: 'https://github.com/doodersrage/esp32-bench',
-    note: 'Live site',
-  },
   {
     name: 'fiio-k7-linux',
     blurb:

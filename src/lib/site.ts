@@ -65,6 +65,9 @@ export const SITE_LINKS = {
   shelfDocker: 'ghcr.io/doodersrage/shelf:latest',
   printBridge: '/work/printbridge/',
   printBridgeGithub: 'https://github.com/doodersrage/printbridge',
+  esp32Bench: '/work/esp32-bench/',
+  esp32BenchLive: 'https://esp32bench.dev/',
+  esp32BenchGithub: 'https://github.com/doodersrage/esp32-bench',
   /** @deprecated Use castcut* */
   promptStudio: '/castcut/',
   promptStudioGithub: 'https://github.com/doodersrage/castcut',
@@ -125,6 +128,7 @@ export const PRIMARY_NAV: SiteNavItem[] = [
       { id: 'work-probeharbor', label: 'ProbeHarbor', href: SITE_LINKS.probeHarborPage },
       { id: 'work-shelf', label: 'Shelf', href: SITE_LINKS.shelf },
       { id: 'work-printbridge', label: 'PrintBridge', href: SITE_LINKS.printBridge },
+      { id: 'work-esp32-bench', label: 'ESP32 Bench', href: SITE_LINKS.esp32Bench },
       { id: 'work-prompt-studio', label: 'Prompt Studio', href: SITE_LINKS.promptStudioApp },
       { id: 'work-concrete', label: 'Concrete CMS', href: SITE_LINKS.concreteCms },
       { id: 'work-wordpress', label: 'WordPress', href: SITE_LINKS.wordpress },

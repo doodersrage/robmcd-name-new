@@ -6,8 +6,8 @@ export type NowItem = {
 
 /** Lightweight “what I’m building this month” — edit in place. */
 export const NOW = {
-  updated: '2026-11-06',
-  headline: 'Castcut 3.8, ProbeHarbor in °C with clearer alerts, Shelf 2.22, PrintBridge, and two Linux audio apps.',
+  updated: '2026-11-12',
+  headline: 'Castcut 3.8, ProbeHarbor in °C with clearer alerts, Shelf 2.22, PrintBridge, ESP32 Bench, and two Linux audio apps.',
   items: [
     {
       label: 'Castcut 3.8',
@@ -38,6 +38,12 @@ export const NOW = {
       detail:
         'New: a self-hosted slicer and print host for my Ender-3 V3 SE. Drop in a model, PrusaSlicer slices it, and it goes to the printer through the Creality Wi-Fi Box, OctoPrint, or Moonraker. 0.3 adds a watch folder and daily backups.',
       href: '/work/printbridge/',
+    },
+    {
+      label: 'ESP32 Bench',
+      detail:
+        'New: esp32bench.dev, an ESP32 project library and serial workbench in the browser. Forty-six projects with pinouts and wiring diagrams, nearly all flashed straight from their page; a serial monitor with a live plotter and crash translator; and, in 0.12, a sketch editor that builds firmware in the cloud, so nothing needs the Arduino IDE.',
+      href: '/work/esp32-bench/',
     },
     {
       label: 'Linux audio apps',

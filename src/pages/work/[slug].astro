@@ -22,6 +22,7 @@ if (!study) {
 
 const isProbeHarbor = study.slug === 'probeharbor'
 const isCastcut = study.slug === 'castcut'
+const isEsp32Bench = study.slug === 'esp32-bench'
 const primaryHref = study.href ?? study.externalHref ?? SITE_LINKS.contact
 const primaryExternal = Boolean(study.externalHref && !study.href)
 const path = `/work/${study.slug}/`
@@ -51,7 +52,17 @@ const software = isProbeHarbor
         offersUrl: SITE_LINKS.castcutGithub,
         sameAs: [SITE_LINKS.castcutGithub, SITE_LINKS.castcutDocs, SITE_LINKS.castcut],
       })
-    : undefined
+    : isEsp32Bench
+      ? softwareApplicationSchema({
+          name: 'ESP32 Bench',
+          description: study.description,
+          url: SITE_LINKS.esp32BenchLive,
+          codeRepository: SITE_LINKS.esp32BenchGithub,
+          applicationCategory: 'DeveloperApplication',
+          offersUrl: SITE_LINKS.esp32BenchLive,
+          sameAs: [SITE_LINKS.esp32BenchLive, SITE_LINKS.esp32BenchGithub, path],
+        })
+      : undefined
 
 const jsonLd = workCaseStudySchema({
   title: study.title,
