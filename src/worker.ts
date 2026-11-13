@@ -48,8 +48,31 @@ export default {
       if (target) return Response.redirect(new URL(target, url).toString(), 301)
     }
 
+    // www (and any other alias host) goes to the one canonical host.
+    const host = new URL(request.url).hostname
+    if (host.startsWith('www.')) {
+      const url = new URL(request.url)
+      url.hostname = host.slice(4)
+      return Response.redirect(url.toString(), 301)
+    }
+
     const redirect = canonicalRedirect(request)
     if (redirect) return redirect
+
+    // A page's Markdown copy fetched directly (/about/index.md) points search
+    // engines at the HTML page, so it is never indexed as a duplicate.
+    {
+      const url = new URL(request.url)
+      if ((request.method === 'GET' || request.method === 'HEAD') && url.pathname.endsWith('/index.md')) {
+        const md = await env.ASSETS.fetch(request)
+        if (!md.ok) return md
+        const res = new Response(md.body, md)
+        res.headers.set('Content-Type', 'text/markdown; charset=utf-8')
+        res.headers.set('Link', `<${url.origin}${url.pathname.slice(0, -'index.md'.length)}>; rel="canonical"`)
+        res.headers.set('X-Robots-Tag', 'noindex')
+        return res
+      }
+    }
 
     if (wantsMarkdown(request)) {
       const url = new URL(request.url)
@@ -62,7 +85,7 @@ export default {
               'Content-Type': 'text/markdown; charset=utf-8',
               'Cache-Control': 'public, max-age=0, must-revalidate',
               Vary: 'Accept',
-              Link: `<${url.pathname}>; rel="canonical"`,
+              Link: `<${url.origin}${url.pathname}>; rel="canonical"`,
             },
           })
         }
