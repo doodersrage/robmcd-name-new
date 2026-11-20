@@ -180,6 +180,33 @@ export function softwareApplicationSchema(opts: {
   }
 }
 
+/** Docs/guide pages: a complete TechArticle (Ahrefs flags thin or missing Article schema). */
+export function techArticleSchema(opts: {
+  title: string
+  description: string
+  path: string
+  datePublished?: string
+  dateModified?: string
+  image?: string
+}): Record<string, unknown> {
+  const url = ABS(opts.path)
+  return {
+    '@type': 'TechArticle',
+    '@id': `${url}#article`,
+    headline: opts.title,
+    description: opts.description,
+    url,
+    mainEntityOfPage: url,
+    image: opts.image ? ABS(opts.image) : DEFAULT_OG_IMAGE,
+    inLanguage: 'en-US',
+    ...(opts.datePublished ? { datePublished: opts.datePublished } : {}),
+    ...(opts.dateModified ? { dateModified: opts.dateModified } : {}),
+    author: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: SITE_OWNER, url: SITE_URL },
+    publisher: { '@type': 'Person', '@id': `${SITE_URL}/#person`, name: SITE_OWNER, url: SITE_URL },
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+  }
+}
+
 export function workCaseStudySchema(opts: {
   title: string
   description: string

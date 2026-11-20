@@ -3,7 +3,8 @@ export const prerender = true
 
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { SITE_LINKS } from '@/lib/site'
-import { breadcrumbSchema } from '@/lib/seo'
+import { breadcrumbSchema, techArticleSchema } from '@/lib/seo'
+import { gitDates } from '@/lib/git-dates'
 
 const example = `{
   "device_id": "garage-north-01",
@@ -21,12 +22,21 @@ const example = `{
   canonical={SITE_LINKS.probeHarborProtocol}
   jsonLd={{
     '@context': 'https://schema.org',
-    ...breadcrumbSchema([
-      { name: 'Home', path: '/' },
-      { name: 'Work', path: '/work' },
-      { name: 'ProbeHarbor', path: SITE_LINKS.probeHarborPage },
-      { name: 'Ingest protocol', path: SITE_LINKS.probeHarborProtocol },
-    ]),
+    '@graph': [
+      breadcrumbSchema([
+        { name: 'Home', path: '/' },
+        { name: 'Work', path: '/work' },
+        { name: 'ProbeHarbor', path: SITE_LINKS.probeHarborPage },
+        { name: 'Ingest protocol', path: SITE_LINKS.probeHarborProtocol },
+      ]),
+      techArticleSchema({
+        title: 'ProbeHarbor ingest protocol',
+        description:
+          'Open ingest sketch for ProbeHarbor-style sensors — first POST auto-import, flexible payload shapes, push and pull.',
+        path: SITE_LINKS.probeHarborProtocol,
+        ...gitDates('src/pages/work/probeharbor/protocol.astro'),
+      }),
+    ],
   }}
 >
   <article class="space-y-10">

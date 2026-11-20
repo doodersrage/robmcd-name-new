@@ -10,13 +10,11 @@ export const prerender = true
  * zone, so this file is the only source of these rules.
  */
 const AI_TRAINING_CRAWLERS = [
-  'Amazonbot',
   'Applebot-Extended',
   'Bytespider',
   'CCBot',
   'ClaudeBot',
   'anthropic-ai',
-  'Claude-Web',
   'Diffbot',
   'Google-Extended',
   'GoogleOther',
@@ -40,6 +38,8 @@ const AI_TRAINING_CRAWLERS = [
   'magpie-crawler',
   'KimiBot',
   'CitibotSiteCrawler',
+  'DeepseekBot',
+  'xAI-Bot',
 ]
 
 export const GET: APIRoute = () => {

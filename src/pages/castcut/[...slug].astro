@@ -5,8 +5,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import { DocPageView } from '@/components/comfyui-prompt-studio/DocPageView'
 import { DOC_PAGES, getPageBySlug, slugToPath } from '@/content/comfyui-prompt-studio/pages'
 import { plainText } from '@/content/comfyui-prompt-studio/helpers'
-import { breadcrumbSchema } from '@/lib/seo'
-import { absolutePageUrl } from '@/lib/site'
+import { breadcrumbSchema, techArticleSchema } from '@/lib/seo'
+import { gitDates } from '@/lib/git-dates'
 
 export function getStaticPaths() {
   return DOC_PAGES.filter((p) => p.slug.length > 0).map((page) => ({
@@ -33,13 +33,12 @@ const jsonLd = {
       { name: 'Castcut', path: '/castcut' },
       { name: page.title, path: currentPath },
     ]),
-    {
-      '@type': 'TechArticle',
-      headline: page.title,
+    techArticleSchema({
+      title: page.title,
       description: plainText(page.description),
-      url: absolutePageUrl(currentPath),
-      author: { '@id': 'https://robmcd.name/#person' },
-    },
+      path: currentPath,
+      ...gitDates(`src/content/comfyui-prompt-studio/sections/${page.slug[0]}.ts`),
+    }),
   ],
 }
 ---
