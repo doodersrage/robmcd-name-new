@@ -4,7 +4,7 @@ export const prerender = true
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { getWorkBySlug, WORK_CASE_STUDIES } from '@/content/work/case-studies'
 import { SITE_LINKS } from '@/lib/site'
-import { softwareApplicationSchema, workCaseStudySchema } from '@/lib/seo'
+import { softwareSourceCodeSchema, workCaseStudySchema } from '@/lib/seo'
 
 export function getStaticPaths() {
   const aliases = [{ params: { slug: 'garage-temp' } }, { params: { slug: 'llm-prompt-studio' } }]
@@ -28,13 +28,11 @@ const primaryExternal = Boolean(study.externalHref && !study.href)
 const path = `/work/${study.slug}/`
 
 const software = isProbeHarbor
-  ? softwareApplicationSchema({
+  ? softwareSourceCodeSchema({
       name: 'ProbeHarbor',
       description: study.description,
       url: SITE_LINKS.probeHarbor,
       codeRepository: SITE_LINKS.probeHarborGithub,
-      applicationCategory: 'UtilitiesApplication',
-      offersUrl: SITE_LINKS.probeHarbor,
       sameAs: [
         SITE_LINKS.probeHarbor,
         SITE_LINKS.probeHarborGithub,
@@ -43,23 +41,19 @@ const software = isProbeHarbor
       ],
     })
   : isCastcut
-    ? softwareApplicationSchema({
+    ? softwareSourceCodeSchema({
         name: 'Castcut',
         description: study.description,
         url: SITE_LINKS.castcut,
         codeRepository: SITE_LINKS.castcutGithub,
-        applicationCategory: 'DeveloperApplication',
-        offersUrl: SITE_LINKS.castcutGithub,
         sameAs: [SITE_LINKS.castcutGithub, SITE_LINKS.castcutDocs, SITE_LINKS.castcut],
       })
     : isEsp32Bench
-      ? softwareApplicationSchema({
+      ? softwareSourceCodeSchema({
           name: 'ESP32 Bench',
           description: study.description,
           url: SITE_LINKS.esp32BenchLive,
           codeRepository: SITE_LINKS.esp32BenchGithub,
-          applicationCategory: 'DeveloperApplication',
-          offersUrl: SITE_LINKS.esp32BenchLive,
           sameAs: [SITE_LINKS.esp32BenchLive, SITE_LINKS.esp32BenchGithub, path],
         })
       : undefined

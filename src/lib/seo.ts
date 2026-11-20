@@ -148,34 +148,27 @@ export function breadcrumbSchema(items: { name: string; path: string }[]): Recor
   }
 }
 
-export function softwareApplicationSchema(opts: {
+/**
+ * The open-source projects as SoftwareSourceCode. Not SoftwareApplication:
+ * Google's software-app rich result requires ratings/reviews we don't have,
+ * and codeRepository isn't a SoftwareApplication property.
+ */
+export function softwareSourceCodeSchema(opts: {
   name: string
   description: string
   url: string
-  codeRepository?: string
-  applicationCategory?: string
-  offersUrl?: string
+  codeRepository: string
   sameAs?: string[]
 }): Record<string, unknown> {
   return {
-    '@type': 'SoftwareApplication',
+    '@type': 'SoftwareSourceCode',
     name: opts.name,
     description: opts.description,
     url: ABS(opts.url),
-    applicationCategory: opts.applicationCategory ?? 'DeveloperApplication',
-    operatingSystem: 'Cross-platform',
+    codeRepository: opts.codeRepository,
+    license: `${opts.codeRepository}/blob/main/LICENSE`,
+    programmingLanguage: 'TypeScript',
     author: { '@id': `${SITE_URL}/#person` },
-    ...(opts.codeRepository ? { codeRepository: opts.codeRepository, license: 'https://opensource.org/licenses/MIT' } : {}),
-    ...(opts.offersUrl
-      ? {
-          offers: {
-            '@type': 'Offer',
-            price: '0',
-            priceCurrency: 'USD',
-            url: ABS(opts.offersUrl),
-          },
-        }
-      : {}),
     ...(opts.sameAs?.length ? { sameAs: opts.sameAs } : {}),
   }
 }
