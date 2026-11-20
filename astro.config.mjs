@@ -10,13 +10,19 @@ import { execFileSync } from 'node:child_process'
 /**
  * First/last commit date (YYYY-MM-DD) per file under src/, for Article schema.
  * Read here because prerendering runs in the Workers runtime, where git can't.
- * Empty on a shallow clone, so pages never get made-up dates.
+ * Empty if history can't be fetched, so pages never get made-up dates.
  * @returns {Record<string, { datePublished: string, dateModified: string }>}
  */
 function gitFileDates() {
   try {
     const git = (/** @type {string[]} */ ...args) =>
       execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 64 << 20 })
+    // Cloudflare's build clones shallow; fetch the history once so dates exist.
+    if (git('rev-parse', '--is-shallow-repository').trim() === 'true') {
+      try {
+        execFileSync('git', ['fetch', '--unshallow', '--quiet'], { stdio: 'ignore', timeout: 60_000 })
+      } catch {}
+    }
     if (git('rev-parse', '--is-shallow-repository').trim() !== 'false') return {}
     /** @type {Record<string, { datePublished: string, dateModified: string }>} */
     const dates = {}
